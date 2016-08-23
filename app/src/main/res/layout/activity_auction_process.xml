@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="User A"
+        android:id="@+id/auctionprocess_id_text"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="2016.08.07"
+        android:id="@+id/auctionprocess_data_text"
+        android:layout_alignBaseline="@+id/auctionprocess_id_text"
+        android:layout_alignBottom="@+id/auctionprocess_id_text"
+        android:layout_toRightOf="@+id/auctionprocess_id_text"
+        android:layout_toEndOf="@+id/auctionprocess_id_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="15:00"
+        android:id="@+id/auctionprocess_time_text"
+        android:layout_alignBottom="@+id/auctionprocess_person_text"
+        android:layout_alignLeft="@+id/auctionprocess_endtime_text"
+        android:layout_alignStart="@+id/auctionprocess_endtime_text"
+        android:layout_marginBottom="53dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="30000"
+        android:id="@+id/auctionprocess_person_text"
+        android:layout_below="@+id/auctionprocess_id_text"
+        android:layout_alignLeft="@+id/auctionprocess_time_text"
+        android:layout_alignStart="@+id/auctionprocess_time_text"
+        android:layout_marginTop="155dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="11:00"
+        android:id="@+id/auctionprocess_endtime_text"
+        android:layout_above="@+id/auctionprocess_time_text"
+        android:layout_alignLeft="@+id/auctionprocess_status_text"
+        android:layout_alignStart="@+id/auctionprocess_status_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Success"
+        android:id="@+id/auctionprocess_status_text"
+        android:layout_marginRight="37dp"
+        android:layout_below="@+id/auctionprocess_person_text"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginTop="99dp" />
+
+</RelativeLayout>

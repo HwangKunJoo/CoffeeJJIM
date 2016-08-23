@@ -1,7 +1,61 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.coffeejjim.developers.CafeReservationListFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/cafelist_photo_image"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="cafe name"
+        android:id="@+id/cafelist_title_text"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/cafelist_photo_image"
+        android:layout_toEndOf="@+id/cafelist_photo_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="address"
+        android:id="@+id/cafelist_address_text"
+        android:layout_below="@+id/cafelist_title_text"
+        android:layout_toRightOf="@+id/cafelist_photo_image"
+        android:layout_toEndOf="@+id/cafelist_photo_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="price"
+        android:id="@+id/cafelist_price_text"
+        android:layout_below="@+id/cafelist_address_text"
+        android:layout_toRightOf="@+id/cafelist_photo_image"
+        android:layout_toEndOf="@+id/cafelist_photo_image" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Booking"
+        android:id="@+id/cafelist_resevation_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/cafelist_photo_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="distance"
+        android:id="@+id/cafelist_distance_text"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/cafelist_resevation_btn"
+        android:layout_toStartOf="@+id/cafelist_resevation_btn" />
+</RelativeLayout>

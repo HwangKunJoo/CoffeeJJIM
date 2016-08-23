@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.coffeejjim.developers.EstimateSheetFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="장소"
+        android:id="@+id/estimate_location_text"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="날짜"
+        android:id="@+id/estimate_date_text"
+        android:textSize="40dp"
+        android:layout_below="@+id/estimate_location_text"
+        android:layout_alignLeft="@+id/estimate_location_text"
+        android:layout_alignStart="@+id/estimate_location_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시간"
+        android:id="@+id/estimate_time_text"
+        android:textSize="40dp"
+        android:layout_below="@+id/estimate_date_edit"
+        android:layout_alignLeft="@+id/estimate_date_text"
+        android:layout_alignStart="@+id/estimate_date_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인원"
+        android:id="@+id/estimate_persons_text"
+        android:textSize="40dp"
+        android:layout_below="@+id/estimate_time_edit"
+        android:layout_toLeftOf="@+id/estimate_persons_edit"
+        android:layout_toStartOf="@+id/estimate_persons_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="옵션"
+        android:id="@+id/estimate_options_text"
+        android:textSize="40dp"
+        android:layout_below="@+id/estimate_persons_edit"
+        android:layout_toLeftOf="@+id/estimate_persons_edit"
+        android:layout_toStartOf="@+id/estimate_persons_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택하세요"
+        android:id="@+id/estimate_view1_text"
+        android:layout_alignBottom="@+id/estimate_options_text"
+        android:layout_toRightOf="@+id/estimate_options_text"
+        android:layout_toEndOf="@+id/estimate_options_text"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="명"
+        android:id="@+id/estimate_view2_text"
+        android:textSize="40dp"
+        android:layout_alignTop="@+id/estimate_persons_edit"
+        android:layout_alignRight="@+id/estimate_persons_edit"
+        android:layout_alignEnd="@+id/estimate_persons_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="경매시간"
+        android:id="@+id/estimate_minutes_text"
+        android:textSize="40dp"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/estimate_wifi_btn"
+        android:layout_alignLeft="@+id/estimate_options_text"
+        android:layout_alignStart="@+id/estimate_options_text" />
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_location_edit"
+        android:layout_alignTop="@+id/estimate_location_text"
+        android:layout_toRightOf="@+id/estimate_location_text"
+        android:layout_marginRight="50dp"/>
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_date_edit"
+        android:layout_alignTop="@+id/estimate_date_text"
+        android:layout_toRightOf="@+id/estimate_date_text"
+        android:layout_toEndOf="@+id/estimate_date_text" />
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_time_edit"
+        android:layout_below="@+id/estimate_date_text"
+        android:layout_toRightOf="@+id/estimate_time_text"
+        android:layout_toEndOf="@+id/estimate_time_text" />
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_persons_edit"
+        android:layout_alignBottom="@+id/estimate_persons_text"
+        android:layout_alignLeft="@+id/estimate_time_edit"
+        android:layout_alignStart="@+id/estimate_time_edit" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_minutes_edit"
+        android:layout_alignBottom="@+id/estimate_minutes_text"
+        android:layout_toRightOf="@+id/estimate_minutes_text"
+        android:layout_alignRight="@+id/estimate_persons_edit"
+        android:layout_alignEnd="@+id/estimate_persons_edit" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="w"
+        android:id="@+id/estimate_wifi_btn"
+        android:layout_below="@+id/estimate_view1_text"
+        android:layout_toRightOf="@+id/estimate_minutes_text"
+        android:layout_toEndOf="@+id/estimate_minutes_text" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="w"
+        android:id="@+id/estimate_24_btn"
+        android:layout_alignTop="@+id/estimate_wifi_btn"
+        android:layout_toRightOf="@+id/estimate_wifi_btn"
+        android:layout_toEndOf="@+id/estimate_wifi_btn" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="w"
+        android:id="@+id/estimate_plug_btn"
+        android:layout_above="@+id/estimate_minutes_text"
+        android:layout_toRightOf="@+id/estimate_24_btn"
+        android:layout_toEndOf="@+id/estimate_24_btn" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="w"
+        android:id="@+id/estimate_parking_btn"
+        android:layout_above="@+id/estimate_minutes_text"
+        android:layout_toRightOf="@+id/estimate_plug_btn"
+        android:layout_toEndOf="@+id/estimate_plug_btn" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:text="a"
+        android:id="@+id/estimate_location_btn"
+        android:layout_alignTop="@+id/estimate_location_edit"
+        android:layout_alignRight="@+id/estimate_location_edit"
+        android:layout_alignEnd="@+id/estimate_location_edit"
+        android:layout_alignBottom="@+id/estimate_location_edit" />
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:text="a"
+        android:id="@+id/estimate_date_btn"
+        android:layout_alignTop="@+id/estimate_date_edit"
+        android:layout_alignRight="@+id/estimate_date_edit"
+        android:layout_alignEnd="@+id/estimate_date_edit"
+        android:layout_alignBottom="@+id/estimate_date_edit" />
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:text="a"
+        android:id="@+id/estimate_time_btn"
+        android:layout_alignTop="@+id/estimate_time_edit"
+        android:layout_alignRight="@+id/estimate_time_edit"
+        android:layout_alignEnd="@+id/estimate_time_edit"
+        android:layout_alignBottom="@+id/estimate_time_edit" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="견적서 제출하기"
+        android:id="@+id/estimate_present_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
