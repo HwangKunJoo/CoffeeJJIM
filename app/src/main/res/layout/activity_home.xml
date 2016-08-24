@@ -84,17 +84,18 @@
                 android:layout_marginBottom="20dp">
             </android.support.v4.view.ViewPager>
 
-            <android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/home_new_title"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"
-                android:backgroundTint="#420d03"
-                android:isScrollContainer="false"
-                android:src="@android:drawable/ic_input_add" />
+
+            <!--<android.support.design.widget.FloatingActionButton-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_above="@+id/home_new_title"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:layout_marginEnd="20dp"-->
+                <!--android:backgroundTint="#420d03"-->
+                <!--android:isScrollContainer="false"-->
+                <!--android:src="@android:drawable/ic_input_add" />-->
 
             <!--<LinearLayout-->
                 <!--android:layout_width="wrap_content"-->
