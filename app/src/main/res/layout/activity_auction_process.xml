@@ -76,7 +76,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/auctionprocess_option1_image"
         android:layout_below="@+id/auctionprocess_data_text"
         android:layout_alignLeft="@+id/auctionprocess_data_text"
         android:layout_alignStart="@+id/auctionprocess_data_text"
@@ -85,10 +85,10 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/auctionprocess_option2_image"
         android:src="@android:drawable/sym_def_app_icon"
         android:layout_below="@+id/auctionprocess_data_text"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_toRightOf="@+id/auctionprocess_option1_image"
+        android:layout_toEndOf="@+id/auctionprocess_option1_image" />
 
 </RelativeLayout>
