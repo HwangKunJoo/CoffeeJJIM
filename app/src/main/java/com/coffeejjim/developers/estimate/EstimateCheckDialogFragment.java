@@ -1,4 +1,4 @@
-package com.coffeejjim.developers;
+package com.coffeejjim.developers.estimate;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.coffeejjim.developers.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link EstimateSheetFragment.OnFragmentInteractionListener} interface
+ * {@link EstimateCheckDialogFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link EstimateSheetFragment#newInstance} factory method to
+ * Use the {@link EstimateCheckDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EstimateSheetFragment extends Fragment {
+public class EstimateCheckDialogFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +31,7 @@ public class EstimateSheetFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public EstimateSheetFragment() {
+    public EstimateCheckDialogFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +41,11 @@ public class EstimateSheetFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EstimateSheetFragment.
+     * @return A new instance of fragment EstimateCheckDialogFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EstimateSheetFragment newInstance(String param1, String param2) {
-        EstimateSheetFragment fragment = new EstimateSheetFragment();
+    public static EstimateCheckDialogFragment newInstance(String param1, String param2) {
+        EstimateCheckDialogFragment fragment = new EstimateCheckDialogFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +66,7 @@ public class EstimateSheetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fr_estimate_sheet, container, false);
+        return inflater.inflate(R.layout.fr_estimate_check_dialog, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -11,12 +11,20 @@
         android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".estimate.EstimateSheetActivity"/>
+        <activity android:name=".login.FindInfoActivity"/>
+        <activity android:name=".login.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".CoffeeJJIMSplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".CafeReservationActivity"/>
     </application>
 
 </manifest>

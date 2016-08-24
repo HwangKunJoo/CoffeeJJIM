@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sample_1">Sample 1</string>
+    <string name="sample_2">Sample 2</string>
+    <string name="sample_3">Sample 3</string>
+    <string name="sample_4">Sample 4</string>
+    <string name="sample_5">Sample 5</string>
 </resources>

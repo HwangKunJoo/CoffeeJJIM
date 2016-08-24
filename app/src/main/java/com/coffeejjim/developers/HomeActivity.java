@@ -1,12 +1,17 @@
 package com.coffeejjim.developers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -16,6 +21,11 @@ public class HomeActivity extends AppCompatActivity {
     HomeEventPagerAdapter homeEventAdapter;
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
+
+
+//    private static final int SAMPLE_ID = 34536;
+//    private int badgeCount = 10;
+//    //setTitle로 제목 달고 뱃지넘버로
 
 
     @Override
@@ -65,11 +75,60 @@ public class HomeActivity extends AppCompatActivity {
                 .attachTo(actionButton)
                 .build();
 
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_home, menu);
+
+//        //you can add some logic (hide it if the count == 0)
+//        if (badgeCount > 0) {
+//            ActionItemBadge.update(this, menu.findItem(R.id.item_samplebadge), FontAwesome.Icon.faw_bell, ActionItemBadge.BadgeStyles.RED, badgeCount);
+//        } else {
+//            ActionItemBadge.hide(menu.findItem(R.id.item_samplebadge));
+//        }
+
+        //If you want to add your ActionItem programmatically you can do this too. You do the following:
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item_samplebadge)
+        {
+            Toast.makeText(this, R.string.sample_3, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, CafeReservationActivity.class);
+            startActivity(intent);
+//            badgeCount--;
+//            ActionItemBadge.update(item, badgeCount);
+        }
+        else if(id == R.id.item_sampleEstimate)
+        {
+            Toast.makeText(this, R.string.sample_4, Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, EstimateSheetActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+//    @OnClick(R.id.reservation_cafe_list_go_bell)
+//    public void onEstimateSheetWrite(){
+//        moveEstimateSheetActivity();
+//    }
+//
+//    public void moveEstimateSheetActivity(){
+//        Intent intent = new Intent(this, EstimateSheetActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
 
     private void setCustomActionbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
