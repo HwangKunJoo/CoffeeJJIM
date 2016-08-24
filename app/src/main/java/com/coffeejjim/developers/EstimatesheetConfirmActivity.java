@@ -12,7 +12,7 @@ public class EstimatesheetConfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estimatesheet_confirm);
+        setContentView(R.layout.activity_estimate_sheet_confirm);
 
     }
 

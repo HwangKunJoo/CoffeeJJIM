@@ -138,5 +138,6 @@
         android:text="present"
         android:id="@+id/estimatesheetconfirm_present_btn"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="onAlertDialog" />
 </RelativeLayout>
