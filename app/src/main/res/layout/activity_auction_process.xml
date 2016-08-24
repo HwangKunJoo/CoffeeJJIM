@@ -21,10 +21,11 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="2016.08.07"
         android:id="@+id/auctionprocess_data_text"
-        android:layout_alignBaseline="@+id/auctionprocess_id_text"
-        android:layout_alignBottom="@+id/auctionprocess_id_text"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/auctionprocess_id_text"
-        android:layout_toEndOf="@+id/auctionprocess_id_text" />
+        android:layout_toEndOf="@+id/auctionprocess_id_text"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,21 +33,21 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="15:00"
         android:id="@+id/auctionprocess_time_text"
-        android:layout_alignBottom="@+id/auctionprocess_person_text"
-        android:layout_alignLeft="@+id/auctionprocess_endtime_text"
-        android:layout_alignStart="@+id/auctionprocess_endtime_text"
-        android:layout_marginBottom="53dp" />
+        android:layout_alignTop="@+id/auctionprocess_data_text"
+        android:layout_toRightOf="@+id/auctionprocess_data_text"
+        android:layout_toEndOf="@+id/auctionprocess_data_text"
+        android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="30000"
+        android:text="3"
         android:id="@+id/auctionprocess_person_text"
-        android:layout_below="@+id/auctionprocess_id_text"
+        android:layout_below="@+id/auctionprocess_time_text"
         android:layout_alignLeft="@+id/auctionprocess_time_text"
         android:layout_alignStart="@+id/auctionprocess_time_text"
-        android:layout_marginTop="155dp" />
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,21 +55,40 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="11:00"
         android:id="@+id/auctionprocess_endtime_text"
-        android:layout_above="@+id/auctionprocess_time_text"
-        android:layout_alignLeft="@+id/auctionprocess_status_text"
-        android:layout_alignStart="@+id/auctionprocess_status_text" />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/auctionprocess_time_text"
+        android:layout_toEndOf="@+id/auctionprocess_time_text"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Success"
+        android:text="SS"
         android:id="@+id/auctionprocess_status_text"
-        android:layout_marginRight="37dp"
-        android:layout_below="@+id/auctionprocess_person_text"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="37dp"
-        android:layout_marginTop="99dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/auctionprocess_data_text"
+        android:layout_alignLeft="@+id/auctionprocess_data_text"
+        android:layout_alignStart="@+id/auctionprocess_data_text"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView3"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:layout_below="@+id/auctionprocess_data_text"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2" />
 
 </RelativeLayout>
