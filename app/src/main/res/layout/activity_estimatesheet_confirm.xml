@@ -8,5 +8,142 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.coffeejjim.developers.EstimatesheetConfirmActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Estimate"
+        android:id="@+id/bookinginfo_title_text"
+        android:layout_marginTop="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/estimatesheetconfirm_present_btn"
+        android:layout_toStartOf="@+id/estimatesheetconfirm_present_btn"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="date"
+        android:id="@+id/bookinginfo_date_text"
+        android:layout_below="@+id/bookinginfo_title_text"
+        android:layout_alignRight="@+id/bookinginfo_title_text"
+        android:layout_alignEnd="@+id/bookinginfo_title_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="time"
+        android:id="@+id/bookinginfo_time_textew7"
+        android:layout_below="@+id/bookinginfo_date_text"
+        android:layout_alignRight="@+id/bookinginfo_date_text"
+        android:layout_alignEnd="@+id/bookinginfo_date_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="person"
+        android:id="@+id/bookinginfo_person_text"
+        android:layout_below="@+id/bookinginfo_time_textew7"
+        android:layout_alignRight="@+id/bookinginfo_time_textew7"
+        android:layout_alignEnd="@+id/bookinginfo_time_textew7"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="endtime"
+        android:id="@+id/bookinginfo_endtime_text"
+        android:layout_below="@+id/bookinginfo_person_text"
+        android:layout_alignRight="@+id/bookinginfo_person_text"
+        android:layout_alignEnd="@+id/bookinginfo_person_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2016.08.08"
+        android:id="@+id/bookinginfo_date1_text"
+        android:layout_alignTop="@+id/bookinginfo_date_text"
+        android:layout_toRightOf="@+id/bookinginfo_date_text"
+        android:layout_toEndOf="@+id/bookinginfo_date_text"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="13:00"
+        android:id="@+id/bookinginfo_time1_textew7"
+        android:layout_below="@+id/bookinginfo_date1_text"
+        android:layout_alignLeft="@+id/bookinginfo_date1_text"
+        android:layout_alignStart="@+id/bookinginfo_date1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="3"
+        android:id="@+id/bookinginfo_person1_text"
+        android:layout_below="@+id/bookinginfo_time1_textew7"
+        android:layout_alignLeft="@+id/bookinginfo_time1_textew7"
+        android:layout_alignStart="@+id/bookinginfo_time1_textew7"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="20"
+        android:id="@+id/estimatesheetconfirm_endtime1_text"
+        android:layout_below="@+id/bookinginfo_person1_text"
+        android:layout_alignLeft="@+id/bookinginfo_person1_text"
+        android:layout_alignStart="@+id/bookinginfo_person1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="price"
+        android:id="@+id/bookinginfo_price_text"
+        android:layout_below="@+id/bookinginfo_endtime_text"
+        android:layout_alignRight="@+id/bookinginfo_endtime_text"
+        android:layout_alignEnd="@+id/bookinginfo_endtime_text"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimatesheetconfirm_price_edit"
+        android:layout_below="@+id/bookinginfo_price_text"
+        android:layout_alignLeft="@+id/bookinginfo_date_text"
+        android:layout_alignStart="@+id/bookinginfo_date_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="won"
+        android:id="@+id/estimatesheetconfirm_won_text"
+        android:layout_alignBottom="@+id/estimatesheetconfirm_price_edit"
+        android:layout_toRightOf="@+id/estimatesheetconfirm_price_edit"
+        android:layout_toEndOf="@+id/estimatesheetconfirm_price_edit" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="present"
+        android:id="@+id/estimatesheetconfirm_present_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onAlertDialog" />
 
 </RelativeLayout>
