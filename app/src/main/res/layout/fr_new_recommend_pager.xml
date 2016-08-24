@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coffeejjim.developers.HomeEventPagerFragment">
+    tools:context=".NewRecommendPagerFragment">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:src="@drawable/event1"
-        android:id="@+id/eventSample"
+        android:src="@drawable/new1"
+        android:id="@+id/newSample"
         android:scaleType="centerCrop" />
 
 </FrameLayout>

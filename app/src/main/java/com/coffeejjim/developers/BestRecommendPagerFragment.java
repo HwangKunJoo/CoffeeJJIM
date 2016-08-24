@@ -1,6 +1,5 @@
 package com.coffeejjim.developers;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,40 +9,36 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class HomeEventPagerFragment extends Fragment {
+public class BestRecommendPagerFragment extends Fragment {
 
-
-    public HomeEventPagerFragment() {
+    public BestRecommendPagerFragment() {
         // Required empty public constructor
     }
 
-    public static HomeEventPagerFragment newInstance(int eventPhoto) {
-        HomeEventPagerFragment f = new HomeEventPagerFragment();
+    public static BestRecommendPagerFragment newInstance(int bestPhoto) {
+        BestRecommendPagerFragment f = new BestRecommendPagerFragment();
         Bundle b = new Bundle();
-        b.putInt("eventPhoto", eventPhoto);
+        b.putInt("bestPhoto", bestPhoto);
         f.setArguments(b);
         return f;
     }
 
-    int eventPhoto;
+    int bestPhoto;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            eventPhoto = getArguments().getInt("eventPhoto");
+            bestPhoto = getArguments().getInt("bestPhoto");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fr_home_event_pager, container, false);
-        ImageView eventPhotoView = (ImageView) view.findViewById(R.id.eventSample);
-        eventPhotoView.setImageResource(eventPhoto);
+        View view = inflater.inflate(R.layout.fr_best_recommend_pager, container, false);
+        ImageView eventPhotoView = (ImageView) view.findViewById(R.id.bestSample);
+        eventPhotoView.setImageResource(bestPhoto);
         return view;
     }
 }
