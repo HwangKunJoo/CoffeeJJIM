@@ -1,13 +1,13 @@
 package com.coffeejjim.developers;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class AutionProcessActivity extends AppCompatActivity {
+public class EventDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_auction_process);
+        setContentView(R.layout.activity_event_detail);
     }
 }

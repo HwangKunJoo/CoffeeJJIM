@@ -1,6 +1,7 @@
 package com.coffeejjim.developers;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
@@ -42,8 +46,20 @@ public class HomeEventPagerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_home_event_pager, container, false);
+        ButterKnife.bind(this, view);
         ImageView eventPhotoView = (ImageView) view.findViewById(R.id.eventSample);
         eventPhotoView.setImageResource(eventPhoto);
         return view;
     }
+
+    @OnClick(R.id.eventSample)
+    public void onEventDeatail(){
+        moveEventDetailActivity();
+    }
+
+    public void moveEventDetailActivity(){
+        Intent intent = new Intent((HomeActivity)(getActivity()),EventDetailActivity.class);
+        startActivity(intent);
+    }
+
 }
