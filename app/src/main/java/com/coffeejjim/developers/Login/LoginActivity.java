@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.coffeejjim.developers.HomeActivity;
+import com.coffeejjim.developers.ProviderHomeActivity;
 import com.coffeejjim.developers.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -36,6 +37,12 @@ public class LoginActivity extends AppCompatActivity {
 
     public void moveFindInfoActivity() {
         Intent intent = new Intent(this, FindInfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void moveProviderHomeActivity(){
+        Intent intent = new Intent(this, ProviderHomeActivity.class);
         startActivity(intent);
         finish();
     }

@@ -42,7 +42,7 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.login_provider_btn)
     public void onProviderLogin(){
-        ((LoginActivity)getActivity()).moveHomeActivity();
+        ((LoginActivity)getActivity()).moveProviderHomeActivity();
     }
 
     @OnClick(R.id.signup_go_text)

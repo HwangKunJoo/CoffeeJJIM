@@ -32,7 +32,7 @@
             android:name=".reservation.CafeReservationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AutionProcessActivity"
+            android:name=".AuctionProcessActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EventDetailActivity"
@@ -42,6 +42,13 @@
         <activity android:name=".LikeListActivity" />
         <activity android:name=".AllCafeListActivity" />
         <activity android:name=".AlarmActivity"></activity>
+        <activity android:name=".AuctionListActivity"/>
+        <activity android:name=".InquiryActivity"/>
+        <activity android:name=".NotificationActivity"/>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".ProviderHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".UserManagementActivity"/>
     </application>
 
 </manifest>
