@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProviderHomeFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -111,7 +112,7 @@
         android:layout_alignStart="@+id/providerhome_time_text"
         android:layout_marginTop="20dp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -120,9 +121,9 @@
         android:layout_below="@+id/providerhome_option3_imege"
         android:layout_alignRight="@+id/providerhome_tiltem_text"
         android:layout_alignEnd="@+id/providerhome_tiltem_text"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="40dp"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -130,9 +131,10 @@
         android:id="@+id/providerhome_dial_edit"
         android:layout_below="@+id/providerhome_address_edit"
         android:layout_alignLeft="@+id/providerhome_address_edit"
-        android:layout_alignStart="@+id/providerhome_address_edit" />
+        android:layout_alignStart="@+id/providerhome_address_edit"
+        android:layout_marginTop="20dp"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -140,7 +142,8 @@
         android:id="@+id/providerhome_time_edit"
         android:layout_below="@+id/providerhome_dial_edit"
         android:layout_alignLeft="@+id/providerhome_dial_edit"
-        android:layout_alignStart="@+id/providerhome_dial_edit" />
+        android:layout_alignStart="@+id/providerhome_dial_edit"
+        android:layout_marginTop="20dp"/>
 
     <ImageView
         android:layout_width="40dp"
@@ -149,7 +152,8 @@
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_below="@+id/providerhome_time_edit"
         android:layout_alignLeft="@+id/providerhome_time_edit"
-        android:layout_alignStart="@+id/providerhome_time_edit" />
+        android:layout_alignStart="@+id/providerhome_time_edit"
+        android:layout_marginTop="20dp" />
 
     <ImageView
         android:layout_width="40dp"
@@ -178,12 +182,14 @@
         android:layout_toRightOf="@+id/providerhome_option8_image"
         android:layout_toEndOf="@+id/providerhome_option8_image" />
 
-    <ScrollView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/providerhome_option_text"
-        android:layout_alignEnd="@+id/providerhome_option_text" />
+        android:text="Modify"
+        android:id="@+id/providerhome_modify_btn"
+        android:layout_alignTop="@+id/providerhome_tiltem_text"
+        android:layout_alignLeft="@+id/providerhome_option9_image"
+        android:layout_alignStart="@+id/providerhome_option9_image"
+        android:onClick="goToScen1"/>
 
 </RelativeLayout>
