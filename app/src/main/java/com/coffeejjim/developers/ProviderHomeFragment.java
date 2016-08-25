@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ProviderHmoeFragment extends Fragment {
+public class ProviderHomeFragment extends Fragment {
 
-    public ProviderHmoeFragment() {
+    public ProviderHomeFragment() {
         // Required empty public constructor
     }
 

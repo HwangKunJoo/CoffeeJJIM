@@ -15,6 +15,8 @@ import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
+import butterknife.ButterKnife;
+
 public class HomeActivity extends AppCompatActivity {
 
     ViewPager homeEventPager, bestRecommendPager, newRecommendPager;
@@ -32,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
         setCustomActionbar();
 
         homeEventPager = (ViewPager) findViewById(R.id.home_event_pager);
@@ -74,9 +77,55 @@ public class HomeActivity extends AppCompatActivity {
                 .addSubActionView(button4)
                 .attachTo(actionButton)
                 .build();
-
-
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveHomeActivity();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveAllCafeListActivity();
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               moveLikeListActivity();
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveExtraFunctionsActivity();
+            }
+        });
     }
+
+    public void moveHomeActivity(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void moveAllCafeListActivity(){
+        Intent intent = new Intent(this, AllCafeListActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveLikeListActivity(){
+        Intent intent = new Intent(this, LikeListActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveExtraFunctionsActivity(){
+        Intent intent = new Intent(this, ExtraFunctionsActivity.class);
+        startActivity(intent);
+    }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -114,17 +163,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-//    @OnClick(R.id.reservation_cafe_list_go_bell)
-//    public void onEstimateSheetWrite(){
-//        moveEstimateSheetActivity();
-//    }
-//
-//    public void moveEstimateSheetActivity(){
-//        Intent intent = new Intent(this, EstimateSheetActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
 
     private void setCustomActionbar() {
 
