@@ -11,8 +11,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".estimate.EstimateSheetActivity" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".estimate.EstimateSheetActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".login.FindInfoActivity" />
         <activity
             android:name=".login.LoginActivity"
@@ -26,13 +28,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CafeReservationActivity" />
-        <activity android:name=".AutionProcessActivity" />
-        <activity android:name=".EventDetailActivity"></activity>
-        <activity android:name=".CafeDetailActivity"/>
-        <activity android:name=".ExtraFunctionsActivity"/>
-        <activity android:name=".LikeListActivity"/>
-        <activity android:name=".AllCafeListActivity"/>
+        <activity
+            android:name=".reservation.CafeReservationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AutionProcessActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EventDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".cafedetail.CafeDetailActivity" />
+        <activity android:name=".ExtraFunctionsActivity" />
+        <activity android:name=".LikeListActivity" />
+        <activity android:name=".AllCafeListActivity" />
+        <activity android:name=".AlarmActivity"></activity>
     </application>
 
 </manifest>

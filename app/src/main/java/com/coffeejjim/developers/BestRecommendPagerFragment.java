@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 

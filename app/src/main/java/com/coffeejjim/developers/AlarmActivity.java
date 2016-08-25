@@ -1,13 +1,13 @@
 package com.coffeejjim.developers;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
-public class CafeDetailActivity extends AppCompatActivity {
+public class AlarmActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cafe_detail);
+        setContentView(R.layout.activity_alarm);
     }
 }

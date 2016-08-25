@@ -1,4 +1,4 @@
-package com.coffeejjim.developers;
+package com.coffeejjim.developers.cafedetail;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CafeListEmptyFragment extends Fragment {
+import com.coffeejjim.developers.R;
 
-    public CafeListEmptyFragment() {
+public class CafeDetailImageFragment extends Fragment {
+
+    public CafeDetailImageFragment() {
         // Required empty public constructor
     }
 
@@ -16,6 +18,6 @@ public class CafeListEmptyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fr_cafe_list_empty, container, false);
+        return inflater.inflate(R.layout.fr_cafe_detail_image, container, false);
     }
 }
