@@ -2,13 +2,8 @@ package com.coffeejjim.developers;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Scene;
-import android.view.ViewGroup;
 
 public class ProviderHomeActivity extends AppCompatActivity {
-
-    ViewGroup rootContainer;
-    Scene scene1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +12,22 @@ public class ProviderHomeActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ProviderHomeFragment())
+                    .add(R.id.provider_home_cotainer, new ProviderHomeFragment())
                     .commit();
         }
+    }
+
+    public void changeProviderHomeEdit(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.provider_home_cotainer, new ProviderHomeEditFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    public void changeProviderHome(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.provider_home_cotainer, new ProviderHomeFragment())
+                .addToBackStack(null)
+                .commit();
     }
 }

@@ -6,7 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class ProviderHomeEditFragment extends Fragment {
+
     public ProviderHomeEditFragment() {
         // Required empty public constructor
     }
@@ -15,6 +19,14 @@ public class ProviderHomeEditFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fr_provider_home_edit, container, false);
+        View view = inflater.inflate(R.layout.fr_provider_home_edit, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
+
+    @OnClick(R.id.providerhome_edit_ok_btn)
+    public void onProviderHome(){
+        ((ProviderHomeActivity)getActivity()).changeProviderHome();
+    }
+
 }

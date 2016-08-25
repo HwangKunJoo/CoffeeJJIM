@@ -186,4 +186,14 @@
         android:layout_alignRight="@+id/providerhome_option_text"
         android:layout_alignEnd="@+id/providerhome_option_text" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/providerhome_edit_ok_btn"
+        android:layout_alignTop="@+id/providerhome_tiltem_text"
+        android:layout_toRightOf="@+id/providerhome_option9_image"
+        android:layout_toEndOf="@+id/providerhome_option9_image" />
+
+
 </RelativeLayout>
