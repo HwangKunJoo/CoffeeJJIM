@@ -43,7 +43,7 @@
         <activity android:name=".AllCafeListActivity" />
         <activity android:name=".AlarmActivity"></activity>
         <activity android:name=".AuctionListActivity"/>
-        <activity android:name=".InquiryActivity"/>
+        <activity android:name=".inquiry.InquiryActivity"/>
         <activity android:name=".NotificationActivity"/>
         <activity android:name=".SettingsActivity"/>
         <activity android:name=".ProviderHomeActivity"

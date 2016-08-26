@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.coffeejjim.developers.login.LoginActivity;
 
+import com.coffeejjim.developers.inquiry.InquiryActivity;
+
 public class ExtraFunctionsActivity extends AppCompatActivity {
 
     AlertDialog dialog;
@@ -82,8 +84,9 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent LoginIntent = new Intent(ExtraFunctionsActivity.this, LoginActivity.class);
-                startActivity(LoginIntent);
+                Intent loginIntent = new Intent(ExtraFunctionsActivity.this, LoginActivity.class);
+                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(loginIntent);
                 finish();
             }
         });
