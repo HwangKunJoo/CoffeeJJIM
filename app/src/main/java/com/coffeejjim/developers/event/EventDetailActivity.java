@@ -1,4 +1,4 @@
-package com.coffeejjim.developers.estimate;
+package com.coffeejjim.developers.event;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +10,7 @@ import com.coffeejjim.developers.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EstimateSheetActivity extends AppCompatActivity {
-
+public class EventDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -19,19 +18,17 @@ public class EstimateSheetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estimate_sheet);
+        setContentView(R.layout.activity_event_detail);
         ButterKnife.bind(this);
         setCustomActionbar();
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new EstimateSheetFragment())
+                    .add(R.id.container, new EventDetailFragment())
                     .commit();
         }
     }
-
-
     private void setCustomActionbar() {
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -45,6 +42,4 @@ public class EstimateSheetActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }

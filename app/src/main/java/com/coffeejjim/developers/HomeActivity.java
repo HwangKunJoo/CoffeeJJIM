@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.coffeejjim.developers.cafelist.AllCafeListActivity;
 import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.coffeejjim.developers.reservation.CafeReservationActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
@@ -107,10 +108,13 @@ public class HomeActivity extends AppCompatActivity {
 
     @OnClick(R.id.home_estimate_image)
     public void onEstimateSheet(){
+        moveEstimateSheetActivity();
+    }
+
+    public void moveEstimateSheetActivity(){
         Intent intent = new Intent(this, EstimateSheetActivity.class);
         startActivity(intent);
     }
-
     public void moveHomeActivity(){
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
@@ -165,9 +169,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         else if(id == R.id.item_sampleEstimate)
         {
-            Toast.makeText(this, R.string.sample_4, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, EstimateSheetActivity.class);
-            startActivity(intent);
+            moveEstimateSheetActivity();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.coffeejjim.developers.event.EventDetailFragment">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/event_detail_image"
+        android:src="@drawable/eventdetail"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"/>
+</FrameLayout>

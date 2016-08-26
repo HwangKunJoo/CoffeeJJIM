@@ -13,18 +13,23 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:title=""></android.support.v7.widget.Toolbar>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="입 찰 카 페 목 록" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="예약카페목록"
+                android:textColor="@color/coffeejjim_brown"
+                android:textSize="20sp"/>
+        </FrameLayout>
     </android.support.design.widget.AppBarLayout>
 
     <FrameLayout

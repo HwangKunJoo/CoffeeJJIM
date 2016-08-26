@@ -35,12 +35,12 @@
             android:name=".AuctionProcessActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".EventDetailActivity"
+            android:name=".event.EventDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".cafedetail.CafeDetailActivity" />
         <activity android:name=".ExtraFunctionsActivity" />
         <activity android:name=".LikeListActivity" />
-        <activity android:name=".AllCafeListActivity" />
+        <activity android:name=".cafelist.AllCafeListActivity" />
         <activity android:name=".AlarmActivity"></activity>
         <activity android:name=".AuctionListActivity"/>
         <activity android:name=".inquiry.InquiryActivity"/>

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.coffeejjim.developers.event.EventDetailActivity;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
