@@ -1,4 +1,5 @@
-package com.coffeejjim.developers.reservation;
+package com.coffeejjim.developers.cafelist;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,14 +18,18 @@ import com.coffeejjim.developers.data.Cafe;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class AllCafeListFragment extends Fragment {
 
-public class CafeReservationListFragment extends Fragment {
 
-    @BindView(R.id.rv_list)
+    @BindView(R.id.all_cafe_rv_list)
     RecyclerView listView;
-    CafeListRecyclerAdapter mAdapter;
+    AllCafeListRecyclerAdapter mAdapter;
 
-    public CafeReservationListFragment() {
+
+    public AllCafeListFragment() {
         // Required empty public constructor
     }
 
@@ -32,11 +37,16 @@ public class CafeReservationListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fr_cafe_reservation_list, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fr_all_cafe_list, container, false);
         ButterKnife.bind(this, view);
 
-        mAdapter = new CafeListRecyclerAdapter();
-        mAdapter.setOnAdapterItemClickListener(new CafeListRecyclerAdapter.OnAdapterItemClickLIstener() {
+        getChildFragmentManager().beginTransaction()
+                .add(R.id.container, new CafeMapChildFragment())
+                .commit();
+
+        mAdapter = new AllCafeListRecyclerAdapter();
+        mAdapter.setOnAdapterItemClickListener(new AllCafeListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
                 moveCafeDetailActivity();
@@ -47,8 +57,6 @@ public class CafeReservationListFragment extends Fragment {
 
         LinearLayoutManager manager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-//        GridLayoutManager manager =
-//                new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
         listView.setLayoutManager(manager);
 
         initData();
@@ -65,8 +73,8 @@ public class CafeReservationListFragment extends Fragment {
             c.setCafeName("CAFE NO. " + i);
             c.setAddress("Address: " + i);
             c.setDistance(i + " km");
-            c.setPrice(i + " won");
             c.setPhoto(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
+            c.setOptions(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
             mAdapter.add(c);
         }
     }
@@ -76,6 +84,4 @@ public class CafeReservationListFragment extends Fragment {
         startActivity(intent);
         getActivity().finish();
     }
-
-
 }

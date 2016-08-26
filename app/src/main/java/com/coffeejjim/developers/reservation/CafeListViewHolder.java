@@ -28,12 +28,12 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
     ImageView photoView;
 
 
-
     public interface OnCafeItemClickListener {
         public void onCafeItemClick(View view, Cafe cafe, int position);
     }
 
     OnCafeItemClickListener listener;
+
     public void setOnCafeItemClickListener(OnCafeItemClickListener listener) {
         this.listener = listener;
     }
@@ -52,6 +52,7 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
     }
 
     Cafe cafe;
+
     public void setCafe(Cafe cafe) {
         this.cafe = cafe;
         titleView.setText(cafe.getCafeName());
@@ -60,7 +61,6 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
         priceView.setText(cafe.getPrice());
         photoView.setImageDrawable(cafe.getPhoto());
     }
-
 
 
 //    @OnClick(R.id.cafelist_resevation_btn)

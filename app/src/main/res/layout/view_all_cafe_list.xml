@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:layout_width="100dp"
@@ -47,17 +47,17 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="distance"
         android:id="@+id/allcafelist_distance_text"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/allcafelist_options_image"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_alignTop="@+id/allcafelist_address_text"
+        android:text="+detail"
+        android:id="@+id/allcafelist_detail_btn"
+        android:layout_below="@+id/cafe_map_layout"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@android:drawable/ic_input_add" />
-
+        android:background="#FFFFFF"/>
 </RelativeLayout>

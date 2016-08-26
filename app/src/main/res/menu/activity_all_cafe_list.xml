@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="cafe_reservation_refresh"
-        android:id="@+id/cafe_reservation_fresh"
+        android:title="all_cafe_list_current_location"
+        android:id="@+id/all_cafe_list_current_location"
         android:icon="@android:drawable/ic_popup_reminder"
         app:showAsAction="always"
         android:orderInCategory="200"/>

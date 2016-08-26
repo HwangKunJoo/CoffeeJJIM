@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.coffeejjim.developers">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".CoffeeJJIMApplication"
         android:allowBackup="true"
@@ -40,7 +49,8 @@
         <activity android:name=".cafedetail.CafeDetailActivity" />
         <activity android:name=".ExtraFunctionsActivity" />
         <activity android:name=".LikeListActivity" />
-        <activity android:name=".cafelist.AllCafeListActivity" />
+        <activity android:name=".cafelist.AllCafeListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AlarmActivity"></activity>
         <activity android:name=".AuctionListActivity"/>
         <activity android:name=".inquiry.InquiryActivity"/>
@@ -49,6 +59,7 @@
         <activity android:name=".ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".UserManagementActivity"/>
+
     </application>
 
 </manifest>

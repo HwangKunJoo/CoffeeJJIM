@@ -1,70 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".cafelist.AllCafeListActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/linearLayout2"></LinearLayout>
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/allcafelist_photo_image"
-        android:src="@android:drawable/sym_def_app_icon"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="cafe name"
-        android:id="@+id/allcafelist_titke_text"
-        android:layout_alignTop="@+id/allcafelist_photo_image"
-        android:layout_toRightOf="@+id/allcafelist_photo_image"
-        android:layout_toEndOf="@+id/allcafelist_photo_image" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="address"
-        android:id="@+id/allcafelist_address_text"
-        android:layout_below="@+id/allcafelist_titke_text"
-        android:layout_toRightOf="@+id/allcafelist_photo_image"
-        android:layout_toEndOf="@+id/allcafelist_photo_image" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:title=""></android.support.v7.widget.Toolbar>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="모든 카페 보기"
+                android:textColor="@color/coffeejjim_brown"
+                android:textSize="20sp"/>
+        </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/allcafelist_options_image"
-        android:layout_below="@+id/allcafelist_address_text"
-        android:layout_toRightOf="@+id/allcafelist_photo_image"
-        android:layout_toEndOf="@+id/allcafelist_photo_image"
-        android:src="@android:drawable/sym_def_app_icon" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="distance"
-        android:id="@+id/allcafelist_distance_text"
-        android:layout_alignBottom="@+id/allcafelist_options_image"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+detail"
-        android:id="@+id/allcafelist_detail_btn"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="#FFFFFF"/>
-
-</RelativeLayout>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
