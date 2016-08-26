@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="coffeejjim_brown">#420d03</color>
+    <color name="coffeejjim_yellow">#ffc700</color>
+    <color name="coffeejjim_red">#ff5948</color>
 </resources>

@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.coffeejjim.developers.login.LoginActivity;
-
 import com.coffeejjim.developers.inquiry.InquiryActivity;
+import com.coffeejjim.developers.login.LoginActivity;
 
 public class ExtraFunctionsActivity extends AppCompatActivity {
 
@@ -21,7 +20,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extra_functions);
-        Button acutionlistBtn = (Button) findViewById(R.id.extra_functions_estimate_btn);
+        ImageButton acutionlistBtn = (ImageButton) findViewById(R.id.extra_functions_estimate_btn);
         acutionlistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,7 +29,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
             }
         });
 
-        Button likelistBtn = (Button) findViewById(R.id.extra_functions_likelist_btn);
+        ImageButton likelistBtn = (ImageButton) findViewById(R.id.extra_functions_likelist_btn);
         likelistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +38,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
             }
         });
 
-        Button inquiryBtn = (Button) findViewById(R.id.extra_functions_inguiry_btn);
+        ImageButton inquiryBtn = (ImageButton) findViewById(R.id.extra_functions_inguiry_btn);
         inquiryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +47,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
             }
         });
 
-        Button notificationBtn = (Button) findViewById(R.id.extra_functions_notification_btn);
+        ImageButton notificationBtn = (ImageButton) findViewById(R.id.extra_functions_notification_btn);
         notificationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +56,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
             }
         });
 
-        Button settingsBtn = (Button) findViewById(R.id.extra_functions_Settings_btn);
+        ImageButton settingsBtn = (ImageButton) findViewById(R.id.extra_functions_Settings_btn);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +65,7 @@ public class ExtraFunctionsActivity extends AppCompatActivity {
             }
         });
 
-        Button logoutBtn = (Button) findViewById(R.id.extra_functions_logout_btn);
+        ImageButton logoutBtn = (ImageButton) findViewById(R.id.extra_functions_logout_btn);
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

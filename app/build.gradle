@@ -44,4 +44,5 @@ dependencies {
     compile 'com.mikepenz:foundation-icons-typeface:3.0.0.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
     compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'com.android.support:gridlayout-v7:24.2.0'
 }
