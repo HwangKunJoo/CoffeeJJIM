@@ -17,6 +17,7 @@ import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -102,6 +103,12 @@ public class HomeActivity extends AppCompatActivity {
                 moveExtraFunctionsActivity();
             }
         });
+    }
+
+    @OnClick(R.id.home_estimate_image)
+    public void onEstimateSheet(){
+        Intent intent = new Intent(this, EstimateSheetActivity.class);
+        startActivity(intent);
     }
 
     public void moveHomeActivity(){

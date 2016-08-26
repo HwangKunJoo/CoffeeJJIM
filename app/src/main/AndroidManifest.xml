@@ -18,10 +18,10 @@
         <activity android:name=".login.FindInfoActivity" />
         <activity
             android:name=".login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoStatusBar" />
         <activity
             android:name=".CoffeeJJIMSplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
