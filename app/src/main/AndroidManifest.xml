@@ -46,20 +46,25 @@
         <activity
             android:name=".event.EventDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cafedetail.CafeDetailActivity" />
+        <activity
+            android:name=".cafedetail.CafeDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ExtraFunctionsActivity" />
         <activity android:name=".LikeListActivity" />
-        <activity android:name=".cafelist.AllCafeListActivity"
+        <activity
+            android:name=".cafelist.AllCafeListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".AuctionListActivity" />
+        <activity android:name=".inquiry.InquiryActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".ProviderHomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UserManagementActivity" />
+        <activity android:name=".cafedetail.CafeLocationMapActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".AlarmActivity"></activity>
-        <activity android:name=".AuctionListActivity"/>
-        <activity android:name=".inquiry.InquiryActivity"/>
-        <activity android:name=".NotificationActivity"/>
-        <activity android:name=".SettingsActivity"/>
-        <activity android:name=".ProviderHomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".UserManagementActivity"/>
-
     </application>
 
 </manifest>

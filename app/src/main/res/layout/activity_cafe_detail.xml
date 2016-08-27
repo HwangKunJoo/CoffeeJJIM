@@ -1,131 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Cafe Tilte"
-        android:id="@+id/cafedetail_title_text"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/cafedetail_titleadd_text"
-        android:layout_below="@+id/cafedetail_title_text"
-        android:layout_centerHorizontal="true" />
-
-    <LinearLayout
-        android:orientation="horizontal"
+    <FrameLayout
+        android:id="@+id/cafe_detail_toolbar_layout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/cafedetail_titleadd_text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout"></LinearLayout>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/cafedetail_address_text"
-        android:layout_alignBottom="@+id/cafedetail_address_edit"
-        android:layout_toLeftOf="@+id/cafedetail_title_text"
-        android:layout_toStartOf="@+id/cafedetail_title_text" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#ffffff"
+            android:title="" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="dial"
-        android:id="@+id/cafedetail_dial_text"
-        android:layout_alignBottom="@+id/cafedetail_dial_edit"
-        android:layout_toLeftOf="@+id/cafedetail_title_text"
-        android:layout_toStartOf="@+id/cafedetail_title_text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="카페 상세보기"
+            android:textColor="#420d03"
+            android:textSize="20sp" />
+    </FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="working time"
-        android:id="@+id/cafedetail_workingtime_text"
-        android:layout_alignBottom="@+id/cafedetail_workingtime_text_edit"
-        android:layout_toLeftOf="@+id/cafedetail_title_text"
-        android:layout_toStartOf="@+id/cafedetail_title_text" />
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cafe_detail_toolbar_layout" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="options"
-        android:id="@+id/cafedetail_options_text"
-        android:layout_alignBottom="@+id/cafedetail_options_text_edit"
-        android:layout_toLeftOf="@+id/cafedetail_title_text"
-        android:layout_toStartOf="@+id/cafedetail_title_text" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="price"
-        android:id="@+id/cafedetail_price_text"
-        android:layout_alignBottom="@+id/cafedetail_price_text_edit"
-        android:layout_toLeftOf="@+id/cafedetail_title_text"
-        android:layout_toStartOf="@+id/cafedetail_title_text" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cafedetail_address_edit"
-        android:layout_below="@+id/linearLayout"
-        android:layout_toRightOf="@+id/cafedetail_address_text" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cafedetail_dial_edit"
-        android:layout_below="@+id/cafedetail_address_text"
-        android:layout_toRightOf="@+id/cafedetail_address_text"
-        android:layout_toEndOf="@+id/cafedetail_address_text" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cafedetail_workingtime_text_edit"
-        android:layout_below="@+id/cafedetail_dial_edit"
-        android:layout_alignLeft="@+id/cafedetail_dial_edit"
-        android:layout_alignStart="@+id/cafedetail_dial_edit" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cafedetail_options_text_edit"
-        android:layout_below="@+id/cafedetail_workingtime_text_edit"
-        android:layout_alignLeft="@+id/cafedetail_workingtime_text_edit"
-        android:layout_alignStart="@+id/cafedetail_workingtime_text_edit" />
-
-    <EditText
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/cafedetail_price_text_edit"
-        android:layout_below="@+id/cafedetail_options_text_edit"
-        android:layout_alignLeft="@+id/cafedetail_options_text_edit"
-        android:layout_alignStart="@+id/cafedetail_options_text_edit" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="resevation"
-        android:id="@+id/cafedetail_reservation_btn"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

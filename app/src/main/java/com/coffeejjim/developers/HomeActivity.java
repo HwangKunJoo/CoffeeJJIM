@@ -137,13 +137,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_home, menu);
+        return true;
 
+
+        // 뱃지 알림 처리 알고리즘 추가
 //        //you can add some logic (hide it if the count == 0)
 //        if (badgeCount > 0) {
 //            ActionItemBadge.update(this, menu.findItem(R.id.item_samplebadge), FontAwesome.Icon.faw_bell, ActionItemBadge.BadgeStyles.RED, badgeCount);
@@ -153,7 +154,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //If you want to add your ActionItem programmatically you can do this too. You do the following:
 
-        return true;
     }
 
     @Override
