@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.coffeejjim.developers.HomeActivity;
-import com.coffeejjim.developers.ProviderHomeActivity;
+import com.coffeejjim.developers.home.HomeActivity;
+import com.coffeejjim.developers.provider.ProviderHomeActivity;
 import com.coffeejjim.developers.R;
 
 public class LoginActivity extends AppCompatActivity {

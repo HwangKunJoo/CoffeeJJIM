@@ -1,48 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/imageView"
-        android:layout_marginTop="30dp"
-        android:src="@android:drawable/ic_delete"
-        android:layout_marginLeft="10dp"/>
+    <FrameLayout
+        android:id="@+id/auction_list_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="11:11"
-        android:id="@+id/auctionlist_time_text"
-        android:layout_marginTop="34dp"
-        android:layout_marginLeft="50dp" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#ffffff"
+            android:title=""/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Cafe Tilte"
-        android:id="@+id/auctionlist_title_text"
-        android:layout_marginTop="17dp"
-        android:layout_marginLeft="120dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="예약 현황"
+            android:textColor="#420d03"
+            android:textSize="20sp" />
+    </FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/auctionlist_address_text"
-        android:layout_marginTop="47dp"
-        android:layout_marginLeft="120dp"/>
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/auction_list_toolbar_layout"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="present"
-        android:id="@+id/auctionlist_present_btn"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true" />
 </RelativeLayout>

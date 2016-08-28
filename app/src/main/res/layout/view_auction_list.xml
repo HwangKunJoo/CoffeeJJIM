@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/auction_list_reservation_fail_image"
+        android:src="@android:drawable/ic_delete"
+        android:layout_alignTop="@+id/auctionlist_title_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="11:11"
+        android:id="@+id/auctionlist_time_text"
+        android:layout_alignBottom="@+id/auctionlist_title_text"
+        android:layout_toRightOf="@+id/auction_list_reservation_fail_image"
+        android:layout_toEndOf="@+id/auction_list_reservation_fail_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Cafe Tilte"
+        android:id="@+id/auctionlist_title_text"
+        android:layout_alignTop="@+id/auctionlist_present_btn"
+        android:layout_alignLeft="@+id/auctionlist_address_text"
+        android:layout_alignStart="@+id/auctionlist_address_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="address"
+        android:id="@+id/auctionlist_address_text"
+        android:layout_marginTop="47dp"
+        android:layout_marginLeft="120dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="present"
+        android:id="@+id/auctionlist_present_btn"
+        android:layout_marginTop="13dp"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

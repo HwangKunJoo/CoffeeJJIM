@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name=".home.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".estimate.EstimateSheetActivity"
@@ -41,7 +41,7 @@
             android:name=".reservation.CafeReservationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AuctionProcessActivity"
+            android:name=".extrafunctions.AuctionProcessActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".event.EventDetailActivity"
@@ -49,20 +49,21 @@
         <activity
             android:name=".cafedetail.CafeDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ExtraFunctionsActivity" />
-        <activity android:name=".LikeListActivity" />
+        <activity android:name=".extrafunctions.ExtraFunctionsActivity" />
+        <activity android:name=".extrafunctions.likelist.LikeListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".cafelist.AllCafeListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AlarmActivity" />
-        <activity android:name=".AuctionListActivity" />
-        <activity android:name=".inquiry.InquiryActivity" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".extrafunctions.auctionlist.AuctionListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".extrafunctions.notification.NotificationActivity" />
+        <activity android:name=".extrafunctions.settings.SettingsActivity" />
         <activity
-            android:name=".ProviderHomeActivity"
+            android:name=".provider.ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".UserManagementActivity" />
+        <activity android:name=".provider.UserManagementActivity" />
         <activity android:name=".cafedetail.CafeLocationMapActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

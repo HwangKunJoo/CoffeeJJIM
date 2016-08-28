@@ -34,7 +34,7 @@ public class CafeDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cafe_detail, container, false);
+        View view = inflater.inflate(R.layout.fr_cafe_detail, container, false);
         ButterKnife.bind(this, view);
         cafeDetailImagePagerAdapter= new CafeDetailImagePagerAdapter(getChildFragmentManager());
         cafeDetailImagePager.setAdapter(cafeDetailImagePagerAdapter);
