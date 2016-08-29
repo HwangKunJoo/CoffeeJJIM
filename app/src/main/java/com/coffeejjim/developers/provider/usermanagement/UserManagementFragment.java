@@ -65,7 +65,9 @@ public class UserManagementFragment extends Fragment {
             if(i == 4){
                 c.setLiked(true);
             }
+            mAdapter.add(c);
         }
+
     }
 
 }

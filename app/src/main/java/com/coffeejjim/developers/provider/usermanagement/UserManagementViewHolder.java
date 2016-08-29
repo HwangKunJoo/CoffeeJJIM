@@ -18,7 +18,7 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
 
     @BindView(R.id.user_management_nickname)
     TextView userManagementNicknameView;
-    @BindView(R.id.user_management_title_visit_count)
+    @BindView(R.id.user_management_visit_count)
     TextView userManagementVisitCountView;
     @BindView(R.id.user_management_like)
     ImageView userManagementLikeView;

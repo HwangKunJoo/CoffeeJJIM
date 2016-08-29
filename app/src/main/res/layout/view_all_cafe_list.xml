@@ -55,7 +55,6 @@
         android:layout_height="wrap_content"
         android:text="+detail"
         android:id="@+id/allcafelist_detail_btn"
-        android:layout_below="@+id/cafe_map_layout"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="#FFFFFF"/>
