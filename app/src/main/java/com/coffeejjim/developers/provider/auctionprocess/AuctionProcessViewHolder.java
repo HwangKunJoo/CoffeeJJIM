@@ -58,6 +58,5 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
         peopleView.setText(""+estimate.getPeople());
         reservationTimeView.setText(estimate.getReservationTime());
         reservationDateView.setText(estimate.getReservationDate());
-
     }
 }

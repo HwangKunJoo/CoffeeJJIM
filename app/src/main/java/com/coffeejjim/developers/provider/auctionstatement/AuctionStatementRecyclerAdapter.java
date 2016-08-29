@@ -14,7 +14,8 @@ import java.util.List;
 /**
  * Created by Tacademy on 2016-08-23.
  */
-public class AuctionStatementRecyclerAdapter extends RecyclerView.Adapter<AuctionStatementViewHolder> implements AuctionStatementViewHolder.OnAuctionStatementItemClickListener{
+public class AuctionStatementRecyclerAdapter extends RecyclerView.Adapter<AuctionStatementViewHolder>
+        implements AuctionStatementViewHolder.OnAuctionStatementItemClickListener{
 
     List<Estimate> items = new ArrayList<>();
 

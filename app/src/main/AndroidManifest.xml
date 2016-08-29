@@ -64,7 +64,9 @@
         <activity
             android:name=".provider.ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".provider.usermanagement.UserManagementActivity" />
+        <activity android:name=".provider.usermanagement.UserManagementActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
         <activity android:name=".cafedetail.CafeLocationMapActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".provider.auctionstatement.AuctionStatementActivity"

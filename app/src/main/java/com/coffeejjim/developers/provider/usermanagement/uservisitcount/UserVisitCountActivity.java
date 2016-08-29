@@ -1,4 +1,4 @@
-package com.coffeejjim.developers.provider.usermanagement;
+package com.coffeejjim.developers.provider.usermanagement.uservisitcount;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
