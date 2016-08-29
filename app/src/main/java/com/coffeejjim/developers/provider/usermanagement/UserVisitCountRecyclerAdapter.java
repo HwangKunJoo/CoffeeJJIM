@@ -1,4 +1,4 @@
-package com.coffeejjim.developers.provider;
+package com.coffeejjim.developers.provider.usermanagement;
 
 /**
  * Created by Tacademy on 2016-08-23.

@@ -41,8 +41,9 @@
             android:name=".reservation.CafeReservationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.AuctionProcessActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".provider.auctionprocess.AuctionProcessActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
         <activity
             android:name=".event.EventDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -63,9 +64,12 @@
         <activity
             android:name=".provider.ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".provider.UserManagementActivity" />
+        <activity android:name=".provider.usermanagement.UserManagementActivity" />
         <activity android:name=".cafedetail.CafeLocationMapActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".provider.auctionstatement.AuctionStatementActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
     </application>
 
 </manifest>

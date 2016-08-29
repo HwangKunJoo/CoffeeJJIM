@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/auction_statement_reservation_fail_image"
+        android:src="@android:drawable/ic_lock_power_off"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="11:11"
+        android:id="@+id/auction_statement_time"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/auction_statement_reservation_fail_image"
+        android:layout_toEndOf="@+id/auction_statement_reservation_fail_image"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="User A"
+        android:id="@+id/auction_statement_user_nickname"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/auction_statement_time"
+        android:layout_toEndOf="@+id/auction_statement_time"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2m"
+        android:id="@+id/auction_statement_people"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/auction_statement_user_nickname"
+        android:layout_toEndOf="@+id/auction_statement_user_nickname"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="13,000"
+        android:id="@+id/auction_statement_price"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/auction_statement_people"
+        android:layout_toEndOf="@+id/auction_statement_people"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="예약현황"
+        android:id="@+id/btn_reservation_booking_info"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"/>
+
+</LinearLayout>

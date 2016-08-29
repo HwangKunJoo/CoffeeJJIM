@@ -1,15 +1,50 @@
 package com.coffeejjim.developers.data;
 
-import java.util.Date;
-
 /**
  * Created by Tacademy on 2016-08-23.
  */
 public class Estimate {
+    private String endTime;
+    private String reservationDate;
     private String reservationTime;
     private String cafeName;
     private String address;
     private boolean isReserved;
+    private String userNickname;
+    private int people;
+    private String price;
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public int getPeople() {
+        return people;
+    }
+
+    public void setPeople(int people) {
+        this.people = people;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getReservationDate() {
+        return reservationDate;
+    }
+
+    public void setReservationDate(String reservationDate) {
+        this.reservationDate = reservationDate;
+    }
 
     public String getReservationTime() {
         return reservationTime;
@@ -17,6 +52,14 @@ public class Estimate {
 
     public void setReservationTime(String reservationTime) {
         this.reservationTime = reservationTime;
+    }
+
+    public String getUserNickname() {
+        return userNickname;
+    }
+
+    public void setUserNickname(String userNickname) {
+        this.userNickname = userNickname;
     }
 
     public String getCafeName() {

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.provider.auctionprocess.AuctionProcessActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

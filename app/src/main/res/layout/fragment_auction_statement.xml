@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".provider.auctionstatement.AuctionStatementFragment">
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/auction_statement_calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="#00F"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/auction_statement_calendarView"
+        android:id="@+id/auction_statement_rv_list"></android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

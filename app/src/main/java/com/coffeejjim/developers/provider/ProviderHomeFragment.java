@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
+import com.coffeejjim.developers.provider.auctionstatement.AuctionStatementActivity;
+import com.coffeejjim.developers.provider.usermanagement.UserManagementActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -66,7 +68,7 @@ public class ProviderHomeFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                moveAuctionProcessListActivity();
+                moveAuctionStatementListActivity();
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
@@ -98,8 +100,8 @@ public class ProviderHomeFragment extends Fragment {
         getActivity().finish();
     }
 
-    public void moveAuctionProcessListActivity(){
-        Intent intent = new Intent(getActivity(), AuctionProcessActivity.class);
+    public void moveAuctionStatementListActivity(){
+        Intent intent = new Intent(getActivity(), AuctionStatementActivity.class);
         startActivity(intent);
     }
 
