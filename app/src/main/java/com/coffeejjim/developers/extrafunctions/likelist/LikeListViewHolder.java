@@ -2,6 +2,7 @@ package com.coffeejjim.developers.extrafunctions.likelist;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,9 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
     ImageView cafeMainImageView;
     @BindView(R.id.like_list_options_image)
     ImageView cafeOptionsImageView;
+    @BindView(R.id.btn_dislike)
+    ImageButton btn_dislike;
+
 
 
     public LikeListViewHolder(View itemView) {
@@ -57,4 +61,6 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
         cafeMainImageView.setImageDrawable(cafe.getPhoto());
         cafeOptionsImageView.setImageDrawable(cafe.getOptions());
     }
+
+
 }

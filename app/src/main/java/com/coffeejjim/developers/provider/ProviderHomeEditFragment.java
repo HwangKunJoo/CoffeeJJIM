@@ -26,7 +26,7 @@ public class ProviderHomeEditFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.providerhome_edit_ok_btn)
+    @OnClick(R.id.provider_home_complete_btn)
     public void onProviderHome(){
         ((ProviderHomeActivity)getActivity()).changeProviderHome();
     }

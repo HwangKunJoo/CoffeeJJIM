@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.extrafunctions.AuctionProcessActivity;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
@@ -87,7 +86,8 @@ public class ProviderHomeFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.providerhome_modify_btn)
+
+    @OnClick(R.id.provider_home_edit_btn)
     public void onProvider() {
         ((ProviderHomeActivity) getActivity()).changeProviderHomeEdit();
     }

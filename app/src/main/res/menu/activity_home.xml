@@ -11,6 +11,6 @@
         android:id="@+id/item_sampleEstimate"
         android:icon="@android:drawable/ic_input_add"
         app:showAsAction="always"
-        android:title="reservation_bell"
+        android:title="estimate_add"
         android:orderInCategory="150"/>
 </menu>

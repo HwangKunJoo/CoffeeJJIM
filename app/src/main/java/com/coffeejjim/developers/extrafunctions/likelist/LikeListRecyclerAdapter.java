@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.cafelist.AllCafeListViewHolder;
 import com.coffeejjim.developers.data.Cafe;
 
 import java.util.ArrayList;
@@ -16,6 +15,13 @@ import java.util.List;
  * Created by Tacademy on 2016-08-23.
  */
 public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHolder> implements LikeListViewHolder.OnLikeListItemClickListener{
+
+    boolean visiblity = false;
+
+    public LikeListRecyclerAdapter(boolean visiblity) {
+        this.visiblity = visiblity;
+    }
+
     List<Cafe> items = new ArrayList<>();
 
     public void add(Cafe c) {
@@ -40,6 +46,9 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
                 .inflate(R.layout.view_like_list, parent, false);
         LikeListViewHolder holder = new LikeListViewHolder(view);
         holder.setOnLikeListItemClickListener(this);
+        if(visiblity){
+            holder.btn_dislike.setVisibility(View.VISIBLE);
+        }
         return holder;
     }
 
@@ -66,4 +75,9 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
     public void onLikeListItemClick(View view, Cafe cafe, int position) {
         listener.onAdapterItemClick(view, cafe, position);
     }
+
+//    @OnClick(R.id.btn_dislike)
+//    public void DeleteItems(){
+//
+//    }
 }

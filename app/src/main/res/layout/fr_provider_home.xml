@@ -5,191 +5,201 @@
     tools:context=".provider.ProviderHomeFragment">
 
     <TextView
+        android:id="@+id/provider_home_edit_cafe_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Title"
-        android:id="@+id/providerhome_tiltem_text"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_centerHorizontal="true" />
+        android:text="지혁이네 카페"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/provider_home_edit_cafe_main_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/providerhome_photo_image"
-        android:src="@android:drawable/sym_def_app_icon"
-        android:layout_below="@+id/providerhome_tiltem_text"
+        android:layout_below="@+id/provider_home_edit_cafe_name_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ahn" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/provider_home_edit_preview_first_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/providerhome_option3_imege"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:src="@android:drawable/ic_menu_add" />
+        android:layout_below="@+id/provider_home_edit_cafe_main_image"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/bestsample1" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/provider_home_edit_preview_second_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/providerhome_option2_imege"
-        android:src="@android:drawable/ic_menu_add"
-        android:layout_alignBottom="@+id/providerhome_option3_imege"
-        android:layout_toLeftOf="@+id/providerhome_tiltem_text"
-        android:layout_toStartOf="@+id/providerhome_tiltem_text" />
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_first_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_first_image"
+        android:src="@drawable/new2" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/provider_home_edit_preview_third_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/providerhome_option4_imege"
-        android:src="@android:drawable/ic_menu_add"
-        android:layout_alignBottom="@+id/providerhome_option3_imege"
-        android:layout_toRightOf="@+id/providerhome_option3_imege"
-        android:layout_toEndOf="@+id/providerhome_option3_imege" />
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_second_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_second_image"
+        android:src="@drawable/new1" />
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/provider_home_preview_forth_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/providerhome_option1_imege"
-        android:src="@android:drawable/ic_menu_add"
-        android:layout_alignBottom="@+id/providerhome_option2_imege"
-        android:layout_toLeftOf="@+id/providerhome_option2_imege"
-        android:layout_toStartOf="@+id/providerhome_option2_imege" />
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_third_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_third_image"
+        android:src="@drawable/new3" />
 
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/providerhome_option5_imege"
-        android:src="@android:drawable/ic_menu_add"
-        android:layout_alignBottom="@+id/providerhome_option4_imege"
-        android:layout_toRightOf="@+id/providerhome_option4_imege"
-        android:layout_toEndOf="@+id/providerhome_option4_imege" />
 
     <TextView
+        android:id="@+id/provider_home_edit_address_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/providerhome_address_text"
+        android:layout_below="@+id/provider_home_edit_preview_first_image"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:text="Address"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/provider_home_edit_phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/provider_home_edit_address_text"
+        android:layout_alignStart="@+id/provider_home_edit_address_text"
+        android:layout_below="@+id/provider_home_edit_address_text"
+        android:layout_marginTop="20dp"
+        android:text="Phone Number"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/provider_home_edit_working_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/provider_home_edit_phone_text"
+        android:layout_alignStart="@+id/provider_home_edit_phone_text"
+        android:layout_below="@+id/provider_home_edit_phone_text"
+        android:layout_marginTop="20dp"
+        android:text="Working Time"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/provider_home_edit_option_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/provider_home_edit_working_time_text"
+        android:layout_alignStart="@+id/provider_home_edit_working_time_text"
+        android:layout_below="@+id/provider_home_edit_working_time_text"
+        android:layout_marginTop="20dp"
+        android:text="Options"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/provider_home_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/provider_home_edit_address_text"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/providerhome_option1_imege"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="50dp"
-        />
+        android:layout_toEndOf="@+id/provider_home_edit_address_text"
+        android:layout_toRightOf="@+id/provider_home_edit_address_text"
+        android:text="경기도 성남시 분당구 수내동"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/provider_home_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="dial"
-        android:id="@+id/providerhome_dial_text"
-        android:layout_below="@+id/providerhome_address_text"
-        android:layout_alignLeft="@+id/providerhome_address_text"
-        android:layout_alignStart="@+id/providerhome_address_text"
-        android:layout_marginTop="20dp"/>
+        android:layout_alignBottom="@+id/provider_home_edit_phone_text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/provider_home_edit_phone_text"
+        android:layout_toRightOf="@+id/provider_home_edit_phone_text"
+        android:text="010-9374-4512"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/provider_home_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="time"
-        android:id="@+id/providerhome_time_text"
-        android:layout_below="@+id/providerhome_dial_text"
-        android:layout_alignLeft="@+id/providerhome_dial_text"
-        android:layout_alignStart="@+id/providerhome_dial_text"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="option"
-        android:id="@+id/providerhome_option_text"
-        android:layout_below="@+id/providerhome_time_text"
-        android:layout_alignLeft="@+id/providerhome_time_text"
-        android:layout_alignStart="@+id/providerhome_time_text"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/providerhome_address_edit"
-        android:layout_below="@+id/providerhome_option3_imege"
-        android:layout_alignRight="@+id/providerhome_tiltem_text"
-        android:layout_alignEnd="@+id/providerhome_tiltem_text"
-        android:layout_marginTop="40dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="010-1234-1234"
-        android:id="@+id/providerhome_dial_edit"
-        android:layout_below="@+id/providerhome_address_edit"
-        android:layout_alignLeft="@+id/providerhome_address_edit"
-        android:layout_alignStart="@+id/providerhome_address_edit"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="11:11 ~ 22:22"
-        android:id="@+id/providerhome_time_edit"
-        android:layout_below="@+id/providerhome_dial_edit"
-        android:layout_alignLeft="@+id/providerhome_dial_edit"
-        android:layout_alignStart="@+id/providerhome_dial_edit"
-        android:layout_marginTop="20dp"/>
+        android:layout_alignBottom="@+id/provider_home_edit_working_time_text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/provider_home_edit_working_time_text"
+        android:layout_toRightOf="@+id/provider_home_edit_working_time_text"
+        android:text="09 : 30 ~ 22 : 00"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/providerhome_option6_image"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_below="@+id/providerhome_time_edit"
-        android:layout_alignLeft="@+id/providerhome_time_edit"
-        android:layout_alignStart="@+id/providerhome_time_edit"
-        android:layout_marginTop="20dp" />
+        android:id="@+id/provider_home_edit_options_wifi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/provider_home_edit_option_text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/provider_home_edit_option_text"
+        android:layout_toRightOf="@+id/provider_home_edit_option_text"
+        android:src="@drawable/wifi" />
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/providerhome_option7_image"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_alignTop="@+id/providerhome_option6_image"
-        android:layout_toRightOf="@+id/providerhome_option6_image"
-        android:layout_toEndOf="@+id/providerhome_option6_image" />
+        android:id="@+id/provider_home_edit_options_plag"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/provider_home_edit_option_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/provider_home_edit_options_wifi"
+        android:layout_toRightOf="@+id/provider_home_edit_options_wifi"
+        android:src="@drawable/plag" />
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/providerhome_option8_image"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_alignTop="@+id/providerhome_option7_image"
-        android:layout_toRightOf="@+id/providerhome_option7_image"
-        android:layout_toEndOf="@+id/providerhome_option7_image" />
+        android:id="@+id/provider_home_edit_options_parking"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/provider_home_edit_option_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/provider_home_edit_options_plag"
+        android:layout_toRightOf="@+id/provider_home_edit_options_plag"
+        android:src="@drawable/parking" />
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/providerhome_option9_image"
-        android:src="@android:drawable/ic_menu_gallery"
-        android:layout_alignTop="@+id/providerhome_option8_image"
-        android:layout_toRightOf="@+id/providerhome_option8_image"
-        android:layout_toEndOf="@+id/providerhome_option8_image" />
+        android:id="@+id/provider_home_options_working_time"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/provider_home_edit_option_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/provider_home_edit_options_parking"
+        android:layout_toRightOf="@+id/provider_home_edit_options_parking"
+        android:src="@drawable/workingtime" />
 
     <Button
+        android:id="@+id/provider_home_edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modify"
-        android:id="@+id/providerhome_modify_btn"
-        android:layout_alignTop="@+id/providerhome_tiltem_text"
-        android:layout_alignLeft="@+id/providerhome_option9_image"
-        android:layout_alignStart="@+id/providerhome_option9_image"
-        android:onClick="goToScen1"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="편집" />
 
 </RelativeLayout>

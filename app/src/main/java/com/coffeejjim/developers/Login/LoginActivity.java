@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     public void moveProviderHomeActivity(){
         Intent intent = new Intent(this, ProviderHomeActivity.class);
         startActivity(intent);
-        finish();
     }
 
 }

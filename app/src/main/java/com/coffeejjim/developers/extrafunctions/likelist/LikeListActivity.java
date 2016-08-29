@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.cafedetail.CafeDetailFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,6 +16,7 @@ public class LikeListActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +54,13 @@ public class LikeListActivity extends AppCompatActivity {
             finish();
         } else if (id == R.id.like_list_edit) {
             if (!isCompleted) {
-                item.setIcon(R.drawable.edit);
+                item.setIcon(R.drawable.success);
                 isCompleted = true;
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new DislikeFragment())
                         .commit();
             } else {
-                item.setIcon(R.drawable.success);
+                item.setIcon(R.drawable.edit);
                 isCompleted= false;
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new LikeListFragment())

@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
-import com.coffeejjim.developers.cafelist.AllCafeListRecyclerAdapter;
-import com.coffeejjim.developers.cafelist.CafeMapChildFragment;
 import com.coffeejjim.developers.data.Cafe;
 
 import butterknife.BindView;
@@ -24,6 +22,9 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class LikeListFragment extends Fragment {
+
+    private static final boolean SET_GONE = false;
+
 
     @BindView(R.id.like_rv_list)
     RecyclerView likeListRecyclerView;
@@ -41,7 +42,7 @@ public class LikeListFragment extends Fragment {
         ButterKnife.bind(this, view);
 
 
-        mAdapter = new LikeListRecyclerAdapter();
+        mAdapter = new LikeListRecyclerAdapter(SET_GONE);
         mAdapter.setOnAdapterItemClickListener(new LikeListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {

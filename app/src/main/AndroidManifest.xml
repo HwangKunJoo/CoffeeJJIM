@@ -41,7 +41,7 @@
             android:name=".reservation.CafeReservationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".extrafunctions.AuctionProcessActivity"
+            android:name=".provider.AuctionProcessActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".event.EventDetailActivity"
