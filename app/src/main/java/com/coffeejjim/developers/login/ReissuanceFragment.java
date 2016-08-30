@@ -36,6 +36,7 @@ public class ReissuanceFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_reissuance, container, false);
         ButterKnife.bind(this,view);
         setCustomActionbar();
+        setHasOptionsMenu(true);
         return view;
     }
 

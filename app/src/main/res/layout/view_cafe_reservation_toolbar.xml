@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:text="입찰 카페 목록"
         android:textSize="20sp"
-        android:textColor="#420d03"
+        android:textColor="@color/coffeejjim_brown"
         android:gravity="center"/>
 
 </LinearLayout>

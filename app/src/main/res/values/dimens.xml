@@ -4,4 +4,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
+
+
+    <!--fr_estimate_sheet.xml-->
+    <dimen name="estimate_sheet_location_text_margin_top">60dp</dimen>
 </resources>
