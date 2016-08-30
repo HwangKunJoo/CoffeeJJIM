@@ -7,167 +7,227 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location"
         android:id="@+id/estimate_sheet_location_text"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="70dp"/>
+        android:layout_marginTop="@dimen/estimate_sheet_set_text_view_marginTop"
+        android:layout_marginLeft="@dimen/estimate_sheet_set_text_view_marginLeft"
+        android:text="장소"
+        android:textSize="@dimen/subject_text_size"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Date"
+        android:text="날짜"
         android:id="@+id/estimate_sheet_date_text"
         android:layout_below="@+id/estimate_sheet_location_text"
         android:layout_alignLeft="@+id/estimate_sheet_location_text"
         android:layout_alignStart="@+id/estimate_sheet_location_text"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:textSize="@dimen/subject_text_size"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Time"
+        android:text="시간"
         android:id="@+id/estimate_sheet_time_text"
         android:layout_below="@+id/estimate_sheet_date_text"
         android:layout_alignLeft="@+id/estimate_sheet_date_text"
         android:layout_alignStart="@+id/estimate_sheet_date_text"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:textSize="@dimen/subject_text_size"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Person"
+        android:text="인원"
         android:id="@+id/estimate_sheet_person_text"
         android:layout_below="@+id/estimate_sheet_time_text"
         android:layout_alignLeft="@+id/estimate_sheet_time_text"
         android:layout_alignStart="@+id/estimate_sheet_time_text"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:textSize="@dimen/subject_text_size"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Option"
+        android:text="옵션"
         android:id="@+id/estimate_sheet_option_text"
         android:layout_below="@+id/estimate_sheet_person_text"
         android:layout_alignLeft="@+id/estimate_sheet_person_text"
         android:layout_alignStart="@+id/estimate_sheet_person_text"
-        android:layout_marginTop="22dp" />
+        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:textSize="@dimen/subject_text_size"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selecting"
+        android:text="선택하세요"
         android:id="@+id/estimate_sheet_selecting_text"
+        android:textSize="@dimen/small_text_size"
         android:layout_alignBottom="@+id/estimate_sheet_option_text"
-        android:layout_toRightOf="@+id/estimate_sheet_person_text"
-        android:layout_toEndOf="@+id/estimate_sheet_person_text" />
+        android:layout_toRightOf="@+id/estimate_sheet_option_text"
+        android:layout_toEndOf="@+id/estimate_sheet_option_text"
+        android:layout_marginLeft="@dimen/small_text_size_marginLeft"/>
 
     <EditText
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/estimate_sheet_location_edit"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/estimate_sheet_location_text"
-        android:layout_toEndOf="@+id/estimate_sheet_location_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="@dimen/estimate_sheet_edit_text_marginTop"
+        android:layout_marginLeft="@dimen/estimate_sheet_edit_text_marginLeft"
+        android:layout_marginRight="@dimen/estimate_sheet_edit_text_marginRight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/estimate_sheet_date_edit"
         android:layout_below="@+id/estimate_sheet_location_edit"
         android:layout_alignLeft="@+id/estimate_sheet_location_edit"
-        android:layout_alignStart="@+id/estimate_sheet_location_edit" />
+        android:layout_alignStart="@+id/estimate_sheet_location_edit"
+        android:layout_marginTop="@dimen/estimate_sheet_date_edit_marginTop"
+        android:layout_alignRight="@+id/estimate_sheet_location_edit"
+        android:layout_alignEnd="@+id/estimate_sheet_location_edit" />
 
     <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/estimate_sheet_time_edit"
-        android:layout_below="@+id/estimate_sheet_date_edit"
-        android:layout_alignLeft="@+id/estimate_sheet_date_edit"
-        android:layout_alignStart="@+id/estimate_sheet_date_edit" />
-
-    <EditText
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/estimate_sheet_person_edit"
-        android:layout_below="@+id/estimate_sheet_time_edit"
-        android:layout_alignLeft="@+id/estimate_sheet_time_edit"
-        android:layout_alignStart="@+id/estimate_sheet_time_edit" />
+        android:hint="명"
+        android:layout_below="@+id/estimate_sheet_time_spinner"
+        android:layout_alignLeft="@+id/estimate_sheet_time_spinner"
+        android:layout_alignStart="@+id/estimate_sheet_time_spinner"
+        android:layout_marginTop="@dimen/estimate_sheet_person_edit_marginTop"
+        android:gravity="right"
+        android:layout_alignRight="@+id/estimate_sheet_time_spinner"
+        android:layout_alignEnd="@+id/estimate_sheet_time_spinner" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option1_btn"
-        android:layout_below="@+id/estimate_sheet_option_text"
-        android:layout_alignLeft="@+id/estimate_sheet_option_text"
-        android:layout_alignStart="@+id/estimate_sheet_option_text"
-        android:src="@android:drawable/ic_menu_search"
-        android:layout_marginTop="10dp" />
+        android:src="@drawable/wifi"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/estimate_sheet_selecting_text"
+        android:layout_alignLeft="@+id/estimate_sheet_selecting_text"
+        android:layout_alignStart="@+id/estimate_sheet_selecting_text"
+        android:layout_marginTop="@dimen/estimate_sheet_option_image_button_marginTop"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option2_btn"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@drawable/plag"
         android:layout_alignTop="@+id/estimate_sheet_option1_btn"
         android:layout_toRightOf="@+id/estimate_sheet_option1_btn"
-        android:layout_toEndOf="@+id/estimate_sheet_option1_btn" />
+        android:layout_toEndOf="@+id/estimate_sheet_option1_btn"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option3_btn"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@drawable/parking"
         android:layout_alignTop="@+id/estimate_sheet_option2_btn"
-        android:layout_toRightOf="@+id/estimate_sheet_selecting_text"
-        android:layout_toEndOf="@+id/estimate_sheet_selecting_text" />
+        android:layout_toRightOf="@+id/estimate_sheet_option2_btn"
+        android:layout_toEndOf="@+id/estimate_sheet_option2_btn"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option4_btn"
-        android:src="@android:drawable/ic_menu_search"
+        android:src="@drawable/workingtime"
+        android:scaleType="fitCenter"
+        android:background="@color/coffeejjim_invisible"
         android:layout_alignTop="@+id/estimate_sheet_option3_btn"
         android:layout_toRightOf="@+id/estimate_sheet_option3_btn"
-        android:layout_toEndOf="@+id/estimate_sheet_option3_btn" />
+        android:layout_toEndOf="@+id/estimate_sheet_option3_btn"
+        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Endtime"
+        android:text="경매 종료 시간"
         android:id="@+id/estimate_sheet_endtime_text"
-        android:layout_below="@+id/estimate_sheet_option1_btn"
-        android:layout_alignLeft="@+id/estimate_sheet_option1_btn"
-        android:layout_alignStart="@+id/estimate_sheet_option1_btn"
-        android:layout_marginTop="20dp"/>
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/estimate_sheet_endtime_edit"
-        android:layout_below="@+id/estimate_sheet_option2_btn"
-        android:layout_toRightOf="@+id/estimate_sheet_location_text"
-        android:layout_toEndOf="@+id/estimate_sheet_location_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="13dp"/>
+        android:textSize="@dimen/subject_text_size"
+        android:layout_alignLeft="@+id/estimate_sheet_option_text"
+        android:layout_alignStart="@+id/estimate_sheet_option_text"
+        android:layout_marginTop="@dimen/estimate_sheet_endtime_text_marginTop"
+        android:layout_below="@+id/estimate_sheet_option2_btn" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Present"
+        android:text="제출하기"
         android:id="@+id/estimate_sheet_present_btn"
+        android:textSize="@dimen/subject_text_size"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp" />
+        android:background="@color/coffeejjim_brown"
+        android:textColor="@color/coffeejjim_white" />
+
+    <ImageButton
+        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:id="@+id/estimate_sheet_location_search"
+        android:src="@drawable/search"
+        android:scaleType="fitCenter"
+        android:background="@color/coffeejjim_invisible"
+        android:layout_alignTop="@+id/estimate_sheet_location_map"
+        android:layout_toLeftOf="@+id/estimate_sheet_location_map"
+        android:layout_toStartOf="@+id/estimate_sheet_location_map"
+        android:layout_marginRight="@dimen/estimate_sheet_location_search"/>
+
+    <ImageButton
+        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:id="@+id/estimate_sheet_location_map"
+        android:src="@drawable/maplocation"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="fitCenter"
+        android:layout_alignBottom="@+id/estimate_sheet_location_text"
+        android:layout_alignRight="@+id/estimate_sheet_location_edit"
+        android:layout_alignEnd="@+id/estimate_sheet_location_edit" />
+
+    <ImageButton
+        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:id="@+id/estimate_sheet_location_calendar"
+        android:src="@drawable/edit"
+        android:layout_above="@+id/estimate_sheet_time_text"
+        android:layout_alignRight="@+id/estimate_sheet_date_edit"
+        android:layout_alignEnd="@+id/estimate_sheet_date_edit" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_sheet_time_spinner"
+        android:layout_alignLeft="@+id/estimate_sheet_date_edit"
+        android:layout_alignStart="@+id/estimate_sheet_date_edit"
+        android:layout_alignTop="@+id/estimate_sheet_time_text"
+        android:layout_above="@+id/estimate_sheet_person_text"
+        android:layout_alignRight="@+id/estimate_sheet_date_edit"
+        android:layout_alignEnd="@+id/estimate_sheet_date_edit" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/estimate_sheet_endtime_spinner"
+        android:layout_alignTop="@+id/estimate_sheet_endtime_text"
+        android:layout_alignBottom="@+id/estimate_sheet_endtime_text"
+        android:layout_toRightOf="@+id/estimate_sheet_endtime_text"
+        android:layout_alignRight="@+id/estimate_sheet_person_edit"
+        android:layout_alignEnd="@+id/estimate_sheet_person_edit" />
 
 </RelativeLayout>

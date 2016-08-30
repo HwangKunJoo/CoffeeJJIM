@@ -4,5 +4,29 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
+    <dimen name="subject_text_size">18dp</dimen>
+    <dimen name="small_text_size">13dp</dimen>
+
+    <!--fr_estimate_sheet.xml-->
+    <dimen name="estimate_sheet_set_text_view_marginTop">60dp</dimen>
+    <dimen name="estimate_sheet_set_text_view_marginLeft">50dp</dimen>
+    <dimen name="estimate_sheet_text_view_marginTop">22dp</dimen>
+
+    <dimen name="estimate_sheet_edit_text_marginTop">48dp</dimen>
+    <dimen name="estimate_sheet_edit_text_marginLeft">20dp</dimen>
+    <dimen name="estimate_sheet_edit_text_marginRight">50dp</dimen>
+
+    <dimen name="estimate_sheet_date_edit_marginTop">3dp</dimen>
+    <dimen name="estimate_sheet_person_edit_marginTop">10dp</dimen>
+    <dimen name="estimate_sheet_endtime_text_marginTop">50dp</dimen>
+
+    <dimen name="estimate_sheet_option_image_button_size">50dp</dimen>
+    <dimen name="estimate_sheet_option_image_button_marginTop">10dp</dimen>
+    <dimen name="estimate_sheet_option_image_button_marginLeft">5dp</dimen>
+    <dimen name="estimate_sheet_small_image_button_size">20dp</dimen>
+
+    <dimen name="small_text_size_marginLeft">10dp</dimen>
+    <dimen name="estimate_sheet_location_search">5dp</dimen>
+
 
 </resources>

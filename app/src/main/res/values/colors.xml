@@ -6,4 +6,6 @@
     <color name="coffeejjim_brown">#420d03</color>
     <color name="coffeejjim_yellow">#ffc700</color>
     <color name="coffeejjim_red">#ff5948</color>
+    <color name="coffeejjim_white">#ffffff</color>
+    <color name="coffeejjim_invisible">#00ff0000</color>
 </resources>
