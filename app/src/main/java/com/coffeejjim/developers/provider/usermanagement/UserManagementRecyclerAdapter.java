@@ -44,7 +44,7 @@ public class UserManagementRecyclerAdapter extends RecyclerView.Adapter<UserMana
     }
 
     public interface OnAdapterItemClickLIstener {
-        public void onAdapterItemClick(View view, Customer customer, int position);
+        public void onAdapterItemClick(View view, Customer customer, int position, int flag);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -55,7 +55,7 @@ public class UserManagementRecyclerAdapter extends RecyclerView.Adapter<UserMana
 
 
     @Override
-    public void onUserManagementItemClick(View view, Customer customer, int position) {
-        listener.onAdapterItemClick(view, customer, position);
+    public void onUserManagementItemClick(View view, Customer customer, int position, int flag) {
+        listener.onAdapterItemClick(view, customer, position, flag);
     }
 }

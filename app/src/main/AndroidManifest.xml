@@ -81,6 +81,10 @@
         <activity android:name=".SettingsProviderActivity"></activity>
         <activity android:name=".extrafunctions.inquiry.InquiryActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".provider.usermanagement.uservisitcount.UserVisitCountActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".provider.BookingInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

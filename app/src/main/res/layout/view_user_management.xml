@@ -53,7 +53,7 @@
         android:textColor="@color/coffeejjim_brown" />
 
     <Button
-        android:id="@+id/btn_user_management_reservation_info"
+        android:id="@+id/btn_user_management_visit_count_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"

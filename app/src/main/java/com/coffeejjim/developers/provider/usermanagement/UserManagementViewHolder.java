@@ -2,6 +2,7 @@ package com.coffeejjim.developers.provider.usermanagement;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,23 +23,40 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
     TextView userManagementVisitCountView;
     @BindView(R.id.user_management_like)
     ImageView userManagementLikeView;
+    @BindView(R.id.btn_user_management_detail_info)
+    Button btn_detail_info;
+    @BindView(R.id.btn_user_management_visit_count_info)
+    Button btn_visit_count_info;
+
+    public static final int BTN_DETAIL = 0;
+    public static final int BTN_VISIT_COUNT = 1;
+
 
 
     public UserManagementViewHolder(View itemView) {
         super(itemView);
-        itemView.setOnClickListener(new View.OnClickListener() {
+        ButterKnife.bind(this, itemView);
+        btn_detail_info.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 if (listener != null) {
-                    listener.onUserManagementItemClick(v, customer, getAdapterPosition());
+                       listener.onUserManagementItemClick(view, customer, getAdapterPosition(), BTN_DETAIL);
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
+
+        btn_visit_count_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onUserManagementItemClick(view, customer, getAdapterPosition(), BTN_VISIT_COUNT);
+                }
+            }
+        });
     }
 
     public interface OnUserManagementItemClickListener {
-        public void onUserManagementItemClick(View view, Customer customer, int position);
+        public void onUserManagementItemClick(View view, Customer customer, int position, int flag);
     }
 
     OnUserManagementItemClickListener listener;
@@ -46,6 +64,7 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
     public void setOnUserManagementItemClickListener(OnUserManagementItemClickListener listener) {
         this.listener = listener;
     }
+
 
     Customer customer;
 
