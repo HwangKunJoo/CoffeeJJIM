@@ -2,6 +2,7 @@ package com.coffeejjim.developers.provider.auctionprocess;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.coffeejjim.developers.R;
@@ -25,9 +26,12 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
     TextView reservationDateView;
     @BindView(R.id.auction_process_user_nickname)
     TextView userNicknameView;
+    @BindView(R.id.btn_estimate_sheet_confirm)
+    Button btn_confirm;
 
     public AuctionProcessViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,11 +40,21 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
+
+        btn_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onAuctionProcessButtonClick(view, estimate, getAdapterPosition());
+                }
+            }
+        });
+
     }
 
     public interface OnAuctionProcessItemClickListener {
         public void onAuctionProcessItemClick(View view, Estimate estimate, int position);
+        public void onAuctionProcessButtonClick(View view, Estimate estimate, int position);
     }
 
     OnAuctionProcessItemClickListener listener;

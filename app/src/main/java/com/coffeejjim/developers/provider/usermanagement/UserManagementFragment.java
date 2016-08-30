@@ -47,10 +47,10 @@ public class UserManagementFragment extends Fragment {
             @Override
             public void onAdapterItemClick(View view, Customer customer, int position, int flag) {
                 if (flag == BTN_DETAIL) {
-                    Intent intent = new Intent((UserManagementActivity) (getActivity()), BookingInfoActivity.class);
+                    Intent intent = new Intent(getActivity(), BookingInfoActivity.class);
                     startActivity(intent);
                 } else if(flag == BTN_VISIT_COUNT){
-                    Intent intent = new Intent((UserManagementActivity) (getActivity()), UserVisitCountActivity.class);
+                    Intent intent = new Intent(getActivity(), UserVisitCountActivity.class);
                     startActivity(intent);
                 }
             }

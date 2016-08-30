@@ -4,6 +4,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
+    <dimen name="title_text_size">20dp</dimen>
     <dimen name="subject_text_size">18dp</dimen>
     <dimen name="small_text_size">13dp</dimen>
 
@@ -27,6 +28,15 @@
 
     <dimen name="small_text_size_marginLeft">10dp</dimen>
     <dimen name="estimate_sheet_location_search">5dp</dimen>
+
+
+    <!--activity_estimate_sheet_confirm.xml-->
+    <dimen name="activity_estimate_sheet_confirm_text_view_marginTop">80dp</dimen>
+    <dimen name="activity_estimate_sheet_confirm_text_view_marginLeft">100dp</dimen>
+    <dimen name="text_view_marginTop">20dp</dimen>
+    <dimen name="text_view_marginLeft">20dp</dimen>
+    <dimen name="bookinginfo_price_text_marginTop">50dp</dimen>
+    <dimen name="estimatesheetconfirm_price_edit_size">200dp</dimen>
 
 
 </resources>

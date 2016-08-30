@@ -51,6 +51,11 @@ public class AllCafeListFragment extends Fragment {
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
                 moveCafeDetailActivity();
             }
+
+            @Override
+            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
+                moveCafeDetailActivity();
+            }
         });
 
         listView.setAdapter(mAdapter);

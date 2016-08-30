@@ -45,6 +45,7 @@ public class AuctionStatementRecyclerAdapter extends RecyclerView.Adapter<Auctio
 
     public interface OnAdapterItemClickLIstener {
         public void onAdapterItemClick(View view, Estimate estimate, int position);
+        public void onAdapterButtonClick(View view, Estimate estimate, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -56,5 +57,10 @@ public class AuctionStatementRecyclerAdapter extends RecyclerView.Adapter<Auctio
     @Override
     public void onAuctionStatementItemClick(View view, Estimate estimate, int position) {
         listener.onAdapterItemClick(view, estimate, position);
+    }
+
+    @Override
+    public void onAuctionStatementButtonClick(View view, Estimate estimate, int position) {
+        listener.onAdapterButtonClick(view, estimate, position);
     }
 }

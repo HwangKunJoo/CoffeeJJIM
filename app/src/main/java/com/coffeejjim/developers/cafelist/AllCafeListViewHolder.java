@@ -2,6 +2,7 @@ package com.coffeejjim.developers.cafelist;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,10 +27,13 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
     ImageView cafeMainImageView;
     @BindView(R.id.all_cafe_list_options_wifi)
     ImageView cafeOptionsImageView;
+    @BindView(R.id.btn_all_cafe_list_detail)
+    Button btn_detail_cafe;
 
 
     public AllCafeListViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,11 +42,20 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
+        btn_detail_cafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onAllCafeButtonClick(view, cafe, getAdapterPosition());
+                }
+            }
+        });
+
     }
 
     public interface OnAllCafeItemClickListener {
         public void onAllCafeItemClick(View view, Cafe cafe, int position);
+        public void onAllCafeButtonClick(View view, Cafe cafe, int position);
     }
 
     OnAllCafeItemClickListener listener;

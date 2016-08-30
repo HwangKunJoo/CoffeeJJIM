@@ -43,6 +43,7 @@ public class AllCafeListRecyclerAdapter extends RecyclerView.Adapter<AllCafeList
 
     public interface OnAdapterItemClickLIstener {
         public void onAdapterItemClick(View view, Cafe cafe, int position);
+        public void onAdapterButtonClick(View view, Cafe cafe, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -54,5 +55,10 @@ public class AllCafeListRecyclerAdapter extends RecyclerView.Adapter<AllCafeList
     @Override
     public void onAllCafeItemClick(View view, Cafe cafe, int position) {
         listener.onAdapterItemClick(view, cafe, position);
+    }
+
+    @Override
+    public void onAllCafeButtonClick(View view, Cafe cafe, int position) {
+        listener.onAdapterButtonClick(view, cafe, position);
     }
 }

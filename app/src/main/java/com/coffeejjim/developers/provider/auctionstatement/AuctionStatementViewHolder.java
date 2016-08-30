@@ -2,6 +2,7 @@ package com.coffeejjim.developers.provider.auctionstatement;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,9 +27,12 @@ public class AuctionStatementViewHolder extends RecyclerView.ViewHolder {
     TextView auctionStatementPriceView;
     @BindView(R.id.auction_statement_reservation_fail_image)
     ImageView reservationFailImageView;
+    @BindView(R.id.btn_reservation_booking_info)
+    Button btn_booking_info;
 
     public AuctionStatementViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,11 +41,19 @@ public class AuctionStatementViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
-    }
+        btn_booking_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onAuctionStatementButtonClick(view, estimate, getAdapterPosition());
+                }
+            }
+        });
 
+    }
     public interface OnAuctionStatementItemClickListener {
         public void onAuctionStatementItemClick(View view, Estimate estimate, int position);
+        public void onAuctionStatementButtonClick(View view, Estimate estimate, int position);
     }
 
     OnAuctionStatementItemClickListener listener;

@@ -1,6 +1,7 @@
 package com.coffeejjim.developers.provider.auctionprocess;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.estimate.provider.EstimateSheetConfirmActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +45,12 @@ public class AuctionProcessFragment extends Fragment {
             @Override
             public void onAdapterItemClick(View view, Estimate estimate, int position) {
 
+            }
+
+            @Override
+            public void onAdapterButtonClick(View view, Estimate estimate, int position) {
+                Intent intent = new Intent(getActivity(), EstimateSheetConfirmActivity.class);
+                startActivity(intent);
             }
         });
 
