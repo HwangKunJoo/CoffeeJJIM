@@ -22,6 +22,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void changeReissuance(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container, new ReissuanceFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
     public void changeSingup() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new SignupFragment())
@@ -35,11 +42,6 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    public void moveFindInfoActivity() {
-        Intent intent = new Intent(this, FindInfoActivity.class);
-        startActivity(intent);
-        finish();
-    }
 
     public void moveProviderHomeActivity(){
         Intent intent = new Intent(this, ProviderHomeActivity.class);

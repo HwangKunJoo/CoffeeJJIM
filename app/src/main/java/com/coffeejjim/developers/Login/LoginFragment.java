@@ -57,6 +57,6 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.find_id_go_btn)
     public void onFindInfo(){
-        ((LoginActivity)getActivity()).moveFindInfoActivity();
+        ((LoginActivity)getActivity()).changeReissuance();
     }
 }
