@@ -20,6 +20,10 @@ import com.coffeejjim.developers.extrafunctions.notification.NotificationActivit
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
 import com.coffeejjim.developers.login.LoginActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -36,62 +40,62 @@ public class CustomerExtraFunctionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fr_customer_extra_functions, container, false);
-        ImageButton acutionlistBtn = (ImageButton)view.findViewById(R.id.extra_functions_estimate_btn);
-        acutionlistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent AuctionListIntent = new Intent((ExtraFunctionsActivity)getActivity(), AuctionListActivity.class);
-                startActivity(AuctionListIntent);
-            }
-        });
-
-        ImageButton likelistBtn = (ImageButton) view.findViewById(R.id.extra_functions_likelist_btn);
-        likelistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent LikeListIntent = new Intent((ExtraFunctionsActivity)getActivity(), LikeListActivity.class);
-                startActivity(LikeListIntent);
-            }
-        });
-
-        ImageButton inquiryBtn = (ImageButton) view.findViewById(R.id.extra_functions_inguiry_btn);
-        inquiryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent InquiryIntent = new Intent((ExtraFunctionsActivity)getActivity(), InquiryActivity.class);
-                startActivity(InquiryIntent);
-            }
-        });
-
-        ImageButton notificationBtn = (ImageButton) view.findViewById(R.id.extra_functions_notification_btn);
-        notificationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent NotificationIntent = new Intent((ExtraFunctionsActivity)getActivity(), NotificationActivity.class);
-                startActivity(NotificationIntent);
-            }
-        });
-
-        ImageButton settingsBtn = (ImageButton) view.findViewById(R.id.extra_functions_Settings_btn);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent SettingsIntent = new Intent((ExtraFunctionsActivity)getActivity(), SettingsActivity.class);
-                startActivity(SettingsIntent);
-            }
-        });
-
-        ImageButton logoutBtn = (ImageButton) view.findViewById(R.id.extra_functions_logout_btn);
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onAlertDialog();
-            }
-        });
+        ButterKnife.bind(this, view);
         return view;
     }
 
-    private void onAlertDialog() {
+    @OnClick(R.id.btn_customer_extra_functions_auction_statement)
+    public void onAuctionList(){
+        moveAuctionListActivity();
+    }
+    @OnClick(R.id.btn_customer_extra_functions_like_list)
+    public void onLikeList(){
+        moveLikeListActivity();
+    }
+    @OnClick(R.id.btn_customer_extra_functions_inquiry)
+    public void onInquiry(){
+        moveInquiryActivity();
+    }
+    @OnClick(R.id.btn_customer_extra_functions_notification)
+    public void onNotification(){
+        moveNotificationActivity();
+    }
+    @OnClick(R.id.btn_customer_extra_functions_settings)
+    public void onSettings(){
+        moveSettingsActivity();
+    }
+    @OnClick(R.id.btn_customer_extra_functions_logout)
+    public void onLogout(){
+        onLogoutAlertDialog();
+    }
+
+    public void moveAuctionListActivity(){
+        Intent AuctionListIntent = new Intent(getActivity(), AuctionListActivity.class);
+        startActivity(AuctionListIntent);
+    }
+
+    public void moveLikeListActivity(){
+        Intent LikeListIntent = new Intent(getActivity(), LikeListActivity.class);
+        startActivity(LikeListIntent);
+    }
+
+    public void moveInquiryActivity(){
+        Intent InquiryIntent = new Intent(getActivity(), InquiryActivity.class);
+        startActivity(InquiryIntent);
+    }
+
+    public void moveNotificationActivity(){
+        Intent NotificationIntent = new Intent(getActivity(), NotificationActivity.class);
+        startActivity(NotificationIntent);
+    }
+
+    public void moveSettingsActivity(){
+        Intent SettingsIntent = new Intent(getActivity(), SettingsActivity.class);
+        startActivity(SettingsIntent);
+    }
+
+
+    private void onLogoutAlertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Coffee JJIM");
@@ -100,7 +104,7 @@ public class CustomerExtraFunctionsFragment extends Fragment {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent loginIntent = new Intent((ExtraFunctionsActivity)getActivity(), LoginActivity.class);
+                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
                 loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(loginIntent);
                 getActivity().finish();
@@ -109,7 +113,7 @@ public class CustomerExtraFunctionsFragment extends Fragment {
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText((ExtraFunctionsActivity)getActivity(),"취소 되었습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),"취소 되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
 
