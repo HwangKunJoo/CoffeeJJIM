@@ -2,6 +2,7 @@ package com.coffeejjim.developers.reservation;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Tacademy on 2016-08-25.
  */
-public class CafeListViewHolder extends RecyclerView.ViewHolder {
+public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.cafelist_title_text)
     TextView titleView;
@@ -26,10 +27,14 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
     TextView priceView;
     @BindView(R.id.cafelist_photo_image)
     ImageView photoView;
+    @BindView(R.id.btn_cafe_list_reservation)
+    Button btn_reservation;
+
 
 
     public interface OnCafeItemClickListener {
         public void onCafeItemClick(View view, Cafe cafe, int position);
+        public void onCafeItemButtonClick(View view, Cafe cafe, int position);
     }
 
     OnCafeItemClickListener listener;
@@ -38,8 +43,9 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
         this.listener = listener;
     }
 
-    public CafeListViewHolder(View itemView) {
+    public CafeReservationListViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +54,15 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
+
+        btn_reservation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onCafeItemButtonClick(view, cafe, getAdapterPosition());
+                }
+            }
+        });
     }
 
     Cafe cafe;
@@ -69,6 +83,6 @@ public class CafeListViewHolder extends RecyclerView.ViewHolder {
 //    }
 //
 //    public void moveCafeDetailActivity(){
-//        Intent intent = new Intent(((CafeReservationActivity)getActivity()) , CafeDetailActivity.class);
+//        Intent intent = new Intent(((CafeReservationListActivity)getActivity()) , CafeDetailActivity.class);
 //    }
 }

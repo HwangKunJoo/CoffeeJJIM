@@ -22,7 +22,7 @@ public class CafeReservationListFragment extends Fragment {
 
     @BindView(R.id.rv_list)
     RecyclerView listView;
-    CafeListRecyclerAdapter mAdapter;
+    CafeReservationListRecyclerAdapter mAdapter;
 
     public CafeReservationListFragment() {
         // Required empty public constructor
@@ -35,11 +35,17 @@ public class CafeReservationListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_cafe_reservation_list, container, false);
         ButterKnife.bind(this, view);
 
-        mAdapter = new CafeListRecyclerAdapter();
-        mAdapter.setOnAdapterItemClickListener(new CafeListRecyclerAdapter.OnAdapterItemClickLIstener() {
+        mAdapter = new CafeReservationListRecyclerAdapter();
+        mAdapter.setOnAdapterItemClickListener(new CafeReservationListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
                 moveCafeDetailActivity();
+            }
+
+            @Override
+            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
+                CafeReservationCheckDialogFragment f = new CafeReservationCheckDialogFragment();
+                f.show(getFragmentManager(), "dialog");
             }
         });
 

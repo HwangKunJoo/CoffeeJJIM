@@ -33,7 +33,7 @@ public class EstimateSheetFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.estimate_sheet_present_btn)
+    @OnClick(R.id.btn_estimate_sheet_present)
     public void onEstimateCheckDialogButtonClick() {
         onDialogFragmentClick();
     }

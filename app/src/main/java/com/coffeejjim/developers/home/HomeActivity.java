@@ -16,7 +16,7 @@ import com.coffeejjim.developers.cafelist.AllCafeListActivity;
 import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
 import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
-import com.coffeejjim.developers.reservation.CafeReservationActivity;
+import com.coffeejjim.developers.reservation.CafeReservationListActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -168,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
         if (id == R.id.item_samplebadge)
         {
             Toast.makeText(this, R.string.sample_3, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, CafeReservationActivity.class);
+            Intent intent = new Intent(this, CafeReservationListActivity.class);
             startActivity(intent);
 //            badgeCount--;
 //            ActionItemBadge.update(item, badgeCount);

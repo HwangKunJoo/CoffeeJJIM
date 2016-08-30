@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".reservation.CafeReservationActivity"
+            android:name=".reservation.CafeReservationListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".provider.auctionprocess.AuctionProcessActivity"

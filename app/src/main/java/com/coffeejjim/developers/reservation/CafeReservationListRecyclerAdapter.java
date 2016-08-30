@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Tacademy on 2016-08-23.
  */
-public class CafeListRecyclerAdapter extends RecyclerView.Adapter<CafeListViewHolder> implements CafeListViewHolder.OnCafeItemClickListener{
+public class CafeReservationListRecyclerAdapter extends RecyclerView.Adapter<CafeReservationListViewHolder> implements CafeReservationListViewHolder.OnCafeItemClickListener{
 
     List<Cafe> items = new ArrayList<>();
 
@@ -24,16 +24,16 @@ public class CafeListRecyclerAdapter extends RecyclerView.Adapter<CafeListViewHo
     }
 
     @Override
-    public CafeListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CafeReservationListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.view_cafe_reservation_list, parent, false);
-        CafeListViewHolder holder = new CafeListViewHolder(view);
+        CafeReservationListViewHolder holder = new CafeReservationListViewHolder(view);
         holder.setOnCafeItemClickListener(this);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(CafeListViewHolder holder, int position) {
+    public void onBindViewHolder(CafeReservationListViewHolder holder, int position) {
         holder.setCafe(items.get(position));
     }
 
@@ -44,6 +44,7 @@ public class CafeListRecyclerAdapter extends RecyclerView.Adapter<CafeListViewHo
 
     public interface OnAdapterItemClickLIstener {
         public void onAdapterItemClick(View view, Cafe cafe, int position);
+        public void onAdapterButtonClick(View view, Cafe cafe, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -55,5 +56,10 @@ public class CafeListRecyclerAdapter extends RecyclerView.Adapter<CafeListViewHo
     @Override
     public void onCafeItemClick(View view, Cafe cafe, int position) {
         listener.onAdapterItemClick(view, cafe, position);
+    }
+
+    @Override
+    public void onCafeItemButtonClick(View view, Cafe cafe, int position) {
+        listener.onAdapterButtonClick(view, cafe, position);
     }
 }

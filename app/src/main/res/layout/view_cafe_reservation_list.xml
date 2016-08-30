@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Booking"
-        android:id="@+id/cafelist_resevation_btn"
+        android:id="@+id/btn_cafe_list_reservation"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
@@ -56,6 +56,6 @@
         android:text="distance"
         android:id="@+id/cafelist_distance_text"
         android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/cafelist_resevation_btn"
-        android:layout_toStartOf="@+id/cafelist_resevation_btn" />
+        android:layout_toLeftOf="@+id/btn_cafe_list_reservation"
+        android:layout_toStartOf="@+id/btn_cafe_list_reservation" />
 </RelativeLayout>

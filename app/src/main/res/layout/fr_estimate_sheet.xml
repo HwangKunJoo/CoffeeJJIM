@@ -170,7 +170,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="제출하기"
-        android:id="@+id/estimate_sheet_present_btn"
+        android:id="@+id/btn_estimate_sheet_present"
         android:textSize="@dimen/subject_text_size"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

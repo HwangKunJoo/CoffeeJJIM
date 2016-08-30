@@ -11,7 +11,7 @@ import com.coffeejjim.developers.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class CafeReservationActivity extends AppCompatActivity {
+public class CafeReservationListActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -22,7 +22,7 @@ public class CafeReservationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cafe_reservation);
+        setContentView(R.layout.activity_cafe_reservation_list);
         ButterKnife.bind(this);
         setCustomActionbar();
 
@@ -33,7 +33,7 @@ public class CafeReservationActivity extends AppCompatActivity {
                         .commit();
             }else // 입찰카페가 없으면 빈 화면 표시
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container, new CafeListEmptyFragment())
+                        .add(R.id.container, new CafeReservationListEmptyFragment())
                         .commit();
         }
     }
