@@ -68,7 +68,7 @@ public class CafeReservationActivity extends AppCompatActivity {
         if(id == android.R.id.home){
             finish();
         }else{
-            //되는지 안되는지 티가 안남 고칠 필요가 있음
+            //되는지 안되는지 티가 안남 고칠 필요가 있음, 새로고침
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, new CafeReservationListFragment())
                     .commit();

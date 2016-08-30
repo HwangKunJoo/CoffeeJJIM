@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Estimate"
+        android:id="@+id/bookinginfo_title_text"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginStart="82dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="date"
+        android:id="@+id/bookinginfo_date_text"
+        android:layout_below="@+id/bookinginfo_title_text"
+        android:layout_alignRight="@+id/bookinginfo_title_text"
+        android:layout_alignEnd="@+id/bookinginfo_title_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="time"
+        android:id="@+id/bookinginfo_time_textew7"
+        android:layout_below="@+id/bookinginfo_date_text"
+        android:layout_alignRight="@+id/bookinginfo_date_text"
+        android:layout_alignEnd="@+id/bookinginfo_date_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="person"
+        android:id="@+id/bookinginfo_person_text"
+        android:layout_below="@+id/bookinginfo_time_textew7"
+        android:layout_alignRight="@+id/bookinginfo_time_textew7"
+        android:layout_alignEnd="@+id/bookinginfo_time_textew7"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="endtime"
+        android:id="@+id/bookinginfo_endtime_text"
+        android:layout_below="@+id/bookinginfo_person_text"
+        android:layout_alignRight="@+id/bookinginfo_person_text"
+        android:layout_alignEnd="@+id/bookinginfo_person_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="2016.08.08"
+        android:id="@+id/bookinginfo_date1_text"
+        android:layout_alignTop="@+id/bookinginfo_date_text"
+        android:layout_toRightOf="@+id/bookinginfo_date_text"
+        android:layout_toEndOf="@+id/bookinginfo_date_text"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="13:00"
+        android:id="@+id/bookinginfo_time1_textew7"
+        android:layout_below="@+id/bookinginfo_date1_text"
+        android:layout_alignLeft="@+id/bookinginfo_date1_text"
+        android:layout_alignStart="@+id/bookinginfo_date1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="3"
+        android:id="@+id/bookinginfo_person1_text"
+        android:layout_below="@+id/bookinginfo_time1_textew7"
+        android:layout_alignLeft="@+id/bookinginfo_time1_textew7"
+        android:layout_alignStart="@+id/bookinginfo_time1_textew7"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="information"
+        android:id="@+id/bookinginfo_price_text"
+        android:layout_below="@+id/bookinginfo_endtime_text"
+        android:layout_alignRight="@+id/bookinginfo_endtime_text"
+        android:layout_alignEnd="@+id/bookinginfo_endtime_text"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="ID"
+        android:id="@+id/bookinginfo_id_text"
+        android:layout_below="@+id/bookinginfo_price_text"
+        android:layout_toLeftOf="@+id/bookinginfo_date1_text"
+        android:layout_toStartOf="@+id/bookinginfo_date1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name"
+        android:id="@+id/bookinginfo_name_text"
+        android:layout_below="@+id/bookinginfo_id_text"
+        android:layout_toLeftOf="@+id/bookinginfo_date1_text"
+        android:layout_toStartOf="@+id/bookinginfo_date1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="H.P"
+        android:id="@+id/bookinginfo_hp_text"
+        android:layout_below="@+id/bookinginfo_name_text"
+        android:layout_toLeftOf="@+id/bookinginfo_date1_text"
+        android:layout_toStartOf="@+id/bookinginfo_date1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="UserA"
+        android:id="@+id/bookinginfo_id1_text"
+        android:layout_alignTop="@+id/bookinginfo_id_text"
+        android:layout_toRightOf="@+id/bookinginfo_id_text"
+        android:layout_toEndOf="@+id/bookinginfo_id_text"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="aaaa"
+        android:id="@+id/bookinginfo_name1_text"
+        android:layout_below="@+id/bookinginfo_id1_text"
+        android:layout_alignLeft="@+id/bookinginfo_id1_text"
+        android:layout_alignStart="@+id/bookinginfo_id1_text"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="010-1234-1234"
+        android:id="@+id/bookinginfo_hp1_text"
+        android:layout_below="@+id/bookinginfo_name1_text"
+        android:layout_alignLeft="@+id/bookinginfo_name1_text"
+        android:layout_alignStart="@+id/bookinginfo_name1_text"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/bookinginfo_option_image"
+        android:layout_alignTop="@+id/bookinginfo_endtime_text"
+        android:layout_alignLeft="@+id/bookinginfo_person1_text"
+        android:layout_alignStart="@+id/bookinginfo_person1_text"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/bookinginfo_option1_image"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:layout_alignTop="@+id/bookinginfo_option_image"
+        android:layout_toRightOf="@+id/bookinginfo_option_image"
+        android:layout_toEndOf="@+id/bookinginfo_option_image" />
+
+</RelativeLayout>

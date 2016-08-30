@@ -44,6 +44,11 @@ public class DislikeFragment extends Fragment {
         mAdapter.setOnAdapterItemClickListener(new LikeListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
+
+            }
+
+            @Override
+            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
                 mAdapter.delete(cafe);
             }
         });

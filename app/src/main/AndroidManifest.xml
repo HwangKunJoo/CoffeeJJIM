@@ -50,7 +50,8 @@
         <activity
             android:name=".cafedetail.CafeDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".extrafunctions.ExtraFunctionsActivity" />
+        <activity android:name=".extrafunctions.ExtraFunctionsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".extrafunctions.likelist.LikeListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -61,8 +62,10 @@
         <activity
             android:name=".extrafunctions.auctionlist.AuctionListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".extrafunctions.notification.NotificationActivity" />
-        <activity android:name=".extrafunctions.settings.SettingsActivity" />
+        <activity android:name=".extrafunctions.notification.NotificationActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".extrafunctions.settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".provider.ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />

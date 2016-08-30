@@ -1,108 +1,60 @@
 package com.coffeejjim.developers.extrafunctions;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.extrafunctions.auctionlist.AuctionListActivity;
-import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
-import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;
-import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
-import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
-import com.coffeejjim.developers.login.LoginActivity;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ExtraFunctionsActivity extends AppCompatActivity {
 
-    AlertDialog dialog;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    public static final int CUSTOMER = 10;
+    public static final int PROVIDER = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_extra_functions);
-        ImageButton acutionlistBtn = (ImageButton) findViewById(R.id.extra_functions_estimate_btn);
-        acutionlistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent AuctionListIntent = new Intent(ExtraFunctionsActivity.this, AuctionListActivity.class);
-                startActivity(AuctionListIntent);
-            }
-        });
+        ButterKnife.bind(this);
+        setCustomActionbar();
 
-        ImageButton likelistBtn = (ImageButton) findViewById(R.id.extra_functions_likelist_btn);
-        likelistBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent LikeListIntent = new Intent(ExtraFunctionsActivity.this, LikeListActivity.class);
-                startActivity(LikeListIntent);
+        if (savedInstanceState == null) {
+            Intent intent = getIntent();
+            int user = intent.getIntExtra("user", CUSTOMER);
+            if(user == CUSTOMER ) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, new CustomerExtraFunctionsFragment())
+                        .commit();
+            } else if(user == PROVIDER){
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.container, new ProviderExtraFunctionsFragment())
+                        .commit();
             }
-        });
-
-        ImageButton inquiryBtn = (ImageButton) findViewById(R.id.extra_functions_inguiry_btn);
-        inquiryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent InquiryIntent = new Intent(ExtraFunctionsActivity.this, InquiryActivity.class);
-                startActivity(InquiryIntent);
-            }
-        });
-
-        ImageButton notificationBtn = (ImageButton) findViewById(R.id.extra_functions_notification_btn);
-        notificationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent NotificationIntent = new Intent(ExtraFunctionsActivity.this, NotificationActivity.class);
-                startActivity(NotificationIntent);
-            }
-        });
-
-        ImageButton settingsBtn = (ImageButton) findViewById(R.id.extra_functions_Settings_btn);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent SettingsIntent = new Intent(ExtraFunctionsActivity.this, SettingsActivity.class);
-                startActivity(SettingsIntent);
-            }
-        });
-
-        ImageButton logoutBtn = (ImageButton) findViewById(R.id.extra_functions_logout_btn);
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onAlertDialog();
-            }
-        });
+        }
     }
 
-    private void onAlertDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(android.R.drawable.ic_dialog_alert);
-        builder.setTitle("Coffee JJIM");
-        builder.setMessage("로그아웃 되었습니다.");
-        builder.setCancelable(true);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Intent loginIntent = new Intent(ExtraFunctionsActivity.this, LoginActivity.class);
-                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(loginIntent);
-                finish();
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(ExtraFunctionsActivity.this,"취소 되었습니다.", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        builder.setCancelable(false);
-        dialog = builder.create();
-        dialog.show();
+    private void setCustomActionbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

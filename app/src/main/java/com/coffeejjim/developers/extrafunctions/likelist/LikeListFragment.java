@@ -48,6 +48,11 @@ public class LikeListFragment extends Fragment {
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
                 moveCafeDetailActivity();
             }
+
+            @Override
+            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
+
+            }
         });
 
         likeListRecyclerView.setAdapter(mAdapter);

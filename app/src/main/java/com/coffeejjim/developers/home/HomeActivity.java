@@ -30,6 +30,8 @@ public class HomeActivity extends AppCompatActivity {
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
 
+    public static final int CUSTOMER = 10;
+
 
 //    private static final int SAMPLE_ID = 34536;
 //    private int badgeCount = 10;
@@ -136,6 +138,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void moveExtraFunctionsActivity(){
         Intent intent = new Intent(this, ExtraFunctionsActivity.class);
+        intent.putExtra("user", CUSTOMER);
         startActivity(intent);
     }
 

@@ -64,6 +64,7 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
 
     public interface OnAdapterItemClickLIstener {
         public void onAdapterItemClick(View view, Cafe cafe, int position);
+        public void onAdapterButtonClick(View view, Cafe cafe, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -75,6 +76,12 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
     public void onLikeListItemClick(View view, Cafe cafe, int position) {
         listener.onAdapterItemClick(view, cafe, position);
     }
+
+    @Override
+    public void onDislikeButtonClick(View view, Cafe cafe, int position) {
+        listener.onAdapterButtonClick(view, cafe, position);
+    }
+
 
 //    @OnClick(R.id.btn_dislike)
 //    public void DeleteItems(){

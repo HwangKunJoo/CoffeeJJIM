@@ -74,7 +74,6 @@ public class CafeReservationListFragment extends Fragment {
     public void moveCafeDetailActivity() {
         Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
         startActivity(intent);
-        getActivity().finish();
     }
 
 

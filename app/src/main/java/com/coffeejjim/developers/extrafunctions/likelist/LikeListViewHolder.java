@@ -31,6 +31,7 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
 
     public LikeListViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,11 +40,19 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
+        btn_dislike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onDislikeButtonClick(view, cafe, getAdapterPosition());
+                }
+            }
+        });
     }
 
     public interface OnLikeListItemClickListener {
         public void onLikeListItemClick(View view, Cafe cafe, int position);
+        public void onDislikeButtonClick(View view, Cafe cafe, int position);
     }
 
     OnLikeListItemClickListener listener;

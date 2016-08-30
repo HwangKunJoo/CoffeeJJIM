@@ -20,6 +20,8 @@ import butterknife.OnClick;
 
 public class ProviderHomeFragment extends Fragment {
 
+    public static final int PROVIDER = 20;
+
     public ProviderHomeFragment() {
         // Required empty public constructor
     }
@@ -112,6 +114,7 @@ public class ProviderHomeFragment extends Fragment {
 
     public void moveExtraFunctionsActivity(){
         Intent intent = new Intent(getActivity(), ExtraFunctionsActivity.class);
+        intent.putExtra("user",PROVIDER);
         startActivity(intent);
     }
 

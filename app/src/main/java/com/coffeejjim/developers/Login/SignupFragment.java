@@ -37,7 +37,7 @@ public class SignupFragment extends Fragment {
 
     @OnClick(R.id.signup_join_button)
     public void onSingupComlete() {
-        ((LoginActivity)getActivity()).moveHomeActivity();
+        ((LoginActivity)getActivity()).moveProviderHomeActivity();
     }
 
     private void setCustomActionbar() {
