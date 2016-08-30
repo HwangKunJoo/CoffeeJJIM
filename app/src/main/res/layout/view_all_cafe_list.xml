@@ -34,7 +34,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:id="@+id/allcafelist_options_image"
+        android:id="@+id/all_cafe_list_options_wifi"
         android:layout_below="@+id/allcafelist_address_text"
         android:layout_toRightOf="@+id/allcafelist_cafe_main_image"
         android:layout_toEndOf="@+id/allcafelist_cafe_main_image"
@@ -46,7 +46,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="distance"
         android:id="@+id/allcafelist_distance_text"
-        android:layout_alignBottom="@+id/allcafelist_options_image"
+        android:layout_alignBottom="@+id/all_cafe_list_options_wifi"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

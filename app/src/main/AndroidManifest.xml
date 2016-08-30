@@ -79,6 +79,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ProviderInfoEditActivity" />
         <activity android:name=".SettingsProviderActivity"></activity>
+        <activity android:name=".extrafunctions.inquiry.InquiryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

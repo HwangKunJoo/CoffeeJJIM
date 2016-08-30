@@ -24,7 +24,7 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
     TextView distanceView;
     @BindView(R.id.allcafelist_cafe_main_image)
     ImageView cafeMainImageView;
-    @BindView(R.id.allcafelist_options_image)
+    @BindView(R.id.all_cafe_list_options_wifi)
     ImageView cafeOptionsImageView;
 
 
