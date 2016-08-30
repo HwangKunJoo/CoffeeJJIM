@@ -60,6 +60,7 @@ public class AuctionProcessFragment extends Fragment {
     public void initData() {
         for (int i = 0; i < 10; i++) {
             Estimate e = new Estimate();
+            e.setUserNickname("User " + i );
             e.setCafeName("Cafe No. " + i);
             e.setAddress("경기도 성남시 분당구 " + i);
             e.setPeople(i);

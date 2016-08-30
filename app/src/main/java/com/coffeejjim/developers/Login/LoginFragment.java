@@ -37,7 +37,12 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.login_provider_text)
     public void onSignupLayoutVisible() {
-        visibleLayout.setVisibility(View.VISIBLE);
+        if(visibleLayout.getVisibility() == View.GONE){
+            visibleLayout.setVisibility(View.VISIBLE);
+        } else if (visibleLayout.getVisibility() == View.VISIBLE){
+            visibleLayout.setVisibility(View.GONE);
+        }
+
     }
 
     @OnClick(R.id.login_provider_btn)

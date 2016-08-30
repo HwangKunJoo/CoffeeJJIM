@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
 
-public class DialogSingupIdDuplicationFragment extends Fragment {
+public class SignupIdDialogFragment extends Fragment {
 
-    public DialogSingupIdDuplicationFragment() {
+    public SignupIdDialogFragment() {
         // Required empty public constructor
     }
 
@@ -18,6 +18,6 @@ public class DialogSingupIdDuplicationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fr_dialog_singup_id_duplication, container, false);
+        return inflater.inflate(R.layout.fr_signup_id_dialog, container, false);
     }
 }
