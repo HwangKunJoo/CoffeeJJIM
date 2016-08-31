@@ -62,7 +62,8 @@
             android:name=".extrafunctions.auctionlist.AuctionListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".extrafunctions.notification.NotificationActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true"/>
         <activity android:name=".extrafunctions.settings.SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
