@@ -151,5 +151,13 @@
     <dimen name="fr_signup_image_btn_Size">20dp</dimen>
     <dimen name="fr_signup_image_btn_interval_margin">9dp</dimen>
 
+    <!--fragment_booking_info.xml-->
+    <dimen name="fr_booking_info_image_Size">25dp</dimen>
+    <dimen name="fr_booking_info_image_marginLeft">70dp</dimen>
+    <dimen name="fr_booking_info_image_marginTop">30dp</dimen>
+    <dimen name="fr_booking_info_text_view_Size">60dp</dimen>
+    <dimen name="fr_booking_info_text_view_interval_marginTop">15dp</dimen>
+    <dimen name="fr_booking_info_option_image_Size">30dp</dimen>
+
 
 </resources>
