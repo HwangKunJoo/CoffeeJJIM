@@ -159,5 +159,19 @@
     <dimen name="fr_booking_info_text_view_interval_marginTop">15dp</dimen>
     <dimen name="fr_booking_info_option_image_Size">30dp</dimen>
 
+    <!--fragment_estimate_sheet_dialog.xml-->
+    <dimen name="fr_estimate_sheet_dialog_plain_text_marginTop">20dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_plain_text_Size">280dp</dimen>
+
+    <dimen name="fr_estimate_sheet_dialog_first_text_view_margintTop">20dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_first_text_view_margintLeft">40dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_first_text_interval_margintTop">10dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_first_text_interval_margintLeft">20dp</dimen>
+
+    <dimen name="fr_estimate_sheet_dialog_btn_Size">140dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_btn_marginTop">20dp</dimen>
+
+    <dimen name="fr_estimate_sheet_dialog_option_image_Size">20dp</dimen>
+    <dimen name="fr_estimate_sheet_dialog_option_image_marginLeft">5dp</dimen>
 
 </resources>
