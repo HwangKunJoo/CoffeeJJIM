@@ -11,8 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="@dimen/estimate_sheet_set_text_view_marginTop"
-        android:layout_marginLeft="@dimen/estimate_sheet_set_text_view_marginLeft"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_set_text_view_marginTop"
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_set_text_view_marginLeft"
         android:text="장소"
         android:textSize="@dimen/subject_text_size"/>
 
@@ -24,7 +24,7 @@
         android:layout_below="@+id/estimate_sheet_location_text"
         android:layout_alignLeft="@+id/estimate_sheet_location_text"
         android:layout_alignStart="@+id/estimate_sheet_location_text"
-        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_text_view_marginTop"
         android:textSize="@dimen/subject_text_size"/>
 
     <TextView
@@ -35,7 +35,7 @@
         android:layout_below="@+id/estimate_sheet_date_text"
         android:layout_alignLeft="@+id/estimate_sheet_date_text"
         android:layout_alignStart="@+id/estimate_sheet_date_text"
-        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_text_view_marginTop"
         android:textSize="@dimen/subject_text_size"/>
 
     <TextView
@@ -46,7 +46,7 @@
         android:layout_below="@+id/estimate_sheet_time_text"
         android:layout_alignLeft="@+id/estimate_sheet_time_text"
         android:layout_alignStart="@+id/estimate_sheet_time_text"
-        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_text_view_marginTop"
         android:textSize="@dimen/subject_text_size"/>
 
     <TextView
@@ -57,7 +57,7 @@
         android:layout_below="@+id/estimate_sheet_person_text"
         android:layout_alignLeft="@+id/estimate_sheet_person_text"
         android:layout_alignStart="@+id/estimate_sheet_person_text"
-        android:layout_marginTop="@dimen/estimate_sheet_text_view_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_text_view_marginTop"
         android:textSize="@dimen/subject_text_size"/>
 
     <TextView
@@ -77,9 +77,9 @@
         android:id="@+id/estimate_sheet_location_edit"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/estimate_sheet_location_text"
-        android:layout_marginTop="@dimen/estimate_sheet_edit_text_marginTop"
-        android:layout_marginLeft="@dimen/estimate_sheet_edit_text_marginLeft"
-        android:layout_marginRight="@dimen/estimate_sheet_edit_text_marginRight"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_edit_text_marginTop"
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_edit_text_marginLeft"
+        android:layout_marginRight="@dimen/fr_estimate_sheet_edit_text_marginRight"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -90,7 +90,7 @@
         android:layout_below="@+id/estimate_sheet_location_edit"
         android:layout_alignLeft="@+id/estimate_sheet_location_edit"
         android:layout_alignStart="@+id/estimate_sheet_location_edit"
-        android:layout_marginTop="@dimen/estimate_sheet_date_edit_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_date_edit_marginTop"
         android:layout_alignRight="@+id/estimate_sheet_location_edit"
         android:layout_alignEnd="@+id/estimate_sheet_location_edit" />
 
@@ -102,14 +102,14 @@
         android:layout_below="@+id/estimate_sheet_time_spinner"
         android:layout_alignLeft="@+id/estimate_sheet_time_spinner"
         android:layout_alignStart="@+id/estimate_sheet_time_spinner"
-        android:layout_marginTop="@dimen/estimate_sheet_person_edit_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_person_edit_marginTop"
         android:gravity="right"
         android:layout_alignRight="@+id/estimate_sheet_time_spinner"
         android:layout_alignEnd="@+id/estimate_sheet_time_spinner" />
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option1_btn"
         android:src="@drawable/wifi"
         android:background="@color/coffeejjim_invisible"
@@ -117,11 +117,11 @@
         android:layout_below="@+id/estimate_sheet_selecting_text"
         android:layout_alignLeft="@+id/estimate_sheet_selecting_text"
         android:layout_alignStart="@+id/estimate_sheet_selecting_text"
-        android:layout_marginTop="@dimen/estimate_sheet_option_image_button_marginTop"/>
+        android:layout_marginTop="@dimen/fr_estimate_sheet_option_image_button_marginTop"/>
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option2_btn"
         android:src="@drawable/plag"
         android:layout_alignTop="@+id/estimate_sheet_option1_btn"
@@ -129,11 +129,11 @@
         android:layout_toEndOf="@+id/estimate_sheet_option1_btn"
         android:background="@color/coffeejjim_invisible"
         android:scaleType="fitCenter"
-        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_option_image_button_marginLeft"/>
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option3_btn"
         android:src="@drawable/parking"
         android:layout_alignTop="@+id/estimate_sheet_option2_btn"
@@ -141,11 +141,11 @@
         android:layout_toEndOf="@+id/estimate_sheet_option2_btn"
         android:background="@color/coffeejjim_invisible"
         android:scaleType="fitCenter"
-        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_option_image_button_marginLeft"/>
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_option_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_option_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option4_btn"
         android:src="@drawable/workingtime"
         android:scaleType="fitCenter"
@@ -153,7 +153,7 @@
         android:layout_alignTop="@+id/estimate_sheet_option3_btn"
         android:layout_toRightOf="@+id/estimate_sheet_option3_btn"
         android:layout_toEndOf="@+id/estimate_sheet_option3_btn"
-        android:layout_marginLeft="@dimen/estimate_sheet_option_image_button_marginLeft"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_option_image_button_marginLeft"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
         android:textSize="@dimen/subject_text_size"
         android:layout_alignLeft="@+id/estimate_sheet_option_text"
         android:layout_alignStart="@+id/estimate_sheet_option_text"
-        android:layout_marginTop="@dimen/estimate_sheet_endtime_text_marginTop"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_endtime_text_marginTop"
         android:layout_below="@+id/estimate_sheet_option2_btn" />
 
     <Button
@@ -178,8 +178,8 @@
         android:textColor="@color/coffeejjim_white" />
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
         android:id="@+id/estimate_sheet_location_search"
         android:src="@drawable/search"
         android:scaleType="fitCenter"
@@ -187,11 +187,11 @@
         android:layout_alignTop="@+id/estimate_sheet_location_map"
         android:layout_toLeftOf="@+id/estimate_sheet_location_map"
         android:layout_toStartOf="@+id/estimate_sheet_location_map"
-        android:layout_marginRight="@dimen/estimate_sheet_location_search"/>
+        android:layout_marginRight="@dimen/fr_estimate_sheet_location_search"/>
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
         android:id="@+id/estimate_sheet_location_map"
         android:src="@drawable/maplocation"
         android:background="@color/coffeejjim_invisible"
@@ -201,8 +201,8 @@
         android:layout_alignEnd="@+id/estimate_sheet_location_edit" />
 
     <ImageButton
-        android:layout_width="@dimen/estimate_sheet_small_image_button_size"
-        android:layout_height="@dimen/estimate_sheet_small_image_button_size"
+        android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
+        android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
         android:id="@+id/estimate_sheet_location_calendar"
         android:src="@drawable/edit"
         android:layout_above="@+id/estimate_sheet_time_text"

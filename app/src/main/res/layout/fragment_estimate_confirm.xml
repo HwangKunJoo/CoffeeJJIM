@@ -13,8 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="@dimen/activity_estimate_sheet_confirm_text_view_marginLeft"
-        android:layout_marginTop="@dimen/activity_estimate_sheet_confirm_text_view_marginTop"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_confirm_text_view_marginLeft"
+        android:layout_marginTop="@dimen/fr_estimate_sheet_confirm_text_view_marginTop"/>
 
     <TextView
         android:layout_width="wrap_content"

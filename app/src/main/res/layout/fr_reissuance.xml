@@ -24,42 +24,49 @@
             android:gravity="center"
             android:text="아이디/비밀번호 찾기"
             android:textColor="@color/coffeejjim_brown"
-            android:textSize="20dp" />
+            android:textSize="@dimen/title_text_size" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/fr_reissuance_text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="@dimen/fr_reissuance_text_marginTop"
         android:gravity="center"
         android:text="등록하신 이메일 주소를 입력해 주시면"
         android:textColor="@color/colorAccent"
-        android:textSize="13dp" />
+        android:textSize="@dimen/subject_text_size"
+        android:layout_marginLeft="@dimen/fr_reissuance_default_margin"
+        android:layout_marginRight="@dimen/fr_reissuance_default_margin" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/fr_reissuance_text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/fr_reissuance_text1"
         android:gravity="center"
         android:text="해당 주소로 아이디와 임시 비밀번호를 발송하여 드립니다."
         android:textColor="@color/colorAccent"
-        android:textSize="13dp" />
+        android:textSize="@dimen/subject_text_size"
+        android:layout_marginLeft="@dimen/fr_reissuance_default_margin"
+        android:layout_marginRight="@dimen/fr_reissuance_default_margin" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/fr_reissuance_email_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:hint="이메일 주소 입력"
-        android:textSize="18dp" />
+        android:textSize="@dimen/subject_text_size"
+        android:layout_below="@+id/fr_reissuance_text2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fr_reissuance_text_marginTop"
+        android:layout_marginLeft="@dimen/fr_reissuance_default_margin"
+        android:layout_marginRight="@dimen/fr_reissuance_default_margin" />
 
     <Button
         android:id="@+id/btn_back_login_fragment"

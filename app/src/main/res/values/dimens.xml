@@ -9,34 +9,125 @@
     <dimen name="small_text_size">13dp</dimen>
 
     <!--fr_estimate_sheet.xml-->
-    <dimen name="estimate_sheet_set_text_view_marginTop">60dp</dimen>
-    <dimen name="estimate_sheet_set_text_view_marginLeft">50dp</dimen>
-    <dimen name="estimate_sheet_text_view_marginTop">22dp</dimen>
+    <dimen name="fr_estimate_sheet_set_text_view_marginTop">60dp</dimen>
+    <dimen name="fr_estimate_sheet_set_text_view_marginLeft">50dp</dimen>
+    <dimen name="fr_estimate_sheet_text_view_marginTop">22dp</dimen>
 
-    <dimen name="estimate_sheet_edit_text_marginTop">48dp</dimen>
-    <dimen name="estimate_sheet_edit_text_marginLeft">20dp</dimen>
-    <dimen name="estimate_sheet_edit_text_marginRight">50dp</dimen>
+    <dimen name="fr_estimate_sheet_edit_text_marginTop">48dp</dimen>
+    <dimen name="fr_estimate_sheet_edit_text_marginLeft">20dp</dimen>
+    <dimen name="fr_estimate_sheet_edit_text_marginRight">50dp</dimen>
 
-    <dimen name="estimate_sheet_date_edit_marginTop">3dp</dimen>
-    <dimen name="estimate_sheet_person_edit_marginTop">10dp</dimen>
-    <dimen name="estimate_sheet_endtime_text_marginTop">50dp</dimen>
+    <dimen name="fr_estimate_sheet_date_edit_marginTop">3dp</dimen>
+    <dimen name="fr_estimate_sheet_person_edit_marginTop">10dp</dimen>
+    <dimen name="fr_estimate_sheet_endtime_text_marginTop">50dp</dimen>
 
-    <dimen name="estimate_sheet_option_image_button_size">50dp</dimen>
-    <dimen name="estimate_sheet_option_image_button_marginTop">10dp</dimen>
-    <dimen name="estimate_sheet_option_image_button_marginLeft">5dp</dimen>
-    <dimen name="estimate_sheet_small_image_button_size">20dp</dimen>
+    <dimen name="fr_estimate_sheet_option_image_button_size">50dp</dimen>
+    <dimen name="fr_estimate_sheet_option_image_button_marginTop">10dp</dimen>
+    <dimen name="fr_estimate_sheet_option_image_button_marginLeft">5dp</dimen>
+    <dimen name="fr_estimate_sheet_small_image_button_size">20dp</dimen>
 
     <dimen name="small_text_size_marginLeft">10dp</dimen>
-    <dimen name="estimate_sheet_location_search">5dp</dimen>
+    <dimen name="fr_estimate_sheet_location_search">5dp</dimen>
 
 
     <!--activity_estimate_sheet_confirm.xml-->
-    <dimen name="activity_estimate_sheet_confirm_text_view_marginTop">80dp</dimen>
-    <dimen name="activity_estimate_sheet_confirm_text_view_marginLeft">100dp</dimen>
+    <dimen name="fr_estimate_sheet_confirm_text_view_marginTop">80dp</dimen>
+    <dimen name="fr_estimate_sheet_confirm_text_view_marginLeft">120dp</dimen>
     <dimen name="text_view_marginTop">20dp</dimen>
     <dimen name="text_view_marginLeft">20dp</dimen>
     <dimen name="bookinginfo_price_text_marginTop">50dp</dimen>
     <dimen name="estimatesheetconfirm_price_edit_size">200dp</dimen>
+
+
+    <!--fr_provider_info_edit.xml-->
+    <dimen name="fr_provider_info_edit_marginTop">70dp</dimen>
+    <dimen name="fr_provider_info_edit_marginLeft">10dp</dimen>
+    <dimen name="fr_provider_info_text_view_marginTop">30dp</dimen>
+    <dimen name="fr_provider_info_text_view_Size">110dp</dimen>
+    <dimen name="fr_provider_info_edit_text_Size">150dp</dimen>
+    <dimen name="fr_provider_info_edit_text_MarginTop">58dp</dimen>
+    <dimen name="fr_provider_info_edit_text_MarginRight">35dp</dimen>
+    <dimen name="fr_provider_info_edit_text_interval_MarginTop">10dp</dimen>
+
+    <dimen name="fr_provider_info_edit_sellphone_spinner_Size">50dp</dimen>
+    <dimen name="fr_provider_info_edit_sellphone_bar_MarginLeft">5dp</dimen>
+    <dimen name="fr_provider_info_edit_sellphone_edit_size">75dp</dimen>
+
+    <dimen name="fr_provider_info_edit_email_edit_Size">100dp</dimen>
+    <dimen name="fr_provider_info_edit_email_text_MarginLeft">2dp</dimen>
+    <dimen name="fr_provider_info_edit_email_spinner_Size">80dp</dimen>
+
+    <dimen name="fr_provider_info_edit_sellphone_edit_Size">40dp</dimen>
+
+    <!--fr_cafe_detail.xml-->
+    <dimen name="fr_cafe_detail_cafe_title_marginTop">10dp</dimen>
+
+    <dimen name="fr_cafe_detail_view_pager_marginTop">16dp</dimen>
+    <dimen name="fr_cafe_detail_view_pager_Size">200dp</dimen>
+
+    <dimen name="fr_cafe_detail_preview_image_layout_Size">50dp</dimen>
+    <dimen name="fr_cafe_detail_preview_image_layout_marginTop">10dp</dimen>
+    <dimen name="fr_cafe_detail_preview_image_layout_marginLeftRight">55dp</dimen>
+    <dimen name="fr_cafe_detail_preview_image_Size">40dp</dimen>
+    <dimen name="fr_cafe_detail_preview_image_marginLR">5dp</dimen>
+
+    <dimen name="fr_cafe_detail_relativeLayout_marginTop">10dp</dimen>
+    <dimen name="fr_cafe_detail_text_view_Size">80dp</dimen>
+    <dimen name="fr_cafe_detail_text_view_marginTop">20dp</dimen>
+    <dimen name="fr_cafe_detail_text_view_marginLeft">45dp</dimen>
+    <dimen name="fr_cafe_detail_text_view_interval_marginTop">15dp</dimen>
+
+    <dimen name="cafe_detail_dial_marginTop">20dp</dimen>
+
+    <dimen name="cafe_detail_options_image_Size">35dp</dimen>
+    <dimen name="cafe_detail_options_image_marginLeft">5dp</dimen>
+
+    <dimen name="maplocation_telephone_image_button_Size">20dp</dimen>
+    <dimen name="telephone_image_button_marginLeft">10dp</dimen>
+    
+    
+    <!--fr_provider_home.xml,fr_provider_home_edit.xml-->
+    <dimen name="fr_provider_home_text_view_title_marginTop">25dp</dimen>
+    <dimen name="fr_provider_home_edit_edit_text_title_marginTop">16dp</dimen>
+    
+    <dimen name="cafe_main_image_Size">150dp</dimen>
+    <dimen name="preview_image_Size">50dp</dimen>
+    <dimen name="preview_image_marginTop">15dp</dimen>
+    <dimen name="preview_first_image_maginLeft">65dp</dimen>
+    <dimen name="preview_image_interval_marginLeft">10dp</dimen>
+    
+    <dimen name="text_view_Size">80dp</dimen>
+    <dimen name="text_view_first_marginTop">30dp</dimen>
+    <dimen name="text_view_first_marginLeft">35dp</dimen>
+    <dimen name="text_view_interval_marginTop">15dp</dimen>
+    <dimen name="option_text_marginTop">40dp</dimen>
+    <dimen name="fr_provider_home_edit_option_text_marginTop">47dp</dimen>
+
+    <dimen name="text_view_contents_marginTop">34dp</dimen>
+    <dimen name="text_view_contents_marginLeft">20dp</dimen>
+    <dimen name="text_view_time_marginTop">15dp</dimen>
+    <dimen name="fr_provider_home_edit_text_view_contents_marginTop">23dp</dimen>
+    <dimen name="fr_provider_home_edit_text_view_contents_marginLeft">20dp</dimen>
+    <dimen name="fr_provider_home_edit_spinner_Size">70dp</dimen>
+
+    <dimen name="option_image_view_Size">30dp</dimen>
+
+    <!--fr_reissuance.xml-->
+    <dimen name="fr_reissuance_text_marginTop">100dp</dimen>
+    <dimen name="fr_reissuance_default_margin">16dp</dimen>
+
+    <!--fr_signup.xml-->
+    <dimen name="fr_signup_text_view_Size">120dp</dimen>
+    <dimen name="fr_signup_default_marginRL">16dp</dimen>
+    <dimen name="fr_signup_first_text_view_marginTop">10dp</dimen>
+    <dimen name="fr_signup_first_text_view_interval_marginTop">21dp</dimen>
+    <dimen name="fr_signup_edit_text_Size">150dp</dimen>
+
+    <dimen name="fr_signup_second_text_view_maginTop">20dp</dimen>
+    <dimen name="fr_signup_second_edit_text_maginTop">35dp</dimen>
+
+    <dimen name="fr_signup_image_btn_Size">20dp</dimen>
+    <dimen name="fr_signup_image_btn_interval_margin">9dp</dimen>
 
 
 </resources>
