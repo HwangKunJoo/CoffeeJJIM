@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "152534243695",
+    "project_id": "coffeejjim"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152534243695:android:a15298fcc75f04ad",
+        "android_client_info": {
+          "package_name": "com.coffeejjim.developers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbG-I21kQMy96tb6PhtgC_wJpReaqRETs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
