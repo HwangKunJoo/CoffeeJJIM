@@ -7,6 +7,7 @@
     <dimen name="title_text_size">20dp</dimen>
     <dimen name="subject_text_size">18dp</dimen>
     <dimen name="small_text_size">13dp</dimen>
+    <dimen name="layout_side_margin">16dp</dimen>
 
     <dimen name="text_size_header_large">36sp</dimen>
     <dimen name="text_size_header">24sp</dimen>
@@ -140,15 +141,15 @@
     <dimen name="fr_reissuance_default_margin">16dp</dimen>
 
     <!--fr_signup.xml-->
-    <dimen name="fr_signup_text_view_Size">120dp</dimen>
+    <dimen name="fr_signup_text_view_textSize">18dp</dimen>
+    <dimen name="fr_signup_text_view_Size">110dp</dimen>
+    <dimen name="fr_signup_text_view_marginTop">15dp</dimen>
+    <dimen name="fr_signup_tect_view_marginLeft">20dp</dimen>
+    <dimen name="fr_signup_view_marginRight">20dp</dimen>
+
+    <dimen name="fr_signup_edit_text_Size1_">90dp</dimen>
+    <dimen name="fr_signup_edit_text_padding">6dp</dimen>
     <dimen name="fr_signup_default_marginRL">16dp</dimen>
-    <dimen name="fr_signup_first_text_view_marginTop">10dp</dimen>
-    <dimen name="fr_signup_first_text_view_interval_marginTop">21dp</dimen>
-    <dimen name="fr_signup_edit_text_Size">150dp</dimen>
-
-    <dimen name="fr_signup_second_text_view_maginTop">20dp</dimen>
-    <dimen name="fr_signup_second_edit_text_maginTop">35dp</dimen>
-
     <dimen name="fr_signup_image_btn_Size">20dp</dimen>
     <dimen name="fr_signup_image_btn_interval_margin">9dp</dimen>
 
@@ -194,7 +195,7 @@
     <dimen name="user_visit_count_description_visit_time_text_margin">20dp</dimen>
     <dimen name="user_visit_count_description_price_text">15dp</dimen>
 
-    <!--view_all_cafe_list.xml-->
+    <!--view_all_cafe_list.xml, view_like_list.xml-->
     <dimen name="view_all_cafe_list_side_margin">16dp</dimen>
     <dimen name="view_all_cafe_list_image_Size">80dp</dimen>
     <dimen name="view_all_cafe_list_image_marginTop">10dp</dimen>
@@ -224,5 +225,28 @@
     <dimen name="view_auction_process_small_text_view_marginLeft">5dp</dimen>
     <dimen name="btn_estimate_sheet_confirm_button_raw_Size">40dp</dimen>
     <dimen name="btn_estimate_sheet_confirm_button_column_Size">47dp</dimen>
+
+    <!--view_cafe_reservation_list.xml-->
+    <dimen name="view_cafe_reservation_list_text_view_marginLeft">16dp</dimen>
+    <dimen name="view_cafe_reservation_list_view_marginTop">5dp</dimen>
+
+    <dimen name="cafelist_distance_text_margin">10dp</dimen>
+    <dimen name="cafelist_price_text_marginTop">15dp</dimen>
+    <dimen name="btn_cafe_list_reservation_raw_Size">60dp</dimen>
+    <dimen name="btn_cafe_list_reservation_column_Size">100dp</dimen>
+
+    <!--view_user_management.xml-->
+    <dimen name="view_user_management_nickname_margin">10dp</dimen>
+    <dimen name="view_user_management_visit_count_margin">20dp</dimen>
+    <dimen name="view_user_management_like_margin">20dp</dimen>
+
+    <dimen name="view_btn_user_management_detail_info_margin">20dp</dimen>
+    <dimen name="view_btn_user_management_visit_count_info_margin">15dp</dimen>
+
+    view_user_visit_count.xml
+    <dimen name="view_user_visit_count_description_visit_date_margin">20dp</dimen>
+    <dimen name="view_user_visit_count_description_visit_time_margin">20dp</dimen>
+    <dimen name="view_user_visit_count_description_people_margin">30dp</dimen>
+    <dimen name="view_user_visit_count_description_price_margin">15dp</dimen>
 
 </resources>

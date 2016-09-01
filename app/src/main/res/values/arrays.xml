@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailArray">
+        <item>[email 선택]</item>
+        <item>naver.com</item>
+        <item>gmail.com</item>
+        <item>daum.com</item>
+        <item>hotmail.com</item>
+    </string-array>
+</resources>

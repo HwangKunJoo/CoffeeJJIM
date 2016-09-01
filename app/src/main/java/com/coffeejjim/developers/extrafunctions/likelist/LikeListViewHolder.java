@@ -22,7 +22,7 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
     TextView addressView;
     @BindView(R.id.like_list_cafe_image)
     ImageView cafeMainImageView;
-    @BindView(R.id.like_list_options_image)
+    @BindView(R.id.like_list_option_wifi)
     ImageView cafeOptionsImageView;
     @BindView(R.id.btn_dislike)
     ImageButton btn_dislike;
