@@ -21,7 +21,7 @@
         android:src="@drawable/ahn"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/fr_cafe_detail_view_pager_marginTop"/>
+        android:layout_marginTop="@dimen/cafe_main_image_marginTop"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/provider_home_edit_preview_first_image"
