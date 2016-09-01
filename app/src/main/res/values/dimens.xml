@@ -113,13 +113,13 @@
     <dimen name="fr_provider_home_edit_edit_text_title_marginTop">16dp</dimen>
     
     <dimen name="cafe_main_image_Size">150dp</dimen>
+    <dimen name="cafe_main_image_marginTop">70dp</dimen>
     <dimen name="preview_image_Size">50dp</dimen>
     <dimen name="preview_image_marginTop">15dp</dimen>
     <dimen name="preview_first_image_maginLeft">65dp</dimen>
     <dimen name="preview_image_interval_marginLeft">10dp</dimen>
     
     <dimen name="text_view_Size">80dp</dimen>
-    <dimen name="cafe_main_image_marginTop">70dp</dimen>
     <dimen name="text_view_first_marginTop">30dp</dimen>
     <dimen name="text_view_first_marginLeft">35dp</dimen>
     <dimen name="text_view_interval_marginTop">15dp</dimen>
@@ -177,5 +177,52 @@
 
     <!--fragment_inquiry.xml-->
     <dimen name="fragment_inquiry_side_margin">16dp</dimen>
+
+    <!--frgment_settings.xml-->
+    <dimen name="fr_settings_side_margin">16dp</dimen>
+    <dimen name="fr_settings_text_view_Size">48dp</dimen>
+
+    <!--fragment_user_visit.xml-->
+    <dimen name="fragment_user_visit_text_view_marginLeft">30dp</dimen>
+    <dimen name="fragment_user_visit_text_view_marginStart">30dp</dimen>
+
+    <dimen name="user_visit_count_user_title_layout">50dp</dimen>
+    <dimen name="user_visit_count_user_title_desc_layout">80dp</dimen>
+    <dimen name="user_visit_count_description_title">50dp</dimen>
+
+    <dimen name="user_visit_count_description_visit_date_text_margin">10dp</dimen>
+    <dimen name="user_visit_count_description_visit_time_text_margin">20dp</dimen>
+    <dimen name="user_visit_count_description_price_text">15dp</dimen>
+
+    <!--view_all_cafe_list.xml-->
+    <dimen name="view_all_cafe_list_side_margin">16dp</dimen>
+    <dimen name="view_all_cafe_list_image_Size">80dp</dimen>
+    <dimen name="view_all_cafe_list_image_marginTop">10dp</dimen>
+
+    <dimen name="allcafelist_address_text_marginTop">5dp</dimen>
+
+    <dimen name="view_all_cafe_list_option_image_Size">24dp</dimen>
+    <dimen name="view_all_cafe_list_option_image_marginTop">10dp</dimen>
+    <dimen name="view_all_cafe_list_option_image_marginLeft">2dp</dimen>
+
+    <dimen name="view_all_cafe_list_button_Size">45dp</dimen>
+    <dimen name="allcafelist_distance_text_marginTop">5dp</dimen>
+
+    <!--view_auction_list.xml-->
+    <dimen name="view_auction_list_image_Size">20dp</dimen>
+    <dimen name="view_auction_list_maginRight">5dp</dimen>
+
+    <dimen name="view_auction_list_button_raw_Size">30dp</dimen>
+    <dimen name="view_auction_list_button_column_Size">30dp</dimen>
+
+    <!--view_auction_process.xml-->
+    <dimen name="view_auction_process_linear_layout_Size">55dp</dimen>
+    <dimen name="view_auction_process_option_image_Size">20dp</dimen>
+    <dimen name="view_auction_process_text_view_marginLeft">16dp</dimen>
+
+    <dimen name="auction_process_reservation_date_marginLeft">25dp</dimen>
+    <dimen name="view_auction_process_small_text_view_marginLeft">5dp</dimen>
+    <dimen name="btn_estimate_sheet_confirm_button_raw_Size">40dp</dimen>
+    <dimen name="btn_estimate_sheet_confirm_button_column_Size">47dp</dimen>
 
 </resources>

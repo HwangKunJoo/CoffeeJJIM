@@ -1,112 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/view_auction_process_linear_layout_Size">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="User A"
+        android:textSize="@dimen/subject_text_size"
         android:id="@+id/auction_process_user_nickname"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/view_auction_process_text_view_marginLeft"/>
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="2016.08.07"
-        android:id="@+id/auction_process_reservation_date"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/auction_process_user_nickname"
-        android:layout_toEndOf="@+id/auction_process_user_nickname"
-        android:layout_marginTop="19dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_weight="1"
+        android:layout_gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="15:00"
-        android:id="@+id/auction_process_reservation_time"
-        android:layout_alignTop="@+id/auction_process_reservation_date"
-        android:layout_toRightOf="@+id/auction_process_reservation_date"
-        android:layout_toEndOf="@+id/auction_process_reservation_date"
-        android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="2016.08.07"
+            android:id="@+id/auction_process_reservation_date"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/small_text_size"
+            android:layout_marginLeft="@dimen/auction_process_reservation_date_marginLeft" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="3"
-        android:id="@+id/auction_process_people"
-        android:layout_alignBottom="@+id/btn_estimate_sheet_confirm"
-        android:layout_toRightOf="@+id/auction_process_options_working_time"
-        android:layout_toEndOf="@+id/auction_process_options_working_time" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="15:00"
+            android:id="@+id/auction_process_reservation_time"
+            android:textSize="@dimen/small_text_size"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/auction_process_reservation_date"
+            android:layout_toEndOf="@+id/auction_process_reservation_date"
+            android:layout_marginLeft="@dimen/view_auction_process_small_text_view_marginLeft" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="3"
+            android:id="@+id/auction_process_people"
+            android:textSize="@dimen/small_text_size"
+            android:layout_alignTop="@+id/auction_process_options_working_time"
+            android:layout_toRightOf="@+id/auction_process_options_working_time"
+            android:layout_toEndOf="@+id/auction_process_options_working_time"
+            android:layout_marginLeft="@dimen/view_auction_process_small_text_view_marginLeft" />
+
+        <ImageView
+            android:layout_width="@dimen/view_auction_process_option_image_Size"
+            android:layout_height="@dimen/view_auction_process_option_image_Size"
+            android:id="@+id/auction_process_options_wifi"
+            android:src="@drawable/wifi"
+            android:layout_below="@+id/auction_process_reservation_date"
+            android:layout_alignLeft="@+id/auction_process_reservation_date"
+            android:layout_alignStart="@+id/auction_process_reservation_date"
+            android:layout_marginTop="@dimen/view_auction_process_small_text_view_marginLeft"
+            android:background="@color/coffeejjim_invisible" />
+
+        <ImageView
+            android:layout_width="@dimen/view_auction_process_option_image_Size"
+            android:layout_height="@dimen/view_auction_process_option_image_Size"
+            android:id="@+id/auction_process_options_plag"
+            android:src="@drawable/plag"
+            android:layout_alignTop="@+id/auction_process_options_wifi"
+            android:layout_toRightOf="@+id/auction_process_options_wifi"
+            android:layout_toEndOf="@+id/auction_process_options_wifi" />
+
+        <ImageView
+            android:layout_width="@dimen/view_auction_process_option_image_Size"
+            android:layout_height="@dimen/view_auction_process_option_image_Size"
+            android:id="@+id/auction_process_options_parking"
+            android:src="@drawable/parking"
+            android:layout_alignTop="@+id/auction_process_options_plag"
+            android:layout_toRightOf="@+id/auction_process_options_plag"
+            android:layout_toEndOf="@+id/auction_process_options_plag" />
+
+        <ImageView
+            android:layout_width="@dimen/view_auction_process_option_image_Size"
+            android:layout_height="@dimen/view_auction_process_option_image_Size"
+            android:id="@+id/auction_process_options_working_time"
+            android:src="@drawable/workingtime"
+            android:layout_alignTop="@+id/auction_process_options_parking"
+            android:layout_toRightOf="@+id/auction_process_options_parking"
+            android:layout_toEndOf="@+id/auction_process_options_parking" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="명"
+            android:textSize="@dimen/small_text_size"
+            android:id="@+id/auction_process_options_working_time1"
+            android:layout_weight="1"
+            android:layout_alignTop="@+id/auction_process_people"
+            android:layout_toRightOf="@+id/auction_process_people"
+            android:layout_toEndOf="@+id/auction_process_people" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="11:00"
+        android:textSize="@dimen/subject_text_size"
         android:id="@+id/auction_process_end_time"
-        android:layout_alignTop="@+id/auction_process_user_nickname"
-        android:layout_toLeftOf="@+id/btn_estimate_sheet_confirm"
-        android:layout_toStartOf="@+id/btn_estimate_sheet_confirm"
-        android:layout_marginRight="32dp"
-        android:layout_marginEnd="32dp" />
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"/>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/btn_estimate_sheet_confirm_button_raw_Size"
+        android:layout_height="@dimen/btn_estimate_sheet_confirm_button_column_Size"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="입찰"
+        android:textSize="@dimen/subject_text_size"
         android:background="@color/coffeejjim_red"
         android:textColor="#ffffff"
         android:id="@+id/btn_estimate_sheet_confirm"
-        android:layout_alignTop="@+id/auction_process_reservation_time"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_weight="1"
+        android:layout_gravity="center" />
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/auction_process_options_wifi"
-        android:layout_below="@+id/auction_process_reservation_date"
-        android:layout_alignLeft="@+id/auction_process_reservation_date"
-        android:layout_alignStart="@+id/auction_process_reservation_date"
-        android:src="@drawable/wifi" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/auction_process_options_plag"
-        android:src="@drawable/plag"
-        android:layout_below="@+id/auction_process_reservation_date"
-        android:layout_toRightOf="@+id/auction_process_options_wifi"
-        android:layout_toEndOf="@+id/auction_process_options_wifi" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/auction_process_options_parking"
-        android:src="@drawable/parking"
-        android:layout_below="@+id/auction_process_reservation_date"
-        android:layout_toRightOf="@+id/auction_process_options_plag"
-        android:layout_toEndOf="@+id/auction_process_options_plag" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/auction_process_options_working_time"
-        android:src="@drawable/workingtime"
-        android:layout_below="@+id/auction_process_reservation_date"
-        android:layout_toRightOf="@+id/auction_process_options_parking"
-        android:layout_toEndOf="@+id/auction_process_options_parking" />
-
-</RelativeLayout>
+</LinearLayout>

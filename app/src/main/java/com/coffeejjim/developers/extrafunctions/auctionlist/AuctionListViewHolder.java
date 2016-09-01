@@ -16,12 +16,14 @@ import butterknife.ButterKnife;
  * Created by acer on 2016-08-28.
  */
 public class AuctionListViewHolder extends RecyclerView.ViewHolder {
+
     @BindView(R.id.auctionlist_time_text)
     TextView auctionListTimeView;
-    @BindView(R.id.auctionlist_address_text)
-    TextView auctionListAddressView;
-    @BindView(R.id.auctionlist_title_text)
-    TextView auctionListTitleView;
+    @BindView(R.id.auctionlist_nickname_text)
+    TextView auctionListCafenameView;
+    @BindView(R.id.auctionlist_price_text)
+    TextView auctionListPrice;
+
     @BindView(R.id.auction_list_reservation_fail_image)
     ImageView reservationFailImageView;
 
@@ -52,9 +54,11 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
 
     public void setEstimate(Estimate estimate) {
         this.estimate = estimate;
-        auctionListAddressView.setText(estimate.getAddress());
         auctionListTimeView.setText(estimate.getReservationTime());
-        auctionListTitleView.setText(estimate.getCafeName());
+        auctionListCafenameView.setText(estimate.getCafeName());
+        auctionListPrice.setText(estimate.getPrice());
+
+
         if(!estimate.isReserved()){
             reservationFailImageView.setImageResource(R.drawable.reservationfail);
         }else

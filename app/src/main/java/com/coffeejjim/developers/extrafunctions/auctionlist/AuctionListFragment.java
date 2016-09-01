@@ -55,9 +55,10 @@ public class AuctionListFragment extends Fragment {
     public void initData() {
         for (int i = 0; i < 20; i++) {
             Estimate estimate = new Estimate();
-            estimate.setCafeName("LATTE KING");
-            estimate.setAddress("경기도 성남시 분당구 수내동");
             estimate.setReservationTime("11 : 00");
+            estimate.setCafeName("LATTE KING");
+            estimate.setPrice("13,000");
+
             if(i/2 == 0){
                 estimate.setReserved(true);
             }else

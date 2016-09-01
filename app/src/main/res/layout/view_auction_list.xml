@@ -1,52 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp">
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/view_auction_list_image_Size"
+        android:layout_height="@dimen/view_auction_list_image_Size"
         android:id="@+id/auction_list_reservation_fail_image"
         android:src="@android:drawable/ic_delete"
-        android:layout_alignTop="@+id/auctionlist_title_text"
+        android:layout_alignTop="@+id/auctionlist_nickname_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"/>
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/view_auction_list_maginRight"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="11:11"
+        android:textSize="@dimen/subject_text_size"
         android:id="@+id/auctionlist_time_text"
-        android:layout_alignBottom="@+id/auctionlist_title_text"
+        android:layout_alignBottom="@+id/auctionlist_nickname_text"
         android:layout_toRightOf="@+id/auction_list_reservation_fail_image"
-        android:layout_toEndOf="@+id/auction_list_reservation_fail_image" />
+        android:layout_toEndOf="@+id/auction_list_reservation_fail_image"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/view_auction_list_maginRight"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Cafe Tilte"
-        android:id="@+id/auctionlist_title_text"
+        android:text="철수"
+        android:textSize="@dimen/subject_text_size"
+        android:id="@+id/auctionlist_nickname_text"
         android:layout_alignTop="@+id/auctionlist_present_btn"
-        android:layout_alignLeft="@+id/auctionlist_address_text"
-        android:layout_alignStart="@+id/auctionlist_address_text" />
+        android:layout_alignLeft="@+id/auctionlist_person_text"
+        android:layout_alignStart="@+id/auctionlist_person_text"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginRight="@dimen/view_auction_list_maginRight"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="address"
-        android:id="@+id/auctionlist_address_text"
-        android:layout_marginTop="47dp"
-        android:layout_marginLeft="120dp"/>
+        android:text="13,000"
+        android:textSize="@dimen/subject_text_size"
+        android:id="@+id/auctionlist_price_text"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="right"/>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="present"
+        android:text="원"
+        android:id="@+id/textView"
+        android:textSize="@dimen/subject_text_size"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="left"
+        android:layout_marginRight="@dimen/view_auction_list_maginRight"/>
+
+    <Button
+        android:layout_width="@dimen/view_auction_list_button_raw_Size"
+        android:layout_height="@dimen/view_auction_list_button_column_Size"
         android:id="@+id/auctionlist_present_btn"
-        android:layout_marginTop="13dp"
-        android:layout_alignParentRight="true" />
-</RelativeLayout>
+        android:layout_alignParentRight="true"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:background="@drawable/view_auction_list_btn"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+</LinearLayout>
