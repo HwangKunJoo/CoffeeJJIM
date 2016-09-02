@@ -10,11 +10,10 @@ import android.view.ViewGroup;
 
 import com.coffeejjim.developers.ProviderInfoEditActivity;
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.extrafunctions.auctionlist.AuctionListActivity;
 import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
-import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
+import com.coffeejjim.developers.provider.auctionstatement.AuctionStatementActivity;
 import com.coffeejjim.developers.provider.usermanagement.UserManagementActivity;
 
 import butterknife.ButterKnife;
@@ -65,7 +64,7 @@ public class ProviderExtraFunctionsFragment extends Fragment {
     }
 
     public void moveAuctionStatementActivity(){
-        Intent AuctionListIntent = new Intent(getActivity(), AuctionListActivity.class);
+        Intent AuctionListIntent = new Intent(getActivity(), AuctionStatementActivity.class);
         startActivity(AuctionListIntent);
     }
 

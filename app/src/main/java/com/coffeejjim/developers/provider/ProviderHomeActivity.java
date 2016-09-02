@@ -55,10 +55,7 @@ public class ProviderHomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == android.R.id.home){
-            finish();
-        }
-        else if (id == R.id.provider_home_item_badge)
+        if (id == R.id.provider_home_item_badge)
         {
             Toast.makeText(this, "진행중인 경매 목록으로 이동합니다.", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AuctionProcessActivity.class);
@@ -71,14 +68,14 @@ public class ProviderHomeActivity extends AppCompatActivity {
 
     private void setCustomActionbar() {
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
-    //edit 도중 백키나 홈애스업버튼을 눌렀을 때는 다시 홈 화면이 나와야됨
+
     public void changeProviderHomeEdit(){
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.provider_home_container, new ProviderHomeEditFragment())
+                .addToBackStack(null)
                 .commit();
     }
 
