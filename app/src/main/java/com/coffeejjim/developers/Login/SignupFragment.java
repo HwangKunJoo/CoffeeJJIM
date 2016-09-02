@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,12 @@ public class SignupFragment extends Fragment {
         );
 
         return view;
+    }
+
+    @OnClick(R.id.signup_search_btn)
+    public void onSearch(){
+        Intent intent = new Intent(getActivity(), SearchAddressActivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.signup_join_button)
