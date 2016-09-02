@@ -3,15 +3,25 @@ package com.coffeejjim.developers.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.coffeejjim.developers.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SearchAddressActivity extends AppCompatActivity {
 
-    private WebView browser;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.search_address_web_view)
+    WebView searchView;
+
 
     class MyJavaScriptInterface {
         @JavascriptInterface
@@ -33,21 +43,42 @@ public class SearchAddressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_address);
 
-        browser = (WebView) findViewById(R.id.webView);
-        browser.getSettings().setJavaScriptEnabled(true);
-        browser.addJavascriptInterface(new MyJavaScriptInterface(), "Android");
+        ButterKnife.bind(this);
+        setCustomActionbar();
+        excuteSearchAddress();
 
-        browser.setWebViewClient(new WebViewClient() {
+    }
+
+    private void excuteSearchAddress(){
+
+        searchView.getSettings().setJavaScriptEnabled(true);
+        searchView.addJavascriptInterface(new MyJavaScriptInterface(), "Android");
+
+        searchView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
 
-                browser.loadUrl("javascript:sample2_execDaumPostcode();");
+                searchView.loadUrl("javascript:sample2_execDaumPostcode();");
             }
         });
 
-        //browser.loadUrl("file:///android_asset/daum.html");
-        //browser.loadUrl("http://www.daddyface.com/public/daum.html");
-        browser.loadUrl("http://cdn.rawgit.com/jolly73-df/DaumPostcodeExample/master/DaumPostcodeExample/app/src/main/assets/daum.html");
+        //searchView.loadUrl("file:///android_asset/daum.html");
+        searchView.loadUrl("http://cdn.rawgit.com/jolly73-df/DaumPostcodeExample/master/DaumPostcodeExample/app/src/main/assets/daum.html");
+    }
+
+    private void setCustomActionbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

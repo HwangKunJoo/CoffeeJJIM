@@ -24,6 +24,8 @@ public class SignupFragment extends Fragment {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    private static final int SEARCH_ADDRESS = 1;
+
     public SignupFragment() {
         // Required empty public constructor
     }
@@ -58,11 +60,7 @@ public class SignupFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.signup_search_btn)
-    public void onSearch(){
-        Intent intent = new Intent(getActivity(), SearchAddressActivity.class);
-        startActivity(intent);
-    }
+
 
     @OnClick(R.id.signup_join_button)
     public void onSingupComlete() {
@@ -83,4 +81,11 @@ public class SignupFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @OnClick(R.id.signup_search_btn)
+    public void onSearchAddress(){
+        Intent intent = new Intent(getActivity(), SearchAddressActivity.class);
+        startActivityForResult(intent,SEARCH_ADDRESS);
+    }
+
 }

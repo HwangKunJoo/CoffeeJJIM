@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 </head>
@@ -69,7 +69,7 @@ function onReceivedActivityMessageViaJavascriptInterface(json){
                 if(fullRoadAddr !== ''){
                     fullRoadAddr += extraRoadAddr;
                 }
-				window.Android.processDATA(data.zonecode + ", " + fullRoadAddr);
+				window.Android.processDATA(fullRoadAddr);
             },
             width : '100%',
             height : '100%'
