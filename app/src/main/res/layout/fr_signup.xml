@@ -45,7 +45,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/fr_signup_text_view_textSize"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="@dimen/fr_signup_tect_view_marginLeft" />
 
         <TextView
@@ -199,7 +199,8 @@
             android:layout_toRightOf="@+id/signup_email_edit"
             android:layout_toEndOf="@+id/signup_email_edit"
             android:layout_alignTop="@+id/signup_email_edit"
-            android:layout_alignBottom="@+id/signup_email_edit" />
+            android:layout_alignBottom="@+id/signup_email_edit"
+            android:layout_marginLeft="3dp" />
 
         <Spinner
             android:layout_width="wrap_content"

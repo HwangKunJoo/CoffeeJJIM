@@ -57,7 +57,7 @@
         android:layout_alignTop="@+id/btn_user_management_visit_count_info"
         android:layout_toLeftOf="@+id/btn_user_management_visit_count_info"
         android:layout_toStartOf="@+id/btn_user_management_visit_count_info"
-        android:layout_marginRight="13dp" />
+        android:layout_marginRight="17dp" />
 
     <Button
         android:id="@+id/btn_user_management_visit_count_info"

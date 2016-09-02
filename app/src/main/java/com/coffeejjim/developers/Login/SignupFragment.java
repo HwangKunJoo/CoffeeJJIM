@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.coffeejjim.developers.R;
@@ -24,12 +26,34 @@ public class SignupFragment extends Fragment {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    String inputAddress;
+
+    @BindView(R.id.signup_address_edit)
+    EditText addressView;
+
     private static final int SEARCH_ADDRESS = 1;
-
-    public SignupFragment() {
-        // Required empty public constructor
-    }
-
+//
+//    public static SignupFragment newInstance(String data) {
+//        SignupFragment fragment = new SignupFragment();
+//        Bundle b = new Bundle();
+//        b.putString("data", data);
+//        fragment.setArguments(b);
+//        return fragment;
+//    }
+//
+//    public SignupFragment() {
+//        // Required empty public constructor
+//    }
+//
+//    @Override
+//    public void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        Bundle b = getArguments();
+//        if (b != null) {
+//            inputAddress = b.getString("data");
+//        }
+//    }
+//
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +62,8 @@ public class SignupFragment extends Fragment {
         ButterKnife.bind(this,view);
         setCustomActionbar();
         setHasOptionsMenu(true);
+
+
 
         String[] str = getResources().getStringArray(R.array.emailArray);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,str);
@@ -65,7 +91,9 @@ public class SignupFragment extends Fragment {
     @OnClick(R.id.signup_join_button)
     public void onSingupComlete() {
         ((LoginActivity)getActivity()).moveProviderHomeActivity();
+        getActivity().finish();
     }
+
 
     private void setCustomActionbar() {
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
@@ -88,4 +116,16 @@ public class SignupFragment extends Fragment {
         startActivityForResult(intent,SEARCH_ADDRESS);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == SEARCH_ADDRESS || resultCode == Activity.RESULT_OK) {
+            inputAddress = data.getExtras().getString("data");
+            addressView.setText(inputAddress);
+//            Bundle addressData = new Bundle();
+//            addressData.putString("data", findAddress);
+        }else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }
