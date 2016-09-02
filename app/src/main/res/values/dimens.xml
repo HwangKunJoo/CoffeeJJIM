@@ -107,19 +107,19 @@
 
     <dimen name="maplocation_telephone_image_button_Size">20dp</dimen>
     <dimen name="telephone_image_button_marginLeft">10dp</dimen>
-    
-    
+
+
     <!--fr_provider_home.xml,fr_provider_home_edit.xml-->
     <dimen name="fr_provider_home_text_view_title_marginTop">25dp</dimen>
     <dimen name="fr_provider_home_edit_edit_text_title_marginTop">16dp</dimen>
-    
+
     <dimen name="cafe_main_image_Size">150dp</dimen>
     <dimen name="cafe_main_image_marginTop">70dp</dimen>
     <dimen name="preview_image_Size">50dp</dimen>
     <dimen name="preview_image_marginTop">15dp</dimen>
     <dimen name="preview_first_image_maginLeft">65dp</dimen>
     <dimen name="preview_image_interval_marginLeft">10dp</dimen>
-    
+
     <dimen name="text_view_Size">80dp</dimen>
     <dimen name="text_view_first_marginTop">30dp</dimen>
     <dimen name="text_view_first_marginLeft">35dp</dimen>
@@ -141,16 +141,16 @@
     <dimen name="fr_reissuance_default_margin">16dp</dimen>
 
     <!--fr_signup.xml-->
-    <dimen name="fr_signup_text_view_textSize">18dp</dimen>
-    <dimen name="fr_signup_text_view_Size">110dp</dimen>
+    <dimen name="fr_signup_text_view_textSize">16dp</dimen>
+    <dimen name="fr_signup_text_view_Size">70dp</dimen>
     <dimen name="fr_signup_text_view_marginTop">15dp</dimen>
     <dimen name="fr_signup_tect_view_marginLeft">20dp</dimen>
     <dimen name="fr_signup_view_marginRight">20dp</dimen>
 
-    <dimen name="fr_signup_edit_text_Size1_">90dp</dimen>
-    <dimen name="fr_signup_edit_text_padding">6dp</dimen>
+    <dimen name="fr_signup_edit_text_Size1_">30dp</dimen>
+    <dimen name="fr_signup_edit_text_padding">10dp</dimen>
     <dimen name="fr_signup_default_marginRL">16dp</dimen>
-    <dimen name="fr_signup_image_btn_Size">20dp</dimen>
+    <dimen name="fr_signup_image_btn_Size">17dp</dimen>
     <dimen name="fr_signup_image_btn_interval_margin">9dp</dimen>
 
     <!--fragment_booking_info.xml-->
@@ -235,15 +235,7 @@
     <dimen name="btn_cafe_list_reservation_raw_Size">60dp</dimen>
     <dimen name="btn_cafe_list_reservation_column_Size">100dp</dimen>
 
-    <!--view_user_management.xml-->
-    <dimen name="view_user_management_nickname_margin">10dp</dimen>
-    <dimen name="view_user_management_visit_count_margin">20dp</dimen>
-    <dimen name="view_user_management_like_margin">20dp</dimen>
-
-    <dimen name="view_btn_user_management_detail_info_margin">20dp</dimen>
-    <dimen name="view_btn_user_management_visit_count_info_margin">15dp</dimen>
-
-    view_user_visit_count.xml
+    <!--view_user_visit_count.xml-->
     <dimen name="view_user_visit_count_description_visit_date_margin">20dp</dimen>
     <dimen name="view_user_visit_count_description_visit_time_margin">20dp</dimen>
     <dimen name="view_user_visit_count_description_people_margin">30dp</dimen>

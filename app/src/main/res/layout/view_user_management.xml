@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content" >
 
     <TextView
         android:id="@+id/user_management_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/view_user_management_nickname_margin"
-        android:layout_marginStart="@dimen/view_user_management_nickname_margin"
-        android:layout_weight="1"
         android:text="닉네임"
+        android:textSize="@dimen/small_text_size"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/coffeejjim_brown" />
+        android:textColor="@color/coffeejjim_brown"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="7dp" />
 
     <TextView
         android:id="@+id/user_management_visit_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/view_user_management_visit_count_margin"
-        android:layout_marginStart="@dimen/view_user_management_visit_count_margin"
-        android:layout_weight="1"
         android:text="방문 수"
+        android:textSize="@dimen/subject_text_size"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/coffeejjim_brown" />
+        android:textColor="@color/coffeejjim_brown"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/user_management_nickname"
+        android:layout_toEndOf="@+id/user_management_nickname"
+        android:layout_marginTop="7dp" />
 
     <ImageView
         android:id="@+id/user_management_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/view_user_management_like_margin"
-        android:layout_marginStart="@dimen/view_user_management_like_margin"
-        android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/coffeejjim_brown"
-        android:src="@drawable/likeempty"/>
+        android:src="@drawable/likeempty_32pixel"
+        android:layout_alignTop="@+id/user_management_nickname"
+        android:layout_toRightOf="@+id/user_management_visit_count"
+        android:layout_toEndOf="@+id/user_management_visit_count"
+        android:layout_marginLeft="67dp" />
 
     <Button
         android:id="@+id/btn_user_management_detail_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/view_btn_user_management_detail_info_margin"
-        android:layout_marginStart="@dimen/view_btn_user_management_detail_info_margin"
-        android:layout_weight="1"
-        android:text="상세정보"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/coffeejjim_brown" />
+        android:textColor="@color/coffeejjim_brown"
+        android:background="@drawable/details_btn"
+        android:layout_alignTop="@+id/btn_user_management_visit_count_info"
+        android:layout_toLeftOf="@+id/btn_user_management_visit_count_info"
+        android:layout_toStartOf="@+id/btn_user_management_visit_count_info"
+        android:layout_marginRight="15dp" />
 
     <Button
         android:id="@+id/btn_user_management_visit_count_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="30dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/view_btn_user_management_visit_count_info_margin"
-        android:layout_marginStart="@dimen/view_btn_user_management_visit_count_info_margin"
-        android:layout_weight="1"
-        android:text="내역"
+        android:text="보기"
+        android:textSize="@dimen/small_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/coffeejjim_brown" />
-</LinearLayout>
+        android:textColor="@color/coffeejjim_white"
+        android:background="@color/coffeejjim_red"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp" />
+</RelativeLayout>
 
