@@ -3,12 +3,15 @@ package com.coffeejjim.developers.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
+import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.home.HomeActivity;
 import com.coffeejjim.developers.provider.ProviderHomeActivity;
-import com.coffeejjim.developers.R;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private static final int SEARCH_ADDRESS = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,17 @@ public class LoginActivity extends AppCompatActivity {
     public void moveProviderHomeActivity(){
         Intent intent = new Intent(this, ProviderHomeActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(requestCode == SEARCH_ADDRESS || resultCode == RESULT_OK){
+            String findAddress = data.getExtras().getString("data");
+            Toast.makeText(this, findAddress, Toast.LENGTH_SHORT).show();
+        }else
+            super.onActivityResult(requestCode, resultCode, data);
+
     }
 
 }
