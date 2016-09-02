@@ -2,8 +2,8 @@ package com.coffeejjim.developers.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.home.HomeActivity;
@@ -12,6 +12,7 @@ import com.coffeejjim.developers.provider.ProviderHomeActivity;
 public class LoginActivity extends AppCompatActivity {
 
     private static final int SEARCH_ADDRESS = 1;
+    private static final String TAG_ONE = "tag_one";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void changeReissuance(){
+    public void changeReissuance() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ReissuanceFragment())
                 .addToBackStack(null)
@@ -33,10 +34,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void changeSingup() {
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new SignupFragment())
-                .addToBackStack(null)
-                .commit();
+        Fragment old = getSupportFragmentManager()
+                .findFragmentByTag(TAG_ONE);
+        if (old == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new SignupFragment(), TAG_ONE)
+                    .addToBackStack(null)
+                    .commit();
+        }
+//        } else {
+//            FragmentTransaction ft = getSupportFragmentManager()
+//                    .beginTransaction();
+//            SignupFragment f = new SignupFragment();
+//            f = SignupFragment.newInstance("data");
+//            ft.replace(R.id.container, f, TAG_ONE);
+//            ft.commitAllowingStateLoss();
+//        }
+
     }
 
     public void moveHomeActivity() {
@@ -46,20 +60,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void moveProviderHomeActivity(){
+    public void moveProviderHomeActivity() {
         Intent intent = new Intent(this, ProviderHomeActivity.class);
         startActivity(intent);
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if(requestCode == SEARCH_ADDRESS || resultCode == RESULT_OK){
-            String findAddress = data.getExtras().getString("data");
-            Toast.makeText(this, findAddress, Toast.LENGTH_SHORT).show();
-        }else
-            super.onActivityResult(requestCode, resultCode, data);
-
-    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == SEARCH_ADDRESS || resultCode == RESULT_OK) {
+//            String findAddress = data.getExtras().getString("data");
+//            Bundle addressData = new Bundle();
+//            addressData.putString("data", findAddress);
+//            SignupFragment sf = new SignupFragment();
+//            sf.setArguments(addressData);
+//            changeSingup();
+//        } else
+//            super.onActivityResult(requestCode, resultCode, data);
+//
+//    }
 
 }
