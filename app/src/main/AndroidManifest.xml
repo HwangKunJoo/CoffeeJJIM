@@ -49,8 +49,9 @@
         <activity
             android:name=".cafedetail.CafeDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".extrafunctions.ExtraFunctionsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".extrafunctions.ExtraFunctionsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".extrafunctions.likelist.LikeListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -61,11 +62,13 @@
         <activity
             android:name=".extrafunctions.auctionlist.AuctionListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".extrafunctions.notification.NotificationActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="true"/>
-        <activity android:name=".extrafunctions.settings.SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".extrafunctions.notification.NotificationActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".extrafunctions.settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".provider.ProviderHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -81,15 +84,20 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ProviderInfoEditActivity" />
-        <activity android:name=".SettingsProviderActivity"></activity>
-        <activity android:name=".extrafunctions.inquiry.InquiryActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".provider.usermanagement.uservisitcount.UserVisitCountActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".provider.BookingInfoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".estimate.provider.EstimateSheetConfirmActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".SettingsProviderActivity" />
+        <activity
+            android:name=".extrafunctions.inquiry.InquiryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".provider.usermanagement.uservisitcount.UserVisitCountActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".provider.BookingInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".estimate.provider.EstimateSheetConfirmActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".login.SearchAddressActivity"></activity>
     </application>
 
 </manifest>
