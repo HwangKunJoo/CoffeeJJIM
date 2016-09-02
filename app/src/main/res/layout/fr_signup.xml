@@ -45,7 +45,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/fr_signup_text_view_textSize"
-            android:layout_marginTop="@dimen/fr_signup_text_view_marginTop"
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="@dimen/fr_signup_tect_view_marginLeft" />
 
         <TextView
@@ -199,8 +199,7 @@
             android:layout_toRightOf="@+id/signup_email_edit"
             android:layout_toEndOf="@+id/signup_email_edit"
             android:layout_alignTop="@+id/signup_email_edit"
-            android:layout_alignBottom="@+id/signup_email_edit"
-            android:layout_marginLeft="5dp" />
+            android:layout_alignBottom="@+id/signup_email_edit" />
 
         <Spinner
             android:layout_width="wrap_content"
@@ -328,24 +327,11 @@
             android:src="@drawable/search"
             android:background="@color/coffeejjim_invisible"
             android:scaleType="fitCenter"
-            android:layout_toLeftOf="@+id/signup_map_btn"
-            android:layout_toStartOf="@+id/signup_map_btn"
             android:layout_marginRight="@dimen/fr_signup_image_btn_interval_margin"
             android:layout_above="@+id/signup_cafephone_text"
-            android:layout_alignTop="@+id/signup_address_edit" />
-
-        <ImageButton
-            android:layout_width="@dimen/fr_signup_image_btn_Size"
-            android:layout_height="@dimen/fr_signup_image_btn_Size"
-            android:id="@+id/signup_map_btn"
-            android:src="@drawable/maplocation"
-            android:background="@color/coffeejjim_invisible"
-            android:scaleType="fitCenter"
-            android:layout_alignRight="@+id/signup_cafetitle_edit"
-            android:layout_alignEnd="@+id/signup_cafetitle_edit"
-            android:layout_above="@+id/signup_cafephone_text"
             android:layout_alignTop="@+id/signup_address_edit"
-            android:layout_marginRight="7dp" />
+            android:layout_alignRight="@+id/signup_cafetitle_edit" />
+
     </RelativeLayout>
 
     <Button
