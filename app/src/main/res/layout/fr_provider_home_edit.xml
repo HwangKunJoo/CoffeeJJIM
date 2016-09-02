@@ -9,10 +9,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/fr_provider_home_edit_edit_text_title_marginTop"
+        android:layout_marginTop="@dimen/fr_provider_home_text_view_title_marginTop"
         android:text="지혁이네 카페"
         android:textSize="@dimen/subject_text_size"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@drawable/edit_text_line"
+        android:singleLine="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/provider_home_edit_cafe_main_image"
@@ -135,12 +139,15 @@
         android:hint="경기도 성남시 분당구"
         android:textSize="@dimen/small_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/provider_home_edit_preview_second_image"
         android:layout_toRightOf="@+id/provider_home_edit_address_text"
-        android:layout_marginTop="@dimen/fr_provider_home_edit_text_view_contents_marginTop"
         android:layout_alignRight="@+id/provider_home_edit_preview_forth_image"
         android:layout_alignEnd="@+id/provider_home_edit_preview_forth_image"
-        android:layout_marginLeft="@dimen/fr_provider_home_edit_text_view_contents_marginLeft" />
+        android:layout_marginLeft="@dimen/fr_provider_home_edit_text_view_contents_marginLeft"
+        android:layout_alignTop="@+id/provider_home_edit_address_text"
+        android:layout_alignBottom="@+id/provider_home_edit_address_text"
+        android:background="@drawable/edit_text_line"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
 
     <android.support.design.widget.TextInputEditText
         android:id="@+id/provider_home_edit_phone"
@@ -149,11 +156,15 @@
         android:hint="010-9374-4512"
         android:textSize="@dimen/small_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/provider_home_edit_address"
         android:layout_alignLeft="@+id/provider_home_edit_address"
         android:layout_alignStart="@+id/provider_home_edit_address"
         android:layout_alignRight="@+id/provider_home_edit_address"
-        android:layout_alignEnd="@+id/provider_home_edit_address" />
+        android:layout_alignEnd="@+id/provider_home_edit_address"
+        android:layout_alignTop="@+id/provider_home_edit_phone_text"
+        android:layout_above="@+id/provider_home_edit_working_daytime_text"
+        android:background="@drawable/edit_text_line"
+        android:paddingLeft="10dp"
+        android:singleLine="true" />
 
     <Spinner
         android:layout_width="@dimen/fr_provider_home_edit_spinner_Size"

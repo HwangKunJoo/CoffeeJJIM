@@ -161,14 +161,6 @@
             android:layout_weight="0.5"
             android:layout_gravity="center"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/fr_settings_text_view_Size"
-            android:text="분"
-            android:id="@+id/activity_settings_min_text"
-            android:layout_weight="0.5"
-            android:textSize="13dp"
-            android:gravity="center|left" />
     </LinearLayout>
 
 </LinearLayout>

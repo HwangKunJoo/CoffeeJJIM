@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:background="@drawable/under_line">
 
     <ImageView
         android:layout_width="@dimen/view_all_cafe_list_image_Size"
@@ -118,8 +119,9 @@
         android:background="@color/coffeejjim_red"
         android:textColor="@color/coffeejjim_white"
         android:gravity="center"
-        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/cafelist_photo_image"
+        android:layout_alignTop="@+id/cafelist_title_text" />
 
 </RelativeLayout>

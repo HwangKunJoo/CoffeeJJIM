@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/view_auction_process_linear_layout_Size">
+    android:layout_height="@dimen/view_auction_process_linear_layout_Size"
+    android:background="@drawable/under_line">
 
     <TextView
         android:layout_width="wrap_content"
@@ -125,11 +126,13 @@
         android:layout_height="@dimen/btn_estimate_sheet_confirm_button_column_Size"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="입찰"
-        android:textSize="@dimen/subject_text_size"
+        android:textSize="@dimen/small_text_size"
         android:background="@color/coffeejjim_red"
-        android:textColor="#ffffff"
+        android:textColor="@color/coffeejjim_white"
         android:id="@+id/btn_estimate_sheet_confirm"
         android:layout_weight="1"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="2dp" />
 
 </LinearLayout>

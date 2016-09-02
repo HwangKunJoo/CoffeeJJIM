@@ -142,7 +142,7 @@
         android:id="@+id/provider_home_daytime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="09 : 30 ~ 22 : 00"
+        android:text="평일 09:30 ~ 22:00"
         android:textSize="@dimen/subject_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_below="@+id/provider_home_phone"
