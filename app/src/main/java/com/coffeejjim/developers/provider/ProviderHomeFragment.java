@@ -1,26 +1,19 @@
 package com.coffeejjim.developers.provider;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
-import com.coffeejjim.developers.provider.auctionstatement.AuctionStatementActivity;
-import com.coffeejjim.developers.provider.usermanagement.UserManagementActivity;
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
-import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ProviderHomeFragment extends Fragment {
 
-    public static final int PROVIDER = 20;
+
 
     public ProviderHomeFragment() {
         // Required empty public constructor
@@ -33,89 +26,14 @@ public class ProviderHomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_provider_home, container, false);
         ButterKnife.bind(this, view);
 
-        ImageView icon = new ImageView(getContext());
-        icon.setImageResource(R.drawable.floatsample);
-
-        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton actionButton
-                = new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(getActivity())
-                .setContentView(icon).build();
-
-        SubActionButton.Builder itemBuilder = new SubActionButton.Builder(getActivity());
-        ImageView itemIcon = new ImageView(getContext());
-        itemIcon.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon2 = new ImageView(getContext());
-        itemIcon2.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon3 = new ImageView(getContext());
-        itemIcon3.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon4 = new ImageView(getContext());
-        itemIcon4.setImageResource(R.drawable.floatbutton);
-        SubActionButton button1 = itemBuilder.setContentView(itemIcon).build();
-        SubActionButton button2 = itemBuilder.setContentView(itemIcon2).build();
-        SubActionButton button3 = itemBuilder.setContentView(itemIcon3).build();
-        SubActionButton button4 = itemBuilder.setContentView(itemIcon4).build();
-
-        FloatingActionMenu actionMenu = new FloatingActionMenu.Builder(getActivity())
-                .addSubActionView(button1)
-                .addSubActionView(button2)
-                .addSubActionView(button3)
-                .addSubActionView(button4)
-                .attachTo(actionButton)
-                .build();
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moveProviderHomeActivity();
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moveAuctionStatementListActivity();
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moveUserManagementActivity();
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                moveExtraFunctionsActivity();
-            }
-        });
-
-
         return view;
     }
 
 
+
     @OnClick(R.id.provider_home_edit_btn)
-    public void onProvider() {
-        ((ProviderHomeActivity) getActivity()).changeProviderHomeEdit();
-    }
-
-    public void moveProviderHomeActivity(){
-        Intent intent = new Intent(getActivity(), ProviderHomeActivity.class);
-        startActivity(intent);
-        getActivity().finish();
-    }
-
-    public void moveAuctionStatementListActivity(){
-        Intent intent = new Intent(getActivity(), AuctionStatementActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveUserManagementActivity(){
-        Intent intent = new Intent(getActivity(), UserManagementActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveExtraFunctionsActivity(){
-        Intent intent = new Intent(getActivity(), ExtraFunctionsActivity.class);
-        intent.putExtra("user",PROVIDER);
-        startActivity(intent);
+    public void onProviderEdit() {
+        ((ProviderHomeActivity)getActivity()).changeProviderHomeEdit();
     }
 
 

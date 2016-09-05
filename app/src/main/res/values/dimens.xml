@@ -13,6 +13,12 @@
     <dimen name="text_size_header">24sp</dimen>
     <dimen name="margin_medium">8dp</dimen>
 
+    <!--Floating Button-->
+    <dimen name="radius_large">100dp</dimen>
+    <dimen name="radius_small">50dp</dimen>
+    <dimen name="radius_medium">72dp</dimen>
+    <dimen name="floating_margin">58dp</dimen>
+
     <!-- Animation duration spinner -->
     <dimen name="list_item_animation_duration_textSize">18sp</dimen>
     <dimen name="list_item_animation_duration_layout_margin">10dp</dimen>

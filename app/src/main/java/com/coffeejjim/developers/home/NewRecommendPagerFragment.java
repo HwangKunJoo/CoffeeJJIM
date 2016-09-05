@@ -55,7 +55,7 @@ public class NewRecommendPagerFragment extends Fragment {
     }
 
     public void moveCafeDetailActivity(){
-        Intent intent = new Intent((HomeActivity)(getActivity()),CafeDetailActivity.class);
+        Intent intent = new Intent(getActivity(),CafeDetailActivity.class);
         startActivity(intent);
     }
 }
