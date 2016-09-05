@@ -19,8 +19,10 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.auctionlist_time_text)
     TextView auctionListTimeView;
-    @BindView(R.id.auctionlist_nickname_text)
+    @BindView(R.id.auctionlist_cafe_title_text)
     TextView auctionListCafenameView;
+    @BindView(R.id.auctionlist_cafe_address_text)
+    TextView auctionListCafeaddressView;
     @BindView(R.id.auctionlist_price_text)
     TextView auctionListPrice;
 
@@ -57,6 +59,7 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
         auctionListTimeView.setText(estimate.getReservationTime());
         auctionListCafenameView.setText(estimate.getCafeName());
         auctionListPrice.setText(estimate.getPrice());
+        auctionListCafeaddressView.setText(estimate.getAddress());
 
 
         if(!estimate.isReserved()){

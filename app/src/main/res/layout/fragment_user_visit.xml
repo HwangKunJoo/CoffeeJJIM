@@ -43,6 +43,16 @@
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/material_grey_300" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/user_visit_count_user_title_desc_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/user_visit_count_user_title_desc_layout"
@@ -79,6 +89,16 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/likeempty"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/material_grey_300" />
     </LinearLayout>
     
     <LinearLayout
@@ -129,6 +149,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="33dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/material_grey_300" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -117,7 +117,7 @@
         android:layout_below="@+id/provider_home_edit_working_daytime_text"
         android:layout_alignLeft="@+id/provider_home_edit_working_daytime_text"
         android:layout_alignStart="@+id/provider_home_edit_working_daytime_text"
-        android:layout_marginTop="@dimen/text_view_interval_marginTop"/>
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/provider_home_edit_option_text"
@@ -244,7 +244,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_wifi"
         android:layout_toRightOf="@+id/provider_home_edit_options_wifi"
         android:layout_toEndOf="@+id/provider_home_edit_options_wifi"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="4dp" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_parking"
@@ -254,7 +255,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_plag"
         android:layout_toRightOf="@+id/provider_home_edit_options_plag"
         android:layout_toEndOf="@+id/provider_home_edit_options_plag"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="4dp" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_working_time"
@@ -264,7 +266,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_parking"
         android:layout_toRightOf="@+id/provider_home_edit_options_parking"
         android:layout_toEndOf="@+id/provider_home_edit_options_parking"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="4dp" />
 
     <Button
         android:id="@+id/provider_home_complete_btn"

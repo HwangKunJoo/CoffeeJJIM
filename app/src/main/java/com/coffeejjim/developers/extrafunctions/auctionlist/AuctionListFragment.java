@@ -57,6 +57,7 @@ public class AuctionListFragment extends Fragment {
             Estimate estimate = new Estimate();
             estimate.setReservationTime("11 : 00");
             estimate.setCafeName("LATTE KING");
+            estimate.setAddress("서울시 봉천구 낙성대1길");
             estimate.setPrice("13,000");
 
             if(i/2 == 0){

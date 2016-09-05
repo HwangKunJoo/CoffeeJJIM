@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="28dp"
             android:layout_marginStart="37dp"
-            android:text="마감 시간"
+            android:text="경매 마감"
             android:textColor="@color/coffeejjim_brown"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical" />

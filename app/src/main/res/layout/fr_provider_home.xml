@@ -179,7 +179,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_wifi"
         android:layout_toRightOf="@+id/provider_home_edit_options_wifi"
         android:layout_toEndOf="@+id/provider_home_edit_options_wifi"
-        android:background="@color/coffeejjim_invisible" />
+        android:background="@color/coffeejjim_invisible"
+        android:layout_marginLeft="4dp" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_parking"
@@ -189,7 +190,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_plag"
         android:layout_toRightOf="@+id/provider_home_edit_options_plag"
         android:layout_toEndOf="@+id/provider_home_edit_options_plag"
-        android:background="@color/coffeejjim_invisible" />
+        android:background="@color/coffeejjim_invisible"
+        android:layout_marginLeft="4dp" />
 
     <ImageView
         android:id="@+id/provider_home_options_working_time"
@@ -199,7 +201,8 @@
         android:layout_alignTop="@+id/provider_home_edit_options_parking"
         android:layout_toRightOf="@+id/provider_home_edit_options_parking"
         android:layout_toEndOf="@+id/provider_home_edit_options_parking"
-        android:background="@color/coffeejjim_invisible" />
+        android:background="@color/coffeejjim_invisible"
+        android:layout_marginLeft="4dp" />
 
     <Button
         android:id="@+id/provider_home_edit_btn"

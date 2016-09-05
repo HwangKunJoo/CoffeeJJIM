@@ -240,12 +240,12 @@
         android:layout_width="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:layout_height="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:id="@+id/fr_estimate_sheet_dialog_option3"
-        android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option2"
-        android:layout_toRightOf="@+id/fr_estimate_sheet_dialog_location_text"
-        android:layout_toEndOf="@+id/fr_estimate_sheet_dialog_location_text"
         android:src="@drawable/options_workingtime_on"
-        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"
         android:background="@color/coffeejjim_invisible"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option2"
+        android:layout_toRightOf="@+id/fr_estimate_sheet_dialog_date_text"
+        android:layout_toEndOf="@+id/fr_estimate_sheet_dialog_date_text"
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft" />
 
 </RelativeLayout>

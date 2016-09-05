@@ -6,8 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@drawable/under_line">
+        android:layout_weight="1">
 
         <ImageView
             android:layout_width="@dimen/fr_booking_info_image_Size"
@@ -170,6 +169,16 @@
             android:scaleType="centerCrop" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/material_grey_300" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
