@@ -276,7 +276,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/signup_cafetitle_edit"
+            android:id="@+id/signup_cafe_name_edit"
             android:textSize="@dimen/small_text_size"
             android:layout_toRightOf="@+id/signup_cafetitle_text"
             android:layout_alignParentRight="true"
@@ -292,34 +292,34 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/signup_address_edit"
+            android:id="@+id/signup_cafe_address_edit"
             android:textSize="@dimen/small_text_size"
-            android:layout_alignLeft="@+id/signup_cafetitle_edit"
-            android:layout_alignStart="@+id/signup_cafetitle_edit"
+            android:layout_alignLeft="@+id/signup_cafe_name_edit"
+            android:layout_alignStart="@+id/signup_cafe_name_edit"
             android:singleLine="true"
             android:layout_alignTop="@+id/signup_address_text"
             android:layout_above="@+id/signup_cafephone_text"
             android:background="@drawable/edit_text_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_alignRight="@+id/signup_cafetitle_edit"
-            android:layout_alignEnd="@+id/signup_cafetitle_edit" />
+            android:layout_alignRight="@+id/signup_cafe_name_edit"
+            android:layout_alignEnd="@+id/signup_cafe_name_edit" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/signup_cafephone_edit"
+            android:id="@+id/signup_cafe_phone_edit"
             android:textSize="@dimen/small_text_size"
-            android:layout_alignLeft="@+id/signup_cafetitle_edit"
-            android:layout_alignStart="@+id/signup_cafetitle_edit"
+            android:layout_alignLeft="@+id/signup_cafe_name_edit"
+            android:layout_alignStart="@+id/signup_cafe_name_edit"
             android:singleLine="true"
             android:layout_alignTop="@+id/signup_cafephone_text"
             android:layout_alignBottom="@+id/signup_cafephone_text"
             android:background="@drawable/edit_text_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_alignRight="@+id/signup_address_edit"
-            android:layout_alignEnd="@+id/signup_address_edit" />
+            android:layout_alignRight="@+id/signup_cafe_address_edit"
+            android:layout_alignEnd="@+id/signup_cafe_address_edit" />
 
         <ImageButton
             android:layout_width="@dimen/fr_signup_image_btn_Size"
@@ -330,8 +330,8 @@
             android:scaleType="fitCenter"
             android:layout_marginRight="@dimen/fr_signup_image_btn_interval_margin"
             android:layout_above="@+id/signup_cafephone_text"
-            android:layout_alignTop="@+id/signup_address_edit"
-            android:layout_alignRight="@+id/signup_cafetitle_edit" />
+            android:layout_alignTop="@+id/signup_cafe_address_edit"
+            android:layout_alignRight="@+id/signup_cafe_name_edit" />
 
     </RelativeLayout>
 
