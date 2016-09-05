@@ -3,15 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/view_auction_process_linear_layout_Size">
+    android:layout_height="wrap_content"
+    android:gravity="center">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="47dp">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="User A"
@@ -19,11 +21,10 @@
             android:id="@+id/auction_process_user_nickname"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginLeft="@dimen/view_auction_process_text_view_marginLeft"/>
+            android:gravity="center" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center">
@@ -48,9 +49,8 @@
                 android:id="@+id/auction_process_reservation_time"
                 android:textSize="@dimen/small_text_size"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/auction_process_reservation_date"
-                android:layout_toEndOf="@+id/auction_process_reservation_date"
-                android:layout_marginLeft="@dimen/view_auction_process_small_text_view_marginLeft" />
+                android:layout_alignRight="@+id/auction_process_options_working_time1"
+                android:layout_alignEnd="@+id/auction_process_options_working_time1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,26 +118,36 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="11:00"
             android:textSize="@dimen/subject_text_size"
             android:id="@+id/auction_process_end_time"
             android:layout_weight="1"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_gravity="center" />
 
-        <Button
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="@dimen/btn_estimate_sheet_confirm_button_Size"
-            android:layout_height="@dimen/btn_estimate_sheet_confirm_button_Size"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:background="@drawable/view_auction_process_btn"
-            android:id="@+id/btn_estimate_sheet_confirm"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_marginBottom="2dp"
-            android:layout_marginRight="2dp" />
+            android:layout_height="48dp"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:background="@drawable/view_auction_process_btn"
+                android:id="@+id/btn_estimate_sheet_confirm"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout

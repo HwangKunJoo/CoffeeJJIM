@@ -38,6 +38,7 @@
     <dimen name="standard_text_size">16sp</dimen>
 
     <!--fr_estimate_sheet.xml-->
+    <dimen name="fr_estimate_sheet_text_Size">18dp</dimen>
     <dimen name="fr_estimate_sheet_set_text_view_marginTop">60dp</dimen>
     <dimen name="fr_estimate_sheet_set_text_view_marginLeft">50dp</dimen>
     <dimen name="fr_estimate_sheet_text_view_marginTop">22dp</dimen>
@@ -51,9 +52,9 @@
     <dimen name="fr_estimate_sheet_endtime_text_marginTop">50dp</dimen>
 
     <dimen name="fr_estimate_sheet_option_image_button_size">50dp</dimen>
-    <dimen name="fr_estimate_sheet_option_image_button_marginTop">10dp</dimen>
+    <dimen name="fr_estimate_sheet_option_image_button_marginTop">15dp</dimen>
     <dimen name="fr_estimate_sheet_option_image_button_marginLeft">5dp</dimen>
-    <dimen name="fr_estimate_sheet_small_image_button_size">15dp</dimen>
+    <dimen name="fr_estimate_sheet_small_image_button_size">18dp</dimen>
 
     <dimen name="small_text_size_marginLeft">10dp</dimen>
     <dimen name="fr_estimate_sheet_location_search">5dp</dimen>
@@ -61,8 +62,8 @@
 
     <!--activity_estimate_sheet_confirm.xml-->
     <dimen name="fr_estimate_sheet_confirm_text_view_marginTop">80dp</dimen>
-    <dimen name="fr_estimate_sheet_confirm_text_view_marginLeft">90dp</dimen>
-    <dimen name="text_view_marginTop">20dp</dimen>
+    <dimen name="fr_estimate_sheet_confirm_side_margin">58dp</dimen>
+    <dimen name="text_view_marginTop">16dp</dimen>
     <dimen name="text_view_marginLeft">20dp</dimen>
     <dimen name="bookinginfo_price_text_marginTop">50dp</dimen>
     <dimen name="estimatesheetconfirm_price_edit_size">200dp</dimen>
@@ -106,7 +107,7 @@
     <dimen name="fr_cafe_detail_text_view_marginLeft">45dp</dimen>
     <dimen name="fr_cafe_detail_text_view_interval_marginTop">15dp</dimen>
 
-    <dimen name="cafe_detail_dial_marginTop">20dp</dimen>
+    <dimen name="cafe_detail_dial_marginTop">15dp</dimen>
 
     <dimen name="cafe_detail_options_image_Size">35dp</dimen>
     <dimen name="cafe_detail_options_image_marginLeft">5dp</dimen>
@@ -228,7 +229,7 @@
 
     <dimen name="auction_process_reservation_date_marginLeft">25dp</dimen>
     <dimen name="view_auction_process_small_text_view_marginLeft">5dp</dimen>
-    <dimen name="btn_estimate_sheet_confirm_button_Size">47dp</dimen>
+    <dimen name="btn_estimate_sheet_confirm_button_Size">45dp</dimen>
 
     <!--view_cafe_reservation_list.xml-->
     <dimen name="view_cafe_reservation_list_text_view_marginLeft">16dp</dimen>

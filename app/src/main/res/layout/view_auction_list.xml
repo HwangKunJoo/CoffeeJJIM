@@ -38,7 +38,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="4"
             android:layout_gravity="center">
 
@@ -87,7 +87,7 @@
 
         <Button
             android:layout_width="@dimen/view_auction_list_button_raw_Size"
-            android:layout_height="@dimen/view_auction_list_button_column_Size"
+            android:layout_height="@dimen/view_auction_list_button_raw_Size"
             android:id="@+id/auctionlist_present_btn"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
@@ -95,6 +95,7 @@
             android:background="@drawable/view_auction_list_estimate_btn"
             android:layout_marginRight="@dimen/layout_side_margin"/>
     </LinearLayout>
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -104,4 +105,5 @@
             android:layout_height="1dp"
             android:background="@color/material_grey_300" />
     </LinearLayout>
+
 </LinearLayout>

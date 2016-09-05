@@ -14,13 +14,20 @@ import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafelist.AllCafeListActivity;
+import com.coffeejjim.developers.data.CafeImage;
+import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
 import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.BestCafeImageRequest;
 import com.coffeejjim.developers.reservation.CafeReservationListActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
 
+
     public static final int CUSTOMER = 10;
 
     @Override
@@ -58,8 +66,25 @@ public class HomeActivity extends AppCompatActivity {
         homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager());
         homeEventPager.setAdapter(homeEventAdapter);
 
-        bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager());
-        homeBestPager.setAdapter(bestRecommendPagerAdapter);
+        BestCafeImageRequest BCIRequest = new BestCafeImageRequest(this);
+        NetworkManager.getInstance().getNetworkData(BCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
+                List<CafeImage> bestCafeImages = result.getResult();
+                bestRecommendPagerAdapter.clear();
+                bestRecommendPagerAdapter.addAll(bestCafeImages);
+                bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
+                homeBestPager.setAdapter(bestRecommendPagerAdapter);
+                Toast.makeText(HomeActivity.this, "Cancel click", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<CafeImage>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(HomeActivity.this, "Cancel click123123123123", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager());
         homeNewPager.setAdapter(newRecommendPagerAdapter);
@@ -221,6 +246,5 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(mCustomView);
     }
 }
-
 
 

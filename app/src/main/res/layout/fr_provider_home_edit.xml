@@ -13,7 +13,7 @@
         android:text="지혁이네 카페"
         android:textSize="@dimen/subject_text_size"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:background="@drawable/edit_text_line"
+        android:background="@drawable/edit_text_box_line"
         android:singleLine="true"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />
@@ -145,7 +145,7 @@
         android:layout_marginLeft="@dimen/fr_provider_home_edit_text_view_contents_marginLeft"
         android:layout_alignTop="@+id/provider_home_edit_address_text"
         android:layout_alignBottom="@+id/provider_home_edit_address_text"
-        android:background="@drawable/edit_text_line"
+        android:background="@drawable/edit_text_box_line"
         android:paddingLeft="10dp"
         android:singleLine="true" />
 
@@ -162,7 +162,7 @@
         android:layout_alignEnd="@+id/provider_home_edit_address"
         android:layout_alignTop="@+id/provider_home_edit_phone_text"
         android:layout_above="@+id/provider_home_edit_working_daytime_text"
-        android:background="@drawable/edit_text_line"
+        android:background="@drawable/edit_text_box_line"
         android:paddingLeft="10dp"
         android:singleLine="true" />
 

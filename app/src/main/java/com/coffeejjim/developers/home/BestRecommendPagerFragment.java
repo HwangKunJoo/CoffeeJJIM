@@ -11,32 +11,37 @@ import android.widget.ImageView;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
+import com.coffeejjim.developers.data.CafeImage;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
 public class BestRecommendPagerFragment extends Fragment {
 
+    @BindView(R.id.home_best_cafe_image)
+    ImageView bestCafeImageView;
+
     public BestRecommendPagerFragment() {
         // Required empty public constructor
     }
 
-    public static BestRecommendPagerFragment newInstance(int bestPhoto) {
+    public static BestRecommendPagerFragment newInstance(CafeImage bestImage) {
         BestRecommendPagerFragment f = new BestRecommendPagerFragment();
         Bundle b = new Bundle();
-        b.putInt("bestPhoto", bestPhoto);
+        b.putSerializable("bestImage", bestImage);
         f.setArguments(b);
         return f;
     }
 
-    int bestPhoto;
+    CafeImage bestImage;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            bestPhoto = getArguments().getInt("bestPhoto");
+            bestImage = (CafeImage)getArguments().getSerializable("bestImage");
         }
     }
 
@@ -45,18 +50,16 @@ public class BestRecommendPagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_best_recommend_pager, container, false);
         ButterKnife.bind(this,view);
-        ImageView eventPhotoView = (ImageView) view.findViewById(R.id.bestSample);
-        eventPhotoView.setImageResource(bestPhoto);
         return view;
     }
 
-    @OnClick(R.id.bestSample)
+    @OnClick(R.id.home_best_cafe_image)
     public void onEventDeatail(){
         moveCafeDetailActivity();
     }
 
     public void moveCafeDetailActivity(){
-        Intent intent = new Intent((HomeActivity)(getActivity()),CafeDetailActivity.class);
+        Intent intent = new Intent(getActivity(),CafeDetailActivity.class);
         startActivity(intent);
     }
 }
