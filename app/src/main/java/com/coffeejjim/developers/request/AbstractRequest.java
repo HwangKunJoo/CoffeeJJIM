@@ -1,7 +1,10 @@
 package com.coffeejjim.developers.request;
 
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.NetworkResultTemp;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -40,8 +43,22 @@ public abstract class AbstractRequest<T> extends NetworkRequest<T> {
     protected T parse(ResponseBody body) throws IOException {
         String text = body.string();
         Gson gson = new Gson();
-        T  temp = gson.fromJson(text,getType() );
-        return temp;
+        NetworkResultTemp temp = gson.fromJson(text, NetworkResultTemp.class);
+        if (temp.getCode() == 1) {
+            T result = gson.fromJson(text, getType());
+            return result;
+        } else if (temp.getCode() == 0) {
+            Type type = new TypeToken<NetworkResult<String>>(){}.getType();
+            NetworkResult<String> result = gson.fromJson(text, type);
+            throw new IOException(result.getResult());
+        } else {
+            T result = gson.fromJson(text, getType(temp.getCode()));
+            return result;
+        }
+    }
+
+    protected Type getType(int code) {
+        return getType();
     }
 
 

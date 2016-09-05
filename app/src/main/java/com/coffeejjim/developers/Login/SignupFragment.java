@@ -60,7 +60,7 @@ public class SignupFragment extends Fragment {
     String cafeAddress;
 
 
-//    public static SignupFragment newInstance(String data) {
+    //    public static SignupFragment newInstance(String data) {
 //        SignupFragment fragment = new SignupFragment();
 //        Bundle b = new Bundle();
 //        b.putString("data", data);
@@ -86,15 +86,14 @@ public class SignupFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_signup, container, false);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
         setCustomActionbar();
         setHasOptionsMenu(true);
 
 
-
         String[] str = getResources().getStringArray(R.array.emailArray);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,str);
-        Spinner spi = (Spinner)view.findViewById(R.id.signup_email_spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, str);
+        Spinner spi = (Spinner) view.findViewById(R.id.signup_email_spinner);
         spi.setAdapter(adapter);
         spi.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
@@ -119,6 +118,35 @@ public class SignupFragment extends Fragment {
     // 토큰 받아오는 함수도 필요
 
 
+    @OnClick(R.id.btn_signup_id_duplication_check)
+    public void onIsIdChecked() {
+
+//        String ownerId = ownerIdView.getText().toString();
+//        if (ownerId == null) {
+//            IdNullDialogFragment nullIdFragment = new IdNullDialogFragment();
+//            nullIdFragment.show(getFragmentManager(), "IdNullDialog");
+//        } else {
+//            LoginIdCheckedRequest LICRequest = new LoginIdCheckedRequest(getContext(), ownerId);
+//            NetworkManager.getInstance().getNetworkData(LICRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+//                @Override
+//                public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
+//                    IdDuplicationCheckDialogFragment f = new IdDuplicationCheckDialogFragment();
+//                    f.show(getFragmentManager(), "IdDuplicationCheckDialog");
+//
+//                }
+//
+//                @Override
+//                public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+//                    IdDuplicationDialogFragment duplicationDialogFragment = new IdDuplicationDialogFragment();
+//                    duplicationDialogFragment.show(getFragmentManager(), "IdDuplicationDialog");
+//                }
+//            });
+//        }
+
+        IdDuplicationCheckDialogFragment f = new IdDuplicationCheckDialogFragment();
+        f.show(getFragmentManager(), "IdDuplicationCheckDialog");
+    }
+
     @OnClick(R.id.signup_join_button)
     public void onSignupComlete() {
         String ownerName = ownerNameView.getText().toString();
@@ -130,21 +158,21 @@ public class SignupFragment extends Fragment {
         String cafePhoneNumber = cafePhoneNameView.getText().toString();
 
         OwnerSignUpRequest OSRequest = new OwnerSignUpRequest(getContext(), ownerName, ownerId, ownerPassword, ownerPhoneNumber,
-                ownerEmail, cafeName, cafeAddress, "32.12313", "127.12341",cafePhoneNumber, "123123dasda" );
+                ownerEmail, cafeName, cafeAddress, "32.12313", "127.12341", cafePhoneNumber, "123123dasda");
 
         NetworkManager.getInstance().getNetworkData(OSRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
                 //property에 쓸 게 있으면 담아둠
-                Toast.makeText(getContext(),"성공",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(),"실패",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
             }
         });
-        ((LoginActivity)getActivity()).moveProviderHomeActivity();
+        ((LoginActivity) getActivity()).moveProviderHomeActivity();
         getActivity().finish();
     }
 
@@ -158,27 +186,26 @@ public class SignupFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == android.R.id.home){
+        if (id == android.R.id.home) {
             getActivity().onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
 
     @OnClick(R.id.signup_search_btn)
-    public void onSearchAddress(){
+    public void onSearchAddress() {
         Intent intent = new Intent(getActivity(), SearchAddressActivity.class);
-        startActivityForResult(intent,SEARCH_ADDRESS);
+        startActivityForResult(intent, SEARCH_ADDRESS);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == SEARCH_ADDRESS || resultCode == Activity.RESULT_OK) {
             cafeAddress = data.getExtras().getString("data");
             addressView.setText(cafeAddress);
 //            Bundle addressData = new Bundle();
 //            addressData.putString("data", findAddress);
-        }else {
+        } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }

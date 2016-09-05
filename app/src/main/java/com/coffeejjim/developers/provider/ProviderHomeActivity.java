@@ -29,6 +29,11 @@ public class ProviderHomeActivity extends AppCompatActivity {
     Toolbar toolbar;
 
     FloatingActionButton actionButton;
+    SubActionButton floatingOwnerHomeButton;
+    SubActionButton floatingAuctionStatementButton;
+    SubActionButton floatingUserManagementButton;
+    SubActionButton floatingExtraFunctionsButton;
+
 
     public static final int PROVIDER = 20;
 
@@ -70,11 +75,11 @@ public class ProviderHomeActivity extends AppCompatActivity {
         ImageView floatingExtraFunctionsView = new ImageView(this);
         floatingExtraFunctionsView.setImageResource(R.drawable.floating_extra_functions);
 
-        SubActionButton floatingOwnerHomeButton = itemBuilder.setContentView(floatingOwnerHomeView)
+        floatingOwnerHomeButton = itemBuilder.setContentView(floatingOwnerHomeView)
                 .setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.floating_background)).build();
-        SubActionButton floatingAuctionStatementButton = itemBuilder.setContentView(floatingAuctionStatementView).build();
-        SubActionButton floatingUserManagementButton = itemBuilder.setContentView(floatingUserManagementView).build();
-        SubActionButton floatingExtraFunctionsButton = itemBuilder.setContentView(floatingExtraFunctionsView).build();
+        floatingAuctionStatementButton = itemBuilder.setContentView(floatingAuctionStatementView).build();
+        floatingUserManagementButton = itemBuilder.setContentView(floatingUserManagementView).build();
+        floatingExtraFunctionsButton = itemBuilder.setContentView(floatingExtraFunctionsView).build();
 
         FloatingActionMenu actionMenu = new FloatingActionMenu.Builder(this)
                 .setRadius(getResources().getDimensionPixelSize(R.dimen.radius_large))
@@ -152,6 +157,10 @@ public class ProviderHomeActivity extends AppCompatActivity {
     public void changeProviderHome() {
         if (actionButton.getVisibility() == View.GONE) {
             actionButton.setVisibility(View.VISIBLE);
+            floatingOwnerHomeButton.setVisibility(View.VISIBLE);
+            floatingAuctionStatementButton.setVisibility(View.VISIBLE);
+            floatingUserManagementButton.setVisibility(View.VISIBLE);
+            floatingExtraFunctionsButton.setVisibility(View.VISIBLE);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.provider_home_container, new ProviderHomeFragment())
                     .commit();
@@ -160,7 +169,11 @@ public class ProviderHomeActivity extends AppCompatActivity {
 
     public void changeProviderHomeEdit() {
         if (actionButton.getVisibility() == View.VISIBLE) {
-            actionButton.setVisibility(View.GONE);
+//            actionButton.setVisibility(View.GONE);
+//            floatingOwnerHomeButton.setVisibility(View.GONE);
+//            floatingAuctionStatementButton.setVisibility(View.GONE);
+//            floatingUserManagementButton.setVisibility(View.GONE);
+//            floatingExtraFunctionsButton.setVisibility(View.GONE);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.provider_home_container, new ProviderHomeEditFragment())
                     .addToBackStack(null)

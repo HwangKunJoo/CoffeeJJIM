@@ -107,7 +107,7 @@
             android:background="@drawable/edit_text_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_toLeftOf="@+id/signup_id_btn"
+            android:layout_toLeftOf="@+id/btn_signup_id_duplication_check"
             android:layout_toRightOf="@+id/signup_name_text"
             android:layout_toEndOf="@+id/signup_name_text" />
 
@@ -131,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="중복 확인"
-            android:id="@+id/signup_id_btn"
+            android:id="@+id/btn_signup_id_duplication_check"
             android:textSize="@dimen/fr_signup_text_view_textSize"
             android:background="@color/coffeejjim_invisible"
             android:textColor="@color/coffeejjim_yellow"
@@ -154,8 +154,8 @@
             android:background="@drawable/edit_text_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_alignRight="@+id/signup_id_btn"
-            android:layout_alignEnd="@+id/signup_id_btn" />
+            android:layout_alignRight="@+id/btn_signup_id_duplication_check"
+            android:layout_alignEnd="@+id/btn_signup_id_duplication_check" />
 
         <EditText
             android:layout_width="match_parent"
