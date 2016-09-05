@@ -19,12 +19,14 @@ public class BestCafeImageRequest extends AbstractRequest<NetworkResult<List<Caf
 
     Request request;
     public BestCafeImageRequest(Context context) {
-        HttpUrl url = getBaseUrlBuilder()
+        HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("cafes")
                 .addPathSegment("best5")
                 .build();
+
         request = new Request.Builder()
                 .url(url)
+                .tag(context)
                 .build();
     }
     @Override
