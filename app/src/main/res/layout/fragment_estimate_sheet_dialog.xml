@@ -205,30 +205,36 @@
         android:layout_width="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:layout_height="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:id="@+id/fr_estimate_sheet_dialog_option_image"
-        android:src="@drawable/wifi"
+        android:src="@drawable/options_wifi_on"
         android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option"
         android:layout_alignLeft="@+id/fr_estimate_sheet_dialog_person_text"
-        android:layout_alignStart="@+id/fr_estimate_sheet_dialog_person_text" />
+        android:layout_alignStart="@+id/fr_estimate_sheet_dialog_person_text"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:layout_width="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:layout_height="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:id="@+id/fr_estimate_sheet_dialog_option1"
-        android:src="@drawable/plag"
+        android:src="@drawable/options_plag_on"
         android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option_image"
         android:layout_toRightOf="@+id/fr_estimate_sheet_dialog_option_image"
         android:layout_toEndOf="@+id/fr_estimate_sheet_dialog_option_image"
-        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:layout_width="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:layout_height="@dimen/fr_estimate_sheet_dialog_option_image_Size"
         android:id="@+id/fr_estimate_sheet_dialog_option2"
-        android:src="@drawable/parking"
+        android:src="@drawable/options_parking_on"
         android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option1"
         android:layout_toRightOf="@+id/fr_estimate_sheet_dialog_option1"
         android:layout_toEndOf="@+id/fr_estimate_sheet_dialog_option1"
-        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"/>
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:layout_width="@dimen/fr_estimate_sheet_dialog_option_image_Size"
@@ -237,7 +243,9 @@
         android:layout_alignTop="@+id/fr_estimate_sheet_dialog_option2"
         android:layout_toRightOf="@+id/fr_estimate_sheet_dialog_location_text"
         android:layout_toEndOf="@+id/fr_estimate_sheet_dialog_location_text"
-        android:src="@drawable/workingtime"
-        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"/>
+        android:src="@drawable/options_workingtime_on"
+        android:layout_marginLeft="@dimen/fr_estimate_sheet_dialog_option_image_marginLeft"
+        android:background="@color/coffeejjim_invisible"
+        android:scaleType="centerCrop" />
 
 </RelativeLayout>

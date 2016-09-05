@@ -75,7 +75,7 @@ public class LikeListFragment extends Fragment {
             c.setCafeName("CAFE NO. " + i);
             c.setAddress("Address: " + i);
             c.setPhoto(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
-            c.setOptions(ContextCompat.getDrawable(getContext(),R.drawable.wifi));
+            c.setOptions(ContextCompat.getDrawable(getContext(),R.drawable.options_wifi_on_120));
             mAdapter.add(c);
         }
     }

@@ -16,9 +16,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/alarm"
+            android:src="@drawable/fr_booking_info_ic_clock"
             android:layout_marginLeft="@dimen/fr_booking_info_image_marginLeft"
-            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop" />
+            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop"
+            android:background="@color/coffeejjim_invisible"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -123,22 +125,25 @@
             android:layout_width="@dimen/fr_booking_info_option_image_Size"
             android:layout_height="@dimen/fr_booking_info_option_image_Size"
             android:id="@+id/bookinginfo_option_image"
-            android:src="@drawable/wifi"
+            android:src="@drawable/options_wifi_on_120"
             android:layout_below="@+id/bookinginfo_person1_text"
             android:layout_alignLeft="@+id/bookinginfo_person1_text"
             android:layout_alignStart="@+id/bookinginfo_person1_text"
             android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:background="@color/coffeejjim_invisible" />
+            android:background="@color/coffeejjim_invisible"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="@dimen/fr_booking_info_option_image_Size"
             android:layout_height="@dimen/fr_booking_info_option_image_Size"
             android:id="@+id/bookinginfo_option1_image"
-            android:src="@drawable/plag"
+            android:src="@drawable/options_plag_on_120"
             android:layout_alignTop="@+id/bookinginfo_option_image"
             android:layout_toRightOf="@+id/bookinginfo_option_image"
             android:layout_toEndOf="@+id/bookinginfo_option_image"
-            android:background="@color/coffeejjim_invisible" />
+            android:background="@color/coffeejjim_invisible"
+            android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="@dimen/fr_booking_info_option_image_Size"
@@ -147,8 +152,10 @@
             android:layout_alignTop="@+id/bookinginfo_option1_image"
             android:layout_toRightOf="@+id/bookinginfo_option1_image"
             android:layout_toEndOf="@+id/bookinginfo_option1_image"
-            android:src="@drawable/parking"
-            android:background="@color/coffeejjim_invisible" />
+            android:src="@drawable/options_parking_on_120"
+            android:background="@color/coffeejjim_invisible"
+            android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop" />
 
         <ImageView
             android:layout_width="@dimen/fr_booking_info_option_image_Size"
@@ -157,8 +164,10 @@
             android:layout_alignTop="@+id/bookinginfo_option2_image"
             android:layout_toRightOf="@+id/bookinginfo_option2_image"
             android:layout_toEndOf="@+id/bookinginfo_option2_image"
-            android:src="@drawable/workingtime"
-            android:background="@color/coffeejjim_invisible" />
+            android:src="@drawable/options_wprkingtime_on_120"
+            android:background="@color/coffeejjim_invisible"
+            android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop" />
 
     </RelativeLayout>
 
@@ -174,9 +183,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:src="@drawable/person"
+            android:src="@drawable/fr_booking_info_ic_face"
             android:layout_marginLeft="@dimen/fr_booking_info_image_marginLeft"
-            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop" />
+            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop"
+            android:background="@color/coffeejjim_invisible"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:layout_width="wrap_content"

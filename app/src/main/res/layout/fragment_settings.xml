@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/under_line" >
+        android:background="@drawable/under_line"
+        android:layout_marginTop="2dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,13 +44,14 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/under_line">
+        android:background="@drawable/under_line"
+        android:layout_marginTop="2dp">
 
         <Switch
             android:layout_width="match_parent"
             android:layout_height="@dimen/fr_settings_text_view_Size"
-            android:text="Puch 알림"
-            android:id="@+id/activity_settings_puch_switch"
+            android:text="Push 알림"
+            android:id="@+id/activity_settings_push_switch"
             android:layout_gravity="right"
             android:checked="false"
             android:textSize="@dimen/subject_text_size"
@@ -62,7 +64,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/under_line">
+        android:background="@drawable/under_line"
+        android:layout_marginTop="2dp">
 
         <Switch
             android:layout_width="match_parent"
@@ -81,7 +84,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/under_line">
+        android:background="@drawable/under_line"
+        android:layout_marginTop="2dp">
 
         <Switch
             android:layout_width="match_parent"
@@ -145,7 +149,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/under_line">
+        android:background="@drawable/under_line"
+        android:layout_marginTop="2dp">
 
         <TextView
             android:layout_width="wrap_content"

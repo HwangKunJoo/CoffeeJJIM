@@ -27,14 +27,14 @@
     <LinearLayout
         android:id="@+id/cafe_detail_preview_image_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fr_cafe_detail_preview_image_layout_Size"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/cafe_detail_image_pager"
         android:layout_marginTop="@dimen/fr_cafe_detail_preview_image_layout_marginTop"
         android:orientation="horizontal"
         android:layout_marginLeft="@dimen/fr_cafe_detail_preview_image_layout_marginLeftRight"
         android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_layout_marginLeftRight">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cafe_detail_preview_image_left"
             android:layout_width="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cafe_detail_preview_image_right"
             android:layout_width="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cafe_detail_preview_image_top"
             android:layout_width="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
@@ -64,7 +64,7 @@
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/cafe_detail_preview_image_bottom"
             android:layout_width="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
@@ -143,9 +143,12 @@
             android:text="서울시 관악구 봉천동"
             android:textSize="@dimen/small_text_size"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_alignBottom="@+id/cafedetail_address_text"
+            android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/cafe_detail_dial"
-            android:layout_alignStart="@+id/cafe_detail_dial" />
+            android:layout_alignStart="@+id/cafe_detail_dial"
+            android:layout_toLeftOf="@+id/btn_move_map"
+            android:layout_toStartOf="@+id/btn_move_map"
+            android:layout_marginTop="13dp" />
 
         <TextView
             android:id="@+id/cafe_detail_dial"
@@ -187,48 +190,56 @@
                 android:id="@+id/cafe_detail_options_wifi"
                 android:layout_width="@dimen/cafe_detail_options_image_Size"
                 android:layout_height="@dimen/cafe_detail_options_image_Size"
-                android:src="@drawable/wifi" />
+                android:src="@drawable/options_wifi_on"
+                android:background="@color/coffeejjim_invisible" />
 
             <ImageView
                 android:id="@+id/cafe_detail_options_plag"
                 android:layout_width="@dimen/cafe_detail_options_image_Size"
                 android:layout_height="@dimen/cafe_detail_options_image_Size"
-                android:src="@drawable/plag"
-                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft" />
+                android:src="@drawable/options_plag_on"
+                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft"
+                android:background="@color/coffeejjim_invisible" />
 
             <ImageView
                 android:id="@+id/cafe_detail_options_parking"
                 android:layout_width="@dimen/cafe_detail_options_image_Size"
                 android:layout_height="@dimen/cafe_detail_options_image_Size"
-                android:src="@drawable/parking"
-                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft" />
+                android:src="@drawable/options_parking_on"
+                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft"
+                android:background="@color/coffeejjim_invisible" />
 
             <ImageView
                 android:id="@+id/cafe_detail_options_working_time"
                 android:layout_width="@dimen/cafe_detail_options_image_Size"
                 android:layout_height="@dimen/cafe_detail_options_image_Size"
-                android:src="@drawable/workingtime"
-                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft" />
+                android:src="@drawable/options_workingtime_on"
+                android:layout_marginLeft="@dimen/cafe_detail_options_image_marginLeft"
+                android:background="@color/coffeejjim_invisible" />
         </LinearLayout>
 
-        <ImageButton
+        <Button
             android:layout_width="@dimen/maplocation_telephone_image_button_Size"
             android:layout_height="@dimen/maplocation_telephone_image_button_Size"
             android:id="@+id/btn_move_map"
-            android:background="@drawable/maplocation"
-            android:layout_above="@+id/cafedetail_dial_text"
-            android:layout_alignLeft="@+id/btn_move_dial_pad"
-            android:layout_alignStart="@+id/btn_move_dial_pad" />
+            android:src="@drawable/fr_cafe_detail_map_btn"
+            android:scaleType="center"
+            android:layout_alignTop="@+id/cafedetail_address_text"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/fr_cafe_detail_map_btn" />
 
-        <ImageButton
+        <Button
             android:layout_width="@dimen/maplocation_telephone_image_button_Size"
             android:layout_height="@dimen/maplocation_telephone_image_button_Size"
             android:id="@+id/btn_move_dial_pad"
-            android:background="@drawable/telephone"
+            android:src="@drawable/fr_cafe_detail_call_btn"
+            android:scaleType="center"
             android:layout_alignTop="@+id/cafe_detail_dial"
-            android:layout_alignRight="@+id/cafe_detail_options_image_layout"
-            android:layout_alignEnd="@+id/cafe_detail_options_image_layout"
-            android:layout_marginLeft="@dimen/telephone_image_button_marginLeft" />
+            android:layout_alignLeft="@+id/btn_move_map"
+            android:layout_alignStart="@+id/btn_move_map"
+            android:background="@drawable/fr_cafe_detail_call_btn" />
 
     </RelativeLayout>
 

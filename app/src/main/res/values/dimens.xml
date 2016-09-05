@@ -91,12 +91,12 @@
     <dimen name="fr_cafe_detail_preview_image_layout_Size">50dp</dimen>
     <dimen name="fr_cafe_detail_preview_image_layout_marginTop">10dp</dimen>
     <dimen name="fr_cafe_detail_preview_image_layout_marginLeftRight">55dp</dimen>
-    <dimen name="fr_cafe_detail_preview_image_Size">40dp</dimen>
+    <dimen name="fr_cafe_detail_preview_image_Size">60dp</dimen>
     <dimen name="fr_cafe_detail_preview_image_marginLR">5dp</dimen>
 
-    <dimen name="fr_cafe_detail_relativeLayout_marginTop">10dp</dimen>
+    <dimen name="fr_cafe_detail_relativeLayout_marginTop">4dp</dimen>
     <dimen name="fr_cafe_detail_text_view_Size">80dp</dimen>
-    <dimen name="fr_cafe_detail_text_view_marginTop">20dp</dimen>
+    <dimen name="fr_cafe_detail_text_view_marginTop">10dp</dimen>
     <dimen name="fr_cafe_detail_text_view_marginLeft">45dp</dimen>
     <dimen name="fr_cafe_detail_text_view_interval_marginTop">15dp</dimen>
 
@@ -197,12 +197,11 @@
 
     <!--view_all_cafe_list.xml, view_like_list.xml-->
     <dimen name="view_all_cafe_list_side_margin">16dp</dimen>
-    <dimen name="view_all_cafe_list_image_Size">80dp</dimen>
-    <dimen name="view_all_cafe_list_image_marginTop">10dp</dimen>
+    <dimen name="view_all_cafe_list_image_Size">60dp</dimen>
+    <dimen name="view_all_cafe_list_image_marginTop">6dp</dimen>
+    <dimen name="view_all_cafe_list_image_marginBottom">5dp</dimen>
 
-    <dimen name="allcafelist_address_text_marginTop">5dp</dimen>
-
-    <dimen name="view_all_cafe_list_option_image_Size">24dp</dimen>
+    <dimen name="view_all_cafe_list_option_image_Size">20dp</dimen>
     <dimen name="view_all_cafe_list_option_image_marginTop">10dp</dimen>
     <dimen name="view_all_cafe_list_option_image_marginLeft">2dp</dimen>
 
@@ -210,7 +209,7 @@
     <dimen name="allcafelist_distance_text_marginTop">5dp</dimen>
 
     <!--view_auction_list.xml-->
-    <dimen name="view_auction_list_image_Size">20dp</dimen>
+    <dimen name="view_auction_list_image_Size">15dp</dimen>
     <dimen name="view_auction_list_maginRight">5dp</dimen>
 
     <dimen name="view_auction_list_button_raw_Size">30dp</dimen>

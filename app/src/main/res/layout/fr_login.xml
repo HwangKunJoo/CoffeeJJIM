@@ -24,7 +24,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/login_kakao_btn"
-        android:src="@drawable/fr_login_kakao"
+        android:src="@drawable/fr_login_btn_kakao"
         android:scaleType="centerCrop"
         android:background="#ffc700"
         android:layout_marginTop="40dp"
@@ -65,7 +65,8 @@
             android:layout_marginLeft="48dp"
             android:background="@drawable/edit_text_line"
             android:paddingLeft="10dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="@color/coffeejjim_red" />
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="177dp"
@@ -79,7 +80,8 @@
             android:layout_marginTop="4dp"
             android:background="@drawable/edit_text_line"
             android:paddingLeft="10dp"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:textColor="@color/coffeejjim_red" />
 
         <Button
             android:layout_width="wrap_content"

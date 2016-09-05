@@ -146,7 +146,7 @@
         android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option1_btn"
-        android:src="@drawable/wifi"
+        android:src="@drawable/options_wifi_off_120"
         android:background="@color/coffeejjim_invisible"
         android:scaleType="fitCenter"
         android:layout_below="@+id/estimate_sheet_selecting_text"
@@ -158,7 +158,7 @@
         android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option2_btn"
-        android:src="@drawable/plag"
+        android:src="@drawable/options_plag_off_120"
         android:layout_alignTop="@+id/estimate_sheet_option1_btn"
         android:layout_toRightOf="@+id/estimate_sheet_option1_btn"
         android:layout_toEndOf="@+id/estimate_sheet_option1_btn"
@@ -170,7 +170,7 @@
         android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option3_btn"
-        android:src="@drawable/parking"
+        android:src="@drawable/options_workingtime_off_120"
         android:layout_alignTop="@+id/estimate_sheet_option2_btn"
         android:layout_toRightOf="@+id/estimate_sheet_option2_btn"
         android:layout_toEndOf="@+id/estimate_sheet_option2_btn"
@@ -182,7 +182,7 @@
         android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_option_image_button_size"
         android:id="@+id/estimate_sheet_option4_btn"
-        android:src="@drawable/workingtime"
+        android:src="@drawable/options_parking_off_120"
         android:scaleType="fitCenter"
         android:background="@color/coffeejjim_invisible"
         android:layout_alignTop="@+id/estimate_sheet_option3_btn"
@@ -258,7 +258,6 @@
         android:layout_marginLeft="10dp"
         android:layout_alignBottom="@+id/estimate_sheet_endtime_text"
         android:layout_alignRight="@+id/estimate_sheet_person_edit"
-        android:layout_alignEnd="@+id/estimate_sheet_person_edit"
-        android:background="@drawable/edit_text_line" />
+        android:layout_alignEnd="@+id/estimate_sheet_person_edit" />
 
 </RelativeLayout>

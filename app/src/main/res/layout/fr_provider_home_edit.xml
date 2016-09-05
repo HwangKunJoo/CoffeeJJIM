@@ -230,37 +230,41 @@
         android:id="@+id/provider_home_edit_options_wifi"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
-        android:src="@drawable/wifi"
+        android:src="@drawable/options_wifi_on"
         android:layout_alignTop="@+id/provider_home_edit_option_text"
         android:layout_alignLeft="@+id/provider_home_edit_phone"
-        android:layout_alignStart="@+id/provider_home_edit_phone" />
+        android:layout_alignStart="@+id/provider_home_edit_phone"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_plag"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
-        android:src="@drawable/plag"
+        android:src="@drawable/options_plag_on"
         android:layout_alignTop="@+id/provider_home_edit_options_wifi"
         android:layout_toRightOf="@+id/provider_home_edit_options_wifi"
-        android:layout_toEndOf="@+id/provider_home_edit_options_wifi" />
+        android:layout_toEndOf="@+id/provider_home_edit_options_wifi"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_parking"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
-        android:src="@drawable/parking"
+        android:src="@drawable/options_parking_on"
         android:layout_alignTop="@+id/provider_home_edit_options_plag"
         android:layout_toRightOf="@+id/provider_home_edit_options_plag"
-        android:layout_toEndOf="@+id/provider_home_edit_options_plag" />
+        android:layout_toEndOf="@+id/provider_home_edit_options_plag"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_working_time"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
-        android:src="@drawable/workingtime"
+        android:src="@drawable/options_workingtime_on"
         android:layout_alignTop="@+id/provider_home_edit_options_parking"
         android:layout_toRightOf="@+id/provider_home_edit_options_parking"
-        android:layout_toEndOf="@+id/provider_home_edit_options_parking" />
+        android:layout_toEndOf="@+id/provider_home_edit_options_parking"
+        android:scaleType="centerCrop" />
 
     <Button
         android:id="@+id/provider_home_complete_btn"
