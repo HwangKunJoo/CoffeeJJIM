@@ -28,15 +28,16 @@ public class BestRecommendPagerAdapter extends FragmentPagerAdapter{
 
     List<CafeImage> bestCafeImages = new ArrayList<>();
 
-    public void clear() {
-        bestCafeImages.clear();
-        notifyDataSetChanged();
-    }
 
-    public void addAll(List<CafeImage> items) {
-        this.bestCafeImages.addAll(items);
-        notifyDataSetChanged();
-    }
+//    public void clear() {
+//        bestCafeImages.clear();
+//        notifyDataSetChanged();
+//    }
+//
+//    public void addAll(List<CafeImage> items) {
+//        this.bestCafeImages.addAll(items);
+//        notifyDataSetChanged();
+//    }
 
     public BestRecommendPagerAdapter(FragmentManager fm, List<CafeImage> bestCafeImages) {
         super(fm);

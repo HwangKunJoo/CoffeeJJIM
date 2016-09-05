@@ -53,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
 
+    List<CafeImage> bestCafeImages;
 
     public static final int CUSTOMER = 10;
 
@@ -70,11 +71,9 @@ public class HomeActivity extends AppCompatActivity {
         NetworkManager.getInstance().getNetworkData(BCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
-                List<CafeImage> bestCafeImages = result.getResult();
-                bestRecommendPagerAdapter.clear();
-                bestRecommendPagerAdapter.addAll(bestCafeImages);
-                bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
-                homeBestPager.setAdapter(bestRecommendPagerAdapter);
+                bestCafeImages = result.getResult();
+//                bestRecommendPagerAdapter.clear();
+//                bestRecommendPagerAdapter.addAll(bestCafeImages);
                 Toast.makeText(HomeActivity.this, "Cancel click", Toast.LENGTH_SHORT).show();
             }
 
@@ -83,7 +82,8 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "Cancel click123123123123", Toast.LENGTH_SHORT).show();
             }
         });
-
+        bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
+        homeBestPager.setAdapter(bestRecommendPagerAdapter);
 
 
         newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager());

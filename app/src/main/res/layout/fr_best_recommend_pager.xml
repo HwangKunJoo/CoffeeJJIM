@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home.BestRecommendPagerFragment"
-    android:id="@+id/home_best_cafe_image">
+    android:id="@+id/home_best_cafe_layout">
 
     <ImageView
         android:layout_width="match_parent"
