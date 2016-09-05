@@ -169,11 +169,11 @@ public class ProviderHomeActivity extends AppCompatActivity {
 
     public void changeProviderHomeEdit() {
         if (actionButton.getVisibility() == View.VISIBLE) {
-//            actionButton.setVisibility(View.GONE);
-//            floatingOwnerHomeButton.setVisibility(View.GONE);
-//            floatingAuctionStatementButton.setVisibility(View.GONE);
-//            floatingUserManagementButton.setVisibility(View.GONE);
-//            floatingExtraFunctionsButton.setVisibility(View.GONE);
+            actionButton.setVisibility(View.GONE);
+            floatingOwnerHomeButton.setVisibility(View.GONE);
+            floatingAuctionStatementButton.setVisibility(View.GONE);
+            floatingUserManagementButton.setVisibility(View.GONE);
+            floatingExtraFunctionsButton.setVisibility(View.GONE);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.provider_home_container, new ProviderHomeEditFragment())
                     .addToBackStack(null)
