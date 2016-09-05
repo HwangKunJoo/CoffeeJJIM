@@ -1,104 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/user_management_toolbar_layout"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <FrameLayout
+            android:id="@+id/user_management_toolbar_layout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#ffffff"
-            android:title="" />
+            android:layout_height="wrap_content">
 
-        <TextView
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#ffffff"
+                android:title="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="고객 관리"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#420d03"
+                android:textSize="20dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/user_management_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/user_management_toolbar_layout"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/user_management_title_nickname"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="닉네임"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/user_management_title_visit_count"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="방문 수"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/user_management_title_like"
+                android:layout_width="74dp"
+                android:layout_height="wrap_content"
+                android:text="즐겨찾기"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/btn_user_management_title_detail_info"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:text="상세정보"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/btn_user_management_title_reservation_info"
+                android:layout_width="49dp"
+                android:layout_height="wrap_content"
+                android:text="내역"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/material_grey_300" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="고객 관리"
-            android:textColor="#420d03"
-            android:textSize="20dp" />
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/user_management_title_layout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/user_management_toolbar_layout"
-        android:orientation="horizontal"
-        android:background="@drawable/under_line">
-
-        <TextView
-            android:id="@+id/user_management_title_nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:text="닉네임"
-            android:textColor="@color/coffeejjim_brown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/user_management_title_visit_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:text="방문 수"
-            android:textColor="@color/coffeejjim_brown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/user_management_title_like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:text="즐겨찾기"
-            android:textColor="@color/coffeejjim_brown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/btn_user_management_title_detail_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:text="상세정보"
-            android:textColor="@color/coffeejjim_brown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/btn_user_management_title_reservation_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:text="내역"
-            android:textColor="@color/coffeejjim_brown"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
+            android:layout_below="@+id/user_management_title_layout" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/user_management_title_layout" />
-
-</RelativeLayout>
+</LinearLayout>
 
 

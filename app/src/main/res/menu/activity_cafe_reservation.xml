@@ -4,7 +4,7 @@
     <item
         android:title="cafe_reservation_refresh"
         android:id="@+id/cafe_reservation_fresh"
-        android:icon="@android:drawable/ic_popup_reminder"
+        android:icon="@drawable/activity_cafe_reservation_refresh"
         app:showAsAction="always"
         android:orderInCategory="200"/>
 </menu>
