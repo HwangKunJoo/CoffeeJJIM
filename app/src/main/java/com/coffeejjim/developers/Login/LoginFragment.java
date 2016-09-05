@@ -6,8 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Owner;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.OwnerLoginRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,22 +59,22 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.login_provider_btn)
     public void onProviderLogin() {
-//        final String ownerId = ownerLoginIdView.getText().toString();
-//        final String password = ownerPasswordView.getText().toString();
-//
-//        OwnerLoginRequest OLRequest = new OwnerLoginRequest(getContext(), ownerId, password, "adasdwewe");
-//        NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
-//            @Override
-//            public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
-//                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
-//                ((LoginActivity) getActivity()).moveProviderHomeActivity();
-//            }
-//
-//            @Override
-//            public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
-//                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        final String ownerId = ownerLoginIdView.getText().toString();
+        final String password = ownerPasswordView.getText().toString();
+
+        OwnerLoginRequest OLRequest = new OwnerLoginRequest(getContext(), ownerId, password, "adasdwewe");
+        NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
+                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+                ((LoginActivity) getActivity()).moveProviderHomeActivity();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         ((LoginActivity) getActivity()).moveProviderHomeActivity();
     }

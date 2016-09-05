@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Owner;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.LoginIdCheckedRequest;
 import com.coffeejjim.developers.request.OwnerSignUpRequest;
 
 import butterknife.BindView;
@@ -121,30 +123,28 @@ public class SignupFragment extends Fragment {
     @OnClick(R.id.btn_signup_id_duplication_check)
     public void onIsIdChecked() {
 
-//        String ownerId = ownerIdView.getText().toString();
-//        if (ownerId == null) {
-//            IdNullDialogFragment nullIdFragment = new IdNullDialogFragment();
-//            nullIdFragment.show(getFragmentManager(), "IdNullDialog");
-//        } else {
-//            LoginIdCheckedRequest LICRequest = new LoginIdCheckedRequest(getContext(), ownerId);
-//            NetworkManager.getInstance().getNetworkData(LICRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
-//                @Override
-//                public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
-//                    IdDuplicationCheckDialogFragment f = new IdDuplicationCheckDialogFragment();
-//                    f.show(getFragmentManager(), "IdDuplicationCheckDialog");
-//
-//                }
-//
-//                @Override
-//                public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
-//                    IdDuplicationDialogFragment duplicationDialogFragment = new IdDuplicationDialogFragment();
-//                    duplicationDialogFragment.show(getFragmentManager(), "IdDuplicationDialog");
-//                }
-//            });
-//        }
+        final String ownerId = ownerIdView.getText().toString();
 
-        IdDuplicationCheckDialogFragment f = new IdDuplicationCheckDialogFragment();
-        f.show(getFragmentManager(), "IdDuplicationCheckDialog");
+        LoginIdCheckedRequest LICRequest = new LoginIdCheckedRequest(getContext(), ownerId);
+        NetworkManager.getInstance().getNetworkData(LICRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
+                if(!TextUtils.isEmpty(ownerId) && result.getCode() != 2) {
+                    IdDuplicationCheckDialogFragment idDuplicationCheckDialogFragment
+                            = new IdDuplicationCheckDialogFragment();
+                    idDuplicationCheckDialogFragment.show(getFragmentManager(), "IdDuplicationCheckDialog");
+                }else{
+                    IdDuplicationDialogFragment duplicationDialogFragment
+                            = IdDuplicationDialogFragment.newInstance(ownerId);
+                    duplicationDialogFragment.show(getFragmentManager(), "IdDuplicationDialog");
+                }
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(),"실패",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @OnClick(R.id.signup_join_button)
@@ -165,6 +165,8 @@ public class SignupFragment extends Fragment {
             public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
                 //property에 쓸 게 있으면 담아둠
                 Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+                ((LoginActivity) getActivity()).moveProviderHomeActivity();
+                getActivity().finish();
             }
 
             @Override
@@ -172,8 +174,7 @@ public class SignupFragment extends Fragment {
                 Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
             }
         });
-        ((LoginActivity) getActivity()).moveProviderHomeActivity();
-        getActivity().finish();
+
     }
 
 

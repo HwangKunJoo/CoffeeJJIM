@@ -21,7 +21,6 @@ public class IdDuplicationCheckDialogFragment extends DialogFragment{
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(getContext(), "OK click", Toast.LENGTH_SHORT).show();
-                // 아이디 값 넘겨주기 설정해야됨
             }
         });
 

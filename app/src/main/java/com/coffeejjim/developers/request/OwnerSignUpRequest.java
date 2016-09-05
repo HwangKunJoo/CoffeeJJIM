@@ -25,7 +25,7 @@ public class OwnerSignUpRequest extends AbstractRequest<NetworkResult<Owner>> {
                               String cafeAddress, String latitude,
                               String longitude, String cafePhoneNumber, String fcmToken)
     {
-        HttpUrl.Builder builder = getBaseUrlBuilder();
+        HttpUrl.Builder builder = getBaseUrlHttpsBuilder();
         builder.addPathSegment("cafes");
 
         RequestBody body = new FormBody.Builder()
