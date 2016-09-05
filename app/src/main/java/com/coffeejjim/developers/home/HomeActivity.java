@@ -2,6 +2,7 @@ package com.coffeejjim.developers.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,26 +18,35 @@ import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
 import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.reservation.CafeReservationListActivity;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity {
-
-    ViewPager homeEventPager, bestRecommendPager, newRecommendPager;
-    HomeEventPagerAdapter homeEventAdapter;
-    BestRecommendPagerAdapter bestRecommendPagerAdapter;
-    NewRecommendPagerAdapter newRecommendPagerAdapter;
-
-    public static final int CUSTOMER = 10;
 
 
 //    private static final int SAMPLE_ID = 34536;
 //    private int badgeCount = 10;
 //    //setTitle로 제목 달고 뱃지넘버로
 
+    @BindView(R.id.home_event_pager)
+    ViewPager homeEventPager;
+
+    @BindView(R.id.home_best_pager)
+    ViewPager homeBestPager;
+
+    @BindView(R.id.home_new_pager)
+    ViewPager homeNewPager;
+
+    HomeEventPagerAdapter homeEventAdapter;
+    BestRecommendPagerAdapter bestRecommendPagerAdapter;
+    NewRecommendPagerAdapter newRecommendPagerAdapter;
+
+    public static final int CUSTOMER = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,71 +55,84 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setCustomActionbar();
 
-        homeEventPager = (ViewPager) findViewById(R.id.home_event_pager);
         homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager());
         homeEventPager.setAdapter(homeEventAdapter);
 
-        bestRecommendPager = (ViewPager) findViewById(R.id.home_best_pager);
         bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager());
-        bestRecommendPager.setAdapter(bestRecommendPagerAdapter);
+        homeBestPager.setAdapter(bestRecommendPagerAdapter);
 
-        newRecommendPager = (ViewPager) findViewById(R.id.home_new_pager);
         newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager());
-        newRecommendPager.setAdapter(newRecommendPagerAdapter);
+        homeNewPager.setAdapter(newRecommendPagerAdapter);
 
-        ImageView icon = new ImageView(this);
-        icon.setImageResource(R.drawable.floatsample);
+        setFloatingButton();
 
-        com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton actionButton
-                = new com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton.Builder(this)
-                .setContentView(icon).build();
+
+    }
+
+    private void setFloatingButton(){
+        ImageView floatingMainView = new ImageView(this);
+        floatingMainView.setImageResource(R.drawable.floating_main);
+        int floatingWidth = getResources().getDimensionPixelSize(R.dimen.radius_small);
+        int floatingHeight = getResources().getDimensionPixelSize(R.dimen.radius_small);
+        int floatingMargin = 58;
+        FloatingActionButton.LayoutParams floatingMainParams = new FloatingActionButton.LayoutParams
+                (floatingWidth,floatingHeight);
+        floatingMainParams.setMargins(floatingMargin,floatingMargin,floatingMargin,floatingMargin);
+
+        FloatingActionButton actionButton
+                = new FloatingActionButton.Builder(this).setContentView(floatingMainView).setBackgroundDrawable(R.drawable.floating_background).
+                setLayoutParams(floatingMainParams).build();
 
         SubActionButton.Builder itemBuilder = new SubActionButton.Builder(this);
-        ImageView itemIcon = new ImageView(this);
-        itemIcon.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon2 = new ImageView(this);
-        itemIcon2.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon3 = new ImageView(this);
-        itemIcon3.setImageResource(R.drawable.floatbutton);
-        ImageView itemIcon4 = new ImageView(this);
-        itemIcon4.setImageResource(R.drawable.floatbutton);
-        SubActionButton button1 = itemBuilder.setContentView(itemIcon).build();
-        SubActionButton button2 = itemBuilder.setContentView(itemIcon2).build();
-        SubActionButton button3 = itemBuilder.setContentView(itemIcon3).build();
-        SubActionButton button4 = itemBuilder.setContentView(itemIcon4).build();
+        ImageView floatingHomeView = new ImageView(this);
+        floatingHomeView.setImageResource(R.drawable.floating_home);
+        ImageView floatingAllCafeView = new ImageView(this);
+        floatingAllCafeView.setImageResource(R.drawable.floating_all_cafe);
+        ImageView floatingLikeListView = new ImageView(this);
+        floatingLikeListView.setImageResource(R.drawable.floating_like_list);
+        ImageView floatingExtraFunctionsView = new ImageView(this);
+        floatingExtraFunctionsView.setImageResource(R.drawable.floating_extra_functions);
+
+        SubActionButton floatingHomeButton = itemBuilder.setContentView(floatingHomeView).setBackgroundDrawable(ContextCompat.getDrawable(this,R.drawable.floating_background)).build();
+        SubActionButton floatingAllCafeButton = itemBuilder.setContentView(floatingAllCafeView).build();
+        SubActionButton floatingLikeListButton = itemBuilder.setContentView(floatingLikeListView).build();
+        SubActionButton floatingExtraFunctionsButton = itemBuilder.setContentView(floatingExtraFunctionsView).build();
 
         FloatingActionMenu actionMenu = new FloatingActionMenu.Builder(this)
-                .addSubActionView(button1)
-                .addSubActionView(button2)
-                .addSubActionView(button3)
-                .addSubActionView(button4)
+                .setRadius(getResources().getDimensionPixelSize(R.dimen.radius_large))
+                .addSubActionView(floatingHomeButton)
+                .addSubActionView(floatingAllCafeButton)
+                .addSubActionView(floatingLikeListButton)
+                .addSubActionView(floatingExtraFunctionsButton)
                 .attachTo(actionButton)
                 .build();
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        floatingHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 moveHomeActivity();
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        floatingAllCafeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 moveAllCafeListActivity();
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
+        floatingLikeListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               moveLikeListActivity();
+                moveLikeListActivity();
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() {
+        floatingExtraFunctionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 moveExtraFunctionsActivity();
             }
         });
     }
+
 
     @OnClick(R.id.home_estimate_image)
     public void onEstimateSheet(){
