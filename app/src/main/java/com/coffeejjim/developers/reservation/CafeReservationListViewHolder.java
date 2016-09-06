@@ -6,8 +6,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.Proposal;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,12 +30,22 @@ public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
     ImageView photoView;
     @BindView(R.id.btn_cafe_list_reservation)
     Button btn_reservation;
+    @BindView(R.id.cafelist_option_wifi)
+    ImageView optionWifiImageView;
+    @BindView(R.id.cafelist_option_parking)
+    ImageView optionParkingImageView;
+    @BindView(R.id.cafelist_option_plag)
+    ImageView optionSocketImageView;
+    @BindView(R.id.cafelist_option_workingtime)
+    ImageView optionDaysImageView;
+
 
 
 
     public interface OnCafeItemClickListener {
-        public void onCafeItemClick(View view, Cafe cafe, int position);
-        public void onCafeItemButtonClick(View view, Cafe cafe, int position);
+        public void onCafeItemClick(View view, Proposal proposal, int position);
+
+        public void onCafeItemButtonClick(View view, Proposal proposal, int position);
     }
 
     OnCafeItemClickListener listener;
@@ -50,7 +61,7 @@ public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.onCafeItemClick(v, cafe, getAdapterPosition());
+                    listener.onCafeItemClick(v, proposal, getAdapterPosition());
                 }
             }
         });
@@ -59,30 +70,22 @@ public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 if (listener != null) {
-                    listener.onCafeItemButtonClick(view, cafe, getAdapterPosition());
+                    listener.onCafeItemButtonClick(view, proposal, getAdapterPosition());
                 }
             }
         });
     }
 
-    Cafe cafe;
+    Proposal proposal;
 
-    public void setCafe(Cafe cafe) {
-        this.cafe = cafe;
-        titleView.setText(cafe.getCafeName());
-        addressView.setText(cafe.getAddress());
-        distanceView.setText(cafe.getDistance());
-        priceView.setText(cafe.getPrice());
-        photoView.setImageDrawable(cafe.getPhoto());
+    public void setProposal(Proposal proposal) {
+        this.proposal = proposal;
+        titleView.setText(proposal.getCafe().getCafeName());
+        addressView.setText(proposal.getCafe().getAddress());
+        distanceView.setText(proposal.getCafe().getDistance());
+        priceView.setText(proposal.getBidPrice());
+        Glide.with(photoView.getContext())
+                .load(proposal.getCafeImage().getImageUrl())
+                .into(photoView);
     }
-
-
-//    @OnClick(R.id.cafelist_resevation_btn)
-//    public void onCafeDetail(){
-//        moveCafeDetailActivity();
-//    }
-//
-//    public void moveCafeDetailActivity(){
-//        Intent intent = new Intent(((CafeReservationListActivity)getActivity()) , CafeDetailActivity.class);
-//    }
 }

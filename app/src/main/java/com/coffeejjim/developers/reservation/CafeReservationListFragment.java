@@ -2,17 +2,24 @@ package com.coffeejjim.developers.reservation;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
-import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Proposal;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.CafeReservationRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +35,12 @@ public class CafeReservationListFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new CafeReservationListRecyclerAdapter();
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,15 +48,14 @@ public class CafeReservationListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_cafe_reservation_list, container, false);
         ButterKnife.bind(this, view);
 
-        mAdapter = new CafeReservationListRecyclerAdapter();
         mAdapter.setOnAdapterItemClickListener(new CafeReservationListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
-            public void onAdapterItemClick(View view, Cafe cafe, int position) {
+            public void onAdapterItemClick(View view, Proposal proposal, int position) {
                 moveCafeDetailActivity();
             }
 
             @Override
-            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
+            public void onAdapterButtonClick(View view, Proposal proposal, int position) {
                 CafeReservationCheckDialogFragment f = new CafeReservationCheckDialogFragment();
                 f.show(getFragmentManager(), "dialog");
             }
@@ -53,28 +65,10 @@ public class CafeReservationListFragment extends Fragment {
 
         LinearLayoutManager manager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-//        GridLayoutManager manager =
-//                new GridLayoutManager(this, 2, GridLayoutManager.HORIZONTAL, false);
+
         listView.setLayoutManager(manager);
 
-        initData();
         return view;
-    }
-
-    int[] resIds = {R.drawable.hwang, R.drawable.event1, R.drawable.event2,
-            R.drawable.bestsample1, R.drawable.sample1, R.drawable.event4,
-            R.drawable.bestsample2, R.drawable.hwang};
-
-    public void initData() {
-        for (int i = 0; i < 20; i++) {
-            Cafe c = new Cafe();
-            c.setCafeName("CAFE NO. " + i);
-            c.setAddress("Address: " + i);
-            c.setDistance(i + " km");
-            c.setPrice(i + " won");
-            c.setPhoto(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
-            mAdapter.add(c);
-        }
     }
 
     public void moveCafeDetailActivity() {
@@ -82,5 +76,22 @@ public class CafeReservationListFragment extends Fragment {
         startActivity(intent);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        CafeReservationRequest CRRequest = new CafeReservationRequest(getContext(), "1", "10");
+        NetworkManager.getInstance().getNetworkData(CRRequest, new NetworkManager.OnResultListener<NetworkResult<List<Proposal>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Proposal>>> request, NetworkResult<List<Proposal>> result) {
+                List<Proposal> proposalList = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(proposalList);
+            }
 
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Proposal>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "network fail", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
