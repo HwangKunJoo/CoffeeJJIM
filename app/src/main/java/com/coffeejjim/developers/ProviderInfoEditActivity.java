@@ -1,11 +1,16 @@
 package com.coffeejjim.developers;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.coffeejjim.developers.extrafunctions.LogoutDialogFragment;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ProviderInfoEditActivity extends AppCompatActivity {
 
@@ -13,6 +18,7 @@ public class ProviderInfoEditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_provider_info_edit);
+        ButterKnife.bind(this);
 
         String[] str = getResources().getStringArray(R.array.emailArray);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,str);
@@ -32,4 +38,17 @@ public class ProviderInfoEditActivity extends AppCompatActivity {
                 }
         );
     }
+
+    @OnClick(R.id.activity_provider_info_edit_logout_btn)
+    public void onLogout(){
+        onLogoutAlertDialog();
+    }
+
+    private void onLogoutAlertDialog() {
+
+        LogoutDialogFragment logoutDialogFragment = new LogoutDialogFragment();
+        logoutDialogFragment.show(getSupportFragmentManager(), "LogoutDialog");
+    }
+
+
 }
