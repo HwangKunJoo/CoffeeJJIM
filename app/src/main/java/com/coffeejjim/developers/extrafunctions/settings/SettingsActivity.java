@@ -34,6 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void setCustomActionbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.btn_back);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 

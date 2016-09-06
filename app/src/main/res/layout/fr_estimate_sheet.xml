@@ -124,7 +124,8 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:singleLine="true"
-        android:textSize="@dimen/fr_estimate_sheet_text_Size" />
+        android:textSize="@dimen/fr_estimate_sheet_text_Size"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -235,7 +236,6 @@
         android:layout_alignEnd="@+id/estimate_sheet_date_edit"
         android:layout_marginRight="10dp"
         android:scaleType="centerCrop"
-        android:background="@drawable/btn_write"
         android:layout_marginBottom="1dp" />
 
     <Button

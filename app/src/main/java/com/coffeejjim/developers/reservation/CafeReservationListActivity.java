@@ -45,6 +45,7 @@ public class CafeReservationListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.btn_back);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 //        //set custom view layout

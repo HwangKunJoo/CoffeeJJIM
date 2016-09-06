@@ -6,15 +6,14 @@ import android.graphics.PointF;
 import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.reservation.CafeReservationListFragment;
 import com.skp.Tmap.TMapMarkerItem;
 import com.skp.Tmap.TMapPOIItem;
 import com.skp.Tmap.TMapPoint;
@@ -79,6 +78,7 @@ public class CafeLocationMapActivity extends AppCompatActivity {
     private void setCustomActionbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.btn_back);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
