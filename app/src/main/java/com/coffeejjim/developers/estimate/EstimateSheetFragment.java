@@ -1,9 +1,13 @@
 package com.coffeejjim.developers.estimate;
 
+import android.Manifest;
 import android.app.TimePickerDialog;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +27,12 @@ import com.coffeejjim.developers.data.Options;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.EstimateRequest;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.ActivityRecognition;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
@@ -34,7 +44,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class EstimateSheetFragment extends Fragment {
+public class EstimateSheetFragment extends Fragment implements GoogleApiClient.OnConnectionFailedListener,
+        GoogleApiClient.ConnectionCallbacks  {
 
     @BindView(R.id.estimate_sheet_date_edit)
     EditText dateView;
@@ -55,6 +66,10 @@ public class EstimateSheetFragment extends Fragment {
     @BindView(R.id.estimate_sheet_endtime_spinner)
     Spinner auctionTimeSpi;
 
+    GoogleApiClient mApiClient;
+
+    String longitude;
+    String latitude;
 
     public EstimateSheetFragment() {
         // Required empty public constructor
@@ -70,12 +85,71 @@ public class EstimateSheetFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_estimate_sheet, container, false);
         ButterKnife.bind(this, view);
-
         setEstimateSpinner();
+
+        mApiClient = new GoogleApiClient.Builder(getContext())
+                .addApi(LocationServices.API)
+                .addApi(ActivityRecognition.API)
+                .addConnectionCallbacks(this)
+                .enableAutoManage(getActivity(), this)
+                .build();
 
 
         return view;
     }
+
+
+    boolean isConnected = false;
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        isConnected = true;
+        getLocation();
+    }
+
+    private void getLocation() {
+        if (!isConnected) return;
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        Location location = LocationServices.FusedLocationApi.getLastLocation(mApiClient);
+        if (location != null) {
+            setLocation(location);
+        }
+
+        LocationRequest request = new LocationRequest();
+        request.setFastestInterval(10000);
+        request.setInterval(20000);
+        request.setNumUpdates(1);
+        request.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+
+        LocationServices.FusedLocationApi.requestLocationUpdates(mApiClient, request, mListener);
+
+    }
+
+    LocationListener mListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            setLocation(location);
+        }
+    };
+
+    private void setLocation(Location location) {
+        latitude = "" + location.getLatitude();
+        longitude = "" + location.getLongitude();
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        isConnected = false;
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+
 
     @OnClick(R.id.estimate_sheet_time)
     void onTimeClick() {
@@ -162,4 +236,5 @@ public class EstimateSheetFragment extends Fragment {
         EstimateCheckDialogFragment f = new EstimateCheckDialogFragment();
         f.show(getFragmentManager(), "dialog");
     }
+
 }

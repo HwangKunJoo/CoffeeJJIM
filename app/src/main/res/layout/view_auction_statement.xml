@@ -64,11 +64,14 @@
         android:layout_gravity="center" />
 
     <Button
-        android:layout_width="@dimen/view_auction_list_button_raw_Size"
-        android:layout_height="@dimen/view_auction_list_button_column_Size"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
         android:id="@+id/btn_reservation_booking_info"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/btn_estimate_view_auction_list" />
+        android:background="@drawable/btn_estimate_view_auction_list"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
 
 </LinearLayout>
