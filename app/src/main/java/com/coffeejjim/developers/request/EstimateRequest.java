@@ -23,7 +23,7 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
 
     public EstimateRequest(Context context, int people, String latitude, String longitude, String reservationTime,
                            Options options, int auctionTime) {
-        HttpUrl.Builder builder = getBaseUrlHttpsBuilder();
+        HttpUrl.Builder builder = getBaseUrlBuilder();
         builder.addPathSegment("estimates");
 
         RequestBody body = new FormBody.Builder()
