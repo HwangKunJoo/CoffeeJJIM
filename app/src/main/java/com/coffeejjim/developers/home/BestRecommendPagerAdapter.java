@@ -14,30 +14,8 @@ import java.util.List;
  */
 public class BestRecommendPagerAdapter extends FragmentPagerAdapter{
 
-//    private final int[] galImages = new int[] {
-//            R.drawable.bestsample1,
-//            R.drawable.bestsample2,
-//            R.drawable.hwang,
-//            R.drawable.ahn,
-//            R.drawable.bestsample1,
-//            R.drawable.bestsample2,
-//            R.drawable.hwang,
-//            R.drawable.ahn
-//
-//    };
-
     List<CafeImage> bestCafeImages = new ArrayList<>();
 
-
-//    public void clear() {
-//        bestCafeImages.clear();
-//        notifyDataSetChanged();
-//    }
-//
-//    public void addAll(List<CafeImage> items) {
-//        this.bestCafeImages.addAll(items);
-//        notifyDataSetChanged();
-//    }
 
     public BestRecommendPagerAdapter(FragmentManager fm, List<CafeImage> bestCafeImages) {
         super(fm);

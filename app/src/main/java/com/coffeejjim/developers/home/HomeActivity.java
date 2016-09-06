@@ -72,8 +72,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
                 bestCafeImages = result.getResult();
-//                bestRecommendPagerAdapter.clear();
-//                bestRecommendPagerAdapter.addAll(bestCafeImages);
                 bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
                 homeBestPager.setAdapter(bestRecommendPagerAdapter);
                 Toast.makeText(HomeActivity.this, "Cancel click", Toast.LENGTH_SHORT).show();
