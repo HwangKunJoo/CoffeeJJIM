@@ -125,12 +125,7 @@
         android:paddingRight="10dp"
         android:singleLine="true"
         android:textSize="@dimen/fr_estimate_sheet_text_Size"
-<<<<<<< Updated upstream
         android:inputType="number" />
-=======
-        android:focusable="false"
-        android:enabled="false" />
->>>>>>> Stashed changes
 
     <EditText
         android:layout_width="wrap_content"
