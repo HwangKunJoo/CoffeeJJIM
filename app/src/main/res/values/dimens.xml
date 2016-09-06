@@ -54,7 +54,7 @@
     <dimen name="fr_estimate_sheet_option_image_button_size">50dp</dimen>
     <dimen name="fr_estimate_sheet_option_image_button_marginTop">15dp</dimen>
     <dimen name="fr_estimate_sheet_option_image_button_marginLeft">5dp</dimen>
-    <dimen name="fr_estimate_sheet_small_image_button_size">18dp</dimen>
+    <dimen name="fr_estimate_sheet_small_image_button_size">17dp</dimen>
 
     <dimen name="small_text_size_marginLeft">10dp</dimen>
     <dimen name="fr_estimate_sheet_location_search">5dp</dimen>

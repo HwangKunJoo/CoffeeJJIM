@@ -217,12 +217,13 @@
         android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
         android:id="@+id/estimate_sheet_location_search"
-        android:src="@drawable/search"
+        android:src="@drawable/btn_my_location"
         android:scaleType="fitCenter"
         android:background="@color/coffeejjim_invisible"
-        android:layout_alignTop="@+id/estimate_sheet_location_edit"
+        android:layout_above="@+id/estimate_sheet_date_text"
         android:layout_alignLeft="@+id/estimate_sheet_location_calendar"
-        android:layout_alignStart="@+id/estimate_sheet_location_calendar" />
+        android:layout_alignStart="@+id/estimate_sheet_location_calendar"
+        android:layout_marginBottom="1dp" />
 
     <ImageView
         android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
@@ -234,7 +235,8 @@
         android:layout_alignEnd="@+id/estimate_sheet_date_edit"
         android:layout_marginRight="10dp"
         android:scaleType="centerCrop"
-        android:background="@drawable/btn_write" />
+        android:background="@drawable/btn_write"
+        android:layout_marginBottom="1dp" />
 
     <Button
         android:layout_width="match_parent"
