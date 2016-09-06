@@ -23,6 +23,7 @@ import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.BestCafeImageRequest;
+import com.coffeejjim.developers.request.EventImageRequest;
 import com.coffeejjim.developers.request.NewCafeImageRequest;
 import com.coffeejjim.developers.reservation.CafeReservationListActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
@@ -68,8 +69,22 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setCustomActionbar();
 
-        homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager());
-        homeEventPager.setAdapter(homeEventAdapter);
+
+        EventImageRequest EIRequest = new EventImageRequest(this);
+        NetworkManager.getInstance().getNetworkData(EIRequest, new NetworkManager.OnResultListener<NetworkResult<List<Event>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Event>>> request, NetworkResult<List<Event>> result) {
+                eventImages = result.getResult();
+                homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager(), eventImages);
+                homeEventPager.setAdapter(homeEventAdapter);
+                Toast.makeText(HomeActivity.this, "Event Image Load Success....", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Event>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(HomeActivity.this, "Event Images Load Failed....", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         BestCafeImageRequest BCIRequest = new BestCafeImageRequest(this);
         NetworkManager.getInstance().getNetworkData(BCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
@@ -108,15 +123,15 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void setFloatingButton(){
+    private void setFloatingButton() {
         ImageView floatingMainView = new ImageView(this);
         floatingMainView.setImageResource(R.drawable.floating_main);
         int floatingWidth = getResources().getDimensionPixelSize(R.dimen.radius_small);
         int floatingHeight = getResources().getDimensionPixelSize(R.dimen.radius_small);
         int floatingMargin = 58;
         FloatingActionButton.LayoutParams floatingMainParams = new FloatingActionButton.LayoutParams
-                (floatingWidth,floatingHeight);
-        floatingMainParams.setMargins(floatingMargin,floatingMargin,floatingMargin,floatingMargin);
+                (floatingWidth, floatingHeight);
+        floatingMainParams.setMargins(floatingMargin, floatingMargin, floatingMargin, floatingMargin);
 
         FloatingActionButton actionButton
                 = new FloatingActionButton.Builder(this).setContentView(floatingMainView).setBackgroundDrawable(R.drawable.floating_background).
@@ -132,7 +147,7 @@ public class HomeActivity extends AppCompatActivity {
         ImageView floatingExtraFunctionsView = new ImageView(this);
         floatingExtraFunctionsView.setImageResource(R.drawable.floating_extra_functions);
 
-        SubActionButton floatingHomeButton = itemBuilder.setContentView(floatingHomeView).setBackgroundDrawable(ContextCompat.getDrawable(this,R.drawable.floating_background)).build();
+        SubActionButton floatingHomeButton = itemBuilder.setContentView(floatingHomeView).setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.floating_background)).build();
         SubActionButton floatingAllCafeButton = itemBuilder.setContentView(floatingAllCafeView).build();
         SubActionButton floatingLikeListButton = itemBuilder.setContentView(floatingLikeListView).build();
         SubActionButton floatingExtraFunctionsButton = itemBuilder.setContentView(floatingExtraFunctionsView).build();
@@ -174,31 +189,32 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.home_estimate_image)
-    public void onEstimateSheet(){
+    public void onEstimateSheet() {
         moveEstimateSheetActivity();
     }
 
-    public void moveEstimateSheetActivity(){
+    public void moveEstimateSheetActivity() {
         Intent intent = new Intent(this, EstimateSheetActivity.class);
         startActivity(intent);
     }
-    public void moveHomeActivity(){
+
+    public void moveHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         finish();
     }
 
-    public void moveAllCafeListActivity(){
+    public void moveAllCafeListActivity() {
         Intent intent = new Intent(this, AllCafeListActivity.class);
         startActivity(intent);
     }
 
-    public void moveLikeListActivity(){
+    public void moveLikeListActivity() {
         Intent intent = new Intent(this, LikeListActivity.class);
         startActivity(intent);
     }
 
-    public void moveExtraFunctionsActivity(){
+    public void moveExtraFunctionsActivity() {
         Intent intent = new Intent(this, ExtraFunctionsActivity.class);
         intent.putExtra("user", CUSTOMER);
         startActivity(intent);
@@ -227,16 +243,13 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item_samplebadge)
-        {
+        if (id == R.id.item_samplebadge) {
             Toast.makeText(this, R.string.sample_3, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, CafeReservationListActivity.class);
             startActivity(intent);
 //            badgeCount--;
 //            ActionItemBadge.update(item, badgeCount);
-        }
-        else if(id == R.id.item_sampleEstimate)
-        {
+        } else if (id == R.id.item_sampleEstimate) {
             moveEstimateSheetActivity();
         }
         return super.onOptionsItemSelected(item);

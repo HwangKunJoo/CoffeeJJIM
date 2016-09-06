@@ -4,33 +4,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Event;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by acer on 2016-08-23.
  */
 public class HomeEventPagerAdapter extends FragmentPagerAdapter{
 
+    List<Event> eventImages = new ArrayList<>();
 
-    private final int[] galImages = new int[] {
-            R.drawable.event1,
-            R.drawable.event2,
-            R.drawable.event3,
-            R.drawable.event4,
-    };
-
-    public HomeEventPagerAdapter(FragmentManager fm) {
+    public HomeEventPagerAdapter(FragmentManager fm, List<Event> eventImages) {
         super(fm);
+        this.eventImages = eventImages;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return HomeEventPagerFragment.newInstance(galImages[position]);
+        return HomeEventPagerFragment.newInstance(eventImages.get(position));
     }
 
     @Override
     public int getCount() {
-        return galImages.length;
+        return eventImages.size();
     }
 
 }
