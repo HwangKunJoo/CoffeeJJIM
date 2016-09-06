@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/item_samplebadge"
-        android:icon="@drawable/bell"
+        android:icon="@drawable/btn_bell"
         app:showAsAction="always"
         android:title="reservation_bell"
         android:orderInCategory="200"/>
     <item
         android:id="@+id/item_sampleEstimate"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/btn_write"
         app:showAsAction="always"
         android:title="estimate_add"
         android:orderInCategory="150"/>

@@ -244,13 +244,13 @@
         android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
         android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
         android:id="@+id/estimate_sheet_location_calendar"
-        android:src="@drawable/fr_estimate_sheet_btn_write"
+        android:src="@drawable/btn_write"
         android:layout_above="@+id/estimate_sheet_time_text"
         android:layout_alignRight="@+id/estimate_sheet_date_edit"
         android:layout_alignEnd="@+id/estimate_sheet_date_edit"
         android:layout_marginRight="10dp"
         android:scaleType="centerCrop"
-        android:background="@drawable/fr_estimate_sheet_btn_write" />
+        android:background="@drawable/btn_write" />
 
     <Button
         android:layout_width="match_parent"

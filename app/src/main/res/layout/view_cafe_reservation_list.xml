@@ -114,7 +114,7 @@
             android:layout_width="@dimen/btn_cafe_list_reservation_raw_Size"
             android:layout_height="@dimen/btn_cafe_list_reservation_column_Size"
             android:id="@+id/btn_cafe_list_reservation"
-            android:background="@drawable/view_cafe_reservation_list_btn"
+            android:background="@drawable/btn_bookingview_cafe_reservation_list"
             android:gravity="center"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"

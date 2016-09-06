@@ -138,7 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:background="@drawable/view_auction_process_btn"
+                android:background="@drawable/btn_tender_view_auction_process"
                 android:id="@+id/btn_estimate_sheet_confirm"
                 android:layout_weight="1"
                 android:layout_gravity="center"
