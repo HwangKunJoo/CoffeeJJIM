@@ -95,7 +95,7 @@ public class CustomerExtraFunctionsFragment extends Fragment {
 
     private void onLogoutAlertDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setIcon(android.R.drawable.ic_dialog_alert);
+//        builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Coffee JJIM");
         builder.setMessage("로그아웃 하시겠습니까.");
         builder.setCancelable(true);
