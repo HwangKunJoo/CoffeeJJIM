@@ -15,7 +15,7 @@
         android:layout_height="136dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/login_costomer_text"
-        android:src="@drawable/fr_login_title"
+        android:src="@drawable/logo_fr_login"
         android:layout_marginTop="121dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -24,7 +24,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/login_kakao_btn"
-        android:src="@drawable/fr_login_btn_kakao"
+        android:src="@drawable/btn_kakao_fr_login"
         android:scaleType="centerCrop"
         android:background="#ffc700"
         android:layout_marginTop="40dp"

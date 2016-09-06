@@ -86,6 +86,27 @@
                 android:layout_marginBottom="20dp">
             </android.support.v4.view.ViewPager>
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView"
+                android:layout_alignTop="@+id/home_event_pager"
+                android:layout_alignLeft="@+id/home_best_title"
+                android:layout_alignStart="@+id/home_best_title"
+                android:src="@drawable/btn_arrow_left_activity_home"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="65dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/btn_arrow_right_activity_home"
+                android:scaleType="centerCrop"
+                android:layout_alignTop="@+id/imageView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
 
             <!--<android.support.design.widget.FloatingActionButton-->
                 <!--android:layout_width="wrap_content"-->

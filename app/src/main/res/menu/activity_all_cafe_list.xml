@@ -4,7 +4,7 @@
     <item
         android:title="all_cafe_list_current_location"
         android:id="@+id/all_cafe_list_current_location"
-        android:icon="@android:drawable/ic_popup_reminder"
+        android:icon="@drawable/btn_my_location"
         app:showAsAction="always"
         android:orderInCategory="200"/>
 </menu>

@@ -74,6 +74,8 @@ public class HomeActivity extends AppCompatActivity {
                 bestCafeImages = result.getResult();
 //                bestRecommendPagerAdapter.clear();
 //                bestRecommendPagerAdapter.addAll(bestCafeImages);
+                bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
+                homeBestPager.setAdapter(bestRecommendPagerAdapter);
                 Toast.makeText(HomeActivity.this, "Cancel click", Toast.LENGTH_SHORT).show();
             }
 
@@ -82,8 +84,7 @@ public class HomeActivity extends AppCompatActivity {
                 Toast.makeText(HomeActivity.this, "Cancel click123123123123", Toast.LENGTH_SHORT).show();
             }
         });
-        bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
-        homeBestPager.setAdapter(bestRecommendPagerAdapter);
+
 
 
         newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager());

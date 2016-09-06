@@ -92,7 +92,7 @@
             android:layout_alignParentRight="true"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:background="@drawable/view_auction_list_estimate_btn"
+            android:background="@drawable/btn_estimate_view_auction_list"
             android:layout_marginRight="@dimen/layout_side_margin"/>
     </LinearLayout>
 

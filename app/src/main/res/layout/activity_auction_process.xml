@@ -42,7 +42,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:id="@+id/auction_process_title_description"

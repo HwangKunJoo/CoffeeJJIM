@@ -69,6 +69,6 @@
         android:id="@+id/btn_reservation_booking_info"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:background="@drawable/view_auction_list_estimate_btn" />
+        android:background="@drawable/btn_estimate_view_auction_list" />
 
 </LinearLayout>

@@ -96,7 +96,7 @@
             android:layout_height="40dp"
             android:gravity="right|bottom"
             android:id="@+id/btn_all_cafe_list_detail"
-            android:background="@drawable/view_all_cafe_list_btn"
+            android:background="@drawable/btn_detail_view_all_cafe_list"
             android:layout_alignTop="@+id/allcafelist_address_text"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
