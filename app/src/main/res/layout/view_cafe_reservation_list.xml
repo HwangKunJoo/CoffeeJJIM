@@ -48,7 +48,8 @@
             android:scaleType="centerCrop"
             android:layout_below="@+id/cafelist_address_text"
             android:layout_alignLeft="@+id/cafelist_address_text"
-            android:layout_alignStart="@+id/cafelist_address_text" />
+            android:layout_alignStart="@+id/cafelist_address_text"
+            android:visibility="gone"/>
 
         <ImageView
             android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
@@ -60,7 +61,8 @@
             android:layout_alignTop="@+id/cafelist_option_wifi"
             android:layout_toRightOf="@+id/cafelist_option_wifi"
             android:layout_toEndOf="@+id/cafelist_option_wifi"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft" />
+            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+            android:visibility="gone"/>
 
         <ImageView
             android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
@@ -72,7 +74,8 @@
             android:layout_alignTop="@+id/cafelist_option_plag"
             android:layout_toRightOf="@+id/cafelist_option_plag"
             android:layout_toEndOf="@+id/cafelist_option_plag"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft" />
+            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+            android:visibility="gone"/>
 
         <ImageView
             android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
@@ -84,7 +87,8 @@
             android:layout_alignTop="@+id/cafelist_option_parking"
             android:layout_toRightOf="@+id/cafelist_option_parking"
             android:layout_toEndOf="@+id/cafelist_option_parking"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft" />
+            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+            android:visibility="gone"/>
 
         <TextView
             android:layout_width="wrap_content"

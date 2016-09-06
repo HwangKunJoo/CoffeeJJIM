@@ -87,5 +87,18 @@ public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
         Glide.with(photoView.getContext())
                 .load(proposal.getCafeImage().getImageUrl())
                 .into(photoView);
+        if(proposal.getOptions().isWifi()){
+            optionWifiImageView.setVisibility(View.VISIBLE);
+        }
+        if(proposal.getOptions().isSocket()){
+            optionSocketImageView.setVisibility(View.VISIBLE);
+        }
+        if(proposal.getOptions().isParking()){
+            optionParkingImageView.setVisibility(View.VISIBLE);
+        }
+        if(proposal.getOptions().isDays()){
+            optionDaysImageView.setVisibility(View.VISIBLE);
+        }
+
     }
 }

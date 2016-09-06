@@ -19,7 +19,7 @@ public class CafeReservationRequest extends AbstractRequest<NetworkResult<List<P
 
     Request request;
     public CafeReservationRequest(Context context, String pageNo, String rowCount) {
-        HttpUrl url = getBaseUrlBuilder()
+        HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("proposals")
                 .addQueryParameter("pageNo", pageNo)
                 .addQueryParameter("rowCount", rowCount)
