@@ -40,7 +40,7 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_notification, container, false);
+        View view = inflater.inflate(R.layout.fr_notification, container, false);
         ButterKnife.bind(this, view);
         NotiContent notiContent1 = new NotiContent("서버 점검 안내입니다.");
         NotiContent notiContent2 = new NotiContent("서버 점검 안내입니다2.");

@@ -160,7 +160,7 @@
     <dimen name="fr_signup_image_btn_Size">17dp</dimen>
     <dimen name="fr_signup_image_btn_interval_margin">9dp</dimen>
 
-    <!--fragment_booking_info.xml-->
+    <!--fr_booking_info.xml-->
     <dimen name="fr_booking_info_image_Size">25dp</dimen>
     <dimen name="fr_booking_info_image_marginLeft">60dp</dimen>
     <dimen name="fr_booking_info_image_marginTop">30dp</dimen>
@@ -168,7 +168,7 @@
     <dimen name="fr_booking_info_text_view_interval_marginTop">15dp</dimen>
     <dimen name="fr_booking_info_option_image_Size">30dp</dimen>
 
-    <!--fragment_estimate_sheet_dialog.xml-->
+    <!--fr_estimate_sheet_dialog.xml-->
     <dimen name="fr_estimate_sheet_dialog_plain_text_marginTop">20dp</dimen>
     <dimen name="fr_estimate_sheet_dialog_plain_text_Size">280dp</dimen>
 
@@ -183,14 +183,14 @@
     <dimen name="fr_estimate_sheet_dialog_option_image_Size">20dp</dimen>
     <dimen name="fr_estimate_sheet_dialog_option_image_marginLeft">5dp</dimen>
 
-    <!--fragment_inquiry.xml-->
+    <!--fr_inquiry.xml-->
     <dimen name="fragment_inquiry_side_margin">16dp</dimen>
 
     <!--frgment_settings.xml-->
     <dimen name="fr_settings_side_margin">16dp</dimen>
     <dimen name="fr_settings_text_view_Size">48dp</dimen>
 
-    <!--fragment_user_visit.xml-->
+    <!--fr_user_visit.xml-->
     <dimen name="fragment_user_visit_text_view_marginLeft">30dp</dimen>
     <dimen name="fragment_user_visit_text_view_marginStart">30dp</dimen>
 
@@ -220,7 +220,7 @@
     <dimen name="view_auction_list_maginRight">5dp</dimen>
 
     <dimen name="view_auction_list_button_raw_Size">30dp</dimen>
-    <dimen name="view_auction_list_button_column_Size">30dp</dimen>
+    <dimen name="view_auction_list_button_column_Size">25dp</dimen>
 
     <!--view_auction_process.xml-->
     <dimen name="view_auction_process_linear_layout_Size">55dp</dimen>

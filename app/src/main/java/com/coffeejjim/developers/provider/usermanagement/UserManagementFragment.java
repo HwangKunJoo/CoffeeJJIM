@@ -39,7 +39,7 @@ public class UserManagementFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_user_management, container, false);
+        View view = inflater.inflate(R.layout.fr_user_management, container, false);
         ButterKnife.bind(this, view);
 
         mAdapter = new UserManagementRecyclerAdapter();

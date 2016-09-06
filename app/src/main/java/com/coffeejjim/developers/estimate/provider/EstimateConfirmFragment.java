@@ -33,7 +33,7 @@ public class EstimateConfirmFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_estimate_confirm, container, false);
+        View view =inflater.inflate(R.layout.fr_estimate_confirm, container, false);
         ButterKnife.bind(this, view);
         btn_confirm_present.setOnClickListener(new View.OnClickListener() {
             @Override

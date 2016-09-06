@@ -87,7 +87,7 @@
 
         <Button
             android:layout_width="@dimen/view_auction_list_button_raw_Size"
-            android:layout_height="@dimen/view_auction_list_button_raw_Size"
+            android:layout_height="@dimen/view_auction_list_button_column_Size"
             android:id="@+id/auctionlist_present_btn"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
