@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="예약카페목록"
+                android:text="예약 카페 목록"
                 android:textColor="@color/coffeejjim_brown"
                 android:textSize="20sp"/>
         </FrameLayout>

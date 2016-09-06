@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
@@ -20,7 +19,6 @@ import com.coffeejjim.developers.extrafunctions.notification.NotificationActivit
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
 import com.coffeejjim.developers.login.LoginActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -99,11 +97,12 @@ public class CustomerExtraFunctionsFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Coffee JJIM");
-        builder.setMessage("로그아웃 되었습니다.");
+        builder.setMessage("로그아웃 하시겠습니까.");
         builder.setCancelable(true);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getActivity(),"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
                 Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
                 loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(loginIntent);
