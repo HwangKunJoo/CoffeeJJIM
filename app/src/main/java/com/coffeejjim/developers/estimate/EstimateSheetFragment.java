@@ -1,6 +1,8 @@
 package com.coffeejjim.developers.estimate;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,8 +13,21 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Options;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.EstimateRequest;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,31 +38,22 @@ public class EstimateSheetFragment extends Fragment {
 
     @BindView(R.id.estimate_sheet_date_edit)
     EditText dateView;
-
     @BindView(R.id.estimate_sheet_location_edit)
     EditText locationView;
-
     @BindView(R.id.estimate_sheet_people_edit)
     EditText peopleView;
-
     @BindView(R.id.estimate_sheet_time_edit)
     EditText timeView;
-
     @BindView(R.id.estimate_sheet_wifi_btn)
     ImageButton btn_wifi;
-
     @BindView(R.id.estimate_sheet_parking_btn)
     ImageButton btn_parking;
-
     @BindView(R.id.estimate_sheet_socket_btn)
     ImageButton btn_socket;
-
     @BindView(R.id.estimate_sheet_days_btn)
     ImageButton btn_days;
-
     @BindView(R.id.estimate_sheet_endtime_spinner)
     Spinner auctionTimeSpi;
-
 
 
     public EstimateSheetFragment() {
@@ -71,9 +77,45 @@ public class EstimateSheetFragment extends Fragment {
         return view;
     }
 
-    private void setEstimateSpinner(){
+    @OnClick(R.id.estimate_sheet_time)
+    void onTimeClick() {
+
+        GregorianCalendar calendar = new GregorianCalendar();
+        final int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+                String reservationTime = String.format("%d:%d", hourOfDay, minute);
+                timeView.setText(reservationTime);
+            }
+        }, hour, minute, false);
+
+        timePickerDialog.show();
+    }
+
+
+    @OnClick(R.id.estimate_sheet_calendar)
+    void onDateClick() {
+        CalendarDialogFragment calendarDialogFragment = CalendarDialogFragment.newInstance(CalendarDialogFragment.FRAG_RESERVATION);
+        calendarDialogFragment.show(getActivity().getSupportFragmentManager(), "calendarDialog");
+
+        calendarDialogFragment.setOnCalendarDateChanged(new CalendarDialogFragment.OnCalendarDateChangedListener() {
+            @Override
+            public void onCalendarDateChanged(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+                int year = date.getYear();
+                int month = date.getMonth() + 1;
+                int day = date.getDay();
+                String reservationDate = String.format("%d-%d-%d", year, month, day);
+                dateView.setText(reservationDate);
+            }
+        });
+    }
+
+    private void setEstimateSpinner() {
         String[] str = getResources().getStringArray(R.array.auction_time_Array);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,str);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, str);
         auctionTimeSpi.setAdapter(adapter);
         auctionTimeSpi.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
@@ -89,11 +131,29 @@ public class EstimateSheetFragment extends Fragment {
                 }
         );
     }
-
+    //옵션들 선택 이미지 바꾸기, 위치 변환,
     @OnClick(R.id.btn_estimate_sheet_present)
-    public void onEstimateCheckDialogButtonClick()  {
+    public void onEstimateCheckDialogButtonClick() {
         String location = locationView.getText().toString();
+        String reservationTime = dateView.getText().toString() + timeView.getText().toString();
+        Options options = new Options();
+        options.setWifi(true);
+        options.setDays(true);
+        options.setParking(true);
+        options.setSocket(false);
 
+        EstimateRequest ERequest = new EstimateRequest(getContext(),3,"32.213123","123123213",reservationTime,options,20);
+        NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {
+                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Estimate>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         onDialogFragmentClick();
     }
