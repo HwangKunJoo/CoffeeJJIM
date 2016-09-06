@@ -2,14 +2,12 @@ package com.coffeejjim.developers.request;
 
 import android.content.Context;
 
-import com.coffeejjim.developers.Utils;
 import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Options;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.Date;
 
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
@@ -23,9 +21,8 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
     Request request;
 
 
-    public EstimateRequest(Context context, int people, String latitude, String longitude, Date reservationTime,
+    public EstimateRequest(Context context, int people, String latitude, String longitude, String reservationTime,
                            Options options, int auctionTime) {
-        String dateString = Utils.convertTimeToString(reservationTime);
         HttpUrl.Builder builder = getBaseUrlHttpsBuilder();
         builder.addPathSegment("estimates");
 
@@ -33,12 +30,12 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
                 .add("people", "" + people)
                 .add("latitude", latitude)
                 .add("longitude", longitude)
-                .add("reservationTime", dateString)
-                .add("options", "" + options.isWifi())
-                .add("options", "" + options.isDays())
-                .add("options", "" + options.isParking())
-                .add("options", "" + options.isSocket())
-                .add("auctionTime", ""+auctionTime)
+                .add("reservationTime", reservationTime)
+                .add("wifi", "" + options.isWifi())
+                .add("days", "" + options.isDays())
+                .add("parking", "" + options.isParking())
+                .add("socket", "" + options.isSocket())
+                .add("auctionTime", "" + auctionTime)
                 .build();
 
         request = new Request.Builder()
