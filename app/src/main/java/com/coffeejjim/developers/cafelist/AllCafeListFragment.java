@@ -79,7 +79,7 @@ public class AllCafeListFragment extends Fragment {
             c.setAddress("Address: " + i);
             c.setDistance(i + " km");
             c.setPhoto(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
-            c.setOptions(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
+            c.setOption(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
             mAdapter.add(c);
         }
     }

@@ -29,13 +29,18 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
         notifyDataSetChanged();
     }
 
-    public void delete(Cafe c){
-        items.remove(c);
+    public void addAll(List<Cafe> items) {
+        this.items.addAll(items);
         notifyDataSetChanged();
     }
 
-    public void clear(Cafe c){
+    public void clear(){
         items.clear();
+        notifyDataSetChanged();
+    }
+
+    public void delete(Cafe c){
+        items.remove(c);
         notifyDataSetChanged();
     }
 
@@ -82,9 +87,4 @@ public class LikeListRecyclerAdapter extends RecyclerView.Adapter<LikeListViewHo
         listener.onAdapterButtonClick(view, cafe, position);
     }
 
-
-//    @OnClick(R.id.btn_dislike)
-//    public void DeleteItems(){
-//
-//    }
 }

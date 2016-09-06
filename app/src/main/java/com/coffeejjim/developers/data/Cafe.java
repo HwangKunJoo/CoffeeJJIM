@@ -11,14 +11,32 @@ public class Cafe {
     private String price;
     private String distance;
     private Drawable photo;
-    private Drawable options;
+    private Options options;
+    private CafeImage cafeImage;
+    private Drawable option;
 
-    public Drawable getOptions() {
+    public Drawable getOption() {
+        return option;
+    }
+
+    public void setOption(Drawable option) {
+        this.option = option;
+    }
+
+    public Options getOptions() {
         return options;
     }
 
-    public void setOptions(Drawable options) {
+    public void setOptions(Options options) {
         this.options = options;
+    }
+
+    public CafeImage getCafeImage() {
+        return cafeImage;
+    }
+
+    public void setCafeImage(CafeImage cafeImage) {
+        this.cafeImage = cafeImage;
     }
 
     public String getCafeName() {

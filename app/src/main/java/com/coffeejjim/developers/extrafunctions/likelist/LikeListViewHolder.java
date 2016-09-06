@@ -6,6 +6,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Cafe;
 
@@ -23,7 +24,13 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.like_list_cafe_image)
     ImageView cafeMainImageView;
     @BindView(R.id.like_list_option_wifi)
-    ImageView cafeOptionsImageView;
+    ImageView optionWifiImageView;
+    @BindView(R.id.like_list_option_parking)
+    ImageView optionParkingImageView;
+    @BindView(R.id.like_list_option_plag)
+    ImageView optionSocketImageView;
+    @BindView(R.id.like_list_option_workingtime)
+    ImageView optionDaysImageView;
     @BindView(R.id.btn_dislike)
     ImageButton btn_dislike;
 
@@ -67,8 +74,21 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
         this.cafe = cafe;
         cafeNameView.setText(cafe.getCafeName());
         addressView.setText(cafe.getAddress());
-        cafeMainImageView.setImageDrawable(cafe.getPhoto());
-        cafeOptionsImageView.setImageDrawable(cafe.getOptions());
+        Glide.with(cafeMainImageView.getContext())
+                .load(cafe.getCafeImage().getImageUrl())
+                .into(cafeMainImageView);
+        if(cafe.getOptions().isWifi()){
+            optionWifiImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getOptions().isSocket()){
+            optionSocketImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getOptions().isParking()){
+            optionParkingImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getOptions().isDays()){
+            optionDaysImageView.setVisibility(View.VISIBLE);
+        }
     }
 
 

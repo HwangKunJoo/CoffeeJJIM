@@ -72,6 +72,6 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
         addressView.setText(cafe.getAddress());
         distanceView.setText(cafe.getDistance());
         cafeMainImageView.setImageDrawable(cafe.getPhoto());
-        cafeOptionsImageView.setImageDrawable(cafe.getOptions());
+        cafeOptionsImageView.setImageDrawable(cafe.getOption());
     }
 }
