@@ -2,7 +2,7 @@ package com.coffeejjim.developers.request;
 
 import android.content.Context;
 
-import com.coffeejjim.developers.data.CafeImage;
+import com.coffeejjim.developers.data.Event;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.google.gson.reflect.TypeToken;
 
@@ -13,15 +13,14 @@ import okhttp3.HttpUrl;
 import okhttp3.Request;
 
 /**
- * Created by Tacademy on 2016-09-05.
+ * Created by Tacademy on 2016-09-06.
  */
-public class BestCafeImageRequest extends AbstractRequest<NetworkResult<List<CafeImage>>> {
+public class EventImageRequest extends AbstractRequest<NetworkResult<List<Event>>> {
 
     Request request;
-    public BestCafeImageRequest(Context context) {
+    public EventImageRequest(Context context) {
         HttpUrl url = getBaseUrlBuilder()
-                .addPathSegment("cafes")
-                .addPathSegment("best5")
+                .addPathSegment("events")
                 .build();
 
         request = new Request.Builder()
@@ -31,7 +30,7 @@ public class BestCafeImageRequest extends AbstractRequest<NetworkResult<List<Caf
     }
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<List<CafeImage>>>(){}.getType();
+        return new TypeToken<NetworkResult<List<Event>>>(){}.getType();
     }
 
     @Override

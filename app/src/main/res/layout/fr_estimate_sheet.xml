@@ -114,7 +114,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/estimate_sheet_time_edit"
-        android:hint="00:00"
         android:layout_alignTop="@+id/estimate_sheet_time_text"
         android:layout_alignLeft="@+id/estimate_sheet_person_edit"
         android:layout_alignStart="@+id/estimate_sheet_person_edit"
@@ -131,7 +130,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/estimate_sheet_person_edit"
-        android:hint="명"
         android:layout_alignTop="@+id/estimate_sheet_person_text"
         android:layout_alignLeft="@+id/estimate_sheet_date_edit"
         android:layout_alignStart="@+id/estimate_sheet_date_edit"
@@ -222,23 +220,9 @@
         android:src="@drawable/search"
         android:scaleType="fitCenter"
         android:background="@color/coffeejjim_invisible"
-        android:layout_alignTop="@+id/estimate_sheet_location_map"
-        android:layout_toLeftOf="@+id/estimate_sheet_location_map"
-        android:layout_toStartOf="@+id/estimate_sheet_location_map"
-        android:layout_marginRight="@dimen/fr_estimate_sheet_location_search"/>
-
-    <ImageButton
-        android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"
-        android:layout_height="@dimen/fr_estimate_sheet_small_image_button_size"
-        android:id="@+id/estimate_sheet_location_map"
-        android:src="@drawable/maplocation"
-        android:background="@color/coffeejjim_invisible"
-        android:scaleType="fitCenter"
-        android:layout_alignBottom="@+id/estimate_sheet_location_text"
-        android:layout_alignRight="@+id/estimate_sheet_location_edit"
-        android:layout_alignEnd="@+id/estimate_sheet_location_edit"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="4dp" />
+        android:layout_alignTop="@+id/estimate_sheet_location_edit"
+        android:layout_alignLeft="@+id/estimate_sheet_location_calendar"
+        android:layout_alignStart="@+id/estimate_sheet_location_calendar" />
 
     <ImageView
         android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"

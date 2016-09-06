@@ -5,29 +5,31 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.CafeImage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Tacademy on 2016-08-23.
  */
 public class NewRecommendPagerAdapter extends FragmentPagerAdapter {
 
-    private final int[] galImages = new int[] {
-            R.drawable.new1,
-            R.drawable.new2,
-            R.drawable.new3,
-    };
+    List<CafeImage> newCafeImages = new ArrayList<>();
 
-    public NewRecommendPagerAdapter(FragmentManager fm) {
+
+    public NewRecommendPagerAdapter(FragmentManager fm, List<CafeImage> newCafeImages) {
         super(fm);
+        this.newCafeImages = newCafeImages;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return NewRecommendPagerFragment.newInstance(galImages[position]);
+        return NewRecommendPagerFragment.newInstance(newCafeImages.get(position));
     }
 
     @Override
     public int getCount() {
-        return galImages.length;
+        return newCafeImages.size();
     }
 }

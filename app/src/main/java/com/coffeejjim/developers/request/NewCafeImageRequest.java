@@ -13,15 +13,15 @@ import okhttp3.HttpUrl;
 import okhttp3.Request;
 
 /**
- * Created by Tacademy on 2016-09-05.
+ * Created by Tacademy on 2016-09-06.
  */
-public class BestCafeImageRequest extends AbstractRequest<NetworkResult<List<CafeImage>>> {
+public class NewCafeImageRequest extends AbstractRequest<NetworkResult<List<CafeImage>>> {
 
     Request request;
-    public BestCafeImageRequest(Context context) {
+    public NewCafeImageRequest(Context context) {
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("cafes")
-                .addPathSegment("best5")
+                .addPathSegment("new5")
                 .build();
 
         request = new Request.Builder()
