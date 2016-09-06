@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.Proposal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,20 @@ import java.util.List;
  */
 public class CafeReservationListRecyclerAdapter extends RecyclerView.Adapter<CafeReservationListViewHolder> implements CafeReservationListViewHolder.OnCafeItemClickListener{
 
-    List<Cafe> items = new ArrayList<>();
+    List<Proposal> items = new ArrayList<>();
 
-    public void add(Cafe c) {
-        items.add(c);
+    public void add(Proposal p) {
+        items.add(p);
+        notifyDataSetChanged();
+    }
+
+    public void clear() {
+        items.clear();
+        notifyDataSetChanged();
+    }
+
+    public void addAll(List<Proposal> items) {
+        this.items.addAll(items);
         notifyDataSetChanged();
     }
 
@@ -34,7 +44,7 @@ public class CafeReservationListRecyclerAdapter extends RecyclerView.Adapter<Caf
 
     @Override
     public void onBindViewHolder(CafeReservationListViewHolder holder, int position) {
-        holder.setCafe(items.get(position));
+        holder.setProposal(items.get(position));
     }
 
     @Override
@@ -43,8 +53,8 @@ public class CafeReservationListRecyclerAdapter extends RecyclerView.Adapter<Caf
     }
 
     public interface OnAdapterItemClickLIstener {
-        public void onAdapterItemClick(View view, Cafe cafe, int position);
-        public void onAdapterButtonClick(View view, Cafe cafe, int position);
+        public void onAdapterItemClick(View view, Proposal proposal, int position);
+        public void onAdapterButtonClick(View view, Proposal proposal, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -54,12 +64,12 @@ public class CafeReservationListRecyclerAdapter extends RecyclerView.Adapter<Caf
 
 
     @Override
-    public void onCafeItemClick(View view, Cafe cafe, int position) {
-        listener.onAdapterItemClick(view, cafe, position);
+    public void onCafeItemClick(View view, Proposal proposal, int position) {
+        listener.onAdapterItemClick(view, proposal, position);
     }
 
     @Override
-    public void onCafeItemButtonClick(View view, Cafe cafe, int position) {
-        listener.onAdapterButtonClick(view, cafe, position);
+    public void onCafeItemButtonClick(View view, Proposal proposal, int position) {
+        listener.onAdapterButtonClick(view, proposal, position);
     }
 }
