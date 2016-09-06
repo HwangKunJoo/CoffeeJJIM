@@ -9,33 +9,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
+import com.coffeejjim.developers.data.CafeImage;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NewRecommendPagerFragment extends Fragment {
 
+
+    @BindView(R.id.home_new_cafe_image)
+    ImageView newCafeImageView;
+
     public NewRecommendPagerFragment() {
         // Required empty public constructor
     }
 
-    public static NewRecommendPagerFragment newInstance(int newPhoto) {
+    public static NewRecommendPagerFragment newInstance(CafeImage newCafeImage) {
         NewRecommendPagerFragment f = new NewRecommendPagerFragment();
         Bundle b = new Bundle();
-        b.putInt("newPhoto", newPhoto);
+        b.putSerializable("newCafeImage", newCafeImage);
         f.setArguments(b);
         return f;
     }
 
-    int newPhoto;
+    CafeImage newCafeImage;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            newPhoto = getArguments().getInt("newPhoto");
+            newCafeImage = (CafeImage)(getArguments().getSerializable("newCafeImage"));
         }
     }
 
@@ -44,13 +51,13 @@ public class NewRecommendPagerFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_new_recommend_pager, container, false);
         ButterKnife.bind(this, view);
-        ImageView eventPhotoView = (ImageView) view.findViewById(R.id.newSample);
-        eventPhotoView.setImageResource(newPhoto);
+        Glide.with(newCafeImageView.getContext())
+                .load(newCafeImage.getImageUrl()).into(newCafeImageView);
         return view;
     }
 
-    @OnClick(R.id.newSample)
-    public void onEventDeatail(){
+    @OnClick(R.id.home_new_cafe_image)
+    public void onNewCafeDeatail(){
         moveCafeDetailActivity();
     }
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafelist.AllCafeListActivity;
 import com.coffeejjim.developers.data.CafeImage;
+import com.coffeejjim.developers.data.Event;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.estimate.EstimateSheetActivity;
 import com.coffeejjim.developers.extrafunctions.ExtraFunctionsActivity;
@@ -22,6 +23,7 @@ import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.BestCafeImageRequest;
+import com.coffeejjim.developers.request.NewCafeImageRequest;
 import com.coffeejjim.developers.reservation.CafeReservationListActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
@@ -53,7 +55,9 @@ public class HomeActivity extends AppCompatActivity {
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
 
+    List<Event> eventImages;
     List<CafeImage> bestCafeImages;
+    List<CafeImage> newCafeImages;
 
     public static final int CUSTOMER = 10;
 
@@ -74,19 +78,30 @@ public class HomeActivity extends AppCompatActivity {
                 bestCafeImages = result.getResult();
                 bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
                 homeBestPager.setAdapter(bestRecommendPagerAdapter);
-                Toast.makeText(HomeActivity.this, "Cancel click", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Best Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<List<CafeImage>>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(HomeActivity.this, "Cancel click123123123123", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Best Cafe Images Load Failed..", Toast.LENGTH_SHORT).show();
             }
         });
 
+        NewCafeImageRequest NCIRequest = new NewCafeImageRequest(this);
+        NetworkManager.getInstance().getNetworkData(NCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
+                newCafeImages = result.getResult();
+                newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager(), newCafeImages);
+                homeNewPager.setAdapter(newRecommendPagerAdapter);
+                Toast.makeText(HomeActivity.this, "New Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
+            }
 
-
-        newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager());
-        homeNewPager.setAdapter(newRecommendPagerAdapter);
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<CafeImage>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(HomeActivity.this, "New Cafe Images Load Failed....", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         setFloatingButton();
 

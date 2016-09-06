@@ -58,7 +58,7 @@ public class BestRecommendPagerFragment extends Fragment {
 
 
     @OnClick(R.id.home_best_cafe_image)
-    public void onEventDeatail(){
+    public void onBestCafeDeatail(){
         moveCafeDetailActivity();
     }
 
