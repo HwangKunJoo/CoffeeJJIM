@@ -10,6 +10,33 @@ public class Cafe implements java.io.Serializable {
     private String cafeName;
     private int socket;
     private int cafeId;
+    private double distance;
+    private double latitude;
+    private double longitude;
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(long latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(long longitude) {
+        this.longitude = longitude;
+    }
 
     public int getParking() {
         return this.parking;

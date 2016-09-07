@@ -22,6 +22,16 @@ public class AllCafeListRecyclerAdapter extends RecyclerView.Adapter<AllCafeList
         notifyDataSetChanged();
     }
 
+    public void addAll(List<Cafe> items) {
+        this.items.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void clear(){
+        items.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public AllCafeListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

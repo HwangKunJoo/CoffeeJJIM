@@ -3,9 +3,11 @@ package com.coffeejjim.developers.cafelist;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Cafe;
 
@@ -26,9 +28,15 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.allcafelist_cafe_main_image)
     ImageView cafeMainImageView;
     @BindView(R.id.all_cafe_list_options_wifi)
-    ImageView cafeOptionsImageView;
+    ImageView optionWifiImageView;
+    @BindView(R.id.all_cafe_list_options_parking)
+    ImageView optionParkingImageView;
+    @BindView(R.id.all_cafe_list_options_plag)
+    ImageView optionSocketImageView;
+    @BindView(R.id.all_cafe_list_options_workingtime)
+    ImageView optionDaysImageView;
     @BindView(R.id.btn_all_cafe_list_detail)
-    Button btn_detail_cafe;
+    ImageButton btn_detail_cafe;
 
 
     public AllCafeListViewHolder(View itemView) {
@@ -69,5 +77,22 @@ public class AllCafeListViewHolder extends RecyclerView.ViewHolder {
     public void setCafe(Cafe cafe) {
         this.cafe = cafe;
         cafeNameView.setText(cafe.getCafeName());
+        addressView.setText(cafe.getCafeAddress());
+        distanceView.setText(""+cafe.getDistance());
+        Glide.with(cafeMainImageView.getContext())
+                .load(cafe.getImageUrl())
+                .into(cafeMainImageView);
+        if(cafe.getWifi() == 1){
+            optionWifiImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getSocket() == 1){
+            optionSocketImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getParking() == 1){
+            optionParkingImageView.setVisibility(View.VISIBLE);
+        }
+        if(cafe.getDays() == 1){
+            optionDaysImageView.setVisibility(View.VISIBLE);
+        }
     }
 }

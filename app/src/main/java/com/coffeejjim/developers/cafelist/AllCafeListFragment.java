@@ -3,16 +3,26 @@ package com.coffeejjim.developers.cafelist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.cafedetail.CafeDetailActivity;
 import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.extrafunctions.likelist.LikeListRecyclerAdapter;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AllCafeListRequest;
+import com.coffeejjim.developers.request.LikeListRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +36,12 @@ public class AllCafeListFragment extends Fragment {
     @BindView(R.id.all_cafe_rv_list)
     RecyclerView listView;
     AllCafeListRecyclerAdapter mAdapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new AllCafeListRecyclerAdapter();
+    }
 
 
     public AllCafeListFragment() {
@@ -63,24 +79,32 @@ public class AllCafeListFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         listView.setLayoutManager(manager);
 
-        initData();
         return view;
     }
 
-    int[] resIds = {R.drawable.hwang, R.drawable.event1, R.drawable.event2,
-            R.drawable.bestsample1, R.drawable.sample1, R.drawable.event4,
-            R.drawable.bestsample2, R.drawable.hwang};
-
-    public void initData() {
-        for (int i = 0; i < 20; i++) {
-            Cafe c = new Cafe();
-            c.setCafeName("CAFE NO. " + i);
-            mAdapter.add(c);
-        }
-    }
 
     public void moveCafeDetailActivity() {
         Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        AllCafeListRequest ACLRequest = new AllCafeListRequest(getContext(), "1", "10", 37, 126);
+        NetworkManager.getInstance().getNetworkData(ACLRequest, new NetworkManager.OnResultListener<NetworkResult<List<Cafe>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Cafe>>> request, NetworkResult<List<Cafe>> result) {
+                List<Cafe> allCafeList = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(allCafeList);
+                Toast.makeText(getContext(), "yap", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Cafe>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "network fail", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
