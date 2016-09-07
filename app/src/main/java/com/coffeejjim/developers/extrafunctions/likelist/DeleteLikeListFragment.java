@@ -15,6 +15,7 @@ import com.coffeejjim.developers.data.Cafe;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.DeleteLikeListRequest;
 import com.coffeejjim.developers.request.LikeListRequest;
 
 import java.util.List;
@@ -25,7 +26,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DislikeFragment extends Fragment {
+public class DeleteLikeListFragment extends Fragment {
 
     @BindView(R.id.dislike_rv_list)
     RecyclerView dislikeListRecyclerView;
@@ -34,7 +35,7 @@ public class DislikeFragment extends Fragment {
     private static final boolean SET_VISIBLE = true;
 
 
-    public DislikeFragment() {
+    public DeleteLikeListFragment() {
         // Required empty public constructor
     }
 
@@ -54,9 +55,22 @@ public class DislikeFragment extends Fragment {
             }
 
             @Override
-            public void onAdapterButtonClick(View view, Cafe cafe, int position) {
-                mAdapter.delete(cafe);
-                //지우는 리퀘스트 요청해야되
+            public void onAdapterButtonClick(View view, final Cafe cafe, int position) {
+                DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(getContext(),"" + cafe.getCafeId());
+                NetworkManager.getInstance().getNetworkData(DLLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<Cafe>> request, NetworkResult<Cafe> result) {
+                        mAdapter.delete(cafe);
+                        Toast.makeText(getContext(), "yap지워졌당", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<Cafe>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(getContext(), "failfailfailfail", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         });
 

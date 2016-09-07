@@ -58,7 +58,7 @@ public class LikeListActivity extends AppCompatActivity {
                 item.setIcon(R.drawable.success);
                 isCompleted = true;
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new DislikeFragment())
+                        .replace(R.id.container, new DeleteLikeListFragment())
                         .commit();
             } else {
                 item.setIcon(R.drawable.edit);
