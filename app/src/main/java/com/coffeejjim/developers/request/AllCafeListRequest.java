@@ -17,7 +17,7 @@ import okhttp3.Request;
  */
 public class AllCafeListRequest extends AbstractRequest<NetworkResult<List<Cafe>>> {
 
-   Request request;
+    Request request;
 
     public AllCafeListRequest(Context context, String pageNo,
                               String rowCount, long latitude, long longitude) {
@@ -26,8 +26,26 @@ public class AllCafeListRequest extends AbstractRequest<NetworkResult<List<Cafe>
                 .addPathSegment("cafes")
                 .addQueryParameter("pageNo", pageNo)
                 .addQueryParameter("rowCount", rowCount)
-                .addQueryParameter("latitude", ""+latitude)
-                .addQueryParameter("longitude", ""+longitude)
+                .addQueryParameter("latitude", "" + latitude)
+                .addQueryParameter("longitude", "" + longitude)
+                .build();
+
+        request = new Request.Builder()
+                .url(url)
+                .tag(context)
+                .build();
+    }
+
+    public AllCafeListRequest(Context context, String keyword, String pageNo,
+                              String rowCount, long latitude, long longitude) {
+
+        HttpUrl url = getBaseUrlBuilder()
+                .addPathSegment("cafes")
+                .addQueryParameter("keyword", keyword)
+                .addQueryParameter("pageNo", pageNo)
+                .addQueryParameter("rowCount", rowCount)
+                .addQueryParameter("latitude", "" + latitude)
+                .addQueryParameter("longitude", "" + longitude)
                 .build();
 
         request = new Request.Builder()
