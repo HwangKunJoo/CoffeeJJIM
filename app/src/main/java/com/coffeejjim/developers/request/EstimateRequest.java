@@ -31,10 +31,10 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
                 .add("latitude", latitude)
                 .add("longitude", longitude)
                 .add("reservationTime", reservationTime)
-                .add("wifi", "" + options.isWifi())
-                .add("days", "" + options.isDays())
-                .add("parking", "" + options.isParking())
-                .add("socket", "" + options.isSocket())
+                .add("wifi", "" + options.getWifi())
+                .add("days", "" + options.getDays())
+                .add("parking", "" + options.getParking())
+                .add("socket", "" + options.getSocket())
                 .add("auctionTime", "" + auctionTime)
                 .build();
 

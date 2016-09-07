@@ -1,82 +1,77 @@
 package com.coffeejjim.developers.data;
 
-import android.graphics.drawable.Drawable;
-
-/**
- * Created by Tacademy on 2016-08-23.
- */
-public class Cafe {
+public class Cafe implements java.io.Serializable {
+    private static final long serialVersionUID = -1373791085815832808L;
+    private int parking;
+    private int wifi;
+    private String cafeAddress;
+    private String imageUrl;
+    private int days;
     private String cafeName;
-    private String address;
-    private String price;
-    private String distance;
-    private Drawable photo;
-    private Options options;
-    private CafeImage cafeImage;
-    private Drawable option;
+    private int socket;
+    private int cafeId;
 
-    public Drawable getOption() {
-        return option;
+    public int getParking() {
+        return this.parking;
     }
 
-    public void setOption(Drawable option) {
-        this.option = option;
+    public void setParking(int parking) {
+        this.parking = parking;
     }
 
-    public Options getOptions() {
-        return options;
+    public int getWifi() {
+        return this.wifi;
     }
 
-    public void setOptions(Options options) {
-        this.options = options;
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
     }
 
-    public CafeImage getCafeImage() {
-        return cafeImage;
+    public String getCafeAddress() {
+        return this.cafeAddress;
     }
 
-    public void setCafeImage(CafeImage cafeImage) {
-        this.cafeImage = cafeImage;
+    public void setCafeAddress(String cafeAddress) {
+        this.cafeAddress = cafeAddress;
+    }
+
+    public String getImageUrl() {
+        return this.imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getDays() {
+        return this.days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 
     public String getCafeName() {
-        return cafeName;
+        return this.cafeName;
     }
 
     public void setCafeName(String cafeName) {
         this.cafeName = cafeName;
     }
 
-    public String getAddress() {
-        return address;
+    public int getSocket() {
+        return this.socket;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setSocket(int socket) {
+        this.socket = socket;
     }
 
-    public String getPrice() {
-        return price;
+    public int getCafeId() {
+        return this.cafeId;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setCafeId(int cafeId) {
+        this.cafeId = cafeId;
     }
-
-    public String getDistance() {
-        return distance;
-    }
-
-    public void setDistance(String distance) {
-        this.distance = distance;
-    }
-
-    public Drawable getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(Drawable photo) {
-        this.photo = photo;
-    }
-
 }

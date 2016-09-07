@@ -66,10 +66,12 @@ public class LikeListFragment extends Fragment {
             }
         });
 
+
         likeListRecyclerView.setAdapter(mAdapter);
         LinearLayoutManager manager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         likeListRecyclerView.setLayoutManager(manager);
+
 
         return view;
     }
@@ -98,6 +100,7 @@ public class LikeListFragment extends Fragment {
                 Toast.makeText(getContext(), "network fail", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
 }

@@ -211,10 +211,10 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
         String location = locationView.getText().toString();
         String reservationTime = dateView.getText().toString() + timeView.getText().toString();
         Options options = new Options();
-        options.setWifi(true);
-        options.setDays(true);
-        options.setParking(true);
-        options.setSocket(false);
+        options.setWifi(1);
+        options.setDays(0);
+        options.setParking(0);
+        options.setSocket(0);
 
         EstimateRequest ERequest = new EstimateRequest(getContext(),3,"32.213123","123123213",reservationTime,options,20);
         NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {

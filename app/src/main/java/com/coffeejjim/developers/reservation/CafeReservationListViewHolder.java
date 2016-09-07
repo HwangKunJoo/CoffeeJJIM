@@ -80,23 +80,23 @@ public class CafeReservationListViewHolder extends RecyclerView.ViewHolder {
 
     public void setProposal(Proposal proposal) {
         this.proposal = proposal;
-        titleView.setText(proposal.getCafe().getCafeName());
-        addressView.setText(proposal.getCafe().getAddress());
-        distanceView.setText(proposal.getCafe().getDistance());
-        priceView.setText(proposal.getBidPrice());
+        titleView.setText(proposal.getCafeName());
+        addressView.setText(proposal.getCafeAddress());
+        distanceView.setText(""+proposal.getDistance());
+        priceView.setText(""+proposal.getBidPrice());
         Glide.with(photoView.getContext())
-                .load(proposal.getCafeImage().getImageUrl())
+                .load(proposal.getImageUrl())
                 .into(photoView);
-        if(proposal.getOptions().isWifi()){
+        if(proposal.getWifi() == 1){
             optionWifiImageView.setVisibility(View.VISIBLE);
         }
-        if(proposal.getOptions().isSocket()){
+        if(proposal.getSocket() == 1){
             optionSocketImageView.setVisibility(View.VISIBLE);
         }
-        if(proposal.getOptions().isParking()){
+        if(proposal.getParking() == 1){
             optionParkingImageView.setVisibility(View.VISIBLE);
         }
-        if(proposal.getOptions().isDays()){
+        if(proposal.getDays() == 1){
             optionDaysImageView.setVisibility(View.VISIBLE);
         }
 

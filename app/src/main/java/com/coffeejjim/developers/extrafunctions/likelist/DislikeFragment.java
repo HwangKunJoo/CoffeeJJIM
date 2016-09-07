@@ -3,7 +3,6 @@ package com.coffeejjim.developers.extrafunctions.likelist;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -71,8 +70,6 @@ public class DislikeFragment extends Fragment {
         for (int i = 0; i < 20; i++) {
             Cafe c = new Cafe();
             c.setCafeName("CAFE NO. " + i);
-            c.setAddress("Address: " + i);
-            c.setPhoto(ContextCompat.getDrawable(getContext(), resIds[i % resIds.length]));
             mAdapter.add(c);
         }
     }

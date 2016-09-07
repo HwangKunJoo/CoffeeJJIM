@@ -4,40 +4,40 @@ package com.coffeejjim.developers.data;
  * Created by Tacademy on 2016-09-06.
  */
 public class Options {
-    boolean wifi;
-    boolean days;
-    boolean socket;
-    boolean parking;
+    int wifi;
+    int days;
+    int socket;
+    int parking;
 
-    public boolean isWifi() {
+    public int getWifi() {
         return wifi;
     }
 
-    public void setWifi(boolean wifi) {
+    public void setWifi(int wifi) {
         this.wifi = wifi;
     }
 
-    public boolean isDays() {
+    public int getDays() {
         return days;
     }
 
-    public void setDays(boolean days) {
+    public void setDays(int days) {
         this.days = days;
     }
 
-    public boolean isSocket() {
+    public int getSocket() {
         return socket;
     }
 
-    public void setSocket(boolean socket) {
+    public void setSocket(int socket) {
         this.socket = socket;
     }
 
-    public boolean isParking() {
+    public int getParking() {
         return parking;
     }
 
-    public void setParking(boolean parking) {
+    public void setParking(int parking) {
         this.parking = parking;
     }
 }

@@ -1,10 +1,7 @@
 package com.coffeejjim.developers.request;
 
-import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.NetworkResultTemp;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -18,9 +15,9 @@ import okhttp3.ResponseBody;
 public abstract class AbstractRequest<T> extends NetworkRequest<T> {
 
 
-    private  final static String HOST = "ec2-52-78-110-229.ap-northeast-2.compute.amazonaws.com";
-    private  final static int HTTPS_PORT = 443;
-    private final static int HTTP_PORT=80;
+    private final static String HOST = "ec2-52-78-110-229.ap-northeast-2.compute.amazonaws.com";
+    private final static int HTTPS_PORT = 443;
+    private final static int HTTP_PORT = 80;
 
     protected HttpUrl.Builder getBaseUrlHttpsBuilder() {
         HttpUrl.Builder builder = new HttpUrl.Builder();
@@ -43,18 +40,9 @@ public abstract class AbstractRequest<T> extends NetworkRequest<T> {
     protected T parse(ResponseBody body) throws IOException {
         String text = body.string();
         Gson gson = new Gson();
-        NetworkResultTemp temp = gson.fromJson(text, NetworkResultTemp.class);
-        if (temp.getCode() == 1) {
-            T result = gson.fromJson(text, getType());
-            return result;
-        } else if (temp.getCode() == 0) {
-            Type type = new TypeToken<NetworkResult<String>>(){}.getType();
-            NetworkResult<String> result = gson.fromJson(text, type);
-            throw new IOException(result.getResult());
-        } else {
-            T result = gson.fromJson(text, getType(temp.getCode()));
-            return result;
-        }
+        T temp = gson.fromJson(text, getType());
+        return temp;
+
     }
 
     protected Type getType(int code) {

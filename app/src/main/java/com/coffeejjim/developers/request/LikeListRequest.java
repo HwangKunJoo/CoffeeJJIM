@@ -1,7 +1,6 @@
 package com.coffeejjim.developers.request;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.coffeejjim.developers.data.Cafe;
 import com.coffeejjim.developers.data.NetworkResult;
@@ -19,6 +18,7 @@ import okhttp3.Request;
 public class LikeListRequest extends AbstractRequest<NetworkResult<List<Cafe>>> {
 
     Request request;
+
     public LikeListRequest(Context context, String pageNo, String rowCount) {
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("bookmarks")
@@ -30,12 +30,12 @@ public class LikeListRequest extends AbstractRequest<NetworkResult<List<Cafe>>> 
                 .url(url)
                 .tag(context)
                 .build();
-        Log.i("url", url.toString());
     }
 
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<List<Cafe>>>(){}.getType();
+        return new TypeToken<NetworkResult<List<Cafe>>>() {
+        }.getType();
     }
 
     @Override

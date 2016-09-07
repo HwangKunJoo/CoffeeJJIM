@@ -73,20 +73,20 @@ public class LikeListViewHolder extends RecyclerView.ViewHolder {
     public void setCafe(Cafe cafe) {
         this.cafe = cafe;
         cafeNameView.setText(cafe.getCafeName());
-        addressView.setText(cafe.getAddress());
+        addressView.setText(cafe.getCafeAddress());
         Glide.with(cafeMainImageView.getContext())
-                .load(cafe.getCafeImage().getImageUrl())
+                .load(cafe.getImageUrl())
                 .into(cafeMainImageView);
-        if(cafe.getOptions().isWifi()){
+        if(cafe.getWifi() == 1){
             optionWifiImageView.setVisibility(View.VISIBLE);
         }
-        if(cafe.getOptions().isSocket()){
+        if(cafe.getSocket() == 1){
             optionSocketImageView.setVisibility(View.VISIBLE);
         }
-        if(cafe.getOptions().isParking()){
+        if(cafe.getParking() == 1){
             optionParkingImageView.setVisibility(View.VISIBLE);
         }
-        if(cafe.getOptions().isDays()){
+        if(cafe.getDays() == 1){
             optionDaysImageView.setVisibility(View.VISIBLE);
         }
     }

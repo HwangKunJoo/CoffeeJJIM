@@ -1,9 +1,7 @@
 package com.coffeejjim.developers.data;
 
-/**
- * Created by Tacademy on 2016-08-23.
- */
-public class Estimate {
+public class Estimate implements java.io.Serializable {
+    private static final long serialVersionUID = -401744136212757770L;
     private String endTime;
     private String reservationDate;
     private String reservationTime;
@@ -85,6 +83,5 @@ public class Estimate {
     public void setReserved(boolean reserved) {
         isReserved = reserved;
     }
-
 
 }

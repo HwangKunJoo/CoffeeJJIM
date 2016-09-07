@@ -74,6 +74,7 @@ public class CafeReservationListFragment extends Fragment {
     public void moveCafeDetailActivity() {
         Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
         startActivity(intent);
+
     }
 
     @Override
@@ -86,11 +87,12 @@ public class CafeReservationListFragment extends Fragment {
                 List<Proposal> proposalList = result.getResult();
                 mAdapter.clear();
                 mAdapter.addAll(proposalList);
+                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<List<Proposal>>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(), "network fail", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
             }
         });
     }
