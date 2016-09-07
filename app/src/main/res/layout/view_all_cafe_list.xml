@@ -91,16 +91,17 @@
             android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
             android:scaleType="centerCrop" />
 
-        <Button
+        <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:gravity="right|bottom"
             android:id="@+id/btn_all_cafe_list_detail"
-            android:background="@drawable/btn_detail_view_all_cafe_list"
+            android:background="@color/coffeejjim_invisible"
             android:layout_alignTop="@+id/allcafelist_address_text"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            android:src="@drawable/btn_add" />
 
         <TextView
             android:layout_width="wrap_content"

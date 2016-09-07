@@ -28,9 +28,9 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_settings, container, false);
 
-        String[] str = getResources().getStringArray(R.array.auction_time_Array);
+        String[] str = getResources().getStringArray(R.array.local_distance_Array);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,str);
-        Spinner spi = (Spinner)view.findViewById(R.id.activity_settings_protime_spinner);
+        Spinner spi = (Spinner)view.findViewById(R.id.activity_settings_distance_spinner);
         spi.setAdapter(adapter);
         spi.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {

@@ -18,6 +18,14 @@
         <item>30분</item>
     </string-array>
 
+    <string-array name="local_distance_Array">
+        <item>[선택]</item>
+        <item>500m</item>
+        <item>1Km</item>
+        <item>1.5Km</item>
+        <item>2Km</item>
+    </string-array>
+
     <string-array name="working_time_Array">
         <item>08:00</item>
         <item>09:00</item>

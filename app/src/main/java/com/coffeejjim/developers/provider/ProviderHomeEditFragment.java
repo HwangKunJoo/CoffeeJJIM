@@ -1,5 +1,7 @@
 package com.coffeejjim.developers.provider;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,6 +17,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ProviderHomeEditFragment extends Fragment {
+
+    private static final int PICK_FROM_GALLERY = 1;
 
     public ProviderHomeEditFragment() {
         // Required empty public constructor
@@ -107,5 +111,43 @@ public class ProviderHomeEditFragment extends Fragment {
         ((ProviderHomeActivity)getActivity()).changeProviderHome();
     }
 
+    @OnClick(R.id.provider_home_edit_preview_first_image)
+    public void onProviderPreviewFirstImageUpload(){
+        getGalleryImage ();
+    }
+
+    @OnClick(R.id.provider_home_edit_preview_second_image)
+    public void onProviderPreviewSecondImageUpload(){
+        getGalleryImage ();
+    }
+
+    @OnClick(R.id.provider_home_edit_preview_third_image)
+    public void onProviderPreviewThirdImageUpload(){
+        getGalleryImage ();
+    }
+
+    @OnClick(R.id.provider_home_edit_preview_forth_image)
+    public void onProviderPreviewForthImageUpload(){
+        getGalleryImage ();
+    }
+
+    public void getGalleryImage () {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+
+        intent.putExtra("crop", "true");
+        intent.putExtra("aspectX", 0);
+        intent.putExtra("aspectY", 0);
+        intent.putExtra("outputX", 200);
+        intent.putExtra("outputY", 150);
+        try {
+            intent.putExtra("return_data", true);
+            startActivityForResult(Intent.createChooser(intent,
+                    "Complete action using"), PICK_FROM_GALLERY);
+        } catch (ActivityNotFoundException e) {
+
+        }
+    }
 
 }
