@@ -8,9 +8,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.LikeListRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,6 +56,7 @@ public class DislikeFragment extends Fragment {
             @Override
             public void onAdapterButtonClick(View view, Cafe cafe, int position) {
                 mAdapter.delete(cafe);
+                //지우는 리퀘스트 요청해야되
             }
         });
 
@@ -58,20 +66,28 @@ public class DislikeFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         dislikeListRecyclerView.setLayoutManager(manager);
 
-        initData();
+
         return view;
     }
 
-    int[] resIds = {R.drawable.hwang, R.drawable.event1, R.drawable.event2,
-            R.drawable.bestsample1, R.drawable.sample1, R.drawable.event4,
-            R.drawable.bestsample2, R.drawable.hwang};
+    @Override
+    public void onStart() {
+        super.onStart();
+        LikeListRequest ADRequest = new LikeListRequest(getContext(), "1", "10");
+        NetworkManager.getInstance().getNetworkData(ADRequest, new NetworkManager.OnResultListener<NetworkResult<List<Cafe>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Cafe>>> request, NetworkResult<List<Cafe>> result) {
+                List<Cafe> likeList = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(likeList);
+                Toast.makeText(getContext(), "yap", Toast.LENGTH_SHORT).show();
+            }
 
-    public void initData() {
-        for (int i = 0; i < 20; i++) {
-            Cafe c = new Cafe();
-            c.setCafeName("CAFE NO. " + i);
-            mAdapter.add(c);
-        }
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Cafe>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "network fail", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
-
 }
