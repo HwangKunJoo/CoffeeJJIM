@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.coffeejjim.developers.provider.BookingInfoActivity;
+import com.coffeejjim.developers.owner.BookingInfoActivity;
 
 public class AlarmActivity extends AppCompatActivity {
 

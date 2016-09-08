@@ -1,11 +1,7 @@
-package com.coffeejjim.developers.cafedetail;
+package com.coffeejjim.developers.owner;
 
-
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,111 +15,82 @@ import com.coffeejjim.developers.data.CafeInfo;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
-import com.coffeejjim.developers.request.CafeDetailRequest;
+import com.coffeejjim.developers.request.CafeInfoRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class CafeDetailFragment extends Fragment {
+public class OwnerHomeFragment extends Fragment {
 
-    @BindView(R.id.cafe_detail_image_pager)
-    ViewPager cafeDetailImagePager;
-    @BindView(R.id.cafe_detail_cafe_name)
+    @BindView(R.id.provider_home_cafe_name_text)
     TextView cafeNameView;
-    @BindView(R.id.cafe_detail_address)
+    @BindView(R.id.provider_home_cafe_main_image)
+    CircleImageView cafeMainImageView;
+    @BindView(R.id.provider_home_address)
     TextView cafeAddressView;
-    @BindView(R.id.cafe_detail_dial)
-    TextView cafePhoneNumberView;
-    @BindView(R.id.cafe_detail_business_time)
+    @BindView(R.id.provider_home_daytime)
     TextView cafeBusinessTimeView;
-    @BindView(R.id.cafe_detail_preview_image_first)
+    @BindView(R.id.provider_home_phone)
+    TextView cafePhoneNumberView;
+    @BindView(R.id.provider_home_preview_first_image)
     CircleImageView firstPreviewImageView;
-    @BindView(R.id.cafe_detail_preview_image_second)
+    @BindView(R.id.provider_home_preview_second_image)
     CircleImageView secondPreviewImageView;
-    @BindView(R.id.cafe_detail_preview_image_third)
+    @BindView(R.id.provider_home_preview_third_image)
     CircleImageView thirdPreviewImageView;
-    @BindView(R.id.cafe_detail_preview_image_fourth)
+    @BindView(R.id.provider_home_preview_forth_image)
     CircleImageView fourthPreviewImageView;
-    @BindView(R.id.cafe_detail_options_wifi)
+    @BindView(R.id.provider_home_options_wifi)
     ImageView optionWifiImageView;
-    @BindView(R.id.cafe_detail_options_working_time)
+    @BindView(R.id.provider_home_options_working_time)
     ImageView optionDaysImageView;
-    @BindView(R.id.cafe_detail_options_plag)
+    @BindView(R.id.provider_home_options_plag)
     ImageView optionSocketImageView;
-    @BindView(R.id.cafe_detail_options_parking)
+    @BindView(R.id.provider_home_options_parking)
     ImageView optionParkingImageView;
 
-
-    CafeDetailImagePagerAdapter cafeDetailImagePagerAdapter;
     CafeInfo cafeInfo;
 
-
-    public CafeDetailFragment() {
+    public OwnerHomeFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fr_cafe_detail, container, false);
+        View view = inflater.inflate(R.layout.fr_owner_home, container, false);
         ButterKnife.bind(this, view);
-        return view;
-    }
 
-    @OnClick(R.id.btn_move_map)
-    public void onCafeLocation() {
-        changeCafeLocationMap();
-    }
-
-    public void changeCafeLocationMap() {
-        Intent intent = new Intent(getActivity(), CafeLocationMapActivity.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.btn_move_dial_pad)
-    public void onDialPad() {
-        moveDialPadActivity();
-    }
-
-    public void moveDialPadActivity() {
-        Intent intent = new Intent(Intent.ACTION_DIAL,
-                Uri.parse("tel:010-9374-4512"));
-        startActivity(intent);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        //cafeId 어디서 디테일로 들어오는지 확인해서 구분해줘야 됨.
-        // 툴바를 여기다 만들던지 아이디값 넘겨줘야됨 액티비티에
-        CafeDetailRequest CDRequest = new CafeDetailRequest(getContext(), "123");
-        NetworkManager.getInstance().getNetworkData(CDRequest, new NetworkManager.OnResultListener<NetworkResult<CafeInfo>>() {
+        CafeInfoRequest CIRequest = new CafeInfoRequest(getContext(), 0);
+        NetworkManager.getInstance().getNetworkData(CIRequest, new NetworkManager.OnResultListener<NetworkResult<CafeInfo>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<CafeInfo>> request, NetworkResult<CafeInfo> result) {
                 cafeInfo = result.getResult();
-                cafeDetailImagePagerAdapter = new CafeDetailImagePagerAdapter(getChildFragmentManager(), cafeInfo);
-                cafeDetailImagePager.setAdapter(cafeDetailImagePagerAdapter);
-                cafeInit();
-                Toast.makeText(getContext(), "성공요요요요", Toast.LENGTH_SHORT).show();
+                cafeInfoInit();
+                Toast.makeText(getContext(),"서어어어엉어공",Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<CafeInfo>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(), "실패요요요요요", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"시이이이일패애애애ㅐ",Toast.LENGTH_SHORT).show();
             }
         });
+
+        return view;
     }
 
-    public void cafeInit() {
+    public void cafeInfoInit(){
         cafeNameView.setText(cafeInfo.getCafeInfo().getCafeName());
         cafeAddressView.setText(cafeInfo.getCafeInfo().getCafeAddress());
         cafePhoneNumberView.setText(cafeInfo.getCafeInfo().getCafePhoneNumber());
         cafeBusinessTimeView.setText(cafeInfo.getCafeInfo().getBusinessHour());
+
+        //메인으로 설정한 사진 보여주는 코드 필요함
+        Glide.with(cafeMainImageView.getContext())
+                .load(cafeInfo.getImages().get(0).getImageUrl()).into(cafeMainImageView);
         Glide.with(firstPreviewImageView.getContext())
                 .load(cafeInfo.getImages().get(0).getImageUrl()).into(firstPreviewImageView);
         Glide.with(secondPreviewImageView.getContext())
@@ -145,4 +112,13 @@ public class CafeDetailFragment extends Fragment {
             optionDaysImageView.setVisibility(View.VISIBLE);
         }
     }
+
+
+
+    @OnClick(R.id.provider_home_edit_btn)
+    public void onProviderEdit() {
+        ((OwnerHomeActivity)getActivity()).changeProviderHomeEdit();
+    }
+
+
 }

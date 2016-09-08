@@ -45,7 +45,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.auctionprocess.AuctionProcessActivity"
+            android:name=".owner.auctionprocess.AuctionProcessActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -86,11 +86,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.ProviderHomeActivity"
+            android:name=".owner.OwnerHomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.usermanagement.UserManagementActivity"
+            android:name=".owner.usermanagement.UserManagementActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -99,7 +99,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.auctionstatement.AuctionStatementActivity"
+            android:name=".owner.auctionstatement.AuctionStatementActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -114,11 +114,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.usermanagement.uservisitcount.UserVisitCountActivity"
+            android:name=".owner.usermanagement.uservisitcount.UserVisitCountActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".provider.BookingInfoActivity"
+            android:name=".owner.BookingInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

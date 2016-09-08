@@ -14,13 +14,14 @@ import okhttp3.Request;
 /**
  * Created by Tacademy on 2016-09-08.
  */
-public class CafeDetailRequest extends AbstractRequest<NetworkResult<CafeInfo>> {
+public class CafeInfoRequest extends AbstractRequest<NetworkResult<CafeInfo>> {
     Request request;
 
-    public CafeDetailRequest(Context context, String cafeId){
-        HttpUrl url = getBaseUrlBuilder()
+    public CafeInfoRequest(Context context, int type){
+        HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("cafes")
-                .addPathSegment(cafeId)
+                .addPathSegment("me")
+                .addQueryParameter("type", ""+type)
                 .build();
 
         request = new Request.Builder()

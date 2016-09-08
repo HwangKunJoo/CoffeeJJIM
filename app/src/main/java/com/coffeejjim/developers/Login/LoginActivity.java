@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.home.HomeActivity;
-import com.coffeejjim.developers.provider.ProviderHomeActivity;
+import com.coffeejjim.developers.owner.OwnerHomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void moveProviderHomeActivity() {
-        Intent intent = new Intent(this, ProviderHomeActivity.class);
+        Intent intent = new Intent(this, OwnerHomeActivity.class);
         startActivity(intent);
     }
 //

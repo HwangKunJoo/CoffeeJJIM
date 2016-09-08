@@ -116,7 +116,7 @@
     <dimen name="telephone_image_button_marginLeft">10dp</dimen>
 
 
-    <!--fr_provider_home.xml,fr_provider_home_edit.xml-->
+    <!--fr_owner_home.xml_provider_home_edit.xml-->
     <dimen name="fr_provider_home_text_view_title_marginTop">25dp</dimen>
     <dimen name="fr_provider_home_edit_edit_text_title_marginTop">16dp</dimen>
 

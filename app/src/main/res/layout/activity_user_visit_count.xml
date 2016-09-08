@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".provider.usermanagement.uservisitcount.UserVisitCountActivity">
+    tools:context=".owner.usermanagement.uservisitcount.UserVisitCountActivity">
 
         <FrameLayout
             android:id="@+id/user_visit_count_toolbar_layout"

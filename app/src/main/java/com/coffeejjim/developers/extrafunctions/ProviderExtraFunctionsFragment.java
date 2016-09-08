@@ -13,8 +13,8 @@ import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
 import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
-import com.coffeejjim.developers.provider.auctionstatement.AuctionStatementActivity;
-import com.coffeejjim.developers.provider.usermanagement.UserManagementActivity;
+import com.coffeejjim.developers.owner.auctionstatement.AuctionStatementActivity;
+import com.coffeejjim.developers.owner.usermanagement.UserManagementActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,7 +33,7 @@ public class ProviderExtraFunctionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fr_provider_extra_functions, container, false);
+        View view = inflater.inflate(R.layout.fr_owner_extra_functions, container, false);
         ButterKnife.bind(this, view);
         return view;
     }
