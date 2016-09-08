@@ -8,31 +8,37 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.CafeImage;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CafeDetailImageChildFragment extends Fragment {
+
+    @BindView(R.id.cafe_detail_image)
+    ImageView cafeDetailImageView;
 
     public CafeDetailImageChildFragment() {
         // Required empty public constructor
     }
 
-    public static CafeDetailImageChildFragment newInstance(int cafeDetailImage) {
+    public static CafeDetailImageChildFragment newInstance(CafeImage cafeImage) {
         CafeDetailImageChildFragment f = new CafeDetailImageChildFragment();
         Bundle b = new Bundle();
-        b.putInt("cafeDetailImage", cafeDetailImage);
+        b.putSerializable("cafeImage", cafeImage);
         f.setArguments(b);
         return f;
     }
 
-    int cafeDetailImage;
+    CafeImage cafeImage;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            cafeDetailImage = getArguments().getInt("cafeDetailImage");
+            cafeImage = (CafeImage) getArguments().getSerializable("cafeImage");
         }
     }
 
@@ -42,8 +48,10 @@ public class CafeDetailImageChildFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_cafe_detail_image, container, false);
         ButterKnife.bind(this, view);
-        ImageView eventPhotoView = (ImageView) view.findViewById(R.id.cafe_detail_image);
-        eventPhotoView.setImageResource(cafeDetailImage);
+
+        Glide.with(cafeDetailImageView.getContext())
+                .load(cafeImage.getImageUrl()).into(cafeDetailImageView);
+
         return view;
     }
 }

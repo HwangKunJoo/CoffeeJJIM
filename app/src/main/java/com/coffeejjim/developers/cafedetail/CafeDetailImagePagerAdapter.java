@@ -4,31 +4,28 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.CafeDetail;
 
 /**
  * Created by Tacademy on 2016-08-23.
  */
 public class CafeDetailImagePagerAdapter extends FragmentPagerAdapter{
 
-    private final int[] galImages = new int[] {
-            R.drawable.new1,
-            R.drawable.new2,
-            R.drawable.new3,
-    };
+    CafeDetail cafeDetail;
 
-    public CafeDetailImagePagerAdapter(FragmentManager fm) {
+
+    public CafeDetailImagePagerAdapter(FragmentManager fm, CafeDetail cafeDetail) {
         super(fm);
+        this.cafeDetail = cafeDetail;
     }
-
 
     @Override
     public Fragment getItem(int position) {
-        return CafeDetailImageChildFragment.newInstance(galImages[position]);
+        return CafeDetailImageChildFragment.newInstance(cafeDetail.getImages().get(position));
     }
 
     @Override
     public int getCount() {
-        return galImages.length;
+        return cafeDetail.getImages().size();
     }
 }

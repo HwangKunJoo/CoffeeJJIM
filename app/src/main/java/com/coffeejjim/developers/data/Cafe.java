@@ -13,6 +13,32 @@ public class Cafe implements java.io.Serializable {
     private double distance;
     private double latitude;
     private double longitude;
+    private String cafePhoneNumber;
+    private String businessHour;
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getCafePhoneNumber() {
+        return cafePhoneNumber;
+    }
+
+    public void setCafePhoneNumber(String cafePhoneNumber) {
+        this.cafePhoneNumber = cafePhoneNumber;
+    }
+
+    public String getBusinessHour() {
+        return businessHour;
+    }
+
+    public void setBusinessHour(String businessHour) {
+        this.businessHour = businessHour;
+    }
 
     public double getDistance() {
         return distance;

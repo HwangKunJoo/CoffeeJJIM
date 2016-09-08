@@ -56,10 +56,6 @@ public class HomeActivity extends AppCompatActivity {
     BestRecommendPagerAdapter bestRecommendPagerAdapter;
     NewRecommendPagerAdapter newRecommendPagerAdapter;
 
-    List<Event> eventImages;
-    List<CafeImage> bestCafeImages;
-    List<CafeImage> newCafeImages;
-
     public static final int CUSTOMER = 10;
 
     @Override
@@ -74,10 +70,10 @@ public class HomeActivity extends AppCompatActivity {
         NetworkManager.getInstance().getNetworkData(EIRequest, new NetworkManager.OnResultListener<NetworkResult<List<Event>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<Event>>> request, NetworkResult<List<Event>> result) {
-                eventImages = result.getResult();
+                List<Event> eventImages = result.getResult();
                 homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager(), eventImages);
                 homeEventPager.setAdapter(homeEventAdapter);
-                //Toast.makeText(HomeActivity.this, "Event Image Load Success....", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Event Image Load Success....", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -90,10 +86,10 @@ public class HomeActivity extends AppCompatActivity {
         NetworkManager.getInstance().getNetworkData(BCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
-                bestCafeImages = result.getResult();
+                List<CafeImage> bestCafeImages = result.getResult();
                 bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
                 homeBestPager.setAdapter(bestRecommendPagerAdapter);
-                //Toast.makeText(HomeActivity.this, "Best Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Best Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -106,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
         NetworkManager.getInstance().getNetworkData(NCIRequest, new NetworkManager.OnResultListener<NetworkResult<List<CafeImage>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<CafeImage>>> request, NetworkResult<List<CafeImage>> result) {
-                newCafeImages = result.getResult();
+                List<CafeImage> newCafeImages = result.getResult();
                 newRecommendPagerAdapter = new NewRecommendPagerAdapter(getSupportFragmentManager(), newCafeImages);
                 homeNewPager.setAdapter(newRecommendPagerAdapter);
                 //Toast.makeText(HomeActivity.this, "New Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
