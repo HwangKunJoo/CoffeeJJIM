@@ -8,6 +8,12 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AddLikeListRequest;
+import com.coffeejjim.developers.request.DeleteLikeListRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,11 +62,35 @@ public class CafeDetailActivity extends AppCompatActivity {
             if(!isLiked){
                 item.setIcon(R.drawable.likefull);
                 isLiked = true;
-                Toast.makeText(this, "즐겨찾기에 추가 되었습니다." , Toast.LENGTH_SHORT).show();
+                AddLikeListRequest ALLRequest = new AddLikeListRequest(this, "123123");
+                NetworkManager.getInstance().getNetworkData(ALLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<Cafe>> request, NetworkResult<Cafe> result) {
+                        Toast.makeText(CafeDetailActivity.this, "즐겨찾기 성공" , Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<Cafe>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(CafeDetailActivity.this, "즐겨찾기 실패" , Toast.LENGTH_SHORT).show();
+                    }
+                });
+                //Toast.makeText(this, "즐겨찾기에 추가 되었습니다." , Toast.LENGTH_SHORT).show();
             }else{
                 item.setIcon(R.drawable.likeempty);
                 isLiked = false;
-                Toast.makeText(this, "즐겨찾기가 해제 되었습니다." , Toast.LENGTH_SHORT).show();
+                DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(this, "123123");
+                NetworkManager.getInstance().getNetworkData(DLLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<Cafe>> request, NetworkResult<Cafe> result) {
+                        Toast.makeText(CafeDetailActivity.this, "즐겨찾기 해제 성공" , Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<Cafe>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(CafeDetailActivity.this, "즐겨찾기 해제 실패" , Toast.LENGTH_SHORT).show();
+                    }
+                });
+                //Toast.makeText(this, "즐겨찾기가 해제 되었습니다." , Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);

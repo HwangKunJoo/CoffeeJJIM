@@ -100,6 +100,7 @@ public class CafeDetailFragment extends Fragment {
     public void onStart() {
         super.onStart();
         //cafeId 어디서 디테일로 들어오는지 확인해서 구분해줘야 됨.
+        // 툴바를 여기다 만들던지 아이디값 넘겨줘야됨 액티비티에
         CafeDetailRequest CDRequest = new CafeDetailRequest(getContext(), "123");
         NetworkManager.getInstance().getNetworkData(CDRequest, new NetworkManager.OnResultListener<NetworkResult<CafeDetail>>() {
             @Override
