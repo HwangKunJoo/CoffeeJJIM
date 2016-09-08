@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.Options;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -22,7 +21,7 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
 
 
     public EstimateRequest(Context context, int people, String latitude, String longitude, String reservationTime,
-                           Options options, int auctionTime) {
+                           int wifi, int days, int parking, int socket, int auctionTime) {
         HttpUrl.Builder builder = getBaseUrlBuilder();
         builder.addPathSegment("estimates");
 
@@ -31,10 +30,10 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
                 .add("latitude", latitude)
                 .add("longitude", longitude)
                 .add("reservationTime", reservationTime)
-                .add("wifi", "" + options.getWifi())
-                .add("days", "" + options.getDays())
-                .add("parking", "" + options.getParking())
-                .add("socket", "" + options.getSocket())
+                .add("wifi", "" + wifi)
+                .add("days", "" + days)
+                .add("parking", "" + parking)
+                .add("socket", "" + socket)
                 .add("auctionTime", "" + auctionTime)
                 .build();
 

@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
                 List<Event> eventImages = result.getResult();
                 homeEventAdapter = new HomeEventPagerAdapter(getSupportFragmentManager(), eventImages);
                 homeEventPager.setAdapter(homeEventAdapter);
-                Toast.makeText(HomeActivity.this, "Event Image Load Success....", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Event Image Load Success....", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -89,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
                 List<CafeImage> bestCafeImages = result.getResult();
                 bestRecommendPagerAdapter = new BestRecommendPagerAdapter(getSupportFragmentManager(), bestCafeImages);
                 homeBestPager.setAdapter(bestRecommendPagerAdapter);
-                Toast.makeText(HomeActivity.this, "Best Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(HomeActivity.this, "Best Cafe Images Load Success..", Toast.LENGTH_SHORT).show();
             }
 
             @Override

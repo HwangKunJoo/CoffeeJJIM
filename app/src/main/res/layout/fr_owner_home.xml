@@ -102,7 +102,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/provider_home_edit_option_text"
+        android:id="@+id/provider_home_option_text"
         android:layout_width="@dimen/text_view_Size"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/provider_home_edit_working_daytime_text"
@@ -166,7 +166,7 @@
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
         android:src="@drawable/options_wifi_on"
-        android:layout_alignTop="@+id/provider_home_edit_option_text"
+        android:layout_alignTop="@+id/provider_home_option_text"
         android:layout_alignLeft="@+id/provider_home_daytime"
         android:layout_alignStart="@+id/provider_home_daytime"
         android:background="@color/coffeejjim_invisible" />

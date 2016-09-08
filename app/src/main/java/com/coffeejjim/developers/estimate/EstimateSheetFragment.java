@@ -23,7 +23,6 @@ import android.widget.Toast;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.Options;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.EstimateRequest;
@@ -210,13 +209,8 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     public void onEstimateCheckDialogButtonClick() {
         String location = locationView.getText().toString();
         String reservationTime = dateView.getText().toString() + timeView.getText().toString();
-        Options options = new Options();
-        options.setWifi(1);
-        options.setDays(0);
-        options.setParking(0);
-        options.setSocket(0);
 
-        EstimateRequest ERequest = new EstimateRequest(getContext(),3,"32.213123","123123213",reservationTime,options,20);
+        EstimateRequest ERequest = new EstimateRequest(getContext(),3,"32.213123","123123213",reservationTime,1,0,0,0,20);
         NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {

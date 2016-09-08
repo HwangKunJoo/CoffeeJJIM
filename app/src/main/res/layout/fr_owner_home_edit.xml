@@ -19,7 +19,7 @@
         android:paddingRight="10dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/provider_home_cafe_main_image"
+        android:id="@+id/provider_home_edit_cafe_main_image"
         android:layout_width="@dimen/cafe_main_image_Size"
         android:layout_height="@dimen/cafe_main_image_Size"
         android:src="@drawable/ahn"
@@ -28,33 +28,33 @@
         android:layout_marginTop="@dimen/cafe_main_image_marginTop"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/provider_home_preview_first_image"
+        android:id="@+id/provider_home_edit_preview_first_image"
         android:layout_width="@dimen/preview_image_Size"
         android:layout_height="@dimen/preview_image_Size"
         android:src="@drawable/bestsample1"
-        android:layout_below="@+id/provider_home_cafe_main_image"
+        android:layout_below="@+id/provider_home_edit_cafe_main_image"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="@dimen/preview_first_image_maginLeft"
         android:layout_marginTop="@dimen/preview_image_marginTop"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/provider_home_preview_second_image"
+        android:id="@+id/provider_home_edit_preview_second_image"
         android:layout_width="@dimen/preview_image_Size"
         android:layout_height="@dimen/preview_image_Size"
-        android:layout_alignTop="@+id/provider_home_preview_first_image"
-        android:layout_toEndOf="@+id/provider_home_preview_first_image"
-        android:layout_toRightOf="@+id/provider_home_preview_first_image"
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_first_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_first_image"
         android:src="@drawable/new2"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/provider_home_preview_third_image"
+        android:id="@+id/provider_home_edit_preview_third_image"
         android:layout_width="@dimen/preview_image_Size"
         android:layout_height="@dimen/preview_image_Size"
-        android:layout_alignTop="@+id/provider_home_preview_first_image"
-        android:layout_toEndOf="@+id/provider_home_preview_second_image"
-        android:layout_toRightOf="@+id/provider_home_preview_second_image"
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_second_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_second_image"
         android:src="@drawable/new1"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft" />
 
@@ -62,9 +62,9 @@
         android:id="@+id/provider_home_edit_preview_forth_image"
         android:layout_width="@dimen/preview_image_Size"
         android:layout_height="@dimen/preview_image_Size"
-        android:layout_alignTop="@+id/provider_home_preview_first_image"
-        android:layout_toEndOf="@+id/provider_home_preview_third_image"
-        android:layout_toRightOf="@+id/provider_home_preview_third_image"
+        android:layout_alignTop="@+id/provider_home_edit_preview_first_image"
+        android:layout_toEndOf="@+id/provider_home_edit_preview_third_image"
+        android:layout_toRightOf="@+id/provider_home_edit_preview_third_image"
         android:src="@drawable/new3"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft" />
 
@@ -77,7 +77,7 @@
         android:gravity="center"
         android:textSize="@dimen/subject_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/provider_home_preview_first_image"
+        android:layout_below="@+id/provider_home_edit_preview_first_image"
         android:layout_marginLeft="@dimen/text_view_first_marginLeft"
         android:layout_marginTop="@dimen/text_view_first_marginTop" />
 
@@ -228,7 +228,7 @@
         android:layout_alignBottom="@+id/provider_home_edit_working_weektime_text1" />
 
     <ImageView
-        android:id="@+id/provider_home_options_wifi"
+        android:id="@+id/provider_home_edit_options_wifi"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
         android:src="@drawable/options_wifi_on"
@@ -238,24 +238,24 @@
         android:scaleType="centerCrop" />
 
     <ImageView
-        android:id="@+id/provider_home_options_plag"
+        android:id="@+id/provider_home_edit_options_plag"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
         android:src="@drawable/options_plag_on"
-        android:layout_alignTop="@+id/provider_home_options_wifi"
-        android:layout_toRightOf="@+id/provider_home_options_wifi"
-        android:layout_toEndOf="@+id/provider_home_options_wifi"
+        android:layout_alignTop="@+id/provider_home_edit_options_wifi"
+        android:layout_toRightOf="@+id/provider_home_edit_options_wifi"
+        android:layout_toEndOf="@+id/provider_home_edit_options_wifi"
         android:scaleType="centerCrop"
         android:layout_marginLeft="4dp" />
 
     <ImageView
-        android:id="@+id/provider_home_options_parking"
+        android:id="@+id/provider_home_edit_options_parking"
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
         android:src="@drawable/options_parking_on"
-        android:layout_alignTop="@+id/provider_home_options_plag"
-        android:layout_toRightOf="@+id/provider_home_options_plag"
-        android:layout_toEndOf="@+id/provider_home_options_plag"
+        android:layout_alignTop="@+id/provider_home_edit_options_plag"
+        android:layout_toRightOf="@+id/provider_home_edit_options_plag"
+        android:layout_toEndOf="@+id/provider_home_edit_options_plag"
         android:scaleType="centerCrop"
         android:layout_marginLeft="4dp" />
 
@@ -264,9 +264,9 @@
         android:layout_width="@dimen/option_image_view_Size"
         android:layout_height="@dimen/option_image_view_Size"
         android:src="@drawable/options_workingtime_on"
-        android:layout_alignTop="@+id/provider_home_options_parking"
-        android:layout_toRightOf="@+id/provider_home_options_parking"
-        android:layout_toEndOf="@+id/provider_home_options_parking"
+        android:layout_alignTop="@+id/provider_home_edit_options_parking"
+        android:layout_toRightOf="@+id/provider_home_edit_options_parking"
+        android:layout_toEndOf="@+id/provider_home_edit_options_parking"
         android:scaleType="centerCrop"
         android:layout_marginLeft="4dp" />
 

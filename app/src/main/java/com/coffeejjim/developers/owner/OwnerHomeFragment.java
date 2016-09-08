@@ -70,7 +70,7 @@ public class OwnerHomeFragment extends Fragment {
             public void onSuccess(NetworkRequest<NetworkResult<CafeInfo>> request, NetworkResult<CafeInfo> result) {
                 cafeInfo = result.getResult();
                 cafeInfoInit();
-                Toast.makeText(getContext(),"서어어어엉어공",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),"서어어어엉어공",Toast.LENGTH_SHORT).show();
             }
 
             @Override
