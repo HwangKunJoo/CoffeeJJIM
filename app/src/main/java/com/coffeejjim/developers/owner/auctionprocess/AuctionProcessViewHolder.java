@@ -3,6 +3,7 @@ package com.coffeejjim.developers.owner.auctionprocess;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.coffeejjim.developers.R;
@@ -17,15 +18,22 @@ import butterknife.ButterKnife;
 public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.auction_process_end_time)
-    TextView endTimeView;
+    TextView deadlineTimeView;
     @BindView(R.id.auction_process_people)
     TextView peopleView;
-    @BindView(R.id.auction_process_reservation_time)
-    TextView reservationTimeView;
-    @BindView(R.id.auction_process_reservation_date)
-    TextView reservationDateView;
+    @BindView(R.id.auction_process_auction_start_time)
+    TextView auctionStartTimeView;
     @BindView(R.id.auction_process_user_nickname)
     TextView userNicknameView;
+    @BindView(R.id.auction_process_options_parking)
+    ImageView optionParkingImageView;
+    @BindView(R.id.auction_process_options_plag)
+    ImageView optionSocketImageView;
+    @BindView(R.id.auction_process_options_wifi)
+    ImageView optionWifiImageView;
+    @BindView(R.id.auction_process_options_working_time)
+    ImageView optionDaysImageView;
+
     @BindView(R.id.btn_estimate_sheet_confirm)
     Button btn_confirm;
 
@@ -68,9 +76,20 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
     public void setEstimate(Estimate estimate) {
         this.estimate = estimate;
         userNicknameView.setText(estimate.getUserNickname());
-        endTimeView.setText(estimate.getEndTime());
+        deadlineTimeView.setText(estimate.getDeadlineTime());
         peopleView.setText(""+estimate.getPeople());
-        reservationTimeView.setText(estimate.getReservationTime());
-        reservationDateView.setText(estimate.getReservationDate());
+        auctionStartTimeView.setText(estimate.getAuctionStartTime());
+        if(estimate.getWifi() == 1){
+            optionWifiImageView.setVisibility(View.VISIBLE);
+        }
+        if(estimate.getSocket() == 1){
+            optionSocketImageView.setVisibility(View.VISIBLE);
+        }
+        if(estimate.getParking() == 1){
+            optionParkingImageView.setVisibility(View.VISIBLE);
+        }
+        if(estimate.getDays() == 1){
+            optionDaysImageView.setVisibility(View.VISIBLE);
+        }
     }
 }

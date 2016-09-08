@@ -3,16 +3,24 @@ package com.coffeejjim.developers.owner.auctionprocess;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.estimate.provider.EstimateSheetConfirmActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AuctionProcessRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +38,12 @@ public class AuctionProcessFragment extends Fragment {
 
     public AuctionProcessFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new AuctionProcessRecyclerAdapter();
     }
 
 
@@ -60,23 +74,26 @@ public class AuctionProcessFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         auctionProcessRecyclerView.setLayoutManager(manager);
 
-        initData();
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        AuctionProcessRequest APRequest = new AuctionProcessRequest(getContext(), "1", "10");
+        NetworkManager.getInstance().getNetworkData(APRequest, new NetworkManager.OnResultListener<NetworkResult<List<Estimate>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Estimate>>> request, NetworkResult<List<Estimate>> result) {
+                List<Estimate> estimateList = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(estimateList);
+                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+            }
 
-    public void initData() {
-        for (int i = 0; i < 10; i++) {
-            Estimate e = new Estimate();
-            e.setUserNickname("User " + i );
-            e.setCafeName("Cafe No. " + i);
-            e.setAddress("경기도 성남시 분당구 " + i);
-            e.setPeople(i);
-            e.setEndTime("11 : " + i);
-            e.setReservationDate("2016. 08. 29");
-            e.setReservationTime("11 : " + i);
-            mAdapter.add(e);
-        }
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Estimate>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "fffffffffffffail", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }

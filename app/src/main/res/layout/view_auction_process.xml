@@ -34,23 +34,14 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="2016.08.07"
-                android:id="@+id/auction_process_reservation_date"
+                android:id="@+id/auction_process_auction_start_time"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="@dimen/small_text_size"
-                android:layout_marginLeft="@dimen/auction_process_reservation_date_marginLeft" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="15:00"
-                android:id="@+id/auction_process_reservation_time"
-                android:textSize="@dimen/small_text_size"
-                android:layout_alignParentTop="true"
-                android:layout_alignRight="@+id/auction_process_options_working_time1"
-                android:layout_alignEnd="@+id/auction_process_options_working_time1" />
+                android:layout_marginLeft="@dimen/auction_process_reservation_date_marginLeft"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,9 +60,9 @@
                 android:layout_height="@dimen/view_auction_process_option_image_Size"
                 android:id="@+id/auction_process_options_wifi"
                 android:src="@drawable/options_wifi_on"
-                android:layout_below="@+id/auction_process_reservation_date"
-                android:layout_alignLeft="@+id/auction_process_reservation_date"
-                android:layout_alignStart="@+id/auction_process_reservation_date"
+                android:layout_below="@+id/auction_process_auction_start_time"
+                android:layout_alignLeft="@+id/auction_process_auction_start_time"
+                android:layout_alignStart="@+id/auction_process_auction_start_time"
                 android:layout_marginTop="@dimen/view_auction_process_small_text_view_marginLeft"
                 android:background="@color/coffeejjim_invisible" />
 
@@ -110,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="명"
                 android:textSize="@dimen/small_text_size"
-                android:id="@+id/auction_process_options_working_time1"
+                android:id="@+id/auction_process_people_text"
                 android:layout_weight="1"
                 android:layout_alignTop="@+id/auction_process_people"
                 android:layout_toRightOf="@+id/auction_process_people"

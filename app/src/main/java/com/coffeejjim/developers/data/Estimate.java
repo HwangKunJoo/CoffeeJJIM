@@ -2,15 +2,77 @@ package com.coffeejjim.developers.data;
 
 public class Estimate implements java.io.Serializable {
     private static final long serialVersionUID = -401744136212757770L;
-    private String endTime;
     private String reservationDate;
     private String reservationTime;
     private String cafeName;
     private String address;
-    private boolean isReserved;
     private String userNickname;
     private int people;
     private String price;
+    private String auctionStartTime;
+    private String deadlineTime;
+    private int wifi;
+    private int parking;
+    private int days;
+    private int socket;
+    private boolean isReserved;
+    private int proposalState;
+
+    public int getProposalState() {
+        return proposalState;
+    }
+
+    public void setProposalState(int proposalState) {
+        this.proposalState = proposalState;
+    }
+
+    public String getAuctionStartTime() {
+        return auctionStartTime;
+    }
+
+    public void setAuctionStartTime(String auctionStartTime) {
+        this.auctionStartTime = auctionStartTime;
+    }
+
+    public String getDeadlineTime() {
+        return deadlineTime;
+    }
+
+    public void setDeadlineTime(String deadlineTime) {
+        this.deadlineTime = deadlineTime;
+    }
+
+    public int getWifi() {
+        return wifi;
+    }
+
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
+    }
+
+    public int getParking() {
+        return parking;
+    }
+
+    public void setParking(int parking) {
+        this.parking = parking;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public int getSocket() {
+        return socket;
+    }
+
+    public void setSocket(int socket) {
+        this.socket = socket;
+    }
 
     public String getPrice() {
         return price;
@@ -26,14 +88,6 @@ public class Estimate implements java.io.Serializable {
 
     public void setPeople(int people) {
         this.people = people;
-    }
-
-    public String getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(String endTime) {
-        this.endTime = endTime;
     }
 
     public String getReservationDate() {

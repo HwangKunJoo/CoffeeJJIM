@@ -47,7 +47,6 @@ public class CafeReservationListFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_cafe_reservation_list, container, false);
         ButterKnife.bind(this, view);
-
         mAdapter.setOnAdapterItemClickListener(new CafeReservationListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Proposal proposal, int position) {
@@ -60,14 +59,10 @@ public class CafeReservationListFragment extends Fragment {
                 f.show(getFragmentManager(), "dialog");
             }
         });
-
         listView.setAdapter(mAdapter);
-
         LinearLayoutManager manager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-
         listView.setLayoutManager(manager);
-
         return view;
     }
 

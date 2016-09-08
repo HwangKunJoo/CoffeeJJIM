@@ -58,24 +58,9 @@ public class AuctionStatementFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         auctionStatementRecyclerView.setLayoutManager(manager);
 
-        initData();
         return view;
     }
 
-    public void initData() {
-        for (int i = 0; i < 10; i++) {
-            Estimate estimate = new Estimate();
-            estimate.setEndTime("11 : 0 " + i);
-            estimate.setPeople(i);
-            estimate.setUserNickname("User. " + i);
-            estimate.setPrice(i + "2000원");
-            if(i/2 == 0){
-                estimate.setReserved(true);
-            }else
-                estimate.setReserved(false);
-            mAdapter.add(estimate);
-        }
-    }
 
 
 }

@@ -24,6 +24,16 @@ public class AuctionStatementRecyclerAdapter extends RecyclerView.Adapter<Auctio
         notifyDataSetChanged();
     }
 
+    public void addAll(List<Estimate> items) {
+        this.items.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void clear(){
+        items.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public AuctionStatementViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
