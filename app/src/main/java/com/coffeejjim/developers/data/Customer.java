@@ -1,9 +1,7 @@
 package com.coffeejjim.developers.data;
 
-/**
- * Created by Tacademy on 2016-08-23.
- */
-public class Customer {
+public class Customer implements java.io.Serializable {
+    private static final long serialVersionUID = -1099703235608839862L;
     private String nickName;
     private int visitCount;
     private boolean isLiked;

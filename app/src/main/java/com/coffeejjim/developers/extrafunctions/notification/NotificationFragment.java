@@ -91,11 +91,6 @@ public class NotificationFragment extends Fragment {
             }
         });
 
-        Toast.makeText(getContext(), "asdad1123", Toast.LENGTH_SHORT).show();
-
-
-
-
         return view;
     }
 
