@@ -62,6 +62,26 @@ public class NotificationFragment extends Fragment {
             public void onSuccess(NetworkRequest<NetworkResult<List<Notification>>> request,
                                   NetworkResult<List<Notification>> result) {
                 notices = result.getResult();
+                mAdapter = new NotificationRecyclerAdapter(getContext(), notices);
+                mAdapter.setExpandCollapseListener(new ExpandableRecyclerAdapter.ExpandCollapseListener() {
+                    @Override
+                    public void onListItemExpanded(int position) {
+                        Notification noti = notices.get(position);
+                        Toast.makeText(getActivity(), noti.getTitle(),
+                                Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+                    @Override
+                    public void onListItemCollapsed(int position) {
+                        Notification cnoti = notices.get(position);
+                        Toast.makeText(getActivity(), cnoti.getTitle(),
+                                Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                });
+                notiRecyclerView.setAdapter(mAdapter);
+                notiRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 Toast.makeText(getContext(), "asdad1123", Toast.LENGTH_SHORT).show();
             }
 
@@ -72,28 +92,10 @@ public class NotificationFragment extends Fragment {
         });
 
         Toast.makeText(getContext(), "asdad1123", Toast.LENGTH_SHORT).show();
-        mAdapter = new NotificationRecyclerAdapter(getContext(), notices);
 
-        mAdapter.setExpandCollapseListener(new ExpandableRecyclerAdapter.ExpandCollapseListener() {
-            @Override
-            public void onListItemExpanded(int position) {
-                Notification noti = notices.get(position);
-                Toast.makeText(getActivity(), noti.getTitle(),
-                        Toast.LENGTH_SHORT)
-                        .show();
-            }
 
-            @Override
-            public void onListItemCollapsed(int position) {
-                Notification cnoti = notices.get(position);
-                Toast.makeText(getActivity(), cnoti.getTitle(),
-                        Toast.LENGTH_SHORT)
-                        .show();
-            }
-        });
 
-        notiRecyclerView.setAdapter(mAdapter);
-        notiRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         return view;
     }
 
