@@ -17,11 +17,11 @@ import okhttp3.Request;
 public class OwnerInfoRequest extends AbstractRequest<NetworkResult<Owner>>{
     Request request;
 
-    public OwnerInfoRequest(Context context, String type){
+    public OwnerInfoRequest(Context context, int type){
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("cafes")
                 .addPathSegment("me")
-                .addQueryParameter("type", type)
+                .addQueryParameter("type", ""+type)
                 .build();
 
         request = new Request.Builder()

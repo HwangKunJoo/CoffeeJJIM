@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.estimate.provider.EstimateSheetConfirmActivity;
+import com.coffeejjim.developers.estimate.provider.ProposalActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.AuctionProcessRequest;
@@ -63,7 +63,7 @@ public class AuctionProcessFragment extends Fragment {
 
             @Override
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
-                Intent intent = new Intent(getActivity(), EstimateSheetConfirmActivity.class);
+                Intent intent = new Intent(getActivity(), ProposalActivity.class);
                 startActivity(intent);
             }
         });

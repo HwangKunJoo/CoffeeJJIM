@@ -10,9 +10,17 @@ public class Proposal implements java.io.Serializable {
     private int days;
     private String cafeName;
     private int socket;
-    private int proposalId;
+    private int estimateId;
     private int cafeId;
     private int bidPrice;
+
+    public int getEstimateId() {
+        return estimateId;
+    }
+
+    public void setEstimateId(int estimateId) {
+        this.estimateId = estimateId;
+    }
 
     public int getParking() {
         return this.parking;
@@ -76,14 +84,6 @@ public class Proposal implements java.io.Serializable {
 
     public void setSocket(int socket) {
         this.socket = socket;
-    }
-
-    public int getProposalId() {
-        return this.proposalId;
-    }
-
-    public void setProposalId(int proposalId) {
-        this.proposalId = proposalId;
     }
 
     public int getCafeId() {

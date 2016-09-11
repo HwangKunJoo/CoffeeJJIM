@@ -10,7 +10,7 @@ import com.coffeejjim.developers.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EstimateSheetConfirmActivity extends AppCompatActivity {
+public class ProposalActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -18,7 +18,7 @@ public class EstimateSheetConfirmActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estimate_sheet_confirm);
+        setContentView(R.layout.activity_proposal);
 
 
         ButterKnife.bind(this);
@@ -26,7 +26,7 @@ public class EstimateSheetConfirmActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new EstimateConfirmFragment())
+                    .add(R.id.container, new ProposalFragment())
                     .commit();
         }
     }

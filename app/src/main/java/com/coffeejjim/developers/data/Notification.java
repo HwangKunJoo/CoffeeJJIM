@@ -14,7 +14,6 @@ public class Notification implements ParentListItem {
     private List<NotiContent> notiContents;
 
 
-
     public Notification(String notiTitle, String notiDate, List<NotiContent> notiContents) {
         this.notiTitle = notiTitle;
         this.notiDate = notiDate;
