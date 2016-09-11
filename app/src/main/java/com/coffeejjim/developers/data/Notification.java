@@ -4,33 +4,45 @@ import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 
 import java.util.List;
 
-/**
- * Created by Tacademy on 2016-08-31.
- */
-public class Notification implements ParentListItem {
+public class Notification implements java.io.Serializable, ParentListItem {
+    private static final long serialVersionUID = 7106266170539278741L;
+    private String title;
+    private String dateTime;
+    private List<NotiContent> contents;
 
-    private String notiTitle;
-    private String notiDate;
-    private List<NotiContent> notiContents;
-
-
-    public Notification(String notiTitle, String notiDate, List<NotiContent> notiContents) {
-        this.notiTitle = notiTitle;
-        this.notiDate = notiDate;
-        this.notiContents = notiContents;
+    public List<NotiContent> getContents() {
+        return contents;
     }
 
-    public String getNotiTitle() {
-        return notiTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getNotiDate() {
-        return notiDate;
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public void setContents(List<NotiContent> contents) {
+        this.contents = contents;
+    }
+
+    public Notification(String title, String dateTime, List<NotiContent> contents) {
+        this.title = title;
+        this.dateTime = dateTime;
+        this.contents = contents;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDateTime() {
+        return dateTime;
     }
 
     @Override
     public List<?> getChildItemList() {
-        return notiContents;
+        return contents;
     }
 
     @Override

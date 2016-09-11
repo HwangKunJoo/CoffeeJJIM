@@ -35,8 +35,8 @@ public class NotiTitleViewHolder extends ParentViewHolder{
     }
 
     public void bind(Notification notification) {
-        notiTitleView.setText(notification.getNotiTitle());
-        notiDateView.setText(notification.getNotiDate());
+        notiTitleView.setText(notification.getTitle());
+        notiDateView.setText(notification.getDateTime());
     }
 
     @SuppressLint("NewApi")

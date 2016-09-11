@@ -1,17 +1,28 @@
 package com.coffeejjim.developers.data;
 
-/**
- * Created by Tacademy on 2016-08-31.
- */
-public class NotiContent {
-    private String notiDesc;
+public class NotiContent implements java.io.Serializable {
+    private static final long serialVersionUID = -7393982038145017634L;
+    private String contentDesc;
+    private int contentImageUrl;
 
-    public String getNotiDesc() {
-        return notiDesc;
+    public void setContentDesc(String contentDesc) {
+        this.contentDesc = contentDesc;
     }
 
-    public NotiContent(String notiDesc) {
+    public int getContentImageUrl() {
+        return contentImageUrl;
+    }
 
-        this.notiDesc = notiDesc;
+    public void setContentImageUrl(int contentImageUrl) {
+        this.contentImageUrl = contentImageUrl;
+    }
+
+    public String getContentDesc() {
+        return contentDesc;
+    }
+
+    public NotiContent(String contentDesc) {
+
+        this.contentDesc = contentDesc;
     }
 }

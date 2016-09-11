@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import com.bignerdranch.expandablerecyclerview.Adapter.ExpandableRecyclerAdapter;
 import com.bignerdranch.expandablerecyclerview.Model.ParentListItem;
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Cafe;
 import com.coffeejjim.developers.data.NotiContent;
 import com.coffeejjim.developers.data.Notification;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +21,23 @@ import java.util.List;
  */
 public class NotificationRecyclerAdapter extends ExpandableRecyclerAdapter<NotiTitleViewHolder, NotiContentViewHolder>{
 
+    List<? extends ParentListItem> parentItemList = new ArrayList<>();
     private LayoutInflater mInflator;
+
+
+    public void addAll(List<? extends ParentListItem> parentItemList) {
+        this.parentItemList.addAll((List)parentItemList);
+        notifyDataSetChanged();
+    }
+
+    public void clear(){
+        parentItemList.clear();
+        notifyDataSetChanged();
+    }
 
     public NotificationRecyclerAdapter(Context context, @NonNull List<? extends ParentListItem> parentItemList) {
         super(parentItemList);
+        this.parentItemList = parentItemList;
         mInflator = LayoutInflater.from(context);
     }
 
@@ -48,5 +63,10 @@ public class NotificationRecyclerAdapter extends ExpandableRecyclerAdapter<NotiT
     public void onBindChildViewHolder(NotiContentViewHolder notiContentViewHolder, int position, Object childListItem) {
         NotiContent notiContent = (NotiContent) childListItem;
         notiContentViewHolder.bind(notiContent);
+    }
+
+    @Override
+    public int getItemCount() {
+        return parentItemList.size();
     }
 }

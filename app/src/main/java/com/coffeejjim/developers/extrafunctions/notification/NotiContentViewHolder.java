@@ -26,6 +26,6 @@ public class NotiContentViewHolder extends ChildViewHolder {
     }
 
     public void bind(NotiContent notiContent){
-        notiDescView.setText(notiContent.getNotiDesc());
+        notiDescView.setText(notiContent.getContentDesc());
     }
 }
