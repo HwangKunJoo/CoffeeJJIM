@@ -53,7 +53,7 @@ public class SettingsFragment extends Fragment {
                 new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                        putAuctionRange();
+
                     }
 
                     @Override
@@ -61,6 +61,7 @@ public class SettingsFragment extends Fragment {
                     }
                 }
         );
+        putAuctionRange();
     }
 
     public void putAuctionRange(){

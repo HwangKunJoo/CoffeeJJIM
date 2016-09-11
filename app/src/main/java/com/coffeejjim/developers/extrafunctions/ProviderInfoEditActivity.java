@@ -1,4 +1,4 @@
-package com.coffeejjim.developers;
+package com.coffeejjim.developers.extrafunctions;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.coffeejjim.developers.extrafunctions.LogoutDialogFragment;
+import com.coffeejjim.developers.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

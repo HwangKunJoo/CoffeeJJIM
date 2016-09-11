@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.coffeejjim.developers.ProviderInfoEditActivity;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
 import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;

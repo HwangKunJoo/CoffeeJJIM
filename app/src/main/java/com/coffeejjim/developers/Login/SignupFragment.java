@@ -33,28 +33,20 @@ public class SignupFragment extends Fragment {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
     @BindView(R.id.signup_name_edit)
     EditText ownerNameView;
-
     @BindView(R.id.signup_id_edit)
     EditText ownerIdView;
-
     @BindView(R.id.signup_password_edit)
     EditText ownerPasswordView;
-
     @BindView(R.id.signup_phone_edit)
     EditText ownerPhoneNumberView;
-
     @BindView(R.id.signup_email_edit)
     EditText ownerEmailView;
-
     @BindView(R.id.signup_cafe_name_edit)
     EditText cafeNameView;
-
     @BindView(R.id.signup_cafe_address_edit)
     EditText addressView;
-
     @BindView(R.id.signup_cafe_phone_edit)
     EditText cafePhoneNameView;
 
@@ -118,6 +110,8 @@ public class SignupFragment extends Fragment {
     // 주소를 기반으로 위도, 경도 계산하는 함수 필요
 
     // 토큰 받아오는 함수도 필요
+
+    // 회원가입 null값 처리
 
 
     @OnClick(R.id.btn_signup_id_duplication_check)

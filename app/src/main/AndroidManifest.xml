@@ -104,7 +104,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ProviderInfoEditActivity"
+            android:name=".extrafunctions.ProviderInfoEditActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsProviderActivity"
