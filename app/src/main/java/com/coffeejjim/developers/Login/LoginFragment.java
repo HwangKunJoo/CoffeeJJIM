@@ -43,7 +43,7 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.login_kakao_btn)
     public void onLogin() {
-        ((LoginActivity) getActivity()).moveHomeActivity();
+        ((LoginActivity)getActivity()).moveHomeActivity();
     }
 
 
@@ -75,8 +75,6 @@ public class LoginFragment extends Fragment {
                 Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
             }
         });
-
-        ((LoginActivity) getActivity()).moveProviderHomeActivity();
     }
 
     @OnClick(R.id.signup_go_text)

@@ -163,9 +163,9 @@ public class OwnerHomeActivity extends AppCompatActivity {
             floatingAuctionStatementButton.setVisibility(View.VISIBLE);
             floatingUserManagementButton.setVisibility(View.VISIBLE);
             floatingExtraFunctionsButton.setVisibility(View.VISIBLE);
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.provider_home_container, new OwnerHomeFragment())
-                    .commit();
+            Intent intent = new Intent(this, OwnerHomeActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -178,11 +178,9 @@ public class OwnerHomeActivity extends AppCompatActivity {
             floatingExtraFunctionsButton.setVisibility(View.GONE);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.provider_home_container, new OwnerHomeEditFragment())
-                    .addToBackStack(null)
                     .commit();
         }
     }
-
 
     public void moveAuctionStatementListActivity() {
         Intent intent = new Intent(this, AuctionStatementActivity.class);
