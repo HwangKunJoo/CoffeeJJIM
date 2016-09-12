@@ -4,7 +4,7 @@
     <item
         android:title="cafe_detail_like_empty"
         android:id="@+id/cafe_detail_like"
-        android:icon="@drawable/likeempty"
+        android:icon="@drawable/btn_likeempty"
         app:showAsAction="always"
         android:orderInCategory="200"/>
 </menu>

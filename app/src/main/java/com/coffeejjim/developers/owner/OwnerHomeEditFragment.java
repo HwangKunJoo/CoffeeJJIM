@@ -39,6 +39,7 @@ public class OwnerHomeEditFragment extends Fragment {
 //    TextView cafeBusinessTimeView;
     @BindView(R.id.provider_home_edit_phone)
     EditText cafePhoneNumberView;
+
     @BindView(R.id.provider_home_edit_preview_first_image)
     CircleImageView firstPreviewImageView;
     @BindView(R.id.provider_home_edit_preview_second_image)
@@ -47,6 +48,7 @@ public class OwnerHomeEditFragment extends Fragment {
     CircleImageView thirdPreviewImageView;
     @BindView(R.id.provider_home_edit_preview_forth_image)
     CircleImageView fourthPreviewImageView;
+
     @BindView(R.id.provider_home_edit_options_wifi)
     ImageView optionWifiImageView;
     @BindView(R.id.provider_home_edit_options_working_time)
@@ -158,6 +160,28 @@ public class OwnerHomeEditFragment extends Fragment {
                 }
         );
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////                     이미지 받아오기 mini                       //////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//        if (savedInstanceState != null) {
+//            String path = savedInstanceState.getString(FIELD_SAVE_FILE);
+//            if (!TextUtils.isEmpty(path)) {
+//                savedFile = new File(path);
+//            }
+//            path = savedInstanceState.getString(FIELD_UPLOAD_FILE);
+//            if (!TextUtils.isEmpty(path)) {
+//                uploadFile = new File(path);
+//                Glide.with(this)
+//                        .load(uploadFile)
+//                        .into(firstPreviewImageView);
+//            }
+//        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         return view;
     }
 
@@ -212,48 +236,211 @@ public class OwnerHomeEditFragment extends Fragment {
         }
     }
 
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////                     이미지 받아오기 mini                         //////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//    private static final String FIELD_SAVE_FILE = "savedfile";
+//    private static final String FIELD_UPLOAD_FILE = "uploadfile";
+//
+//    File savedFile = null;
+//    File uploadFile = null;
+//
+//    private static final int INDEX_GALLERY = 0;
+//    private static final int INDEX_CAMERA = 1;
+//
+//    private static final int RC_GET_FIRST = 1;
+//    private static final int RC_GET_SECOND = 2;
+//    private static final int RC_GET_THIRD = 3;
+//    private static final int RC_GET_FORTH = 4;
+//
+//    private static final int RC_CATPURE_IMAGE = 5;
+//
+//    @Override
+//    public void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        if (savedFile != null) {
+//            outState.putString(FIELD_SAVE_FILE, savedFile.getAbsolutePath());
+//        }
+//        if (uploadFile != null) {
+//            outState.putString(FIELD_UPLOAD_FILE, uploadFile.getAbsolutePath());
+//        }
+//    }
 //
 //    @OnClick(R.id.provider_home_preview_first_image)
 //    public void onProviderPreviewFirstImageUpload(){
-//        getGalleryImage ();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+//        builder.setTitle("이미지 선택");
+//        builder.setItems(R.array.select_image, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                switch (i) {
+//                    case INDEX_GALLERY :{
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        intent.setType("image/*");
+//                        startActivityForResult(intent, RC_GET_FIRST);
+//                        break;}
+//                    case INDEX_CAMERA :{
+//                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, getSaveFile());
+//                        startActivityForResult(intent, RC_CATPURE_IMAGE);
+//                        break;}
+//                }
+//            }
+//        });
+//        builder.create().show();
+//
 //    }
-//
-//
-//
-//
 //
 //    @OnClick(R.id.provider_home_preview_second_image)
 //    public void onProviderPreviewSecondImageUpload(){
-//        getGalleryImage ();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+//        builder.setTitle("이미지 선택");
+//        builder.setItems(R.array.select_image, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                switch (i) {
+//                    case INDEX_GALLERY :{
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        intent.setType("image/*");
+//                        startActivityForResult(intent, RC_GET_SECOND);
+//                        break;}
+//                    case INDEX_CAMERA :{
+//                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, getSaveFile());
+//                        startActivityForResult(intent, RC_CATPURE_IMAGE);
+//                        break;}
+//                }
+//            }
+//        });
+//        builder.create().show();
 //    }
 //
 //    @OnClick(R.id.provider_home_preview_third_image)
 //    public void onProviderPreviewThirdImageUpload(){
-//        getGalleryImage ();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+//        builder.setTitle("이미지 선택");
+//        builder.setItems(R.array.select_image, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                switch (i) {
+//                    case INDEX_GALLERY :{
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        intent.setType("image/*");
+//                        startActivityForResult(intent, RC_GET_THIRD);
+//                        break;}
+//                    case INDEX_CAMERA :{
+//                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, getSaveFile());
+//                        startActivityForResult(intent, RC_CATPURE_IMAGE);
+//                        break;}
+//                }
+//            }
+//        });
+//        builder.create().show();
 //    }
 //
 //    @OnClick(R.id.provider_home_edit_preview_forth_image)
 //    public void onProviderPreviewForthImageUpload(){
-//        getGalleryImage ();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
+//        builder.setTitle("이미지 선택");
+//        builder.setItems(R.array.select_image, new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                switch (i) {
+//                    case INDEX_GALLERY :{
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        intent.setType("image/*");
+//                        startActivityForResult(intent, RC_GET_FORTH);
+//                        break;}
+//                    case INDEX_CAMERA :{
+//                        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                        intent.putExtra(MediaStore.EXTRA_OUTPUT, getSaveFile());
+//                        startActivityForResult(intent, RC_CATPURE_IMAGE);
+//                        break;}
+//                }
+//            }
+//        });
+//        builder.create().show();
 //    }
 //
-//    public void getGalleryImage () {
-//        Intent intent = new Intent();
-//        intent.setType("image/*");
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//    private Uri getSaveFile() {
+//        File dir = getActivity().getExternalFilesDir("capture");
+//        if (!dir.exists()) {
+//            dir.mkdirs();
+//        }
+//        savedFile = new File(dir, "my_image_" + System.currentTimeMillis() + ".jpeg");
+//        return Uri.fromFile(savedFile);
+//    }
 //
-//        intent.putExtra("crop", "true");
-//        intent.putExtra("aspectX", 0);
-//        intent.putExtra("aspectY", 0);
-//        intent.putExtra("outputX", 200);
-//        intent.putExtra("outputY", 150);
-//        try {
-//            intent.putExtra("return_data", true);
-//            startActivityForResult(Intent.createChooser(intent,
-//                    "Complete action using"), PICK_FROM_GALLERY);
-//        } catch (ActivityNotFoundException e) {
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == RC_GET_FIRST) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Uri uri = data.getData();
+//                Cursor c = getActivity().getContentResolver().query(uri, new String[]{MediaStore.Images.Media.DATA}, null, null, null);
+//                if (c.moveToNext()) {
+//                    String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
+//                    uploadFile = new File(path);
+//                    Glide.with(this)
+//                            .load(uploadFile)
+//                            .into(firstPreviewImageView);
+//                }
+//            }
+//        } else if (requestCode == RC_GET_SECOND) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Uri uri = data.getData();
+//                Cursor c = getActivity().getContentResolver().query(uri, new String[]{MediaStore.Images.Media.DATA}, null, null, null);
+//                if (c.moveToNext()) {
+//                    String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
+//                    uploadFile = new File(path);
+//                    Glide.with(this)
+//                            .load(uploadFile)
+//                            .into(secondPreviewImageView);
+//                }
+//            }
 //
 //        }
+//        else if (requestCode == RC_GET_THIRD) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Uri uri = data.getData();
+//                Cursor c = getActivity().getContentResolver().query(uri, new String[]{MediaStore.Images.Media.DATA}, null, null, null);
+//                if (c.moveToNext()) {
+//                    String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
+//                    uploadFile = new File(path);
+//                    Glide.with(this)
+//                            .load(uploadFile)
+//                            .into(thirdPreviewImageView);
+//                }
+//            }
+//
+//        }
+//        else if (requestCode == RC_GET_FORTH) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                Uri uri = data.getData();
+//                Cursor c = getActivity().getContentResolver().query(uri, new String[]{MediaStore.Images.Media.DATA}, null, null, null);
+//                if (c.moveToNext()) {
+//                    String path = c.getString(c.getColumnIndex(MediaStore.Images.Media.DATA));
+//                    uploadFile = new File(path);
+//                    Glide.with(this)
+//                            .load(uploadFile)
+//                            .into(fourthPreviewImageView);
+//                }
+//            }
+//
+//        } else if (requestCode == RC_CATPURE_IMAGE) {
+//            if (resultCode == Activity.RESULT_OK) {
+//                uploadFile = savedFile;
+//                Glide.with(this)
+//                        .load(uploadFile)
+//                        .into(firstPreviewImageView);
+//            }
+//        }
 //    }
+
 
 }

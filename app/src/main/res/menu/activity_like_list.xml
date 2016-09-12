@@ -4,7 +4,7 @@
     <item
         android:title="like_list_edit"
         android:id="@+id/like_list_edit"
-        android:icon="@drawable/edit"
+        android:icon="@drawable/btn_edit"
         app:showAsAction="always"
         android:orderInCategory="200"/>
 </menu>

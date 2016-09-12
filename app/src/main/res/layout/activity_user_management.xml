@@ -36,7 +36,7 @@
         <LinearLayout
             android:id="@+id/user_management_title_layout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/user_management_toolbar_layout"
             android:orientation="horizontal" >
 
@@ -50,7 +50,8 @@
                 android:textColor="@color/coffeejjim_brown"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="@dimen/small_text_size"/>
 
             <TextView
                 android:id="@+id/user_management_title_visit_count"
@@ -61,7 +62,8 @@
                 android:textColor="@color/coffeejjim_brown"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="@dimen/small_text_size" />
 
             <TextView
                 android:id="@+id/user_management_title_like"
@@ -72,7 +74,8 @@
                 android:textColor="@color/coffeejjim_brown"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="@dimen/small_text_size" />
             <TextView
                 android:id="@+id/btn_user_management_title_detail_info"
                 android:layout_width="78dp"
@@ -82,7 +85,8 @@
                 android:textColor="@color/coffeejjim_brown"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="@dimen/small_text_size" />
             <TextView
                 android:id="@+id/btn_user_management_title_reservation_info"
                 android:layout_width="49dp"
@@ -93,7 +97,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_marginRight="16dp" />
+                android:layout_marginRight="16dp"
+                android:textSize="@dimen/small_text_size" />
         </LinearLayout>
 
         <LinearLayout

@@ -29,7 +29,7 @@
     <LinearLayout
         android:id="@+id/auction_process_title_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:orientation="horizontal" >
 
         <TextView

@@ -55,13 +55,13 @@ public class LikeListActivity extends AppCompatActivity {
             finish();
         } else if (id == R.id.like_list_edit) {
             if (!isCompleted) {
-                item.setIcon(R.drawable.success);
+                item.setIcon(R.drawable.btn_success);
                 isCompleted = true;
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new DeleteLikeListFragment())
                         .commit();
             } else {
-                item.setIcon(R.drawable.edit);
+                item.setIcon(R.drawable.btn_edit);
                 isCompleted= false;
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new LikeListFragment())

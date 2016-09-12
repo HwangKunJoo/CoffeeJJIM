@@ -74,9 +74,9 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
         userManagementVisitCountView.setText(""+customer.getVisitTime());
 
         if(customer.getBookmark() == -1){
-            userManagementLikeView.setImageResource(R.drawable.likeempty);
+            userManagementLikeView.setImageResource(R.drawable.btn_likeempty);
         }else
-            userManagementLikeView.setImageResource(R.drawable.likefull);
+            userManagementLikeView.setImageResource(R.drawable.btn_likefull);
 
     }
 }

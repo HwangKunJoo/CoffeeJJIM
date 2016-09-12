@@ -60,7 +60,7 @@ public class CafeDetailActivity extends AppCompatActivity {
             finish();
         } else if(id == R.id.cafe_detail_like){
             if(!isLiked){
-                item.setIcon(R.drawable.likefull);
+                item.setIcon(R.drawable.btn_likefull);
                 isLiked = true;
                 AddLikeListRequest ALLRequest = new AddLikeListRequest(this, "123123");
                 NetworkManager.getInstance().getNetworkData(ALLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
@@ -76,7 +76,7 @@ public class CafeDetailActivity extends AppCompatActivity {
                 });
                 //Toast.makeText(this, "즐겨찾기에 추가 되었습니다." , Toast.LENGTH_SHORT).show();
             }else{
-                item.setIcon(R.drawable.likeempty);
+                item.setIcon(R.drawable.btn_likeempty);
                 isLiked = false;
                 DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(this, "123123");
                 NetworkManager.getInstance().getNetworkData(DLLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {

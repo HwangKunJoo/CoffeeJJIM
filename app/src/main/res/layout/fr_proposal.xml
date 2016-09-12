@@ -131,7 +131,7 @@
         android:layout_alignStart="@+id/proposal_price_text"
         android:textSize="20dp"
         android:singleLine="true"
-        android:background="@drawable/edit_text_box_line" />
+        android:background="@drawable/xml_edit_text_box_line" />
 
     <TextView
         android:layout_width="wrap_content"

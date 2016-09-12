@@ -154,10 +154,10 @@
     <dimen name="fr_signup_tect_view_marginLeft">16dp</dimen>
     <dimen name="fr_signup_view_marginRight">20dp</dimen>
 
-    <dimen name="fr_signup_edit_text_Size1_">30dp</dimen>
+    <dimen name="fr_signup_edit_text_Size1_">120dp</dimen>
     <dimen name="fr_signup_edit_text_padding">10dp</dimen>
     <dimen name="fr_signup_default_marginRL">16dp</dimen>
-    <dimen name="fr_signup_image_btn_Size">17dp</dimen>
+    <dimen name="fr_signup_image_btn_Size">20dp</dimen>
     <dimen name="fr_signup_image_btn_interval_margin">5dp</dimen>
 
     <!--fr_booking_info.xml-->

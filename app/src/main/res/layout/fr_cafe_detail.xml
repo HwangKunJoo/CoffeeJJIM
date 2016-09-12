@@ -224,24 +224,24 @@
             android:layout_width="@dimen/maplocation_telephone_image_button_Size"
             android:layout_height="@dimen/maplocation_telephone_image_button_Size"
             android:id="@+id/btn_move_map"
-            android:src="@drawable/fr_cafe_detail_map_btn"
+            android:src="@drawable/btn_map"
             android:scaleType="center"
             android:layout_alignTop="@+id/cafedetail_address_text"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="32dp"
-            android:background="@drawable/fr_cafe_detail_map_btn" />
+            android:background="@drawable/btn_map" />
 
         <Button
             android:layout_width="@dimen/maplocation_telephone_image_button_Size"
             android:layout_height="@dimen/maplocation_telephone_image_button_Size"
             android:id="@+id/btn_move_dial_pad"
-            android:src="@drawable/fr_cafe_detail_call_btn"
+            android:src="@drawable/btn_call"
             android:scaleType="center"
             android:layout_alignTop="@+id/cafe_detail_dial"
             android:layout_alignLeft="@+id/btn_move_map"
             android:layout_alignStart="@+id/btn_move_map"
-            android:background="@drawable/fr_cafe_detail_call_btn" />
+            android:background="@drawable/btn_call" />
 
     </RelativeLayout>
 

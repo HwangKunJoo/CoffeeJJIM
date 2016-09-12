@@ -63,7 +63,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="48dp"
-            android:background="@drawable/edit_text_box_line"
+            android:background="@drawable/xml_edit_text_box_line"
             android:paddingLeft="10dp"
             android:singleLine="true"
             android:textColor="@color/coffeejjim_red" />
@@ -79,7 +79,7 @@
             android:inputType="textPassword"
             android:textSize="@dimen/subject_text_size"
             android:layout_marginTop="4dp"
-            android:background="@drawable/edit_text_box_line"
+            android:background="@drawable/xml_edit_text_box_line"
             android:paddingLeft="10dp"
             android:singleLine="true"
             android:textColor="@color/coffeejjim_red" />

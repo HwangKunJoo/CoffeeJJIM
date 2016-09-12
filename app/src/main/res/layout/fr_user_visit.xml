@@ -87,7 +87,7 @@
             android:id="@+id/user_visit_count_user_like_image"
             android:layout_weight="1"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/likeempty"/>
+            android:src="@drawable/btn_likeempty"/>
 
     </LinearLayout>
 

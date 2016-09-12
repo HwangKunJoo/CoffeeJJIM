@@ -47,4 +47,10 @@
         <item>24:00</item>
     </string-array>
 
+    <string-array name="select_image">
+        <item>갤러리</item>
+        <item>카메라</item>
+        <item>메인으로 선택</item>
+    </string-array>
+
 </resources>

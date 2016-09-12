@@ -63,9 +63,9 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
 
 
         if(!estimate.isReserved()){
-            reservationFailImageView.setImageResource(R.drawable.reservationfail);
+            reservationFailImageView.setImageResource(R.drawable.ic_reservationfail);
         }else
-            reservationFailImageView.setImageResource(R.drawable.reservationsuccess);
+            reservationFailImageView.setImageResource(R.drawable.ic_reservationsuccess);
 
     }
 }

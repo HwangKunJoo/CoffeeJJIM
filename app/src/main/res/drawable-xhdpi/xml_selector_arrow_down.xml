@@ -4,7 +4,7 @@
         android:drawable="@drawable/arrow_down"
         android:state_enabled="false"/>
     <item
-        android:drawable="@drawable/arrow_down_selected"
+        android:drawable="@drawable/xml_selector_arrow_down"
         android:state_pressed="true"
         android:state_enabled="true"/>
 
