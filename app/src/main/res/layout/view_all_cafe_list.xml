@@ -38,11 +38,13 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="주소"
-            android:textSize="@dimen/small_text_size"
+            android:textSize="@dimen/address_text_size"
             android:id="@+id/allcafelist_address_text"
             android:layout_below="@+id/allcafelist_cafe_name_text"
             android:layout_alignLeft="@+id/allcafelist_cafe_name_text"
-            android:layout_alignStart="@+id/allcafelist_cafe_name_text" />
+            android:layout_alignStart="@+id/allcafelist_cafe_name_text"
+            android:layout_toLeftOf="@+id/btn_all_cafe_list_detail"
+            android:layout_toStartOf="@+id/btn_all_cafe_list_detail" />
 
         <ImageView
             android:layout_width="@dimen/view_all_cafe_list_option_image_Size"

@@ -50,7 +50,7 @@
                 android:layout_gravity="center_vertical"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/coffeejjim_brown"
-                android:src="@drawable/likeempty_32pixel"
+                android:src="@drawable/likeempty"
                 android:layout_alignTop="@+id/user_management_nickname"
                 android:layout_toRightOf="@+id/user_management_visit_count"
                 android:layout_toEndOf="@+id/user_management_visit_count"
@@ -121,4 +121,3 @@
     </LinearLayout>
 
 </LinearLayout>
-

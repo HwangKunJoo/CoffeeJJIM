@@ -55,10 +55,10 @@
                 android:gravity="left" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="서울시 봉천구"
-                android:textSize="@dimen/small_text_size"
+                android:textSize="@dimen/address_text_size"
                 android:id="@+id/auctionlist_cafe_address_text"
                 android:layout_gravity="center|left"
                 android:gravity="left" />

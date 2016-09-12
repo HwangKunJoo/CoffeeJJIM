@@ -119,12 +119,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="경기도 성남시 분당구 수내동"
-        android:textSize="@dimen/small_text_size"
+        android:textSize="@dimen/address_text_size"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_below="@+id/provider_home_preview_second_image"
         android:layout_alignLeft="@+id/provider_home_phone"
         android:layout_alignStart="@+id/provider_home_phone"
-        android:layout_marginTop="@dimen/text_view_contents_marginTop" />
+        android:layout_alignRight="@+id/provider_home_preview_forth_image"
+        android:layout_alignEnd="@+id/provider_home_preview_forth_image"
+        android:layout_alignTop="@+id/provider_home_edit_address_text"
+        android:layout_above="@+id/provider_home_edit_phone_text"
+        android:gravity="left|center" />
 
     <TextView
         android:id="@+id/provider_home_phone"

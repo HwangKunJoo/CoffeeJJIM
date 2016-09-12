@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +15,10 @@ import com.coffeejjim.developers.data.Owner;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
+import com.kakao.auth.ISessionCallback;
+import com.kakao.auth.Session;
+import com.kakao.util.exception.KakaoException;
+import com.kakao.util.helper.log.Logger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +30,8 @@ public class LoginFragment extends Fragment {
     EditText ownerLoginIdView;
     @BindView(R.id.provider_input_pw_edit)
     EditText ownerPasswordView;
+
+    private SessionCallback callback;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -38,13 +45,57 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_login, container, false);
         ButterKnife.bind(this, view);
+
+        callback = new SessionCallback();
+        Session.getCurrentSession().addCallback(callback);
         return view;
     }
 
-    @OnClick(R.id.login_kakao_btn)
-    public void onLogin() {
-        ((LoginActivity)getActivity()).moveHomeActivity();
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Session.getCurrentSession().removeCallback(callback);
+    }
+
+    private class SessionCallback implements ISessionCallback {
+
+        @Override
+        public void onSessionOpened() {
+            redirectSignupActivity();
+        }
+
+        @Override
+        public void onSessionOpenFailed(KakaoException exception) {
+            if (exception != null) {
+                Logger.e(exception);
+            }
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
+            getActivity().finish();// 세션 연결이 실패했을때 로그인 화면 다시
+        }
+    }
+
+    protected void redirectSignupActivity() {       //세션 연결 성공 시 SignupActivity로 넘김
+        final Intent intent = new Intent(getActivity(), KakaoSignupActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
+
+//    @OnClick(R.id.login_kakao_btn)
+//    public void onLogin() {
+//        ((LoginActivity) getActivity()).moveHomeActivity();
+//    }
 
 
     @OnClick(R.id.login_provider_text)

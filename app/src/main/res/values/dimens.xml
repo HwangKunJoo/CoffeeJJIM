@@ -7,6 +7,7 @@
     <dimen name="title_text_size">20dp</dimen>
     <dimen name="subject_text_size">15dp</dimen>
     <dimen name="small_text_size">13dp</dimen>
+    <dimen name="address_text_size">10dp</dimen>
     <dimen name="layout_side_margin">16dp</dimen>
 
     <dimen name="text_size_header_large">36sp</dimen>
@@ -54,7 +55,7 @@
     <dimen name="fr_estimate_sheet_option_image_button_size">50dp</dimen>
     <dimen name="fr_estimate_sheet_option_image_button_marginTop">15dp</dimen>
     <dimen name="fr_estimate_sheet_option_image_button_marginLeft">5dp</dimen>
-    <dimen name="fr_estimate_sheet_small_image_button_size">17dp</dimen>
+    <dimen name="fr_estimate_sheet_small_image_button_size">23dp</dimen>
 
     <dimen name="small_text_size_marginLeft">10dp</dimen>
     <dimen name="fr_estimate_sheet_location_search">5dp</dimen>
@@ -162,7 +163,7 @@
     <!--fr_booking_info.xml-->
     <dimen name="fr_booking_info_image_Size">25dp</dimen>
     <dimen name="fr_booking_info_image_marginLeft">60dp</dimen>
-    <dimen name="fr_booking_info_image_marginTop">30dp</dimen>
+    <dimen name="fr_booking_info_image_marginTop">40dp</dimen>
     <dimen name="fr_booking_info_text_view_Size">60dp</dimen>
     <dimen name="fr_booking_info_text_view_interval_marginTop">15dp</dimen>
     <dimen name="fr_booking_info_option_image_Size">30dp</dimen>

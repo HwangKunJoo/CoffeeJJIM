@@ -27,7 +27,7 @@ public class PropertyManager {
     private static final String KEY_FACEBOOK_ID = "facebookid";
 
     private PropertyManager() {
-        Context context = CoffeeJJIMApplication.getContext();
+        Context context = CoffeeJJIMApplication.getCoffeeJJIMApplicationContext();
         mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         mEditor = mPrefs.edit();
     }

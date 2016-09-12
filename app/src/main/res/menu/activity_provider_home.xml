@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/provider_home_item_badge"
-        android:icon="@drawable/btn_bell"
+        android:icon="@drawable/btn_alert"
         app:showAsAction="always"
         android:title="auction_process_bell"
         android:orderInCategory="200"/>

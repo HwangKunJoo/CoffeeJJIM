@@ -53,7 +53,7 @@ public class NetworkManager {
     private NetworkManager() {
 
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        Context context = CoffeeJJIMApplication.getContext();
+        Context context = CoffeeJJIMApplication.getCoffeeJJIMApplicationContext();
         ClearableCookieJar cookieJar =
                 new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(context));
         builder.cookieJar(cookieJar);
