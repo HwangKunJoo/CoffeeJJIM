@@ -152,7 +152,7 @@ public class SignupFragment extends Fragment {
         String cafePhoneNumber = cafePhoneNameView.getText().toString();
 
         OwnerSignUpRequest OSRequest = new OwnerSignUpRequest(getContext(), ownerName, ownerId, ownerPassword, ownerPhoneNumber,
-                ownerEmail, cafeName, cafeAddress, "32.12313", "127.12341", cafePhoneNumber, "123123dasda");
+                ownerEmail, cafeName, cafeAddress, "37.476350", "126.963001", cafePhoneNumber, "123123dasda");
 
         NetworkManager.getInstance().getNetworkData(OSRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
             @Override

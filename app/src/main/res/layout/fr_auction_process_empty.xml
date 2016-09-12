@@ -5,4 +5,11 @@
     tools:context="com.coffeejjim.developers.owner.auctionprocess.AuctionProcessEmptyFragment">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="진행 중인 경매 목록이 없습니다."
+        android:id="@+id/auction_process_empty_list_text"
+        android:layout_gravity="center" />
 </FrameLayout>

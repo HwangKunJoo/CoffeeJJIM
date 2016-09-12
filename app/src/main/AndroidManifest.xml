@@ -21,7 +21,7 @@
         <activity
             android:name=".home.HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".estimate.EstimateSheetActivity"
             android:screenOrientation="portrait"

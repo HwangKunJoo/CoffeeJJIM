@@ -84,10 +84,16 @@ public class AuctionProcessFragment extends Fragment {
         NetworkManager.getInstance().getNetworkData(APRequest, new NetworkManager.OnResultListener<NetworkResult<List<Estimate>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<Estimate>>> request, NetworkResult<List<Estimate>> result) {
-                List<Estimate> estimateList = result.getResult();
-                mAdapter.clear();
-                mAdapter.addAll(estimateList);
-                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                if(result.getResult() == null) {
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.container, new AuctionProcessEmptyFragment())
+                            .commit();
+                } else {
+                    List<Estimate> estimateList = result.getResult();
+                    mAdapter.clear();
+                    mAdapter.addAll(estimateList);
+                    Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

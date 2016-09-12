@@ -164,8 +164,8 @@ public class OwnerHomeEditFragment extends Fragment {
     @OnClick(R.id.provider_home_complete_btn)
     public void onProviderHome(){
         String cafeAddress = cafeAddressView.getText().toString();
-        String cafePhoneNumber = cafePhoneNumberView.getText().toString();
-        CafeInfoEditRequest CIERequest = new CafeInfoEditRequest(getContext(),"0",cafeAddress, 32.421231, 24.1323123,
+        String cafePhoneNumber = cafePhoneNumberView.getText().toString(); // 카페 이름 추가해야됨
+        CafeInfoEditRequest CIERequest = new CafeInfoEditRequest(getContext(),"0",cafeAddress, 37.477445, 126.961314,
                 cafePhoneNumber, "13123sadasd", 1, 0, 0, 0);
         NetworkManager.getInstance().getNetworkData(CIERequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
             @Override

@@ -55,9 +55,10 @@ public class ProposalFragment extends Fragment {
     }
 
     public void postProposal(){
-        //견적서 아이디 얻어와야됨 , 시간은 어찌할거? 안올려보내도 되나? 재성이랑 얘기할 필요 있음
+        //견적서 아이디 얻어와야됨, auctionProcess에서 리퀘스트로 받은 값으로 뿌려줘야됨
+        // 다이얼로그 멘트 확인 필요함.
         String bidPrice = bidPriceView.getText().toString();
-        ProposalRequest PRequest = new ProposalRequest(getContext(), 1, bidPrice);
+        ProposalRequest PRequest = new ProposalRequest(getContext(), 308, bidPrice);
         NetworkManager.getInstance().getNetworkData(PRequest, new NetworkManager.OnResultListener<NetworkResult<Proposal>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Proposal>> request, NetworkResult<Proposal> result) {

@@ -42,6 +42,7 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_settings, container, false);
         ButterKnife.bind(this, view);
         setAuctionRangeSpinner();
+        putAuctionRange();
         return view;
     }
 
@@ -61,7 +62,6 @@ public class SettingsFragment extends Fragment {
                     }
                 }
         );
-        putAuctionRange();
     }
 
     public void putAuctionRange(){
