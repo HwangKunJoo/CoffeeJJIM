@@ -20,15 +20,15 @@ public class EstimateRequest extends AbstractRequest<NetworkResult<Estimate>> {
     Request request;
 
 
-    public EstimateRequest(Context context, int people, String latitude, String longitude, String reservationTime,
+    public EstimateRequest(Context context, int people, double latitude, double longitude, String reservationTime,
                            int wifi, int days, int parking, int socket, int auctionTime) {
         HttpUrl.Builder builder = getBaseUrlBuilder();
         builder.addPathSegment("estimates");
 
         RequestBody body = new FormBody.Builder()
                 .add("people", "" + people)
-                .add("latitude", latitude)
-                .add("longitude", longitude)
+                .add("latitude", ""+latitude)
+                .add("longitude", ""+longitude)
                 .add("reservationTime", reservationTime)
                 .add("wifi", "" + wifi)
                 .add("days", "" + days)
