@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.coffeejjim.developers.data.NetworkResult;
 import com.google.gson.reflect.TypeToken;
-import com.kakao.usermgmt.response.model.User;
 
 import java.lang.reflect.Type;
 
@@ -21,7 +20,7 @@ public class KakaoLoginRequest extends AbstractRequest<NetworkResult<Object>> {
     public KakaoLoginRequest(Context context, String access_token, String fcmToken) {
         HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("auth")
-                .addPathSegment("kakaotalk")
+                .addPathSegment("kakao")
                 .addPathSegment("token")
                 .addQueryParameter("access_token", access_token)
                 .addQueryParameter("fcmToken", fcmToken)
@@ -34,7 +33,7 @@ public class KakaoLoginRequest extends AbstractRequest<NetworkResult<Object>> {
     }
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<User>>(){}.getType();
+        return new TypeToken<NetworkResult<Object>>(){}.getType();
     }
 
     @Override
