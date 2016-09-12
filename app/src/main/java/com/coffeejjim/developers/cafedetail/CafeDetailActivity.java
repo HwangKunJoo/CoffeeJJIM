@@ -62,7 +62,7 @@ public class CafeDetailActivity extends AppCompatActivity {
             if(!isLiked){
                 item.setIcon(R.drawable.btn_likefull);
                 isLiked = true;
-                AddLikeListRequest ALLRequest = new AddLikeListRequest(this, "123123");
+                AddLikeListRequest ALLRequest = new AddLikeListRequest(this, "50");
                 NetworkManager.getInstance().getNetworkData(ALLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
                     @Override
                     public void onSuccess(NetworkRequest<NetworkResult<Cafe>> request, NetworkResult<Cafe> result) {
@@ -78,7 +78,7 @@ public class CafeDetailActivity extends AppCompatActivity {
             }else{
                 item.setIcon(R.drawable.btn_likeempty);
                 isLiked = false;
-                DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(this, "123123");
+                DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(this, "50");
                 NetworkManager.getInstance().getNetworkData(DLLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
                     @Override
                     public void onSuccess(NetworkRequest<NetworkResult<Cafe>> request, NetworkResult<Cafe> result) {
