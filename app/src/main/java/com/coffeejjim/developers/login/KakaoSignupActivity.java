@@ -3,9 +3,16 @@ package com.coffeejjim.developers.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.coffeejjim.developers.CoffeeJJIMApplication;
+import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.home.HomeActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.KakaoLoginRequest;
 import com.kakao.auth.ErrorCode;
+import com.kakao.auth.Session;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeResponseCallback;
@@ -24,6 +31,7 @@ public class KakaoSignupActivity extends Activity {
         requestMe();
     }
 
+    //8TRjgalBkgUQ/fgIBAE/n8b4Bms=
     /**
      * 사용자의 상태를 알아 보기 위해 me API 호출을 한다.
      */
@@ -31,6 +39,7 @@ public class KakaoSignupActivity extends Activity {
         UserManagement.requestMe(new MeResponseCallback() {
             @Override
             public void onFailure(ErrorResult errorResult) {
+                Toast.makeText(KakaoSignupActivity.this, "이리 들어오나 보자2", Toast.LENGTH_SHORT).show();
                 String message = "failed to get user info. msg=" + errorResult;
                 Logger.d(message);
 
@@ -52,7 +61,22 @@ public class KakaoSignupActivity extends Activity {
 
             @Override
             public void onSuccess(UserProfile userProfile) {  //성공 시 userProfile 형태로 반환
-                Logger.d("UserProfile : " + userProfile);
+                Toast.makeText(KakaoSignupActivity.this, "이리 들어오나 보자2", Toast.LENGTH_SHORT).show();
+                final String access_token = Session.getCurrentSession().getAccessToken();
+                KakaoLoginRequest KLRequest =
+                        new KakaoLoginRequest(CoffeeJJIMApplication.getCoffeeJJIMApplicationContext(),
+                                access_token, "12345");
+                NetworkManager.getInstance().getNetworkData(KLRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {
+                        Toast.makeText(KakaoSignupActivity.this, "ttttttttttt", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<Object>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(KakaoSignupActivity.this, "bbbbbbbbbbb", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 redirectMainActivity(); // 로그인 성공시 MainActivity로
             }
         });

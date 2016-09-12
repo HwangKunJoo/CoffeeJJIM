@@ -30,6 +30,8 @@ public class LoginFragment extends Fragment {
     EditText ownerLoginIdView;
     @BindView(R.id.provider_input_pw_edit)
     EditText ownerPasswordView;
+    @BindView(R.id.provider_signup_visible_layout)
+    View visibleLayout;
 
     private SessionCallback callback;
 
@@ -37,8 +39,6 @@ public class LoginFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @BindView(R.id.provider_signup_visible_layout)
-    View visibleLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,6 +70,7 @@ public class LoginFragment extends Fragment {
 
         @Override
         public void onSessionOpened() {
+            Toast.makeText(getContext(), "이리 들어오나 보자", Toast.LENGTH_SHORT).show();
             redirectSignupActivity();
         }
 
@@ -78,6 +79,7 @@ public class LoginFragment extends Fragment {
             if (exception != null) {
                 Logger.e(exception);
             }
+            Toast.makeText(getContext(), "이리 들어오나 보자1", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
             getActivity().finish();// 세션 연결이 실패했을때 로그인 화면 다시
