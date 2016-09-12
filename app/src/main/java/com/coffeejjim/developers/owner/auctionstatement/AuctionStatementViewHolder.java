@@ -68,7 +68,7 @@ public class AuctionStatementViewHolder extends RecyclerView.ViewHolder {
         this.estimate = estimate;
         auctionStatementUserNicknameView.setText(estimate.getUserNickname());
         auctionStatementEndTimeView.setText(estimate.getDeadlineTime());
-        auctionStatementPriceView.setText(estimate.getPrice());
+        auctionStatementPriceView.setText(estimate.getBid_price());
         auctionStatementPeopleView.setText(""+estimate.getPeople());
         if(!estimate.isReserved()){
             reservationFailImageView.setImageResource(R.drawable.ic_reservationfail);

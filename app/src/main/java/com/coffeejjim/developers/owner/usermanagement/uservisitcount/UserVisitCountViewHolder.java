@@ -54,7 +54,7 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
         userVisitCountDateView.setText(estimate.getReservationDate());
         userVisitCountTimeView.setText(estimate.getReservationTime());
         userVisitCountPeopleView.setText(""+estimate.getPeople());
-        userVisitCountPriceView.setText(estimate.getPrice());
+        userVisitCountPriceView.setText(estimate.getBid_price());
 
     }
 }

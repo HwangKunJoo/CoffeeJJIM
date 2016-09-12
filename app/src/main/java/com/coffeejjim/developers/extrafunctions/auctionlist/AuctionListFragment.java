@@ -2,15 +2,23 @@ package com.coffeejjim.developers.extrafunctions.auctionlist;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AuctionListRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,13 +36,18 @@ public class AuctionListFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new AuctionListRecyclerAdapter();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_auction_list, container, false);
         ButterKnife.bind(this, view);
 
-        mAdapter = new AuctionListRecyclerAdapter();
+
         mAdapter.setOnAdapterItemClickListener(new AuctionListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Estimate estimate, int position) {
@@ -48,24 +61,27 @@ public class AuctionListFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         auctionListRecyclerView.setLayoutManager(manager);
 
-        initData();
+
         return view;
     }
 
-    public void initData() {
-        for (int i = 0; i < 20; i++) {
-            Estimate estimate = new Estimate();
-            estimate.setReservationTime("11 : 00");
-            estimate.setCafeName("LATTE KING");
-            estimate.setAddress("서울시 봉천구 낙성대1길");
-            estimate.setPrice("13,000");
+    @Override
+    public void onStart() {
+        super.onStart();
+        AuctionListRequest ALRequest = new AuctionListRequest(getContext(), 0, 2016, 9);
+        NetworkManager.getInstance().getNetworkData(ALRequest, new NetworkManager.OnResultListener<NetworkResult<List<Estimate>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Estimate>>> request, NetworkResult<List<Estimate>> result) {
+                List<Estimate> estimateList = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(estimateList);
+                Toast.makeText(getContext(), "qqq", Toast.LENGTH_SHORT).show();
+            }
 
-            if(i/2 == 0){
-                estimate.setReserved(true);
-            }else
-                estimate.setReserved(false);
-            mAdapter.add(estimate);
-        }
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Estimate>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "qqq123", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }

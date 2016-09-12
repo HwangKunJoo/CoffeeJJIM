@@ -58,7 +58,7 @@ public class UserVisitCountFragment extends Fragment {
 
         for (int i = 0; i < 10; i++) {
             Estimate e = new Estimate();
-            e.setPrice("12000원");
+            e.setBid_price("12000원");
             e.setPeople(i);
             e.setReservationDate("2016. 08. 29");
             e.setReservationTime("11 : " + i);

@@ -58,9 +58,8 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
         this.estimate = estimate;
         auctionListTimeView.setText(estimate.getReservationTime());
         auctionListCafenameView.setText(estimate.getCafeName());
-        auctionListPrice.setText(estimate.getPrice());
+        auctionListPrice.setText(estimate.getBid_price());
         auctionListCafeaddressView.setText(estimate.getAddress());
-
 
         if(!estimate.isReserved()){
             reservationFailImageView.setImageResource(R.drawable.ic_reservationfail);
