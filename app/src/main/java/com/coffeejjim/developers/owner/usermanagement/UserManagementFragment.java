@@ -3,17 +3,25 @@ package com.coffeejjim.developers.owner.usermanagement;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Customer;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.owner.BookingInfoActivity;
 import com.coffeejjim.developers.owner.usermanagement.uservisitcount.UserVisitCountActivity;
+import com.coffeejjim.developers.request.UserManagementRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +43,11 @@ public class UserManagementFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAdapter = new UserManagementRecyclerAdapter();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,7 +55,6 @@ public class UserManagementFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_user_management, container, false);
         ButterKnife.bind(this, view);
 
-        mAdapter = new UserManagementRecyclerAdapter();
         mAdapter.setOnAdapterItemClickListener(new UserManagementRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Customer customer, int position, int flag) {
@@ -62,24 +74,26 @@ public class UserManagementFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         userManagementRecyclerView.setLayoutManager(manager);
 
-        initData();
         return view;
     }
 
-    public void initData() {
-        for (int i = 0; i < 5; i++) {
-            Customer c = new Customer();
-            c.setNickName("User No." + i);
-            c.setVisitCount(i);
-            if (i == 2) {
-                c.setLiked(false);
+    @Override
+    public void onStart() {
+        super.onStart();
+        UserManagementRequest UMRequest = new UserManagementRequest(getContext(), "1", "10");
+        NetworkManager.getInstance().getNetworkData(UMRequest, new NetworkManager.OnResultListener<NetworkResult<List<Customer>>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<List<Customer>>> request, NetworkResult<List<Customer>> result) {
+                List<Customer> customers = result.getResult();
+                mAdapter.clear();
+                mAdapter.addAll(customers);
+                Toast.makeText(getContext(), "yap123123", Toast.LENGTH_SHORT).show();
             }
-            if (i == 4) {
-                c.setLiked(true);
-            }
-            mAdapter.add(c);
-        }
 
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<List<Customer>>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(), "yap1231234555", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }

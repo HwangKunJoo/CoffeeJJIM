@@ -24,6 +24,16 @@ public class UserManagementRecyclerAdapter extends RecyclerView.Adapter<UserMana
         notifyDataSetChanged();
     }
 
+    public void addAll(List<Customer> items) {
+        this.items.addAll(items);
+        notifyDataSetChanged();
+    }
+
+    public void clear(){
+        items.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public UserManagementViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

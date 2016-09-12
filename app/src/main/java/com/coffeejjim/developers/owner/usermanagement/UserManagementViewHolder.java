@@ -70,10 +70,10 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-        userManagementNicknameView.setText(customer.getNickName());
-        userManagementVisitCountView.setText(""+customer.getVisitCount());
+        userManagementNicknameView.setText(customer.getNickname());
+        userManagementVisitCountView.setText(""+customer.getVisitTime());
 
-        if(!customer.isLiked()){
+        if(customer.getBookmark() == -1){
             userManagementLikeView.setImageResource(R.drawable.likeempty);
         }else
             userManagementLikeView.setImageResource(R.drawable.likefull);

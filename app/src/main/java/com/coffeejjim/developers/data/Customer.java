@@ -2,31 +2,103 @@ package com.coffeejjim.developers.data;
 
 public class Customer implements java.io.Serializable {
     private static final long serialVersionUID = -1099703235608839862L;
-    private String nickName;
-    private int visitCount;
-    private boolean isLiked;
+    private int parking;
+    private int bookmark;
+    private int visitTime;
+    private int wifi;
+    private String reservationTime;
+    private int customerId;
+    private String nickname;
+    private int days;
+    private int socket;
+    private int people;
+    private int bidPrice;
 
-    public String getNickName() {
-        return nickName;
+    public int getParking() {
+        return this.parking;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setParking(int parking) {
+        this.parking = parking;
     }
 
-    public int getVisitCount() {
-        return visitCount;
+    public int getBookmark() {
+        return this.bookmark;
     }
 
-    public void setVisitCount(int visitCount) {
-        this.visitCount = visitCount;
+    public void setBookmark(int bookmark) {
+        this.bookmark = bookmark;
     }
 
-    public boolean isLiked() {
-        return isLiked;
+    public int getVisitTime() {
+        return this.visitTime;
     }
 
-    public void setLiked(boolean liked) {
-        isLiked = liked;
+    public void setVisitTime(int visitTime) {
+        this.visitTime = visitTime;
+    }
+
+    public int getWifi() {
+        return this.wifi;
+    }
+
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
+    }
+
+    public String getReservationTime() {
+        return this.reservationTime;
+    }
+
+    public void setReservationTime(String reservationTime) {
+        this.reservationTime = reservationTime;
+    }
+
+    public int getCustomerId() {
+        return this.customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getNickname() {
+        return this.nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public int getDays() {
+        return this.days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public int getSocket() {
+        return this.socket;
+    }
+
+    public void setSocket(int socket) {
+        this.socket = socket;
+    }
+
+    public int getPeople() {
+        return this.people;
+    }
+
+    public void setPeople(int people) {
+        this.people = people;
+    }
+
+    public int getBidPrice() {
+        return this.bidPrice;
+    }
+
+    public void setBidPrice(int bidPrice) {
+        this.bidPrice = bidPrice;
     }
 }
