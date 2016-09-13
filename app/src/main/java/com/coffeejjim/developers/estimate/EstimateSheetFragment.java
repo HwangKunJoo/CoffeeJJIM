@@ -44,7 +44,7 @@ import butterknife.OnClick;
 
 
 public class EstimateSheetFragment extends Fragment implements GoogleApiClient.OnConnectionFailedListener,
-        GoogleApiClient.ConnectionCallbacks  {
+        GoogleApiClient.ConnectionCallbacks {
 
     @BindView(R.id.estimate_sheet_date_edit)
     EditText dateView;
@@ -99,6 +99,7 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
 
 
     boolean isConnected = false;
+
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         isConnected = true;
@@ -147,7 +148,6 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-
 
 
     @OnClick(R.id.estimate_sheet_time)
@@ -204,17 +204,23 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
                 }
         );
     }
+
     //옵션들 선택 이미지 바꾸기, 위치 변환,
     @OnClick(R.id.btn_estimate_sheet_present)
     public void onEstimateCheckDialogButtonClick() {
         String location = locationView.getText().toString();
-        String reservationTime = dateView.getText().toString() +" "+ timeView.getText().toString();
+        String reservationTime = dateView.getText().toString() + " " + timeView.getText().toString();
 
-        EstimateRequest ERequest = new EstimateRequest(getContext(),3,37.477025,126.963493,"2016-12-12 16:43:23",1,0,0,0,20);
+        EstimateRequest ERequest = new EstimateRequest(getContext(), 3, 37.477025, 126.963493, "2016-12-12 16:43:23", 1, 0, 0, 0, 20);
         NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {
-                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+                if (result.getCode() == 0) {
+                    Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+                    onDialogFragmentClick();
+                }
             }
 
             @Override
@@ -222,8 +228,6 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
                 Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
             }
         });
-
-        onDialogFragmentClick();
     }
 
     public void onDialogFragmentClick() {

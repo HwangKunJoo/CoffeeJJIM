@@ -69,12 +69,12 @@ public class KakaoSignupActivity extends Activity {
                 NetworkManager.getInstance().getNetworkData(KLRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
                     @Override
                     public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {
-                        Toast.makeText(KakaoSignupActivity.this, "ttttttttttt", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(KakaoSignupActivity.this, "access token 전달 성공", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
                     public void onFail(NetworkRequest<NetworkResult<Object>> request, int errorCode, String errorMessage, Throwable e) {
-                        Toast.makeText(KakaoSignupActivity.this, "bbbbbbbbbbb", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(KakaoSignupActivity.this, "access token 전달 실패", Toast.LENGTH_SHORT).show();
                     }
                 });
                 redirectMainActivity(); // 로그인 성공시 MainActivity로

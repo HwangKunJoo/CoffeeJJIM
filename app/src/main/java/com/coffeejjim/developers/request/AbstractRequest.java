@@ -45,10 +45,6 @@ public abstract class AbstractRequest<T> extends NetworkRequest<T> {
 
     }
 
-    protected Type getType(int code) {
-        return getType();
-    }
-
 
     protected abstract Type getType();
 }

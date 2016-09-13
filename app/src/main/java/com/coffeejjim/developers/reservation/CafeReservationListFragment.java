@@ -87,7 +87,7 @@ public class CafeReservationListFragment extends Fragment {
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<List<Proposal>>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
