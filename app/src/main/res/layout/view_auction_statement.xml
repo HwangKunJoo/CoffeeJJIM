@@ -8,7 +8,7 @@
         android:layout_width="@dimen/view_auction_list_image_Size"
         android:layout_height="@dimen/view_auction_list_image_Size"
         android:id="@+id/auction_statement_reservation_fail_image"
-        android:src="@android:drawable/ic_lock_power_off"
+        android:src="@drawable/ic_reservationsuccess"
         android:layout_weight="1"
         android:layout_gravity="center" />
 

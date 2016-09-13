@@ -11,7 +11,7 @@
             android:layout_width="@dimen/view_all_cafe_list_image_Size"
             android:layout_height="@dimen/view_all_cafe_list_image_Size"
             android:id="@+id/like_list_cafe_image"
-            android:src="@drawable/new1"
+            android:src="@drawable/empty_new1"
             android:scaleType="centerCrop"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"

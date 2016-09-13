@@ -90,13 +90,6 @@ public class LoginFragment extends Fragment {
         getActivity().finish();
     }
 
-
-//    @OnClick(R.id.login_kakao_btn)
-//    public void onLogin() {
-//        ((LoginActivity) getActivity()).moveHomeActivity();
-//    }
-
-
     @OnClick(R.id.login_provider_text)
     public void onSignupLayoutVisible() {
         if (visibleLayout.getVisibility() == View.GONE) {
@@ -139,4 +132,12 @@ public class LoginFragment extends Fragment {
     public void onFindInfo() {
         ((LoginActivity) getActivity()).changeReissuance();
     }
+
+    ////////////////////////////////////////////////////////////////////
+    @OnClick(R.id.button)
+    public void onLogin() {
+        ((LoginActivity) getActivity()).moveHomeActivity();
+    }
+    ////////////////////////////////////////////////////////////////////
+
 }

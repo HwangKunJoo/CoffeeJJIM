@@ -34,6 +34,6 @@ public class BestRecommendPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public float getPageWidth(int position) {
-        return 0.4f;
+        return 0.6f;
     }
 }

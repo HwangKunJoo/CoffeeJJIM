@@ -12,7 +12,7 @@
             android:layout_width="@dimen/view_all_cafe_list_image_Size"
             android:layout_height="@dimen/view_all_cafe_list_image_Size"
             android:id="@+id/allcafelist_cafe_main_image"
-            android:src="@drawable/new1"
+            android:src="@drawable/empty_new1"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:scaleType="centerCrop"

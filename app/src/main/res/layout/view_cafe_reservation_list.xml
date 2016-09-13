@@ -12,7 +12,7 @@
             android:layout_width="@dimen/view_all_cafe_list_image_Size"
             android:layout_height="@dimen/view_all_cafe_list_image_Size"
             android:id="@+id/cafelist_photo_image"
-            android:src="@drawable/new1"
+            android:src="@drawable/empty_new1"
             android:layout_marginTop="@dimen/view_all_cafe_list_image_marginTop"
             android:scaleType="centerCrop"
             android:layout_marginBottom="@dimen/view_all_cafe_list_image_marginBottom"

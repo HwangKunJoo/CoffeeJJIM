@@ -151,7 +151,7 @@
             android:text="역경매 허용 범위"
             android:id="@+id/activity_settings_distance_text"
             android:layout_weight="2"
-            android:textSize="18dp"
+            android:textSize="@dimen/subject_text_size"
             android:gravity="center|left"
             android:layout_marginLeft="16dp"
             android:textColor="@color/coffeejjim_brown" />
@@ -168,20 +168,20 @@
             android:textColor="@color/coffeejjim_brown" />
 
         <Spinner
-            android:layout_width="65dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:id="@+id/activity_settings_distance_spinner"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="right" />
+            android:gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:text="KM"
+            android:text="Km"
             android:id="@+id/activity_settings_to_text"
             android:textSize="13dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/layout_side_margin"
             android:layout_gravity="center"
             android:gravity="center|left"
             android:textColor="@color/coffeejjim_brown" />

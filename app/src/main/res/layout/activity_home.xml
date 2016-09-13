@@ -29,12 +29,13 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" >
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -44,27 +45,52 @@
             <ImageView
                 android:id="@+id/home_estimate_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="180dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/btn_estimate_sheet_write" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Event"
+                android:id="@+id/home_event_text"
+                android:textSize="20dp"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:gravity="left|bottom"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_marginTop="10dp" />
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/material_grey_300" />
-            </LinearLayout>
+                android:layout_height="match_parent"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></LinearLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/home_event_pager"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="140dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/home_estimate_image" />
+                android:layout_below="@+id/home_estimate_image"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이벤트를 확인해 보세요."
+                android:id="@+id/home_event_text2"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginBottom="19dp"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/coffeejjim_brown" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -81,29 +107,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:layout_below="@+id/home_event_pager"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginLeft="@dimen/layout_side_margin"
                 android:text="Best Cafe"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#420d03"
-                android:gravity="left|center"
-                android:textSize="20dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/material_grey_300" />
-            </LinearLayout>
+                android:gravity="left|bottom"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp" />
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/home_best_pager"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_below="@+id/home_best_title"></android.support.v4.view.ViewPager>
+                android:layout_height="150dp"
+                android:layout_below="@+id/home_best_title"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginTop="10dp"></android.support.v4.view.ViewPager>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="추천 카페가 여러분을 기다리고 있습니다."
+                android:id="@+id/home_best_title2"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginBottom="19dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/coffeejjim_brown" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -120,13 +149,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:layout_below="@+id/home_best_pager"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
+                android:layout_marginLeft="@dimen/layout_side_margin"
                 android:text="New Cafe"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#420d03"
-                android:gravity="left|center"
+                android:gravity="left|bottom"
                 android:textSize="20dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/home_new_pager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/home_new_title"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginTop="10dp">
+            </android.support.v4.view.ViewPager>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카페가 새로 나왔어요. 확인해 보세요."
+                android:id="@+id/textView2"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_marginLeft="@dimen/layout_side_margin"
+                android:layout_marginBottom="19dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/coffeejjim_brown" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -137,14 +185,6 @@
                     android:layout_height="1dp"
                     android:background="@color/material_grey_300" />
             </LinearLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/home_new_pager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@+id/home_new_title"
-                android:layout_marginBottom="5dp">
-            </android.support.v4.view.ViewPager>
 
 
             <!--<android.support.design.widget.FloatingActionButton-->

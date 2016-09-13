@@ -126,4 +126,13 @@
             android:layout_alignEnd="@+id/login_provider_btn" />
     </RelativeLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="인텐트"
+        android:id="@+id/button"
+        android:layout_alignTop="@+id/login_kakao_btn"
+        android:layout_toRightOf="@+id/login_kakao_btn"
+        android:layout_toEndOf="@+id/login_kakao_btn" />
+
 </RelativeLayout>
