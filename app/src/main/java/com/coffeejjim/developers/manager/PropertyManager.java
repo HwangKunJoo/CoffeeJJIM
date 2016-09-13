@@ -23,7 +23,7 @@ public class PropertyManager {
 
     private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
-    private static final String KEY_REGISTRATION_ID = "regid";
+    private static final String KEY_REGISTRATION_ID = "fcmToken";
     private static final String KEY_FACEBOOK_ID = "facebookid";
 
     private PropertyManager() {

@@ -14,6 +14,7 @@ import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Owner;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
@@ -32,6 +33,8 @@ public class LoginFragment extends Fragment {
     EditText ownerPasswordView;
     @BindView(R.id.provider_signup_visible_layout)
     View visibleLayout;
+
+
 
     private SessionCallback callback;
 
@@ -58,12 +61,6 @@ public class LoginFragment extends Fragment {
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Session.getCurrentSession().removeCallback(callback);
     }
 
     private class SessionCallback implements ISessionCallback {
@@ -116,8 +113,9 @@ public class LoginFragment extends Fragment {
         //코드2랑 에러코드 401이면 아이디 또는 비밀번호가 다릅니다.
         final String ownerId = ownerLoginIdView.getText().toString();
         final String password = ownerPasswordView.getText().toString();
+        String fcmToken = PropertyManager.getInstance().getRegistrationId();
 
-        OwnerLoginRequest OLRequest = new OwnerLoginRequest(getContext(), ownerId, password, "adasdwewe");
+        OwnerLoginRequest OLRequest = new OwnerLoginRequest(getContext(), ownerId, password, fcmToken);
         NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {

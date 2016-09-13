@@ -10,7 +10,6 @@ import android.support.v4.app.DialogFragment;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.Owner;
 import com.coffeejjim.developers.login.LoginActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
@@ -20,8 +19,6 @@ import com.coffeejjim.developers.request.OwnerLogoutRequest;
  * Created by Tacademy on 2016-09-06.
  */
 public class LogoutDialogFragment extends DialogFragment {
-
-    AlertDialog dialog;
 
     @NonNull
     @Override
@@ -35,18 +32,18 @@ public class LogoutDialogFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 OwnerLogoutRequest OWRequest = new OwnerLogoutRequest(getContext());
-                NetworkManager.getInstance().getNetworkData(OWRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+                NetworkManager.getInstance().getNetworkData(OWRequest, new NetworkManager.OnResultListener<NetworkResult<String>>() {
                     @Override
-                    public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
-                        Toast.makeText(getActivity(),"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                        Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+                    public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
+                        Toast.makeText(getContext(),"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                        Intent loginIntent = new Intent(getContext(), LoginActivity.class);
                         loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(loginIntent);
                         getActivity().finish();
                     }
 
                     @Override
-                    public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+                    public void onFail(NetworkRequest<NetworkResult<String>> request, int errorCode, String errorMessage, Throwable e) {
                         Toast.makeText(getActivity(),"로그아웃에 실패하였습니다..", Toast.LENGTH_SHORT).show();
                     }
                 });

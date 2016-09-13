@@ -3,7 +3,6 @@ package com.coffeejjim.developers.request;
 import android.content.Context;
 
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.Owner;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -14,7 +13,7 @@ import okhttp3.Request;
 /**
  * Created by Tacademy on 2016-09-07.
  */
-public class OwnerLogoutRequest extends AbstractRequest<NetworkResult<Owner>> {
+public class OwnerLogoutRequest extends AbstractRequest<NetworkResult<String>> {
 
     Request request;
 
@@ -32,7 +31,7 @@ public class OwnerLogoutRequest extends AbstractRequest<NetworkResult<Owner>> {
 
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<Owner>>(){}.getType();
+        return new TypeToken<NetworkResult<String>>(){}.getType();
     }
 
     @Override
