@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.extrafunctions;
 
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -7,19 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.login.LoginActivity;
-import com.coffeejjim.developers.manager.NetworkManager;
-import com.coffeejjim.developers.manager.NetworkRequest;
-import com.coffeejjim.developers.request.OwnerLogoutRequest;
-import com.kakao.usermgmt.UserManagement;
 
-/**
- * Created by Tacademy on 2016-09-06.
- */
-public class LogoutDialogFragment extends DialogFragment {
+import com.coffeejjim.developers.CoffeeJJIMSplashActivity;
+import com.coffeejjim.developers.login.LoginActivity;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
+public class KakaoLogoutDialogFragment extends DialogFragment{
 
     @NonNull
     @Override
@@ -28,24 +26,18 @@ public class LogoutDialogFragment extends DialogFragment {
         builder.setTitle("Coffee JJIM");
         builder.setMessage("로그아웃 하시겠습니까.");
         builder.setCancelable(true);
-        getFragmentManager().findFragmentByTag("LogoutDialog");
+        getFragmentManager().findFragmentByTag("KakaoLogoutDialog");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                OwnerLogoutRequest OWRequest = new OwnerLogoutRequest(getContext());
-                NetworkManager.getInstance().getNetworkData(OWRequest, new NetworkManager.OnResultListener<NetworkResult<String>>() {
+            public void onClick(DialogInterface dialog, int which) {
+                UserManagement.requestLogout(new LogoutResponseCallback() {
                     @Override
-                    public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
-                        //Toast.makeText(getContext(),"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
-                        Intent loginIntent = new Intent(getContext(), LoginActivity.class);
+                    public void onCompleteLogout() {
+                        Log.i("error","eeeeeeeee");
+                        Intent loginIntent = new Intent(getContext(), CoffeeJJIMSplashActivity.class);
                         loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(loginIntent);
                         getActivity().finish();
-                    }
-
-                    @Override
-                    public void onFail(NetworkRequest<NetworkResult<String>> request, int errorCode, String errorMessage, Throwable e) {
-                        Toast.makeText(getActivity(),"로그아웃에 실패하였습니다..", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -72,5 +64,6 @@ public class LogoutDialogFragment extends DialogFragment {
     public void onDismiss(DialogInterface dialog) {
         super.onDismiss(dialog);
     }
+
 
 }

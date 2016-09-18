@@ -1,13 +1,22 @@
 package com.coffeejjim.developers.extrafunctions;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.login.LoginActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.OwnerLogoutRequest;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -45,9 +54,47 @@ public class ProviderInfoEditActivity extends AppCompatActivity {
     }
 
     private void onLogoutAlertDialog() {
+//        LogoutDialogFragment logoutDialogFragment = new LogoutDialogFragment();
+//        logoutDialogFragment.show(getSupportFragmentManager(), "LogoutDialog");
+        AlertDialog dialog;
 
-        LogoutDialogFragment logoutDialogFragment = new LogoutDialogFragment();
-        logoutDialogFragment.show(getSupportFragmentManager(), "LogoutDialog");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Coffee JJIM");
+        builder.setMessage("로그아웃 하시겠습니까.");
+        builder.setCancelable(true);
+        getFragmentManager().findFragmentByTag("LogoutDialog");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                OwnerLogoutRequest OWRequest = new OwnerLogoutRequest(ProviderInfoEditActivity.this);
+                NetworkManager.getInstance().getNetworkData(OWRequest, new NetworkManager.OnResultListener<NetworkResult<String>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
+                        Toast.makeText(ProviderInfoEditActivity.this,"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                        Intent loginIntent = new Intent(ProviderInfoEditActivity.this, LoginActivity.class);
+                        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(loginIntent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<String>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(ProviderInfoEditActivity.this,"로그아웃에 실패하였습니다..", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(ProviderInfoEditActivity.this,"취소 되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setCancelable(false);
+        dialog = builder.create();
+        dialog.show();
     }
 
 
