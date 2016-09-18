@@ -68,6 +68,7 @@ public class HomeEventPagerFragment extends Fragment {
 
     public void moveEventDetailActivity() {
         Intent intent = new Intent(getActivity(), EventDetailActivity.class);
+        intent.putExtra("eventImage", eventImage);
         startActivity(intent);
     }
 
