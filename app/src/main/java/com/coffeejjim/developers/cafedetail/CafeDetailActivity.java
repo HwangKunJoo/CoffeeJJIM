@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.cafedetail;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,7 +10,9 @@ import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Cafe;
+import com.coffeejjim.developers.data.CafeImage;
 import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.event.EventDetailFragment;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.AddLikeListRequest;
@@ -27,14 +30,14 @@ public class CafeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cafe_detail);
-
         ButterKnife.bind(this);
         setCustomActionbar();
-
+        Intent intent = getIntent();
+        CafeImage cafeDetailInfo = (CafeImage)intent.getSerializableExtra("cafeDetailInfo");
         if (savedInstanceState == null) {
+            CafeDetailFragment cafeDetailFragment = CafeDetailFragment.newInstance(cafeDetailInfo);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new CafeDetailFragment())
-                    .commit();
+                    .add(R.id.container , cafeDetailFragment).commit();
         }
     }
 

@@ -64,6 +64,7 @@ public class BestRecommendPagerFragment extends Fragment {
 
     public void moveCafeDetailActivity(){
         Intent intent = new Intent(getActivity(),CafeDetailActivity.class);
+        intent.putExtra("cafeDetailInfo",bestImage);
         startActivity(intent);
     }
 }
