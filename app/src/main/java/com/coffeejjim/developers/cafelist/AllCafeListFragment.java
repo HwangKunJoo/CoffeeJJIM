@@ -86,12 +86,16 @@ public class AllCafeListFragment extends Fragment {
         mAdapter.setOnAdapterItemClickListener(new AllCafeListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
-                moveCafeDetailActivity();
+                Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
+                intent.putExtra("cafeId", cafe.getCafeId());
+                startActivity(intent);
             }
 
             @Override
             public void onAdapterButtonClick(View view, Cafe cafe, int position) {
-                moveCafeDetailActivity();
+                Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
+                intent.putExtra("cafeId", cafe.getCafeId());
+                startActivity(intent);
             }
         });
 
@@ -200,11 +204,6 @@ public class AllCafeListFragment extends Fragment {
 
             }
         });
-    }
-
-    public void moveCafeDetailActivity() {
-        Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
-        startActivity(intent);
     }
 
     @Override

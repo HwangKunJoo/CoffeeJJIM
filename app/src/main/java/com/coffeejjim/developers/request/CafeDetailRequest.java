@@ -17,10 +17,10 @@ import okhttp3.Request;
 public class CafeDetailRequest extends AbstractRequest<NetworkResult<CafeInfo>> {
     Request request;
 
-    public CafeDetailRequest(Context context, String cafeId){
+    public CafeDetailRequest(Context context, int cafeId){
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("cafes")
-                .addPathSegment(cafeId)
+                .addPathSegment(""+cafeId)
                 .build();
 
         request = new Request.Builder()

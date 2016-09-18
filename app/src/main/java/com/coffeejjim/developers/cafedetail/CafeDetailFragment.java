@@ -70,21 +70,20 @@ public class CafeDetailFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static CafeDetailFragment newInstance(CafeImage cafeDetailInfo){
+    public static CafeDetailFragment newInstance(int cafeId){
         CafeDetailFragment f = new CafeDetailFragment();
         Bundle b = new Bundle();
-        b.putSerializable("cafeDetailInfo", cafeDetailInfo);
+        b.putInt("cafeId", cafeId);
         f.setArguments(b);
         return f;
     }
-
-    CafeImage cafeDetailInfo;
+    int cafeId;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            cafeDetailInfo = (CafeImage) (getArguments().getSerializable("cafeDetailInfo"));
+            cafeId = getArguments().getInt("cafeId");
         }
     }
 
@@ -120,7 +119,6 @@ public class CafeDetailFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        String cafeId = ""+cafeDetailInfo.getCafeId();
         CafeDetailRequest CDRequest = new CafeDetailRequest(getContext(), cafeId);
         NetworkManager.getInstance().getNetworkData(CDRequest, new NetworkManager.OnResultListener<NetworkResult<CafeInfo>>() {
             @Override

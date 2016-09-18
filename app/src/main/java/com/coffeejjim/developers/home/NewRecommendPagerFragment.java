@@ -63,7 +63,7 @@ public class NewRecommendPagerFragment extends Fragment {
 
     public void moveCafeDetailActivity(){
         Intent intent = new Intent(getActivity(),CafeDetailActivity.class);
-        intent.putExtra("cafeDetailInfo", newCafeImage);
+        intent.putExtra("cafeId", newCafeImage.getCafeId());
         startActivity(intent);
     }
 }

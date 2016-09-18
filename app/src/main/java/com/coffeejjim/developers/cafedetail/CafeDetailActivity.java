@@ -33,9 +33,9 @@ public class CafeDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setCustomActionbar();
         Intent intent = getIntent();
-        CafeImage cafeDetailInfo = (CafeImage)intent.getSerializableExtra("cafeDetailInfo");
+        int cafeId = intent.getIntExtra("cafeId", 50);
         if (savedInstanceState == null) {
-            CafeDetailFragment cafeDetailFragment = CafeDetailFragment.newInstance(cafeDetailInfo);
+            CafeDetailFragment cafeDetailFragment = CafeDetailFragment.newInstance(cafeId);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container , cafeDetailFragment).commit();
         }
