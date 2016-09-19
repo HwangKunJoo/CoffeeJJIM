@@ -1,7 +1,6 @@
 package com.coffeejjim.developers.extrafunctions.auctionlist;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -58,9 +57,8 @@ public class AuctionListFragment extends Fragment {
 
             @Override
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
-                Intent estimateDialogIntent = new Intent(getActivity(), EstimateSheetDialogFragment.class);
-                startActivity(estimateDialogIntent);
-
+                getFragmentManager().beginTransaction().replace(R.id.container, new EstimateSheetDialogFragment())
+                        .addToBackStack(null).commit();
             }
         });
 
