@@ -7,33 +7,39 @@ import com.coffeejjim.developers.data.Proposal;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.List;
 
+import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 
 /**
- * Created by Tacademy on 2016-09-06.
+ * Created by Tacademy on 2016-09-19.
  */
-public class CafeReservationRequest extends AbstractRequest<NetworkResult<List<Proposal>>> {
-
+public class CafeReservationRequest extends AbstractRequest<NetworkResult<Proposal>> {
     Request request;
-    public CafeReservationRequest(Context context, String pageNo, String rowCount) {
-        HttpUrl url = getBaseUrlBuilder()
-                .addPathSegment("proposals")
-                .addQueryParameter("pageNo", pageNo)
-                .addQueryParameter("rowCount", rowCount)
+
+    public CafeReservationRequest(Context context, int proposalId) {
+
+        HttpUrl.Builder builder = getBaseUrlHttpsBuilder();
+        builder.addPathSegment("proposals")
+                .addPathSegment(""+proposalId);
+
+        RequestBody body = new FormBody.Builder()
+                .add("proposalId", ""+proposalId)
                 .build();
 
         request = new Request.Builder()
-                .url(url)
+                .url(builder.build())
+                .put(body)
                 .tag(context)
                 .build();
     }
 
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<List<Proposal>>>(){}.getType();
+        return new TypeToken<NetworkResult<Proposal>>() {
+        }.getType();
     }
 
     @Override

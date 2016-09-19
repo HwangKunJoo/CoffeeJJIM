@@ -102,8 +102,6 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.login_provider_btn)
     public void onProviderLogin() {
-        //코드로 아이디랑 비밀번호 다를 때 같이 처리
-        //코드2랑 에러코드 401이면 아이디 또는 비밀번호가 다릅니다.
         final String ownerId = ownerLoginIdView.getText().toString();
         final String password = ownerPasswordView.getText().toString();
         String fcmToken = PropertyManager.getInstance().getRegistrationId();
@@ -118,7 +116,7 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "아이디 또는 비밀번호가 틀립니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }

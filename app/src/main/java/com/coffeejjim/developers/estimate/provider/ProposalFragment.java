@@ -3,6 +3,7 @@ package com.coffeejjim.developers.estimate.provider;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -21,7 +22,6 @@ import com.coffeejjim.developers.request.ProposalRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,10 +34,30 @@ public class ProposalFragment extends Fragment {
     @BindView(R.id.btn_proposal_present)
     Button btn_proposal;
 
+
+
+
     public ProposalFragment() {
         // Required empty public constructor
     }
 
+    public static ProposalFragment newInstance(int estimateId){
+        ProposalFragment f = new ProposalFragment();
+        Bundle b = new Bundle();
+        b.putInt("estimateId", estimateId);
+        f.setArguments(b);
+        return f;
+    }
+
+    int estimateId;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            estimateId = getArguments().getInt("estimateId");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,10 +75,8 @@ public class ProposalFragment extends Fragment {
     }
 
     public void postProposal(){
-        //견적서 아이디 얻어와야됨, auctionProcess에서 리퀘스트로 받은 값으로 뿌려줘야됨
-        // 다이얼로그 멘트 확인 필요함.
         String bidPrice = bidPriceView.getText().toString();
-        ProposalRequest PRequest = new ProposalRequest(getContext(), 308, bidPrice);
+        ProposalRequest PRequest = new ProposalRequest(getContext(), estimateId, bidPrice);
         NetworkManager.getInstance().getNetworkData(PRequest, new NetworkManager.OnResultListener<NetworkResult<Proposal>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Proposal>> request, NetworkResult<Proposal> result) {

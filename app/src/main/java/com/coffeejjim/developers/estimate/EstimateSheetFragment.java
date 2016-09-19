@@ -211,7 +211,7 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
         String location = locationView.getText().toString();
         String reservationTime = dateView.getText().toString() + " " + timeView.getText().toString();
 
-        EstimateRequest ERequest = new EstimateRequest(getContext(), 3, 37.477025, 126.963493, "2016-12-12 16:43:23", 1, 0, 0, 0, 20);
+        EstimateRequest ERequest = new EstimateRequest(getContext(), 3, 37.477025, 126.963493, "2016-12-12 16:43:23", 1, 0, 0, 0, 1);
         NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {

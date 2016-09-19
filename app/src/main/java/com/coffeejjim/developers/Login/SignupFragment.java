@@ -53,28 +53,10 @@ public class SignupFragment extends Fragment {
     private static final int SEARCH_ADDRESS = 1;
     String cafeAddress;
 
-
-    //    public static SignupFragment newInstance(String data) {
-//        SignupFragment fragment = new SignupFragment();
-//        Bundle b = new Bundle();
-//        b.putString("data", data);
-//        fragment.setArguments(b);
-//        return fragment;
-//    }
-//
     public SignupFragment() {
         // Required empty public constructor
     }
 
-//    @Override
-//    public void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        Bundle b = getArguments();
-//        if (b != null) {
-//            inputAddress = b.getString("data");
-//        }
-//    }
-//
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -199,8 +181,6 @@ public class SignupFragment extends Fragment {
         if (requestCode == SEARCH_ADDRESS || resultCode == Activity.RESULT_OK) {
             cafeAddress = data.getExtras().getString("data");
             addressView.setText(cafeAddress);
-//            Bundle addressData = new Bundle();
-//            addressData.putString("data", findAddress);
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }

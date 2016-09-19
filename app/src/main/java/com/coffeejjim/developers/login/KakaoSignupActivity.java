@@ -10,6 +10,7 @@ import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.home.HomeActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.request.KakaoLoginRequest;
 import com.kakao.auth.ErrorCode;
 import com.kakao.auth.Session;
@@ -63,9 +64,10 @@ public class KakaoSignupActivity extends Activity {
             public void onSuccess(UserProfile userProfile) {  //성공 시 userProfile 형태로 반환
                 Toast.makeText(KakaoSignupActivity.this, "이리 들어오나 보자2", Toast.LENGTH_SHORT).show();
                 final String access_token = Session.getCurrentSession().getAccessToken();
+                String fcmToken = PropertyManager.getInstance().getRegistrationId();
                 KakaoLoginRequest KLRequest =
                         new KakaoLoginRequest(CoffeeJJIMApplication.getCoffeeJJIMApplicationContext(),
-                                access_token, "12345");
+                                access_token, fcmToken);
                 NetworkManager.getInstance().getNetworkData(KLRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
                     @Override
                     public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {

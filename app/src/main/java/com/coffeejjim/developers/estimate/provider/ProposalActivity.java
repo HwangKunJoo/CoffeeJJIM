@@ -1,5 +1,6 @@
 package com.coffeejjim.developers.estimate.provider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,15 +20,15 @@ public class ProposalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proposal);
-
-
         ButterKnife.bind(this);
         setCustomActionbar();
+        Intent intent = getIntent();
+        int estimateId = intent.getIntExtra("estimateId", 345);
 
         if (savedInstanceState == null) {
+            ProposalFragment proposalFragment = ProposalFragment.newInstance(estimateId);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ProposalFragment())
-                    .commit();
+                    .add(R.id.container, proposalFragment).commit();
         }
     }
 

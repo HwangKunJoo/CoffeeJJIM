@@ -17,6 +17,7 @@ import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Proposal;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.CafeProposalListRequest;
 import com.coffeejjim.developers.request.CafeReservationRequest;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class CafeReservationListFragment extends Fragment {
     @BindView(R.id.rv_list)
     RecyclerView listView;
     CafeReservationListRecyclerAdapter mAdapter;
+
+    int cafeId;
 
     public CafeReservationListFragment() {
         // Required empty public constructor
@@ -50,11 +53,24 @@ public class CafeReservationListFragment extends Fragment {
         mAdapter.setOnAdapterItemClickListener(new CafeReservationListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Proposal proposal, int position) {
+                cafeId = proposal.getCafeId();
                 moveCafeDetailActivity();
             }
 
             @Override
             public void onAdapterButtonClick(View view, Proposal proposal, int position) {
+                CafeReservationRequest CRRequest = new CafeReservationRequest(getContext(),proposal.getProposalId());
+                NetworkManager.getInstance().getNetworkData(CRRequest, new NetworkManager.OnResultListener<NetworkResult<Proposal>>() {
+                    @Override
+                    public void onSuccess(NetworkRequest<NetworkResult<Proposal>> request, NetworkResult<Proposal> result) {
+                        Toast.makeText(getContext(),"예약 성공",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFail(NetworkRequest<NetworkResult<Proposal>> request, int errorCode, String errorMessage, Throwable e) {
+                        Toast.makeText(getContext(),"예약 실패",Toast.LENGTH_SHORT).show();
+                    }
+                });
                 CafeReservationCheckDialogFragment f = new CafeReservationCheckDialogFragment();
                 f.show(getFragmentManager(), "dialog");
             }
@@ -68,6 +84,7 @@ public class CafeReservationListFragment extends Fragment {
 
     public void moveCafeDetailActivity() {
         Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
+        intent.putExtra("cafeId", cafeId);
         startActivity(intent);
 
     }
@@ -75,7 +92,7 @@ public class CafeReservationListFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        CafeReservationRequest CRRequest = new CafeReservationRequest(getContext(), "1", "10");
+        CafeProposalListRequest CRRequest = new CafeProposalListRequest(getContext(), "1", "10");
         NetworkManager.getInstance().getNetworkData(CRRequest, new NetworkManager.OnResultListener<NetworkResult<List<Proposal>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<Proposal>>> request, NetworkResult<List<Proposal>> result) {

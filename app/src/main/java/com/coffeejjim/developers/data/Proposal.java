@@ -13,6 +13,15 @@ public class Proposal implements java.io.Serializable {
     private int estimateId;
     private int cafeId;
     private int bidPrice;
+    private int proposalId;
+
+    public int getProposalId() {
+        return proposalId;
+    }
+
+    public void setProposalId(int proposalId) {
+        this.proposalId = proposalId;
+    }
 
     public int getEstimateId() {
         return estimateId;

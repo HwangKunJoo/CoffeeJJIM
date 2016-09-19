@@ -17,6 +17,15 @@ public class Estimate implements java.io.Serializable {
     private int socket;
     private boolean isReserved;
     private int proposalState;
+    private int estimateId;
+
+    public int getEstimateId() {
+        return estimateId;
+    }
+
+    public void setEstimateId(int estimateId) {
+        this.estimateId = estimateId;
+    }
 
     public int getProposalState() {
         return proposalState;
