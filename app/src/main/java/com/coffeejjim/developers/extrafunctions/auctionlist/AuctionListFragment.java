@@ -53,6 +53,11 @@ public class AuctionListFragment extends Fragment {
             public void onAdapterItemClick(View view, Estimate estimate, int position) {
 
             }
+
+            @Override
+            public void onAdapterButtonClick(View view, Estimate estimate, int position) {
+
+            }
         });
 
         auctionListRecyclerView.setAdapter(mAdapter);

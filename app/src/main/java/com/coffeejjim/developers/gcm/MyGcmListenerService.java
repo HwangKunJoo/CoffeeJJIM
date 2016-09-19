@@ -27,7 +27,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.home.HomeActivity;
+import com.coffeejjim.developers.owner.OwnerHomeActivity;
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class MyGcmListenerService extends GcmListenerService {
@@ -82,7 +82,7 @@ public class MyGcmListenerService extends GcmListenerService {
      * @param message GCM message received.
      */
     private void sendNotification(String message) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, OwnerHomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
