@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/empty_bestsample1"
+        android:src="@drawable/ic_main_default"
         android:id="@+id/home_best_cafe_image"
         android:scaleType="centerCrop"
         android:layout_marginRight="5dp" />

@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/fr_provider_home_text_view_title_marginTop"
-        android:text="지혁이네 카페"
         android:textSize="@dimen/title_text_size"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -18,7 +17,7 @@
         android:id="@+id/provider_home_cafe_main_image"
         android:layout_width="@dimen/cafe_main_image_Size"
         android:layout_height="@dimen/cafe_main_image_Size"
-        android:src="@drawable/empty_ahn"
+        android:src="@drawable/ic_main_default"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/cafe_main_image_marginTop" />
@@ -30,7 +29,7 @@
         android:layout_below="@+id/provider_home_cafe_main_image"
         android:layout_marginLeft="@dimen/preview_first_image_maginLeft"
         android:layout_marginTop="@dimen/preview_image_marginTop"
-        android:src="@drawable/empty_bestsample1" />
+        android:src="@drawable/ic_main_default" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/provider_home_preview_second_image"
@@ -39,7 +38,7 @@
         android:layout_alignTop="@+id/provider_home_preview_first_image"
         android:layout_toEndOf="@+id/provider_home_preview_first_image"
         android:layout_toRightOf="@+id/provider_home_preview_first_image"
-        android:src="@drawable/empty_new2"
+        android:src="@drawable/ic_main_default"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -49,7 +48,7 @@
         android:layout_alignTop="@+id/provider_home_preview_first_image"
         android:layout_toEndOf="@+id/provider_home_preview_second_image"
         android:layout_toRightOf="@+id/provider_home_preview_second_image"
-        android:src="@drawable/empty_new1"
+        android:src="@drawable/ic_main_default"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -59,7 +58,7 @@
         android:layout_alignTop="@+id/provider_home_preview_first_image"
         android:layout_toEndOf="@+id/provider_home_preview_third_image"
         android:layout_toRightOf="@+id/provider_home_preview_third_image"
-        android:src="@drawable/empty_new3"
+        android:src="@drawable/ic_main_default"
         android:layout_marginLeft="@dimen/preview_image_interval_marginLeft" />
 
 

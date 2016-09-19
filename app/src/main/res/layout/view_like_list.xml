@@ -11,7 +11,7 @@
             android:layout_width="@dimen/view_all_cafe_list_image_Size"
             android:layout_height="@dimen/view_all_cafe_list_image_Size"
             android:id="@+id/like_list_cafe_image"
-            android:src="@drawable/empty_new1"
+            android:src="@drawable/ic_main_default"
             android:scaleType="centerCrop"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -51,10 +51,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_dislike"
             android:src="@drawable/ic_reservationfail"
-            android:layout_below="@+id/like_list_cafe_name"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:visibility="gone"/>
+            android:layout_alignParentEnd="true" />
 
         <ImageView
             android:layout_width="@dimen/view_all_cafe_list_option_image_Size"

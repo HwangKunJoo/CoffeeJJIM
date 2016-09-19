@@ -7,9 +7,9 @@
     tools:context=".cafedetail.CafeDetailImageChildFragment">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/empty_new1"
+        android:src="@drawable/ic_main_default"
         android:id="@+id/cafe_detail_image"
         android:scaleType="centerCrop"/>
 
