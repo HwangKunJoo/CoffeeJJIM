@@ -27,7 +27,7 @@ public class AuctionStatementViewHolder extends RecyclerView.ViewHolder {
     TextView auctionStatementPriceView;
     @BindView(R.id.auction_statement_reservation_fail_image)
     ImageView reservationFailImageView;
-    @BindView(R.id.btn_reservation_booking_info)
+    @BindView(R.id.auction_statement_estimate_btn)
     Button btn_booking_info;
 
     public AuctionStatementViewHolder(View itemView) {

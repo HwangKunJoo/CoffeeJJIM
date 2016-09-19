@@ -84,4 +84,5 @@ public class AuctionListFragment extends Fragment {
             }
         });
     }
+
 }

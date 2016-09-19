@@ -8,7 +8,6 @@ import android.widget.TextView;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
 
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -21,8 +20,6 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
     TextView auctionListTimeView;
     @BindView(R.id.auctionlist_cafe_title_text)
     TextView auctionListCafenameView;
-    @BindView(R.id.auctionlist_cafe_address_text)
-    TextView auctionListCafeaddressView;
     @BindView(R.id.auctionlist_price_text)
     TextView auctionListPrice;
 
@@ -31,6 +28,7 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
 
     public AuctionListViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +37,6 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
                 }
             }
         });
-        ButterKnife.bind(this, itemView);
     }
 
     public interface OnAuctionListItemClickListener {
@@ -59,7 +56,6 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
         auctionListTimeView.setText(estimate.getReservationTime().toString().substring(11));
         auctionListCafenameView.setText(estimate.getCafeName());
         auctionListPrice.setText(estimate.getBid_price());
-        auctionListCafeaddressView.setText(estimate.getAddress());
 
         if(!estimate.isReserved()){
             reservationFailImageView.setImageResource(R.drawable.ic_reservationfail);

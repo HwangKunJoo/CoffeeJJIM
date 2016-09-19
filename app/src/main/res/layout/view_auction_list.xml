@@ -48,20 +48,12 @@
                 android:text="철수"
                 android:textSize="@dimen/subject_text_size"
                 android:id="@+id/auctionlist_cafe_title_text"
-                android:layout_alignTop="@+id/auctionlist_present_btn"
+                android:layout_alignTop="@+id/auctionlist_estimate_btn"
                 android:layout_alignLeft="@+id/auctionlist_person_text"
                 android:layout_alignStart="@+id/auctionlist_person_text"
-                android:layout_gravity="center|left"
-                android:gravity="left" />
+                android:layout_gravity="center"
+                android:gravity="center" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="서울시 봉천구"
-                android:textSize="@dimen/address_text_size"
-                android:id="@+id/auctionlist_cafe_address_text"
-                android:layout_gravity="center|left"
-                android:gravity="left" />
         </LinearLayout>
 
         <TextView
@@ -88,7 +80,7 @@
         <Button
             android:layout_width="@dimen/view_auction_list_button_raw_Size"
             android:layout_height="@dimen/view_auction_list_button_column_Size"
-            android:id="@+id/auctionlist_present_btn"
+            android:id="@+id/auctionlist_estimate_btn"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
             android:layout_gravity="center"
