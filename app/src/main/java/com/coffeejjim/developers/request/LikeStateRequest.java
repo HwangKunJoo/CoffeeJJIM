@@ -12,12 +12,12 @@ import okhttp3.HttpUrl;
 import okhttp3.Request;
 
 /**
- * Created by Tacademy on 2016-09-07.
+ * Created by Tacademy on 2016-09-19.
  */
-public class DeleteLikeListRequest extends AbstractRequest<NetworkResult<Cafe>> {
+public class LikeStateRequest extends AbstractRequest<NetworkResult<Cafe>> {
 
     Request request;
-    public DeleteLikeListRequest(Context context, int cafeId) {
+    public LikeStateRequest(Context context, int cafeId) {
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("bookmarks")
                 .addPathSegment(""+cafeId)
@@ -26,10 +26,8 @@ public class DeleteLikeListRequest extends AbstractRequest<NetworkResult<Cafe>> 
         request = new Request.Builder()
                 .url(url)
                 .tag(context)
-                .delete()
                 .build();
     }
-
 
     @Override
     protected Type getType() {

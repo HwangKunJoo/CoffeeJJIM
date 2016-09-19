@@ -3,6 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:id="@+id/provider_info_edit_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#ffffff"
+            android:title="" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="회원 정보 수정"
+            android:textColor="#420d03"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/provider_info_edit_toolbar_layout">
+
     <TextView
         android:layout_width="@dimen/fr_provider_info_text_view_Size"
         android:layout_height="wrap_content"
@@ -193,5 +220,6 @@
             android:textColor="@color/coffeejjim_white"
             android:layout_marginLeft="1dp" />
     </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

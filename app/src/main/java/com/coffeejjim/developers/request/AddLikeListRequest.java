@@ -19,13 +19,13 @@ import okhttp3.RequestBody;
 public class AddLikeListRequest extends AbstractRequest<NetworkResult<Cafe>>{
 
     Request request;
-    public AddLikeListRequest(Context context, String cafeId) {
+    public AddLikeListRequest(Context context, int cafeId) {
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("bookmarks")
                 .build();
 
         RequestBody body = new FormBody.Builder()
-                .add("cafeId",cafeId).build();
+                .add("cafeId",""+cafeId).build();
 
         request = new Request.Builder()
                 .url(url)

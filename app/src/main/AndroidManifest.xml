@@ -118,7 +118,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".extrafunctions.ProviderInfoEditActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".extrafunctions.inquiry.InquiryActivity"
             android:screenOrientation="portrait"
