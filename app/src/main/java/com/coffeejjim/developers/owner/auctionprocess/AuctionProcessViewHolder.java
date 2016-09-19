@@ -75,7 +75,7 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
 
     public void setEstimate(Estimate estimate) {
         this.estimate = estimate;
-        userNicknameView.setText(estimate.getUserNickname());
+        userNicknameView.setText(estimate.getNickname());
         deadlineTimeView.setText(estimate.getDeadlineTime());
         peopleView.setText(""+estimate.getPeople());
         auctionStartTimeView.setText(estimate.getAuctionStartTime());

@@ -56,7 +56,7 @@ public class AuctionListViewHolder extends RecyclerView.ViewHolder {
 
     public void setEstimate(Estimate estimate) {
         this.estimate = estimate;
-        auctionListTimeView.setText(estimate.getReservationTime());
+        auctionListTimeView.setText(estimate.getReservationTime().toString().substring(11));
         auctionListCafenameView.setText(estimate.getCafeName());
         auctionListPrice.setText(estimate.getBid_price());
         auctionListCafeaddressView.setText(estimate.getAddress());

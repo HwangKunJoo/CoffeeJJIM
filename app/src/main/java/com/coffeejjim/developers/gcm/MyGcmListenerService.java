@@ -45,6 +45,7 @@ public class MyGcmListenerService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
         String message = data.getString("message");
+        String key = data.getString("key1");
         Log.d(TAG, "From: " + from);
         Log.d(TAG, "Message: " + message);
 
@@ -52,6 +53,10 @@ public class MyGcmListenerService extends GcmListenerService {
             // message received from some topic.
         } else {
             // normal downstream message.
+            if(key == "1")
+            {
+                sendNotification(message);
+            }
         }
 
         // [START_EXCLUDE]
@@ -66,7 +71,7 @@ public class MyGcmListenerService extends GcmListenerService {
          * In some cases it may be useful to show a notification indicating to the user
          * that a message was received.
          */
-        sendNotification(message);
+
         // [END_EXCLUDE]
     }
     // [END receive_message]

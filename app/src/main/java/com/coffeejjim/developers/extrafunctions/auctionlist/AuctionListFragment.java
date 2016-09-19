@@ -68,7 +68,7 @@ public class AuctionListFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        AuctionListRequest ALRequest = new AuctionListRequest(getContext(), 0, 2016, 9);
+        AuctionListRequest ALRequest = new AuctionListRequest(getContext(), 0, 2016, 12);
         NetworkManager.getInstance().getNetworkData(ALRequest, new NetworkManager.OnResultListener<NetworkResult<List<Estimate>>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<List<Estimate>>> request, NetworkResult<List<Estimate>> result) {

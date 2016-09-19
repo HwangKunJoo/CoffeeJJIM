@@ -6,7 +6,7 @@ public class Estimate implements java.io.Serializable {
     private String reservationTime;
     private String cafeName;
     private String address;
-    private String userNickname;
+    private String nickname;
     private int people;
     private String bid_price;
     private String auctionStartTime;
@@ -115,12 +115,12 @@ public class Estimate implements java.io.Serializable {
         this.reservationTime = reservationTime;
     }
 
-    public String getUserNickname() {
-        return userNickname;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUserNickname(String userNickname) {
-        this.userNickname = userNickname;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public String getCafeName() {
