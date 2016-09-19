@@ -97,18 +97,17 @@
             android:layout_marginTop="@dimen/fr_signup_text_view_marginTop" />
 
         <EditText
-            android:layout_width="110dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:id="@+id/signup_name_edit"
             android:textSize="@dimen/fr_signup_text_view_textSize"
             android:singleLine="true"
-            android:layout_alignTop="@+id/signup_name_text"
-            android:layout_above="@+id/signup_id_text"
             android:background="@drawable/xml_edit_text_box_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_alignRight="@+id/signup_id_edit"
-            android:layout_alignEnd="@+id/signup_id_edit"
+            android:layout_alignBottom="@+id/signup_name_text"
+            android:layout_alignTop="@+id/signup_name_text"
+            android:layout_toLeftOf="@+id/btn_signup_id_duplication_check"
             android:layout_toRightOf="@+id/signup_name_text"
             android:layout_toEndOf="@+id/signup_name_text" />
 
@@ -118,14 +117,13 @@
             android:id="@+id/signup_id_edit"
             android:textSize="@dimen/fr_signup_text_view_textSize"
             android:singleLine="true"
-            android:layout_alignTop="@+id/signup_id_text"
-            android:layout_above="@+id/signup_password_text"
             android:background="@drawable/xml_edit_text_box_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
+            android:layout_above="@+id/signup_password_text"
             android:layout_toRightOf="@+id/signup_id_text"
-            android:layout_alignRight="@+id/signup_email_sharp"
-            android:layout_alignEnd="@+id/signup_email_sharp" />
+            android:layout_alignRight="@+id/signup_name_edit"
+            android:layout_alignEnd="@+id/signup_name_edit" />
 
         <Button
             android:layout_width="wrap_content"
@@ -135,11 +133,10 @@
             android:textSize="@dimen/fr_signup_text_view_textSize"
             android:background="@color/coffeejjim_invisible"
             android:textColor="@color/coffeejjim_brown"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@+id/signup_id_edit"
-            android:layout_marginRight="@dimen/fr_signup_view_marginRight"
-            android:layout_alignTop="@+id/signup_id_edit" />
+            android:layout_alignTop="@+id/signup_id_text"
+            android:layout_alignRight="@+id/signup_password_edit"
+            android:layout_alignEnd="@+id/signup_password_edit"
+            android:layout_above="@+id/signup_password_text" />
 
         <EditText
             android:layout_width="match_parent"
@@ -153,10 +150,10 @@
             android:background="@drawable/xml_edit_text_box_line"
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
-            android:layout_alignRight="@+id/btn_signup_id_duplication_check"
-            android:layout_alignEnd="@+id/btn_signup_id_duplication_check"
             android:layout_toRightOf="@+id/signup_password_text"
-            android:layout_toEndOf="@+id/signup_password_text" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/fr_signup_view_marginRight" />
 
         <EditText
             android:layout_width="match_parent"
@@ -188,31 +185,8 @@
             android:paddingLeft="@dimen/fr_signup_edit_text_padding"
             android:paddingRight="@dimen/fr_signup_edit_text_padding"
             android:layout_toRightOf="@+id/signup_email_text"
-            android:layout_toEndOf="@+id/signup_email_text" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\@"
-            android:id="@+id/signup_email_sharp"
-            android:textSize="@dimen/fr_signup_text_view_textSize"
-            android:gravity="center"
-            android:layout_toRightOf="@+id/signup_email_edit"
-            android:layout_toEndOf="@+id/signup_email_edit"
-            android:layout_alignTop="@+id/signup_email_edit"
-            android:layout_alignBottom="@+id/signup_email_edit"
-            android:layout_marginLeft="3dp" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/signup_email_spinner"
-            android:layout_toRightOf="@+id/signup_email_sharp"
-            android:spinnerMode="dropdown"
-            android:layout_alignTop="@+id/signup_email_edit"
-            android:layout_alignBottom="@+id/signup_email_edit"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignRight="@+id/signup_phone_edit"
+            android:layout_alignEnd="@+id/signup_phone_edit" />
 
     </RelativeLayout>
 

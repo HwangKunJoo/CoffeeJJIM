@@ -30,20 +30,21 @@
         android:id="@+id/auction_process_title_layout"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:background="@color/coffeejjim_brown">
 
         <TextView
             android:id="@+id/auction_process_title_nickname"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="고객 닉네임"
             android:textSize="@dimen/subject_text_size"
-            android:textColor="@color/coffeejjim_brown"
+            android:textColor="@color/coffeejjim_white"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical"
             android:gravity="center"
             android:layout_weight="1"
-            android:layout_marginLeft="5dp" />
+            android:layout_marginLeft="@dimen/layout_side_margin" />
 
         <TextView
             android:id="@+id/auction_process_title_description"
@@ -51,7 +52,7 @@
             android:layout_height="wrap_content"
             android:text="견적 내용"
             android:textSize="@dimen/subject_text_size"
-            android:textColor="@color/coffeejjim_brown"
+            android:textColor="@color/coffeejjim_white"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical"
             android:gravity="center"
@@ -59,11 +60,11 @@
 
         <TextView
             android:id="@+id/auction_process_title_end_time"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:text="경매 마감"
             android:textSize="@dimen/subject_text_size"
-            android:textColor="@color/coffeejjim_brown"
+            android:textColor="@color/coffeejjim_white"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_gravity="center_vertical"
             android:gravity="center"

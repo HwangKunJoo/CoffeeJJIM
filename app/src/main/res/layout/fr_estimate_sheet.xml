@@ -212,7 +212,8 @@
         android:layout_marginLeft="10dp"
         android:layout_alignBottom="@+id/estimate_sheet_endtime_text"
         android:layout_alignRight="@+id/estimate_sheet_people_edit"
-        android:layout_alignEnd="@+id/estimate_sheet_people_edit" />
+        android:layout_alignEnd="@+id/estimate_sheet_people_edit"
+        android:textAlignment="center" />
 
     <ImageButton
         android:layout_width="@dimen/fr_estimate_sheet_small_image_button_size"

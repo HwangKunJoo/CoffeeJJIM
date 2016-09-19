@@ -173,7 +173,8 @@
             android:id="@+id/activity_settings_distance_spinner"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textAlignment="center" />
 
         <TextView
             android:layout_width="wrap_content"

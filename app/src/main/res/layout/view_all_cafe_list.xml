@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="72dp"
         android:layout_alignParentTop="true" >
 
         <ImageView
@@ -17,105 +17,140 @@
             android:layout_alignParentStart="true"
             android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/view_all_cafe_list_image_marginTop"
-            android:layout_marginBottom="@dimen/view_all_cafe_list_image_marginBottom"
             android:layout_marginLeft="8dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="카페 이름"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/allcafelist_cafe_name_text"
-            android:layout_alignParentTop="true"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_toRightOf="@+id/allcafelist_cafe_main_image"
-            android:layout_toEndOf="@+id/allcafelist_cafe_main_image"
             android:layout_marginLeft="@dimen/layout_side_margin"
-            android:layout_marginTop="4dp"/>
+            android:id="@+id/linearLayout2"
+            android:layout_alignTop="@+id/allcafelist_cafe_main_image"
+            android:layout_alignBottom="@+id/allcafelist_cafe_main_image">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="카페 이름"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/allcafelist_cafe_name_text"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/allcafelist_cafe_main_image"
+                android:layout_toEndOf="@+id/allcafelist_cafe_main_image"
+                android:layout_weight="1"
+                android:textColor="@color/coffeejjim_brown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="주소"
+                android:textSize="@dimen/address_text_size"
+                android:id="@+id/allcafelist_address_text"
+                android:layout_below="@+id/allcafelist_cafe_name_text"
+                android:layout_alignLeft="@+id/allcafelist_cafe_name_text"
+                android:layout_alignStart="@+id/allcafelist_cafe_name_text"
+                android:layout_toLeftOf="@+id/btn_all_cafe_list_detail"
+                android:layout_toStartOf="@+id/btn_all_cafe_list_detail"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btn_all_cafe_list_detail"
+                android:layout_alignLeft="@+id/allcafelist_address_text"
+                android:layout_alignStart="@+id/allcafelist_address_text"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
+                    android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
+                    android:id="@+id/all_cafe_list_options_wifi"
+                    android:src="@drawable/options_wifi_on"
+                    android:background="@color/coffeejjim_invisible"
+                    android:scaleType="centerCrop"
+                    android:layout_alignBottom="@+id/allcafelist_cafe_main_image"
+                    android:layout_alignLeft="@+id/allcafelist_address_text"
+                    android:layout_alignStart="@+id/allcafelist_address_text"
+                    android:layout_marginBottom="5dp" />
+
+                <ImageView
+                    android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
+                    android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
+                    android:id="@+id/all_cafe_list_options_plag"
+                    android:src="@drawable/options_plag_on"
+                    android:layout_alignTop="@+id/all_cafe_list_options_wifi"
+                    android:layout_toRightOf="@+id/all_cafe_list_options_wifi"
+                    android:layout_toEndOf="@+id/all_cafe_list_options_wifi"
+                    android:background="@color/coffeejjim_invisible"
+                    android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
+                    android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
+                    android:id="@+id/all_cafe_list_options_parking"
+                    android:src="@drawable/options_workingtime_on"
+                    android:layout_alignTop="@+id/all_cafe_list_options_plag"
+                    android:layout_toRightOf="@+id/all_cafe_list_options_plag"
+                    android:layout_toEndOf="@+id/all_cafe_list_options_plag"
+                    android:background="@color/coffeejjim_invisible"
+                    android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
+                    android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
+                    android:id="@+id/all_cafe_list_options_workingtime"
+                    android:src="@drawable/options_parking_on"
+                    android:layout_alignTop="@+id/all_cafe_list_options_parking"
+                    android:layout_toRightOf="@+id/all_cafe_list_options_parking"
+                    android:layout_toEndOf="@+id/all_cafe_list_options_parking"
+                    android:background="@color/coffeejjim_invisible"
+                    android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="주소"
-            android:textSize="@dimen/address_text_size"
-            android:id="@+id/allcafelist_address_text"
-            android:layout_below="@+id/allcafelist_cafe_name_text"
-            android:layout_alignLeft="@+id/allcafelist_cafe_name_text"
-            android:layout_alignStart="@+id/allcafelist_cafe_name_text"
-            android:layout_toLeftOf="@+id/btn_all_cafe_list_detail"
-            android:layout_toStartOf="@+id/btn_all_cafe_list_detail" />
-
-        <ImageView
-            android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
-            android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
-            android:id="@+id/all_cafe_list_options_wifi"
-            android:src="@drawable/options_wifi_on"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_below="@+id/allcafelist_address_text"
-            android:layout_alignLeft="@+id/allcafelist_address_text"
-            android:layout_alignStart="@+id/allcafelist_address_text"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
-            android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
-            android:id="@+id/all_cafe_list_options_plag"
-            android:src="@drawable/options_plag_on"
-            android:layout_alignTop="@+id/all_cafe_list_options_wifi"
-            android:layout_toRightOf="@+id/all_cafe_list_options_wifi"
-            android:layout_toEndOf="@+id/all_cafe_list_options_wifi"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
-            android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
-            android:id="@+id/all_cafe_list_options_parking"
-            android:src="@drawable/options_workingtime_on"
-            android:layout_alignTop="@+id/all_cafe_list_options_plag"
-            android:layout_toRightOf="@+id/all_cafe_list_options_plag"
-            android:layout_toEndOf="@+id/all_cafe_list_options_plag"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:layout_width="@dimen/view_all_cafe_list_option_image_Size"
-            android:layout_height="@dimen/view_all_cafe_list_option_image_Size"
-            android:id="@+id/all_cafe_list_options_workingtime"
-            android:src="@drawable/options_parking_on"
-            android:layout_alignTop="@+id/all_cafe_list_options_parking"
-            android:layout_toRightOf="@+id/all_cafe_list_options_parking"
-            android:layout_toEndOf="@+id/all_cafe_list_options_parking"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="@dimen/view_all_cafe_list_option_image_marginLeft"
-            android:scaleType="centerCrop" />
-
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:gravity="right|bottom"
-            android:id="@+id/btn_all_cafe_list_detail"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_alignTop="@+id/allcafelist_address_text"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/linearLayout2"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/btn_add" />
+            android:layout_alignParentEnd="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="거리"
-            android:textSize="@dimen/small_text_size"
-            android:gravity="center|right"
-            android:id="@+id/allcafelist_distance_text"
-            android:layout_alignBottom="@+id/allcafelist_cafe_name_text"
-            android:layout_alignRight="@+id/btn_all_cafe_list_detail"
-            android:layout_alignEnd="@+id/btn_all_cafe_list_detail" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="거리"
+                android:textSize="@dimen/address_text_size"
+                android:gravity="center|right"
+                android:id="@+id/allcafelist_distance_text"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="1"
+                android:layout_gravity="center" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="right|bottom"
+                android:id="@+id/btn_all_cafe_list_detail"
+                android:background="@color/coffeejjim_invisible"
+                android:src="@drawable/btn_add"
+                android:layout_below="@+id/allcafelist_distance_text"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_weight="3"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
     </RelativeLayout>
 
     <LinearLayout

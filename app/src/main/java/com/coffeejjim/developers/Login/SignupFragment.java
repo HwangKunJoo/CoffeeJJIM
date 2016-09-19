@@ -11,10 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
@@ -65,25 +62,6 @@ public class SignupFragment extends Fragment {
         ButterKnife.bind(this, view);
         setCustomActionbar();
         setHasOptionsMenu(true);
-
-
-        String[] str = getResources().getStringArray(R.array.emailArray);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, str);
-        Spinner spi = (Spinner) view.findViewById(R.id.signup_email_spinner);
-        spi.setAdapter(adapter);
-        spi.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> adapterView) {
-
-                    }
-                }
-        );
 
         return view;
     }

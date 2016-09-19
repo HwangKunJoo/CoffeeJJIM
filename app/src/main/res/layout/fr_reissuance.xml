@@ -67,7 +67,8 @@
         android:layout_marginTop="@dimen/fr_reissuance_text_marginTop"
         android:layout_marginLeft="@dimen/fr_reissuance_default_margin"
         android:layout_marginRight="@dimen/fr_reissuance_default_margin"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/btn_back_login_fragment"
