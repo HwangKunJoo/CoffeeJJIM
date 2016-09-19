@@ -2,7 +2,6 @@ package com.coffeejjim.developers.estimate;
 
 import android.Manifest;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -220,11 +219,8 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
                     Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
-//                    onDialogFragmentClick();
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
-                    Intent EstimateSheetDialogFragment = new Intent(getActivity(), EstimateSheetDialogFragment.class);
-                    startActivity(EstimateSheetDialogFragment);
-                    ///////////////////////////////////////////////////////////////////////////////////////////////////
+                    onDialogFragmentClick();
+
                 }
             }
 
@@ -235,10 +231,9 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
         });
     }
 
-//    public void onDialogFragmentClick() {
-//        EstimateCheckDialogFragment f = new EstimateCheckDialogFragment();
-//        f.show(getFragmentManager(), "dialog");
-//
-//    }
+    public void onDialogFragmentClick() {
+        EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
+        estimateSheetDialogFragment.show(getFragmentManager(), "Dialog");
+    }
 
 }

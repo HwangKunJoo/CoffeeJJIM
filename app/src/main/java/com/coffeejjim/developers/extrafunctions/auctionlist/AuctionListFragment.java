@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
@@ -32,6 +33,8 @@ public class AuctionListFragment extends Fragment {
     @BindView(R.id.auction_rv_list)
     RecyclerView auctionListRecyclerView;
     AuctionListRecyclerAdapter mAdapter;
+
+    private Button estimateDialog;
 
     public AuctionListFragment() {
         // Required empty public constructor
@@ -57,8 +60,10 @@ public class AuctionListFragment extends Fragment {
 
             @Override
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
-                getFragmentManager().beginTransaction().replace(R.id.container, new EstimateSheetDialogFragment())
-                        .addToBackStack(null).commit();
+//                getFragmentManager().beginTransaction().replace(R.id.container, new EstimateSheetDialogFragment())
+//                        .addToBackStack(null).commit();
+                EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
+                estimateSheetDialogFragment.show(getFragmentManager(), "Dialog");
             }
         });
 
