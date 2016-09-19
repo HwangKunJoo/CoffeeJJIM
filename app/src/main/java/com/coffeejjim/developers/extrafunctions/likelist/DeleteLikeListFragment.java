@@ -56,6 +56,8 @@ public class DeleteLikeListFragment extends Fragment {
 
             @Override
             public void onAdapterButtonClick(View view, final Cafe cafe, int position) {
+                int cafeId = 0;
+                cafeId = cafe.getCafeId();
                 DeleteLikeListRequest DLLRequest = new DeleteLikeListRequest(getContext(),cafe.getCafeId());
                 NetworkManager.getInstance().getNetworkData(DLLRequest, new NetworkManager.OnResultListener<NetworkResult<Cafe>>() {
                     @Override

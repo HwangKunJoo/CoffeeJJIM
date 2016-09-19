@@ -61,11 +61,11 @@ public class CafeDetailActivity extends AppCompatActivity {
                     //즐겨찾기 한 상태
                     likeState.setIcon(R.drawable.btn_likefull);
                     isLiked = true;
-                    Toast.makeText(CafeDetailActivity.this, "현재 즐겨찾기 상태입니다.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CafeDetailActivity.this, "현재 즐겨찾기 상태입니다.", Toast.LENGTH_SHORT).show();
                 }else{
                     likeState.setIcon(R.drawable.btn_likeempty);
                     isLiked = false;
-                    Toast.makeText(CafeDetailActivity.this, "현재 즐겨찾기 되어있지 않습니다.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(CafeDetailActivity.this, "현재 즐겨찾기 되어있지 않습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -100,7 +100,6 @@ public class CafeDetailActivity extends AppCompatActivity {
                         Toast.makeText(CafeDetailActivity.this, "즐겨찾기 실패", Toast.LENGTH_SHORT).show();
                     }
                 });
-                //Toast.makeText(this, "즐겨찾기에 추가 되었습니다." , Toast.LENGTH_SHORT).show();
             } else {
                 item.setIcon(R.drawable.btn_likeempty);
                 isLiked = false;
@@ -116,7 +115,6 @@ public class CafeDetailActivity extends AppCompatActivity {
                         Toast.makeText(CafeDetailActivity.this, "즐겨찾기 해제 실패", Toast.LENGTH_SHORT).show();
                     }
                 });
-                //Toast.makeText(this, "즐겨찾기가 해제 되었습니다." , Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);
