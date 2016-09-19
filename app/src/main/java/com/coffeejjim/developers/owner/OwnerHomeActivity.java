@@ -143,12 +143,24 @@ public class OwnerHomeActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.provider_home_item_badge) {
             Toast.makeText(this, "진행중인 경매 목록으로 이동합니다.", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, AuctionProcessActivity.class);
-            startActivity(intent);
+            moveAuctionProcessActivity();
 //            badgeCount--;
 //            ActionItemBadge.update(item, badgeCount);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void moveAuctionProcessActivity() {
+        int intentType = getIntent().getIntExtra("NOTI1", 123);
+        if (intentType == 123) {
+            Intent intent = new Intent(this, AuctionProcessActivity.class);
+            startActivity(intent);
+        }else if(intentType == 1){
+            Intent mainIntent = new Intent(this, OwnerHomeActivity.class);
+            Intent auctionProcessIntent = new Intent(this, AuctionProcessActivity.class);
+            Intent[] intents = {mainIntent, auctionProcessIntent};
+            startActivities(intents);
+        }
     }
 
     private void setCustomActionbar() {

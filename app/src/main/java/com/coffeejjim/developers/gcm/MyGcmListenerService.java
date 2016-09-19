@@ -20,8 +20,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -53,9 +51,9 @@ public class MyGcmListenerService extends GcmListenerService {
             // message received from some topic.
         } else {
             // normal downstream message.
-            if(key == "1")
+            if(key.equals(1))
             {
-                sendNotification(message);
+                sendNotification();
             }
         }
 
@@ -76,24 +74,17 @@ public class MyGcmListenerService extends GcmListenerService {
     }
     // [END receive_message]
 
-    /**
-     * Create and show a simple notification containing the received GCM message.
-     *
-     * @param message GCM message received.
-     */
-    private void sendNotification(String message) {
+    private void sendNotification() {
         Intent intent = new Intent(this, OwnerHomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
-
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("GCM Message")
-                .setContentText(message)
+                .setTicker("Chat Message")
+                .setContentTitle("CoffeeJJIM")
+                .setContentText("견적서 요청이 들어왔습니다.")
                 .setAutoCancel(true)
-                .setSound(defaultSoundUri)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager =
