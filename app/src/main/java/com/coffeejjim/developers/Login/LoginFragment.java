@@ -18,6 +18,7 @@ import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
+import com.kakao.usermgmt.LoginButton;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 
@@ -33,10 +34,12 @@ public class LoginFragment extends Fragment {
     EditText ownerPasswordView;
     @BindView(R.id.provider_signup_visible_layout)
     View visibleLayout;
+    @BindView(R.id.login_kakao_btn)
+    LoginButton kakaoLogin;
 
 
 
-    private SessionCallback callback;
+    SessionCallback callback;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -63,6 +66,12 @@ public class LoginFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Session.getCurrentSession().removeCallback(callback);
+    }
+
     private class SessionCallback implements ISessionCallback {
 
         @Override
@@ -76,7 +85,6 @@ public class LoginFragment extends Fragment {
             if (exception != null) {
                 Logger.e(exception);
             }
-            Toast.makeText(getContext(), "이리 들어오나 보자1", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
             getActivity().finish();// 세션 연결이 실패했을때 로그인 화면 다시
@@ -131,11 +139,9 @@ public class LoginFragment extends Fragment {
         ((LoginActivity) getActivity()).changeReissuance();
     }
 
-    ////////////////////////////////////////////////////////////////////
     @OnClick(R.id.button)
     public void onLogin() {
         ((LoginActivity) getActivity()).moveHomeActivity();
     }
-    ////////////////////////////////////////////////////////////////////
 
 }

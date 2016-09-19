@@ -11,7 +11,6 @@ import com.coffeejjim.developers.owner.OwnerHomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final int SEARCH_ADDRESS = 1;
     private static final String TAG_ONE = "tag_one";
 
     @Override

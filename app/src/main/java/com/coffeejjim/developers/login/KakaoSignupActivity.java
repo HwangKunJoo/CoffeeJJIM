@@ -40,7 +40,6 @@ public class KakaoSignupActivity extends Activity {
         UserManagement.requestMe(new MeResponseCallback() {
             @Override
             public void onFailure(ErrorResult errorResult) {
-                Toast.makeText(KakaoSignupActivity.this, "이리 들어오나 보자2", Toast.LENGTH_SHORT).show();
                 String message = "failed to get user info. msg=" + errorResult;
                 Logger.d(message);
 

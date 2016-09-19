@@ -132,7 +132,7 @@ public class AllCafeListFragment extends Fragment {
                 TMapPoint point = mapView.getCenterPoint();
                 addMarker(point.getLatitude(), point.getLongitude(), "My Marker");
 
-                //키워드에 맞는 카페를 찾아오는 리퀘스트
+                //키워드에 맞는 카페를 찾아오는 리퀘스트, 위도와 경도가 어떤 영향을 끼치는가
                 AllCafeListRequest searchRequest = new AllCafeListRequest(getContext(), keyword ,"1", "10", 37, 126);
                 NetworkManager.getInstance().getNetworkData(searchRequest, new NetworkManager.OnResultListener<NetworkResult<List<Cafe>>>() {
                     @Override

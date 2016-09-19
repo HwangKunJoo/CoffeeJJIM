@@ -46,16 +46,6 @@ public class NotificationFragment extends Fragment {
         ButterKnife.bind(this, view);
 
 
-//        NotiContent notiContent1 = new NotiContent("서버 점검 안내입니다.");
-//        NotiContent notiContent2 = new NotiContent("서버 점검 안내입니다2.");
-//        NotiContent notiContent3 = new NotiContent("서버 점검 안내입니다3.");
-//
-//        Notification noti1 = new Notification("서버 점검", "2016-08-17", Arrays.asList(notiContent1));
-//        Notification noti2 = new Notification("서버 점검2", "2016-08-18", Arrays.asList(notiContent1));
-//        Notification noti3 = new Notification("서버 점검3", "2016-08-19", Arrays.asList(notiContent1));
-//        final List<Notification> notis = Arrays.asList(noti1, noti2, noti3);
-
-
         NotiContentRequest NCRequest = new NotiContentRequest(getContext(),"1","10");
         NetworkManager.getInstance().getNetworkData(NCRequest, new NetworkManager.OnResultListener<NetworkResult<List<Notification>>>() {
             @Override
@@ -67,9 +57,7 @@ public class NotificationFragment extends Fragment {
                     @Override
                     public void onListItemExpanded(int position) {
                         Notification noti = notices.get(position);
-                        Toast.makeText(getActivity(), noti.getTitle(),
-                                Toast.LENGTH_SHORT)
-                                .show();
+                        Toast.makeText(getActivity(), noti.getTitle(), Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -90,7 +78,6 @@ public class NotificationFragment extends Fragment {
                 Toast.makeText(getContext(), "asdad112355555555", Toast.LENGTH_SHORT).show();
             }
         });
-
         return view;
     }
 
