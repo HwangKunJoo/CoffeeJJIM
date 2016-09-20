@@ -172,7 +172,10 @@ public class LoginFragment extends Fragment {
         NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
-                Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
+                Owner owner = result.getResult();
+                Toast.makeText(getContext(), "user id : " + owner.getOwnerLoginId(), Toast.LENGTH_SHORT).show();
+                PropertyManager.getInstance().setOwnerId(ownerId);
+                PropertyManager.getInstance().setPassword(password);
                 ((LoginActivity) getActivity()).moveProviderHomeActivity();
             }
 

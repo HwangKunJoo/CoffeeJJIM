@@ -21,7 +21,7 @@ public class PropertyManager {
     SharedPreferences mPrefs;
     SharedPreferences.Editor mEditor;
 
-    private static final String KEY_EMAIL = "email";
+    private static final String KEY_OWNER_ID = "ownerId";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_REGISTRATION_ID = "fcmToken";
     private static final String KEY_FACEBOOK_ID = "facebookid";
@@ -32,13 +32,13 @@ public class PropertyManager {
         mEditor = mPrefs.edit();
     }
 
-    public void setEmail(String email) {
-        mEditor.putString(KEY_EMAIL, email);
+    public void setOwnerId(String ownerId) {
+        mEditor.putString(KEY_OWNER_ID, ownerId);
         mEditor.commit();
     }
 
-    public String getEmail() {
-        return mPrefs.getString(KEY_EMAIL, "");
+    public String getOwnerId() {
+        return mPrefs.getString(KEY_OWNER_ID, "");
     }
 
     public void setPassword(String password) {

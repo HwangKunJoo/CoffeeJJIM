@@ -12,12 +12,16 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.extrafunctions.auctionlist.AuctionListActivity;
 import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
 import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
 import com.coffeejjim.developers.login.LoginActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AuctionRangeRequest;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
@@ -134,4 +138,20 @@ public class CustomerExtraFunctionsFragment extends Fragment {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        AuctionRangeRequest ARRequest = new AuctionRangeRequest(getContext());
+        NetworkManager.getInstance().getNetworkData(ARRequest, new NetworkManager.OnResultListener<NetworkResult<Integer>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Integer>> request, NetworkResult<Integer> result) {
+                Toast.makeText(getContext(),"현재 경매 허용 범위는 "+result.getResult(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Integer>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(),"땡", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

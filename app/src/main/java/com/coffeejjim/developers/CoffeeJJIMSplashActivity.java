@@ -13,10 +13,17 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Owner;
 import com.coffeejjim.developers.gcm.RegistrationIntentService;
+import com.coffeejjim.developers.home.HomeActivity;
 import com.coffeejjim.developers.login.LoginActivity;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.manager.PropertyManager;
+import com.coffeejjim.developers.request.OwnerLoginRequest;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -110,6 +117,31 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
         return true;
     }
 
+    private void processAutoLogin() {
+        String ownerId = PropertyManager.getInstance().getOwnerId();
+        if (!TextUtils.isEmpty(ownerId)) {
+            String password = PropertyManager.getInstance().getPassword();
+            String regid = PropertyManager.getInstance().getRegistrationId();
+            OwnerLoginRequest request = new OwnerLoginRequest(this, ownerId, password, regid);
+            NetworkManager.getInstance().getNetworkData(request, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+                @Override
+                public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
+                    moveHomeActivity();
+                }
+
+                @Override
+                public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+                    moveLoginActivity();
+                }
+            });
+        }
+    }
+
+    public void moveHomeActivity() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
     private void moveLoginActivity() {
         mHandler.postDelayed(new Runnable() {
