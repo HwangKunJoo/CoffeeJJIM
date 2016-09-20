@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -23,11 +24,22 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
 
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
+    private SharedPreferences appSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee_jjimsplash);
+
+        //////////////////////////////////////////////////////////////////////////////////
+        ////////////////////// 바탕화면 바로가기 만들기 /////////////////////////////////
+        appSettings = getSharedPreferences("CoffeeJJIM", MODE_PRIVATE);
+        // Make sure you only run addShortcut() once, not to create duplicate shortcuts.
+        if(!appSettings.getBoolean("shortcut", false)) {
+            addShortcut();
+        }
+        //////////////////////////////////////////////////////////////////////////////////
+
         mRegistrationBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -110,4 +122,28 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
     }
 
     Handler mHandler = new Handler(Looper.getMainLooper());
+
+    //////////////////////////////////////////////////////////////////////////////////
+    ////////////////////// 바탕화면 바로가기 만들기 /////////////////////////////////
+    private void addShortcut() {
+        //Adding shortcut for MainActivity
+        //on Home screen
+        Intent shortcutIntent = new Intent(getApplicationContext(), CoffeeJJIMSplashActivity.class);
+        shortcutIntent.setAction(Intent.ACTION_MAIN);
+
+        Intent addIntent = new Intent();
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "CoffeeJJIM");
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
+                Intent.ShortcutIconResource.fromContext(getApplicationContext(),
+                        R.drawable.launcher_192));
+        addIntent.putExtra("duplicate", false);
+        addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(addIntent);
+
+        SharedPreferences.Editor prefEditor = appSettings.edit();
+        prefEditor.putBoolean("shortcut", true);
+        prefEditor.commit();
+    }
+    //////////////////////////////////////////////////////////////////////////////////
 }

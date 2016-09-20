@@ -3,17 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="#FFFFFF">
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:weightSum="1"
+    android:paddingLeft="@dimen/layout_side_margin">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="COFFEE JJIM"
-        android:textSize="30sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginStart="65dp"
-        android:textColor="#420d03"/>
+        android:text="Coffee JJIM"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#420d03" />
 
 </LinearLayout>
 <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
