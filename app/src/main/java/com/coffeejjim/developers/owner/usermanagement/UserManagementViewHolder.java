@@ -23,12 +23,9 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
     TextView userManagementVisitCountView;
     @BindView(R.id.user_management_like)
     ImageView userManagementLikeView;
-    @BindView(R.id.btn_user_management_detail_info)
-    Button btn_detail_info;
     @BindView(R.id.btn_user_management_visit_count_info)
     Button btn_visit_count_info;
 
-    public static final int BTN_DETAIL = 0;
     public static final int BTN_VISIT_COUNT = 1;
 
 
@@ -36,14 +33,6 @@ public class UserManagementViewHolder extends RecyclerView.ViewHolder{
     public UserManagementViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
-        btn_detail_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null) {
-                       listener.onUserManagementItemClick(view, customer, getAdapterPosition(), BTN_DETAIL);
-                }
-            }
-        });
 
         btn_visit_count_info.setOnClickListener(new View.OnClickListener() {
             @Override

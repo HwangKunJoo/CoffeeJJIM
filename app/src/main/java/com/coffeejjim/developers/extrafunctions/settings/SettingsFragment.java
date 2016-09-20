@@ -1,7 +1,9 @@
 package com.coffeejjim.developers.extrafunctions.settings;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.coffeejjim.developers.request.AuctionRangeEditRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,6 +80,12 @@ public class SettingsFragment extends Fragment {
                 Toast.makeText(getContext(),"123123", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @OnClick(R.id.activity_settings_vi_switch)
+    public void onvibSwitch() {
+        Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(200);
     }
 
 }

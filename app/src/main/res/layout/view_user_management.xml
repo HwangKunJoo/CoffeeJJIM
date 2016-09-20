@@ -61,28 +61,6 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="78dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/btn_user_management_detail_info"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/coffeejjim_brown"
-                android:background="@drawable/btn_details"
-                android:layout_alignTop="@+id/btn_user_management_visit_count_info"
-                android:layout_toLeftOf="@+id/btn_user_management_visit_count_info"
-                android:layout_toStartOf="@+id/btn_user_management_visit_count_info"
-                android:layout_weight="1"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="49dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
