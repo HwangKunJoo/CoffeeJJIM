@@ -6,13 +6,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.coffeejjim.developers.CoffeeJJIMSplashActivity;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.extrafunctions.auctionlist.AuctionListActivity;
 import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
@@ -114,8 +112,7 @@ public class CustomerExtraFunctionsFragment extends Fragment {
                 UserManagement.requestLogout(new LogoutResponseCallback() {
                     @Override
                     public void onCompleteLogout() {
-                        Toast.makeText(getActivity(),"카톡 로그아웃 ㅓㅇ공 되었습니다.", Toast.LENGTH_SHORT).show();
-                        Intent loginIntent = new Intent(getContext(), LoginActivity.class);
+                        Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
                         loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(loginIntent);
                         getActivity().finish();
