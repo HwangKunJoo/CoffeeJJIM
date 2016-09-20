@@ -14,6 +14,7 @@ import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Owner;
@@ -23,7 +24,9 @@ import com.coffeejjim.developers.login.LoginActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.manager.PropertyManager;
+import com.coffeejjim.developers.owner.OwnerHomeActivity;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
+import com.coffeejjim.developers.request.SessionCheckRequest;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -42,7 +45,7 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
         ////////////////////// 바탕화면 바로가기 만들기 /////////////////////////////////
         appSettings = getSharedPreferences("CoffeeJJIM", MODE_PRIVATE);
         // Make sure you only run addShortcut() once, not to create duplicate shortcuts.
-        if(!appSettings.getBoolean("shortcut", false)) {
+        if (!appSettings.getBoolean("shortcut", false)) {
             addShortcut();
         }
         //////////////////////////////////////////////////////////////////////////////////
@@ -92,7 +95,44 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
     }
 
     private void doRealStart() {
-        moveLoginActivity();
+        SessionCheckRequest SCRequest = new SessionCheckRequest(this);
+        NetworkManager.getInstance().getNetworkData(SCRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {
+                if (result.getCode() == 1) { //shared 비교하는 게 있으면 좋을 듯
+                    Toast.makeText(CoffeeJJIMSplashActivity.this, "점주 로그인 성공", Toast.LENGTH_SHORT).show();
+                    moveOwnerHomeActivity();
+                } else if (result.getCode() == 2) {
+                    Toast.makeText(CoffeeJJIMSplashActivity.this, "사용자 로그인 성공", Toast.LENGTH_SHORT).show();
+                    moveHomeActivity();
+                }else if(result.getCode() == 0){
+                    if(result.getMessage().equals("no 로그인")){
+                        Toast.makeText(CoffeeJJIMSplashActivity.this, "not login", Toast.LENGTH_SHORT).show();
+                        loginSharedPreference();
+                        return;
+                    }
+                    moveLoginActivity();
+                }
+            }
+
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Object>> request, int errorCode, String errorMessage, Throwable e) {
+
+            }
+        });
+    }
+
+    private void loginSharedPreference() {
+        if (isAutoLogin()) {
+            processAutoLogin();
+        } else {
+            moveLoginActivity();
+        }
+    }
+
+    private boolean isAutoLogin() {
+        String ownerId = PropertyManager.getInstance().getOwnerId();
+        return !TextUtils.isEmpty(ownerId);
     }
 
     private boolean checkPlayServices() {
@@ -135,6 +175,12 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void moveOwnerHomeActivity() {
+        Intent intent = new Intent(this, OwnerHomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void moveHomeActivity() {

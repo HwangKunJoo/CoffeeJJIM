@@ -14,6 +14,7 @@ import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.login.LoginActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.request.OwnerLogoutRequest;
 
 import butterknife.BindView;
@@ -74,6 +75,8 @@ public class ProviderInfoEditActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
                         Toast.makeText(ProviderInfoEditActivity.this,"로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+                        PropertyManager.getInstance().setOwnerId("");
+                        PropertyManager.getInstance().setPassword("");
                         Intent loginIntent = new Intent(ProviderInfoEditActivity.this, LoginActivity.class);
                         loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(loginIntent);
