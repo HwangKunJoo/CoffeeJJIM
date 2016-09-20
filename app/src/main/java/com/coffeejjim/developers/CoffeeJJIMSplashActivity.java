@@ -188,10 +188,11 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
                 startActivities(intents);
                 finish();
             }
+        } else {
+            Intent intent = new Intent(this, OwnerHomeActivity.class);
+            startActivity(intent);
+            finish();
         }
-        Intent intent = new Intent(this, OwnerHomeActivity.class);
-        startActivity(intent);
-        finish();
     }
 
     public void moveHomeActivity() {
