@@ -50,8 +50,19 @@ public class MyGcmListenerService extends GcmListenerService {
 
         if (from.startsWith("/topics/")) {
         } else {
-            if(key.equals("1")){
-                sendNotification();
+            switch (key) {
+                case "1": {
+                    sendAuctionProcessNotification();
+                }
+                case "2":{
+                    sendAuctionFinishNotification();
+                }
+                case "3":{
+                    sendProposalNotification();
+                }
+                case "4":{
+                    sendAuctionStatementNotification();
+                }
             }
         }
 
@@ -72,16 +83,76 @@ public class MyGcmListenerService extends GcmListenerService {
     }
     // [END receive_message]
 
-    private void sendNotification() {
+    private void sendAuctionProcessNotification() {
         Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
         intent.putExtra("key", key);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setTicker("Chat Message")
+                .setTicker("견적서 요청이 들어왔습니다.")
                 .setContentTitle("CoffeeJJIM")
-                .setContentText("견적서 요청이 들어왔습니다.")
+                .setContentText("견적서를 확인해 주세요.") // nickname들어가면 괜찮을듯
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private void sendAuctionFinishNotification() {
+        Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
+        intent.putExtra("key", key);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setTicker("경매가 종료 되었습니다.")
+                .setContentTitle("CoffeeJJIM")
+                .setContentText("경매가 종료 되었습니다.")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private void sendProposalNotification(){
+        Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
+        intent.putExtra("key", key);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setTicker("카페에서 입찰 요청이 들어왔습니다.")
+                .setContentTitle("CoffeeJJIM")
+                .setContentText("입찰 내용을 확인해 주세요.")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private void sendAuctionStatementNotification(){
+        Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
+        intent.putExtra("key", key);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setTicker("고객님의 예약이 완료되었습니다.")
+                .setContentTitle("CoffeeJJIM")
+                .setContentText("예약 내용을 확인해주세요.")
                 .setAutoCancel(true)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setContentIntent(pendingIntent);
