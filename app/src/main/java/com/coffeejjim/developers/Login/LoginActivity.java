@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     public void moveProviderHomeActivity() {
         Intent intent = new Intent(this, OwnerHomeActivity.class);
         startActivity(intent);
+        finish();
     }
 //
 //    @Override

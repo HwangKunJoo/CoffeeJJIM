@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.coffeejjim.developers.CoffeeJJIMSplashActivity;
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.extrafunctions.auctionlist.AuctionListActivity;
@@ -18,10 +19,10 @@ import com.coffeejjim.developers.extrafunctions.inquiry.InquiryActivity;
 import com.coffeejjim.developers.extrafunctions.likelist.LikeListActivity;
 import com.coffeejjim.developers.extrafunctions.notification.NotificationActivity;
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
-import com.coffeejjim.developers.login.LoginActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.AuctionRangeRequest;
+import com.coffeejjim.developers.request.OwnerLogoutRequest;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
@@ -109,17 +110,28 @@ public class CustomerExtraFunctionsFragment extends Fragment {
         builder.setTitle("Coffee JJIM");
         builder.setMessage("로그아웃 하시겠습니까.");
         builder.setCancelable(true);
-        getFragmentManager().findFragmentByTag("KakaoLogoutDialog");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 UserManagement.requestLogout(new LogoutResponseCallback() {
                     @Override
                     public void onCompleteLogout() {
-                        Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
-                        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(loginIntent);
-                        getActivity().finish();
+                        OwnerLogoutRequest OLRequest = new OwnerLogoutRequest(getContext());
+                        NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<String>>() {
+                            @Override
+                            public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
+                                Intent loginIntent = new Intent(getContext(), CoffeeJJIMSplashActivity.class);
+                                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(loginIntent);
+                                getActivity().finish();
+                            }
+
+                            @Override
+                            public void onFail(NetworkRequest<NetworkResult<String>> request, int errorCode, String errorMessage, Throwable e) {
+                                Toast.makeText(getActivity(),"로가웃 실패 되었습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
                     }
                 });
             }
