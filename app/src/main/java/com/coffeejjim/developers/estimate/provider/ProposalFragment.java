@@ -118,6 +118,7 @@ public class ProposalFragment extends Fragment {
         });
 
         AlertDialog dialog = builder.create();
+        builder.setCancelable(false);
         dialog.show();
     }
 }

@@ -165,6 +165,7 @@ public class OwnerHomeActivity extends AppCompatActivity {
 
     private void setCustomActionbar() {
         setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.btn_back);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 

@@ -41,7 +41,7 @@
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_marginLeft="@dimen/fr_cafe_detail_preview_image_marginLR"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_sub_default"
+            android:src="@drawable/ic_main_default"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
@@ -51,7 +51,7 @@
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_marginLeft="@dimen/fr_cafe_detail_preview_image_marginLR"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_sub_default"
+            android:src="@drawable/ic_main_default"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
@@ -61,7 +61,7 @@
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_marginLeft="@dimen/fr_cafe_detail_preview_image_marginLR"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_sub_default"
+            android:src="@drawable/ic_main_default"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
 
@@ -71,7 +71,7 @@
             android:layout_height="@dimen/fr_cafe_detail_preview_image_Size"
             android:layout_marginLeft="@dimen/fr_cafe_detail_preview_image_marginLR"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_sub_default"
+            android:src="@drawable/ic_main_default"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/fr_cafe_detail_preview_image_marginLR" />
     </LinearLayout>

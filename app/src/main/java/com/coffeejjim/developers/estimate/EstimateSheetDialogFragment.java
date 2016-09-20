@@ -28,6 +28,7 @@ public class EstimateSheetDialogFragment extends DialogFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_estimate_sheet_dialog, container, false);
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().setCancelable(false);
 
         return view;
     }

@@ -41,6 +41,7 @@ public class EstimateComplementDialogFragment extends DialogFragment {
                 Toast.makeText(getContext(), "OK Click", Toast.LENGTH_SHORT).show();
             }
         });
+        builder.setCancelable(false);
         return builder.show();
     }
 

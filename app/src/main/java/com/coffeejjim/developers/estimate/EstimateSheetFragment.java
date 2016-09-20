@@ -165,6 +165,7 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
             }
         }, hour, minute, false);
 
+
         timePickerDialog.show();
     }
 
