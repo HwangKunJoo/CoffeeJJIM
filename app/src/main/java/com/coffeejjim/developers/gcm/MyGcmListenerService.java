@@ -24,13 +24,14 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.coffeejjim.developers.CoffeeJJIMSplashActivity;
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.owner.OwnerHomeActivity;
 import com.google.android.gms.gcm.GcmListenerService;
 
 public class MyGcmListenerService extends GcmListenerService {
 
     private static final String TAG = "MyGcmListenerService";
+    String key;
 
     /**
      * Called when message is received.
@@ -43,15 +44,12 @@ public class MyGcmListenerService extends GcmListenerService {
     @Override
     public void onMessageReceived(String from, Bundle data) {
         String message = data.getString("message");
-        String key = data.getString("key1");
+        key = data.getString("key1");
         Log.d(TAG, "From: " + from);
         Log.d(TAG, "Message: " + message);
 
         if (from.startsWith("/topics/")) {
         } else {
-            if (key == "1") {
-                sendNotification();
-            }
             if(key.equals("1")){
                 sendNotification();
             }
@@ -75,7 +73,8 @@ public class MyGcmListenerService extends GcmListenerService {
     // [END receive_message]
 
     private void sendNotification() {
-        Intent intent = new Intent(this, OwnerHomeActivity.class);
+        Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
+        intent.putExtra("key", key);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)

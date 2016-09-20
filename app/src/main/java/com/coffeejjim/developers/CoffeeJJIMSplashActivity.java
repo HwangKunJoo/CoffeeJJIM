@@ -25,6 +25,7 @@ import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.owner.OwnerHomeActivity;
+import com.coffeejjim.developers.owner.auctionprocess.AuctionProcessActivity;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
 import com.coffeejjim.developers.request.SessionCheckRequest;
 import com.google.android.gms.common.ConnectionResult;
@@ -178,6 +179,15 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
     }
 
     public void moveOwnerHomeActivity() {
+        String key = getIntent().getStringExtra("key");
+        if(key.equals(AuctionProcessActivity.AUCTION_PROCESS_NOTI))
+        {
+            Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
+            Intent auctionProcessIntent = new Intent(this, AuctionProcessActivity.class);
+            Intent[] intents = {homeIntent, auctionProcessIntent};
+            startActivities(intents);
+            finish();
+        }
         Intent intent = new Intent(this, OwnerHomeActivity.class);
         startActivity(intent);
         finish();
