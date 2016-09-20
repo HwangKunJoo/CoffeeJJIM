@@ -193,9 +193,4 @@ public class LoginFragment extends Fragment {
         ((LoginActivity) getActivity()).changeReissuance();
     }
 
-    @OnClick(R.id.button)
-    public void onLogin() {
-        ((LoginActivity) getActivity()).moveHomeActivity();
-    }
-
 }

@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context="com.coffeejjim.developers.login.PhoneInfoDialogFragment"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
@@ -39,18 +39,17 @@
 
     <Button
         android:text="Canlce"
-        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/fr_phone_info_cancle_brn"
         android:background="@color/coffeejjim_invisible"
         android:layout_below="@+id/fr_phone_info_edit"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:layout_width="140dp" />
 
     <Button
         android:text="OK"
-        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/fr_phone_info_send_btn"
         android:background="@color/coffeejjim_invisible"
@@ -58,5 +57,7 @@
         android:layout_alignBaseline="@+id/fr_phone_info_cancle_brn"
         android:layout_alignBottom="@+id/fr_phone_info_cancle_brn"
         android:layout_toRightOf="@+id/fr_phone_info_cancle_brn"
-        android:layout_toEndOf="@+id/fr_phone_info_cancle_brn" />
+        android:layout_toEndOf="@+id/fr_phone_info_cancle_brn"
+        android:layout_width="140dp"
+        android:layout_marginLeft="23dp" />
 </RelativeLayout>

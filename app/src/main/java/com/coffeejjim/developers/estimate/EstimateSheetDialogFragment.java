@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 
 import com.coffeejjim.developers.R;
 
@@ -26,6 +27,8 @@ public class EstimateSheetDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_estimate_sheet_dialog, container, false);
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+
         return view;
     }
 
