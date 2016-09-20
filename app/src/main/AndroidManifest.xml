@@ -63,7 +63,7 @@
             android:name=".owner.auctionprocess.AuctionProcessActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".event.EventDetailActivity"
             android:screenOrientation="portrait"
@@ -142,7 +142,6 @@
             android:name=".login.SearchAddressActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".login.KakaoSignupActivity"></activity>
 
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"

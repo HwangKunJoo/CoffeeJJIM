@@ -106,8 +106,8 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
                 } else if (result.getCode() == 2) {
                     Toast.makeText(CoffeeJJIMSplashActivity.this, "사용자 로그인 성공", Toast.LENGTH_SHORT).show();
                     moveHomeActivity();
-                }else if(result.getCode() == 0){
-                    if(result.getMessage().equals("no 로그인")){
+                } else if (result.getCode() == 0) {
+                    if (result.getMessage().equals("no 로그인")) {
                         Toast.makeText(CoffeeJJIMSplashActivity.this, "not login", Toast.LENGTH_SHORT).show();
                         loginSharedPreference();
                         return;
@@ -180,13 +180,14 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
 
     public void moveOwnerHomeActivity() {
         String key = getIntent().getStringExtra("key");
-        if(key.equals(AuctionProcessActivity.AUCTION_PROCESS_NOTI))
-        {
-            Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
-            Intent auctionProcessIntent = new Intent(this, AuctionProcessActivity.class);
-            Intent[] intents = {homeIntent, auctionProcessIntent};
-            startActivities(intents);
-            finish();
+        if (!TextUtils.isEmpty(key)) {
+            if (key.equals(AuctionProcessActivity.AUCTION_PROCESS_NOTI)) {
+                Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
+                Intent auctionProcessIntent = new Intent(this, AuctionProcessActivity.class);
+                Intent[] intents = {homeIntent, auctionProcessIntent};
+                startActivities(intents);
+                finish();
+            }
         }
         Intent intent = new Intent(this, OwnerHomeActivity.class);
         startActivity(intent);
