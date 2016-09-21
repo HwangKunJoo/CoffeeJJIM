@@ -17,15 +17,15 @@ public class CafeReservationCheckDialogFragment extends DialogFragment{
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 //        builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Coffee JJIM");
-//        builder.setMessage("Dialog Message");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setMessage("예약 하시겠습니까?");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(getContext(), "OK click", Toast.LENGTH_SHORT).show();
             }
         });
 
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Toast.makeText(getContext(), "No click", Toast.LENGTH_SHORT).show();

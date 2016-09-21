@@ -8,165 +8,170 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_image_Size"
-            android:layout_height="@dimen/fr_booking_info_image_Size"
-            android:id="@+id/bookinginfo_title_image1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/ic_clock_fr_booking_info"
-            android:layout_marginLeft="@dimen/fr_booking_info_image_marginLeft"
-            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop"
-            android:background="@color/coffeejjim_invisible"
-            android:scaleType="centerCrop" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="예약 정보"
-            android:textSize="@dimen/title_text_size"
-            android:id="@+id/proposal_title_text"
-            android:layout_alignTop="@+id/bookinginfo_title_image1"
-            android:layout_toRightOf="@+id/bookinginfo_title_image1"
-            android:layout_toEndOf="@+id/bookinginfo_title_image1"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/coffeejjim_brown" />
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="날짜"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_date_text"
-            android:layout_below="@+id/proposal_title_text"
-            android:layout_alignLeft="@+id/proposal_title_text"
-            android:layout_alignStart="@+id/proposal_title_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_image_Size"
+                android:layout_height="@dimen/fr_booking_info_image_Size"
+                android:id="@+id/bookinginfo_title_image1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_clock_fr_booking_info"
+                android:background="@color/coffeejjim_invisible"
+                android:scaleType="centerCrop" />
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="시간"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_time_text"
-            android:layout_below="@+id/proposal_date_text"
-            android:layout_alignLeft="@+id/proposal_date_text"
-            android:layout_alignStart="@+id/proposal_date_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="예약 정보"
+                android:textSize="@dimen/title_text_size"
+                android:id="@+id/proposal_title_text"
+                android:layout_alignTop="@+id/bookinginfo_title_image1"
+                android:layout_toRightOf="@+id/bookinginfo_title_image1"
+                android:layout_toEndOf="@+id/bookinginfo_title_image1"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/coffeejjim_brown" />
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="인원"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_person_text"
-            android:layout_below="@+id/proposal_time_text"
-            android:layout_alignLeft="@+id/proposal_time_text"
-            android:layout_alignStart="@+id/proposal_time_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="날짜"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_date_text"
+                android:layout_below="@+id/proposal_title_text"
+                android:layout_alignLeft="@+id/proposal_title_text"
+                android:layout_alignStart="@+id/proposal_title_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="옵션"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_endtime_text"
-            android:layout_below="@+id/proposal_person_text"
-            android:layout_alignLeft="@+id/proposal_person_text"
-            android:layout_alignStart="@+id/proposal_person_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="시간"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_time_text"
+                android:layout_below="@+id/proposal_date_text"
+                android:layout_alignLeft="@+id/proposal_date_text"
+                android:layout_alignStart="@+id/proposal_date_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="2016.08.08"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_date"
-            android:layout_alignTop="@+id/proposal_date_text"
-            android:layout_toRightOf="@+id/proposal_date_text"
-            android:layout_toEndOf="@+id/proposal_date_text"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="인원"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_person_text"
+                android:layout_below="@+id/proposal_time_text"
+                android:layout_alignLeft="@+id/proposal_time_text"
+                android:layout_alignStart="@+id/proposal_time_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="13:00"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/proposal_time"
-            android:layout_below="@+id/proposal_date"
-            android:layout_alignLeft="@+id/proposal_date"
-            android:layout_alignStart="@+id/proposal_date"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="옵션"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_endtime_text"
+                android:layout_below="@+id/proposal_person_text"
+                android:layout_alignLeft="@+id/proposal_person_text"
+                android:layout_alignStart="@+id/proposal_person_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="3"
-            android:id="@+id/proposal_person"
-            android:textSize="@dimen/subject_text_size"
-            android:layout_below="@+id/proposal_time"
-            android:layout_alignLeft="@+id/proposal_time"
-            android:layout_alignStart="@+id/proposal_time"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="2016.08.08"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_date"
+                android:layout_alignTop="@+id/proposal_date_text"
+                android:layout_toRightOf="@+id/proposal_date_text"
+                android:layout_toEndOf="@+id/proposal_date_text"
+                android:textColor="@color/coffeejjim_brown" />
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_option_image_Size"
-            android:layout_height="@dimen/fr_booking_info_option_image_Size"
-            android:id="@+id/bookinginfo_option_image"
-            android:src="@drawable/options_wifi_on_120"
-            android:layout_below="@+id/proposal_person"
-            android:layout_alignLeft="@+id/proposal_person"
-            android:layout_alignStart="@+id/proposal_person"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:background="@color/coffeejjim_invisible"
-            android:scaleType="centerCrop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="13:00"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_time"
+                android:layout_below="@+id/proposal_date"
+                android:layout_alignLeft="@+id/proposal_date"
+                android:layout_alignStart="@+id/proposal_date"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
+                android:textColor="@color/coffeejjim_brown" />
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_option_image_Size"
-            android:layout_height="@dimen/fr_booking_info_option_image_Size"
-            android:id="@+id/bookinginfo_option1_image"
-            android:src="@drawable/options_plag_on_120"
-            android:layout_alignTop="@+id/bookinginfo_option_image"
-            android:layout_toRightOf="@+id/bookinginfo_option_image"
-            android:layout_toEndOf="@+id/bookinginfo_option_image"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="5dp"
-            android:scaleType="centerCrop" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="3"
+                android:id="@+id/proposal_person"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_below="@+id/proposal_time"
+                android:layout_alignLeft="@+id/proposal_time"
+                android:layout_alignStart="@+id/proposal_time"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
+                android:textColor="@color/coffeejjim_brown" />
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_option_image_Size"
-            android:layout_height="@dimen/fr_booking_info_option_image_Size"
-            android:id="@+id/bookinginfo_option2_image"
-            android:layout_alignTop="@+id/bookinginfo_option1_image"
-            android:layout_toRightOf="@+id/bookinginfo_option1_image"
-            android:layout_toEndOf="@+id/bookinginfo_option1_image"
-            android:src="@drawable/options_parking_on_120"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="5dp"
-            android:scaleType="centerCrop" />
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_option_image_Size"
+                android:layout_height="@dimen/fr_booking_info_option_image_Size"
+                android:id="@+id/bookinginfo_option_image"
+                android:src="@drawable/options_wifi_on_120"
+                android:layout_below="@+id/proposal_person"
+                android:layout_alignLeft="@+id/proposal_person"
+                android:layout_alignStart="@+id/proposal_person"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
+                android:background="@color/coffeejjim_invisible"
+                android:scaleType="centerCrop" />
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_option_image_Size"
-            android:layout_height="@dimen/fr_booking_info_option_image_Size"
-            android:id="@+id/bookinginfo_option3_image"
-            android:layout_alignTop="@+id/bookinginfo_option2_image"
-            android:layout_toRightOf="@+id/bookinginfo_option2_image"
-            android:layout_toEndOf="@+id/bookinginfo_option2_image"
-            android:src="@drawable/options_wprkingtime_on_120"
-            android:background="@color/coffeejjim_invisible"
-            android:layout_marginLeft="5dp"
-            android:scaleType="centerCrop" />
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_option_image_Size"
+                android:layout_height="@dimen/fr_booking_info_option_image_Size"
+                android:id="@+id/bookinginfo_option1_image"
+                android:src="@drawable/options_plag_on_120"
+                android:layout_alignTop="@+id/bookinginfo_option_image"
+                android:layout_toRightOf="@+id/bookinginfo_option_image"
+                android:layout_toEndOf="@+id/bookinginfo_option_image"
+                android:background="@color/coffeejjim_invisible"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_option_image_Size"
+                android:layout_height="@dimen/fr_booking_info_option_image_Size"
+                android:id="@+id/bookinginfo_option2_image"
+                android:layout_alignTop="@+id/bookinginfo_option1_image"
+                android:layout_toRightOf="@+id/bookinginfo_option1_image"
+                android:layout_toEndOf="@+id/bookinginfo_option1_image"
+                android:src="@drawable/options_parking_on_120"
+                android:background="@color/coffeejjim_invisible"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_option_image_Size"
+                android:layout_height="@dimen/fr_booking_info_option_image_Size"
+                android:id="@+id/bookinginfo_option3_image"
+                android:layout_alignTop="@+id/bookinginfo_option2_image"
+                android:layout_toRightOf="@+id/bookinginfo_option2_image"
+                android:layout_toEndOf="@+id/bookinginfo_option2_image"
+                android:src="@drawable/options_wprkingtime_on_120"
+                android:background="@color/coffeejjim_invisible"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -185,105 +190,110 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="@dimen/fr_booking_info_image_Size"
-            android:layout_height="@dimen/fr_booking_info_image_Size"
-            android:id="@+id/bookinginfo_title_image2"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/ic_face_fr_booking_info"
-            android:layout_marginLeft="@dimen/fr_booking_info_image_marginLeft"
-            android:layout_marginTop="@dimen/fr_booking_info_image_marginTop"
-            android:background="@color/coffeejjim_invisible"
-            android:scaleType="centerCrop" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="예약자 정보"
-            android:textSize="@dimen/title_text_size"
-            android:id="@+id/proposal_price_text"
-            android:layout_alignTop="@+id/bookinginfo_title_image2"
-            android:layout_toRightOf="@+id/bookinginfo_title_image2"
-            android:layout_toEndOf="@+id/bookinginfo_title_image2"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/coffeejjim_brown" />
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="닉네임"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_id_text"
-            android:layout_below="@+id/proposal_price_text"
-            android:layout_alignLeft="@+id/proposal_price_text"
-            android:layout_alignStart="@+id/proposal_price_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
+            <ImageView
+                android:layout_width="@dimen/fr_booking_info_image_Size"
+                android:layout_height="@dimen/fr_booking_info_image_Size"
+                android:id="@+id/bookinginfo_title_image2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_face_fr_booking_info"
+                android:background="@color/coffeejjim_invisible"
+                android:scaleType="centerCrop" />
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="이름"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_name_text"
-            android:layout_below="@+id/bookinginfo_id_text"
-            android:layout_alignLeft="@+id/bookinginfo_id_text"
-            android:layout_alignStart="@+id/bookinginfo_id_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="예약자 정보"
+                android:textSize="@dimen/title_text_size"
+                android:id="@+id/proposal_price_text"
+                android:layout_alignTop="@+id/bookinginfo_title_image2"
+                android:layout_toRightOf="@+id/bookinginfo_title_image2"
+                android:layout_toEndOf="@+id/bookinginfo_title_image2"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/coffeejjim_brown" />
 
-        <TextView
-            android:layout_width="@dimen/fr_booking_info_text_view_Size"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="H.P"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_hp_text"
-            android:layout_below="@+id/bookinginfo_name_text"
-            android:layout_alignLeft="@+id/bookinginfo_name_text"
-            android:layout_alignStart="@+id/bookinginfo_name_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="닉네임"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_id_text"
+                android:layout_below="@+id/proposal_price_text"
+                android:layout_alignLeft="@+id/proposal_price_text"
+                android:layout_alignStart="@+id/proposal_price_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="UserA"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_id1_text"
-            android:layout_alignTop="@+id/bookinginfo_id_text"
-            android:layout_toRightOf="@+id/bookinginfo_id_text"
-            android:layout_toEndOf="@+id/bookinginfo_id_text"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="이름"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_name_text"
+                android:layout_below="@+id/bookinginfo_id_text"
+                android:layout_alignLeft="@+id/bookinginfo_id_text"
+                android:layout_alignStart="@+id/bookinginfo_id_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="aaaa"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_name1_text"
-            android:layout_below="@+id/bookinginfo_id1_text"
-            android:layout_alignLeft="@+id/bookinginfo_id1_text"
-            android:layout_alignStart="@+id/bookinginfo_id1_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="H.P"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_hp_text"
+                android:layout_below="@+id/bookinginfo_name_text"
+                android:layout_alignLeft="@+id/bookinginfo_name_text"
+                android:layout_alignStart="@+id/bookinginfo_name_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="010-1234-1234"
-            android:textSize="@dimen/subject_text_size"
-            android:id="@+id/bookinginfo_hp1_text"
-            android:layout_below="@+id/bookinginfo_name1_text"
-            android:layout_alignLeft="@+id/bookinginfo_name1_text"
-            android:layout_alignStart="@+id/bookinginfo_name1_text"
-            android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
-            android:textColor="@color/coffeejjim_brown" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="UserA"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_id1_text"
+                android:layout_alignTop="@+id/bookinginfo_id_text"
+                android:layout_toRightOf="@+id/bookinginfo_id_text"
+                android:layout_toEndOf="@+id/bookinginfo_id_text"
+                android:textColor="@color/coffeejjim_brown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="aaaa"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_name1_text"
+                android:layout_below="@+id/bookinginfo_id1_text"
+                android:layout_alignLeft="@+id/bookinginfo_id1_text"
+                android:layout_alignStart="@+id/bookinginfo_id1_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
+                android:textColor="@color/coffeejjim_brown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="010-1234-1234"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/bookinginfo_hp1_text"
+                android:layout_below="@+id/bookinginfo_name1_text"
+                android:layout_alignLeft="@+id/bookinginfo_name1_text"
+                android:layout_alignStart="@+id/bookinginfo_name1_text"
+                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
+                android:textColor="@color/coffeejjim_brown" />
+        </RelativeLayout>
 
     </RelativeLayout>
 

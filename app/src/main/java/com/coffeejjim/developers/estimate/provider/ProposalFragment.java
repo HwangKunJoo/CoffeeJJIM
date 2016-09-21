@@ -93,19 +93,19 @@ public class ProposalFragment extends Fragment {
 
     public void onAlertDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setIcon(android.R.drawable.ic_dialog_alert);
+//        builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Coffee JJIM");
-        builder.setMessage("견적 요청이 들어왔습니다. 확인하시겠습니까?");
+        builder.setMessage("입찰 하시겠습니까?");
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
                 //Toast.makeText(getActivity(), "확인", Toast.LENGTH_SHORT).show();
             }
         });
-        builder.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
-                //Toast.makeText(getActivity(), "닫기", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "취소", Toast.LENGTH_SHORT).show();
             }
         });
 
