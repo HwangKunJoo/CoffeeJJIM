@@ -151,16 +151,8 @@ public class OwnerHomeActivity extends AppCompatActivity {
     }
 
     public void moveAuctionProcessActivity() {
-        int intentType = getIntent().getIntExtra("NOTI1", 123);
-        if (intentType == 123) {
-            Intent intent = new Intent(this, AuctionProcessActivity.class);
-            startActivity(intent);
-        }else if(intentType == 1){
-            Intent mainIntent = new Intent(this, OwnerHomeActivity.class);
-            Intent auctionProcessIntent = new Intent(this, AuctionProcessActivity.class);
-            Intent[] intents = {mainIntent, auctionProcessIntent};
-            startActivities(intents);
-        }
+        Intent intent = new Intent(this, AuctionProcessActivity.class);
+        startActivity(intent);
     }
 
     private void setCustomActionbar() {

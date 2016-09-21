@@ -26,8 +26,10 @@ import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.owner.OwnerHomeActivity;
 import com.coffeejjim.developers.owner.auctionprocess.AuctionProcessActivity;
+import com.coffeejjim.developers.owner.auctionstatement.AuctionStatementActivity;
 import com.coffeejjim.developers.request.OwnerLoginRequest;
 import com.coffeejjim.developers.request.SessionCheckRequest;
+import com.coffeejjim.developers.reservation.CafeReservationListActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 
@@ -187,6 +189,12 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
                 Intent[] intents = {homeIntent, auctionProcessIntent};
                 startActivities(intents);
                 finish();
+            }else if(key.equals(AuctionStatementActivity.AUCTION_STATEMENT_NOTI)){
+                Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
+                Intent auctionStatementIntent = new Intent(this, AuctionStatementActivity.class);
+                Intent[] intents = {homeIntent, auctionStatementIntent};
+                startActivities(intents);
+                finish();
             }
         } else {
             Intent intent = new Intent(this, OwnerHomeActivity.class);
@@ -196,9 +204,21 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
     }
 
     public void moveHomeActivity() {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        finish();
+        String key = getIntent().getStringExtra("key");
+        if (!TextUtils.isEmpty(key)) {
+            if (key.equals(CafeReservationListActivity.AUCTION_FINISH_NOTI)
+                    || key.equals(CafeReservationListActivity.PROPOSAL_NOTI)) {
+                Intent homeIntent = new Intent(this, HomeActivity.class);
+                Intent cafeReservationIntent = new Intent(this, CafeReservationListActivity.class);
+                Intent[] intents = {homeIntent, cafeReservationIntent};
+                startActivities(intents);
+                finish();
+            }
+        } else {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void moveLoginActivity() {

@@ -16,6 +16,8 @@ public class CafeReservationListActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    public static final String AUCTION_FINISH_NOTI = "2";
+    public static final String PROPOSAL_NOTI = "3";
     boolean isChecked = false;
 
 

@@ -15,6 +15,8 @@ public class AuctionStatementActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    public static final String AUCTION_STATEMENT_NOTI = "4";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
