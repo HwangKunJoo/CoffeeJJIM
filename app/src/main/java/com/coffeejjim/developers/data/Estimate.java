@@ -8,7 +8,7 @@ public class Estimate implements java.io.Serializable {
     private String address;
     private String nickname;
     private int people;
-    private int bid_price;
+    private int bidPrice;
     private String auctionStartTime;
     private String deadlineTime;
     private int wifi;
@@ -101,12 +101,12 @@ public class Estimate implements java.io.Serializable {
         this.socket = socket;
     }
 
-    public int getBid_price() {
-        return bid_price;
+    public int getBidPrice() {
+        return bidPrice;
     }
 
-    public void setBid_price(int bid_price) {
-        this.bid_price = bid_price;
+    public void setBidPrice(int bidPrice) {
+        this.bidPrice = bidPrice;
     }
 
     public int getPeople() {

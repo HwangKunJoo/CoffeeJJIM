@@ -63,7 +63,7 @@ public class BookingInfoFragment extends Fragment {
         dateView.setText(estimate.getReservationTime().toString().substring(0,10));
         timeView.setText(estimate.getReservationTime().toString().substring(12,19));
         nicknameView.setText(estimate.getNickname());
-        priceView.setText(""+estimate.getBid_price());
+        priceView.setText(""+estimate.getBidPrice());
         return view;
     }
 
