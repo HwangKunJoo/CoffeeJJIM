@@ -21,6 +21,7 @@ import com.coffeejjim.developers.extrafunctions.notification.NotificationActivit
 import com.coffeejjim.developers.extrafunctions.settings.SettingsActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.manager.PropertyManager;
 import com.coffeejjim.developers.request.AuctionRangeRequest;
 import com.coffeejjim.developers.request.OwnerLogoutRequest;
 import com.kakao.usermgmt.UserManagement;
@@ -120,6 +121,7 @@ public class CustomerExtraFunctionsFragment extends Fragment {
                         NetworkManager.getInstance().getNetworkData(OLRequest, new NetworkManager.OnResultListener<NetworkResult<String>>() {
                             @Override
                             public void onSuccess(NetworkRequest<NetworkResult<String>> request, NetworkResult<String> result) {
+                                PropertyManager.getInstance().setKeyPhonenumber("");
                                 Intent loginIntent = new Intent(getContext(), CoffeeJJIMSplashActivity.class);
                                 loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(loginIntent);

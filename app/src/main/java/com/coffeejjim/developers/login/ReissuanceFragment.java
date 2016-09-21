@@ -43,26 +43,31 @@ public class ReissuanceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_reissuance, container, false);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
         setCustomActionbar();
         setHasOptionsMenu(true);
         return view;
     }
 
     @OnClick(R.id.btn_find_owner_info)
-    public void onFindInfo(){
+    public void onFindInfo() {
         String ownerEmail = ownerEmailView.getText().toString();
-        OwnerInfoFindRequest ownerInfoFindRequest = new OwnerInfoFindRequest(getContext(),ownerEmail);
+        OwnerInfoFindRequest ownerInfoFindRequest = new OwnerInfoFindRequest(getContext(), ownerEmail);
         NetworkManager.getInstance().getNetworkData(ownerInfoFindRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
-                Toast.makeText(getContext(),"이메일이 전송되었습니다.",Toast.LENGTH_SHORT).show();
-                getActivity().getSupportFragmentManager().popBackStack();
+                if (result.getCode() == 0) {
+                    Toast.makeText(getContext(), "이메일이 전송이 실패하였습니다.\n 메일주소를 확인해 주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "이메일이 전송되었습니다.", Toast.LENGTH_SHORT).show();
+                    getActivity().getSupportFragmentManager().popBackStack();
+                }
+
             }
 
             @Override
             public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(),"이메일이 전송이 실패하였습니다.\n 메일주소를 확인해 주세요.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "이메일이 전송이 실패하였습니다.\n 메일주소를 확인해 주세요.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -77,7 +82,7 @@ public class ReissuanceFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == android.R.id.home){
+        if (id == android.R.id.home) {
             getActivity().onBackPressed();
         }
         return super.onOptionsItemSelected(item);

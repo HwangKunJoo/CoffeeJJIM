@@ -24,7 +24,7 @@ public class PropertyManager {
     private static final String KEY_OWNER_ID = "ownerId";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_REGISTRATION_ID = "fcmToken";
-    private static final String KEY_FACEBOOK_ID = "facebookid";
+    private static final String KEY_PHONENUMBER = "phonenumber";
 
     private PropertyManager() {
         Context context = CoffeeJJIMApplication.getCoffeeJJIMApplicationContext();
@@ -59,12 +59,11 @@ public class PropertyManager {
         return mPrefs.getString(KEY_REGISTRATION_ID, "");
     }
 
-    public void setFacebookId(String facebookid) {
-        mEditor.putString(KEY_FACEBOOK_ID, facebookid);
+    public void setKeyPhonenumber(String phonenumber){
+        mEditor.putString(KEY_PHONENUMBER, phonenumber);
         mEditor.commit();
     }
-
-    public String getFacebookId() {
-        return mPrefs.getString(KEY_FACEBOOK_ID, "");
+    public String getKeyPhonenumber(){
+        return mPrefs.getString(KEY_PHONENUMBER,"");
     }
 }

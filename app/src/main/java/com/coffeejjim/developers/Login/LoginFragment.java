@@ -3,7 +3,7 @@ package com.coffeejjim.developers.login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +45,6 @@ public class LoginFragment extends Fragment {
     View visibleLayout;
     @BindView(R.id.login_kakao_btn)
     LoginButton kakaoLogin;
-
 
 
     SessionCallback callback;
@@ -113,27 +112,31 @@ public class LoginFragment extends Fragment {
                 public void onSuccess(UserProfile userProfile) {
                     //로그인에 성공하면 로그인한 사용자의 일련번호, 닉네임, 이미지url등을 리턴합니다.
                     //사용자 ID는 보안상의 문제로 제공하지 않고 일련번호는 제공합니다.
-                    Log.e("UserProfile", userProfile.toString());
-                    Toast.makeText(getContext(), "이리 들어오나 보자2", Toast.LENGTH_SHORT).show();
-                    final String access_token = Session.getCurrentSession().getAccessToken();
-                    String fcmToken = PropertyManager.getInstance().getRegistrationId();
-                    KakaoLoginRequest KLRequest =
-                            new KakaoLoginRequest(CoffeeJJIMApplication.getCoffeeJJIMApplicationContext(),
-                                    access_token, fcmToken);
-                    NetworkManager.getInstance().getNetworkData(KLRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
-                        @Override
-                        public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {
-                            Toast.makeText(getContext(), "access token 전달 성공", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getActivity(), HomeActivity.class);
-                            startActivity(intent);
-                            getActivity().finish();
-                        }
+                    if (TextUtils.isEmpty(PropertyManager.getInstance().getKeyPhonenumber())) {
+                        PhoneInfoDialogFragment phoneInfoDialogFragment
+                                = new PhoneInfoDialogFragment();
+                        phoneInfoDialogFragment.show(getFragmentManager(), "phone");
+                    } else {
+                        final String access_token = Session.getCurrentSession().getAccessToken();
+                        String fcmToken = PropertyManager.getInstance().getRegistrationId();
+                        KakaoLoginRequest KLRequest =
+                                new KakaoLoginRequest(CoffeeJJIMApplication.getCoffeeJJIMApplicationContext(),
+                                        access_token, fcmToken);
+                        NetworkManager.getInstance().getNetworkData(KLRequest, new NetworkManager.OnResultListener<NetworkResult<Object>>() {
+                            @Override
+                            public void onSuccess(NetworkRequest<NetworkResult<Object>> request, NetworkResult<Object> result) {
+                                Toast.makeText(getContext(), "access token 전달 성공", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                                getActivity().startActivity(intent);
+                                getActivity().finish();
+                            }
 
-                        @Override
-                        public void onFail(NetworkRequest<NetworkResult<Object>> request, int errorCode, String errorMessage, Throwable e) {
-                            Toast.makeText(getContext(), "access token 전달 실패", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                            @Override
+                            public void onFail(NetworkRequest<NetworkResult<Object>> request, int errorCode, String errorMessage, Throwable e) {
+                                Toast.makeText(getContext(), "access token 전달 실패", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
                 }
             });
 

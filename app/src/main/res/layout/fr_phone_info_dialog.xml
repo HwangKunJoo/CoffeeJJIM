@@ -38,9 +38,9 @@
         android:layout_marginTop="5dp" />
 
     <Button
-        android:text="Canlce"
+        android:text="취소"
         android:layout_height="wrap_content"
-        android:id="@+id/fr_phone_info_cancle_brn"
+        android:id="@+id/fr_phone_info_cancel_btn"
         android:background="@color/coffeejjim_invisible"
         android:layout_below="@+id/fr_phone_info_edit"
         android:layout_alignParentLeft="true"
@@ -49,15 +49,15 @@
         android:layout_width="140dp" />
 
     <Button
-        android:text="OK"
+        android:text="확인"
         android:layout_height="wrap_content"
         android:id="@+id/fr_phone_info_send_btn"
         android:background="@color/coffeejjim_invisible"
         android:textColor="@color/coffeejjim_red"
-        android:layout_alignBaseline="@+id/fr_phone_info_cancle_brn"
-        android:layout_alignBottom="@+id/fr_phone_info_cancle_brn"
-        android:layout_toRightOf="@+id/fr_phone_info_cancle_brn"
-        android:layout_toEndOf="@+id/fr_phone_info_cancle_brn"
+        android:layout_alignBaseline="@+id/fr_phone_info_cancel_btn"
+        android:layout_alignBottom="@+id/fr_phone_info_cancel_btn"
+        android:layout_toRightOf="@+id/fr_phone_info_cancel_btn"
+        android:layout_toEndOf="@+id/fr_phone_info_cancel_btn"
         android:layout_width="140dp"
         android:layout_marginLeft="23dp" />
 </RelativeLayout>
