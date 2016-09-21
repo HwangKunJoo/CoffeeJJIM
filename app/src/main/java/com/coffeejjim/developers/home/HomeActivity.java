@@ -189,9 +189,6 @@ public class HomeActivity extends AppCompatActivity {
         moveEstimateSheetActivity();
     }
 
-    public void moveCafeReservationListActivity(){
-
-    }
 
     public void moveEstimateSheetActivity() {
         Intent intent = new Intent(this, EstimateSheetActivity.class);

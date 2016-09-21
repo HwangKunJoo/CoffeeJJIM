@@ -57,7 +57,9 @@ public class LikeListFragment extends Fragment {
         mAdapter.setOnAdapterItemClickListener(new LikeListRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Cafe cafe, int position) {
-                moveCafeDetailActivity();
+                Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
+                intent.putExtra("cafeId", cafe.getCafeId());
+                startActivity(intent);
             }
 
             @Override
@@ -74,12 +76,6 @@ public class LikeListFragment extends Fragment {
 
 
         return view;
-    }
-
-
-    public void moveCafeDetailActivity() {
-        Intent intent = new Intent(getActivity(), CafeDetailActivity.class);
-        startActivity(intent);
     }
 
     @Override
