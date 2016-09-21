@@ -18,33 +18,37 @@ import okhttp3.RequestBody;
 /**
  * Created by Tacademy on 2016-09-07.
  */
-public class OwnerUploadRequest extends AbstractRequest<NetworkResult<ContentData>> {
+public class CafeImagesUploadRequest extends AbstractRequest<NetworkResult<ContentData>> {
 
-    MediaType jpeg = MediaType.parse("photo/jpeg");
+    MediaType jpeg = MediaType.parse("image/jpeg");
     Request request;
+    private static final String PHOTO = "photo";
+    int photoNum;
 
-    public OwnerUploadRequest(Context context, String content, File file) {
+    public CafeImagesUploadRequest(Context context, File file, int photoNum) {
+        this.photoNum = photoNum;
         HttpUrl url = getBaseUrlBuilder()
                 .addPathSegment("images")
                 .build();
 
         MultipartBody.Builder builder = new MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("photo", content);
+                .setType(MultipartBody.FORM);
         if (file != null) {
-            builder.addFormDataPart("myFile", file.getName(), RequestBody.create(jpeg, file));
+            builder.addFormDataPart(PHOTO+photoNum, file.getName(),
+                    RequestBody.create(jpeg, file));
         }
         RequestBody body = builder.build();
         request = new Request.Builder()
                 .url(url)
                 .put(body)
-                .tag(content)
+                .tag(context)
                 .build();
     }
 
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<ContentData>>(){}.getType();
+        return new TypeToken<NetworkResult<ContentData>>() {
+        }.getType();
     }
 
     @Override

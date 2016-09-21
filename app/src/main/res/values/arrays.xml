@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="emailArray">
-        <item>[email]</item>
-        <item>naver.com</item>
-        <item>gmail.com</item>
-        <item>daum.com</item>
-        <item>hotmail.com</item>
-    </string-array>
-
-    <string-array name="auction_time_Array">
-        <item>[선택해 주세요.]</item>
-        <item>10분</item>
-        <item>20분</item>
-        <item>30분</item>
-    </string-array>
-
-    <string-array name="local_distance_Array">
-        <item>[선택]</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="working_time_Array">
-        <item>08:00</item>
-        <item>09:00</item>
-        <item>10:00</item>
-        <item>11:00</item>
-        <item>12:00</item>
-        <item>13:00</item>
-        <item>14:00</item>
-        <item>15:00</item>
-        <item>16:00</item>
-        <item>17:00</item>
-        <item>18:00</item>
-        <item>19:00</item>
-        <item>20:00</item>
-        <item>21:00</item>
-        <item>22:00</item>
-        <item>23:00</item>
-        <item>24:00</item>
-    </string-array>
-
     <string-array name="select_image">
         <item>갤러리</item>
         <item>카메라</item>
-        <item>메인으로 선택</item>
     </string-array>
-
 </resources>

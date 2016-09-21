@@ -92,13 +92,13 @@ public class OwnerHomeFragment extends Fragment {
         Glide.with(cafeMainImageView.getContext())
                 .load(cafeInfo.getImages().get(0).getImageUrl()).into(cafeMainImageView);
         Glide.with(firstPreviewImageView.getContext())
-                .load(cafeInfo.getImages().get(0).getImageUrl()).into(firstPreviewImageView);
+                .load(cafeInfo.getImages().get(1).getImageUrl()).into(firstPreviewImageView);
         Glide.with(secondPreviewImageView.getContext())
-                .load(cafeInfo.getImages().get(1).getImageUrl()).into(secondPreviewImageView);
+                .load(cafeInfo.getImages().get(2).getImageUrl()).into(secondPreviewImageView);
         Glide.with(thirdPreviewImageView.getContext())
-                .load(cafeInfo.getImages().get(2).getImageUrl()).into(thirdPreviewImageView);
+                .load(cafeInfo.getImages().get(3).getImageUrl()).into(thirdPreviewImageView);
         Glide.with(fourthPreviewImageView.getContext())
-                .load(cafeInfo.getImages().get(3).getImageUrl()).into(fourthPreviewImageView);
+                .load(cafeInfo.getImages().get(4).getImageUrl()).into(fourthPreviewImageView);
         if (cafeInfo.getCafeInfo().getWifi() == 1) {
             optionWifiImageView.setVisibility(View.VISIBLE);
         }
