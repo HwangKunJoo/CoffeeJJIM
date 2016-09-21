@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="견적서"
-        android:id="@+id/proposal_title_text"
+        android:id="@+id/proposal_title_plain_text"
         android:textSize="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -21,46 +21,46 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:text="날짜"
-        android:id="@+id/proposal_date_text"
+        android:id="@+id/proposal_date_plain_text"
         android:textSize="20dp"
-        android:layout_below="@+id/proposal_title_text"
-        android:layout_alignLeft="@+id/proposal_title_text"
-        android:layout_alignStart="@+id/proposal_title_text"
+        android:layout_below="@+id/proposal_title_plain_text"
+        android:layout_alignLeft="@+id/proposal_title_plain_text"
+        android:layout_alignStart="@+id/proposal_title_plain_text"
         android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="시간"
-        android:id="@+id/proposal_time_text"
+        android:id="@+id/proposal_time_plain_text"
         android:textSize="20dp"
-        android:layout_below="@+id/proposal_date_text"
-        android:layout_alignLeft="@+id/proposal_date_text"
-        android:layout_alignStart="@+id/proposal_date_text"
-        android:layout_alignRight="@+id/proposal_date_text"
-        android:layout_alignEnd="@+id/proposal_date_text"
+        android:layout_below="@+id/proposal_date_plain_text"
+        android:layout_alignLeft="@+id/proposal_date_plain_text"
+        android:layout_alignStart="@+id/proposal_date_plain_text"
+        android:layout_alignRight="@+id/proposal_date_plain_text"
+        android:layout_alignEnd="@+id/proposal_date_plain_text"
         android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="인원"
-        android:id="@+id/proposal_person_text"
+        android:id="@+id/proposal_person_plain_text"
         android:textSize="20dp"
-        android:layout_below="@+id/proposal_time_text"
-        android:layout_alignLeft="@+id/proposal_time_text"
-        android:layout_alignStart="@+id/proposal_time_text"
+        android:layout_below="@+id/proposal_time_plain_text"
+        android:layout_alignLeft="@+id/proposal_time_plain_text"
+        android:layout_alignStart="@+id/proposal_time_plain_text"
         android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="마감"
-        android:id="@+id/proposal_endtime_text"
+        android:id="@+id/proposal_endtime_plain_text"
         android:textSize="20dp"
-        android:layout_below="@+id/proposal_person_text"
-        android:layout_alignLeft="@+id/proposal_person_text"
-        android:layout_alignStart="@+id/proposal_person_text"
+        android:layout_below="@+id/proposal_person_plain_text"
+        android:layout_alignLeft="@+id/proposal_person_plain_text"
+        android:layout_alignStart="@+id/proposal_person_plain_text"
         android:layout_marginTop="30dp" />
 
     <TextView
@@ -70,9 +70,9 @@
         android:id="@+id/proposal_date"
         android:textSize="20dp"
         android:textColor="@color/coffeejjim_brown"
-        android:layout_alignTop="@+id/proposal_date_text"
-        android:layout_toRightOf="@+id/proposal_date_text"
-        android:layout_toEndOf="@+id/proposal_date_text" />
+        android:layout_alignTop="@+id/proposal_date_plain_text"
+        android:layout_toRightOf="@+id/proposal_date_plain_text"
+        android:layout_toEndOf="@+id/proposal_date_plain_text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -115,10 +115,10 @@
         android:layout_height="wrap_content"
         android:text="입찰 가격"
         android:textSize="20dp"
-        android:id="@+id/proposal_price_text"
-        android:layout_below="@+id/proposal_endtime_text"
-        android:layout_alignLeft="@+id/proposal_endtime_text"
-        android:layout_alignStart="@+id/proposal_endtime_text"
+        android:id="@+id/proposal_nickname_plain_text"
+        android:layout_below="@+id/proposal_endtime_plain_text"
+        android:layout_alignLeft="@+id/proposal_endtime_plain_text"
+        android:layout_alignStart="@+id/proposal_endtime_plain_text"
         android:layout_marginTop="90dp"
         android:textColor="@color/coffeejjim_brown" />
 
@@ -126,9 +126,9 @@
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:id="@+id/proposal_price_edit"
-        android:layout_below="@+id/proposal_price_text"
-        android:layout_alignLeft="@+id/proposal_price_text"
-        android:layout_alignStart="@+id/proposal_price_text"
+        android:layout_below="@+id/proposal_nickname_plain_text"
+        android:layout_alignLeft="@+id/proposal_nickname_plain_text"
+        android:layout_alignStart="@+id/proposal_nickname_plain_text"
         android:textSize="20dp"
         android:singleLine="true"
         android:background="@drawable/xml_edit_text_box_line" />

@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -210,9 +211,12 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     }
 
     public void onDialogFragmentClick() {
-        EstimateSheetDialogFragment f = EstimateSheetDialogFragment.newInstance(ESTIMATE_CALL);
-        f.show(getFragmentManager(), "dialog");
+//        EstimateSheetDialogFragment f = EstimateSheetDialogFragment.newInstance(ESTIMATE_CALL);
+//        f.show(getFragmentManager(), "dialog");
 
+        FragmentManager f = getActivity().getSupportFragmentManager();
+        EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
+        estimateSheetDialogFragment.show(f, "dialog");
     }
 
 }
