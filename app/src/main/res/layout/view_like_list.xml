@@ -20,14 +20,17 @@
             android:layout_marginLeft="@dimen/layout_side_margin" />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:id="@+id/btn_dislike"
             android:src="@drawable/ic_reservationfail"
             android:visibility="gone"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:background="@color/coffeejjim_invisible"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="16dp" />
 
         <LinearLayout
             android:orientation="vertical"
