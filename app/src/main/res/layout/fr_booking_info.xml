@@ -236,19 +236,6 @@
                 android:id="@+id/imageView" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="10000원"
-                android:textSize="@dimen/subject_text_size"
-                android:id="@+id/proposal_price"
-                android:textColor="@color/coffeejjim_red"
-                android:layout_alignBaseline="@+id/proposal_price_plain_text"
-                android:layout_alignBottom="@+id/proposal_price_plain_text"
-                android:layout_toRightOf="@+id/proposal_price_plain_text"
-                android:layout_toEndOf="@+id/proposal_price_plain_text" />
-
-            <TextView
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="나의 입찰 가격"
@@ -260,6 +247,18 @@
                 android:layout_toEndOf="@+id/imageView"
                 android:layout_width="80dp"
                 android:layout_marginLeft="43dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:hint="10000원"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_price"
+                android:textColor="@color/coffeejjim_red"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/proposal_price_plain_text"
+                android:layout_toEndOf="@+id/proposal_price_plain_text" />
         </RelativeLayout>
 
     </RelativeLayout>

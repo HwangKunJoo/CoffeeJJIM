@@ -21,15 +21,15 @@ import butterknife.OnClick;
  */
 public class BookingInfoFragment extends Fragment {
 
-    @BindView(R.id.bookinginfo_hp1_text)
+    @BindView(R.id.proposal_phone)
     TextView phoneNumberView;
     @BindView(R.id.proposal_date)
     TextView dateView;
     @BindView(R.id.proposal_time)
     TextView timeView;
-    @BindView(R.id.bookinginfo_user_nickname)
+    @BindView(R.id.proposal_nickname)
     TextView nicknameView;
-    @BindView(R.id.bookinginfo_price_text)
+    @BindView(R.id.proposal_price)
     TextView priceView;
 
     public BookingInfoFragment() {
