@@ -17,7 +17,8 @@
         android:gravity="center"
         android:layout_marginTop="@dimen/fr_estimate_sheet_dialog_plain_text_marginTop"
         android:layout_alignRight="@+id/fr_estimate_sheet_dialog_present_btn"
-        android:layout_alignEnd="@+id/fr_estimate_sheet_dialog_present_btn" />
+        android:layout_alignEnd="@+id/fr_estimate_sheet_dialog_present_btn"
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="@dimen/fr_estimate_sheet_dialog_plain_text_Size"
@@ -30,7 +31,8 @@
         android:textSize="@dimen/subject_text_size"
         android:gravity="center"
         android:layout_alignRight="@+id/fr_estimate_sheet_dialog_plain_text"
-        android:layout_alignEnd="@+id/fr_estimate_sheet_dialog_plain_text" />
+        android:layout_alignEnd="@+id/fr_estimate_sheet_dialog_plain_text"
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,7 +116,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="@dimen/fr_estimate_sheet_dialog_btn_marginTop"
-        android:background="@color/coffeejjim_invisible" />
+        android:background="@color/coffeejjim_invisible"
+        android:visibility="gone"/>
 
     <Button
         android:layout_width="@dimen/fr_estimate_sheet_dialog_btn_Size"
@@ -127,7 +130,8 @@
         android:textColor="@color/coffeejjim_red"
         android:background="@color/coffeejjim_invisible"
         android:elevation="0dp"
-        android:layout_marginLeft="23dp" />
+        android:layout_marginLeft="23dp"
+        android:visibility="gone"/>
 
     <TextView
         android:layout_width="wrap_content"

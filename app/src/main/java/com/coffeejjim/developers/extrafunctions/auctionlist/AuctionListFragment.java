@@ -36,6 +36,8 @@ public class AuctionListFragment extends Fragment {
 
     private Button estimateDialog;
 
+    public static final int AUCTION_LIST_CALL = 110;
+
     public AuctionListFragment() {
         // Required empty public constructor
     }
@@ -62,7 +64,8 @@ public class AuctionListFragment extends Fragment {
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
 //                getFragmentManager().beginTransaction().replace(R.id.container, new EstimateSheetDialogFragment())
 //                        .addToBackStack(null).commit();
-                EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
+                EstimateSheetDialogFragment estimateSheetDialogFragment
+                        = EstimateSheetDialogFragment.newInstance(AUCTION_LIST_CALL);
                 estimateSheetDialogFragment.show(getFragmentManager(), "Dialog");
             }
         });

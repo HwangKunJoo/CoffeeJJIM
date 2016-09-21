@@ -65,6 +65,8 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     String longitude;
     String latitude;
 
+    public static final int ESTIMATE_CALL = 10;
+
     public EstimateSheetFragment() {
         // Required empty public constructor
     }
@@ -208,7 +210,7 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     }
 
     public void onDialogFragmentClick() {
-        EstimateSheetDialogFragment f = new EstimateSheetDialogFragment();
+        EstimateSheetDialogFragment f = EstimateSheetDialogFragment.newInstance(ESTIMATE_CALL);
         f.show(getFragmentManager(), "dialog");
 
     }
