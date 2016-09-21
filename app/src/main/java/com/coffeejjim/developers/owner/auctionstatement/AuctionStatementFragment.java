@@ -58,6 +58,7 @@ public class AuctionStatementFragment extends Fragment {
             @Override
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
                 Intent intent = new Intent(getActivity(), BookingInfoActivity.class);
+                intent.putExtra("estimate",estimate);
                 startActivity(intent);
             }
         });

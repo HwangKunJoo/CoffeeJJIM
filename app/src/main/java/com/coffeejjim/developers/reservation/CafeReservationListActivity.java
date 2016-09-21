@@ -7,6 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Proposal;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.CafeProposalListRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +25,6 @@ public class CafeReservationListActivity extends AppCompatActivity {
 
     public static final String AUCTION_FINISH_NOTI = "2";
     public static final String PROPOSAL_NOTI = "3";
-    boolean isChecked = false;
 
 
     @Override
@@ -29,14 +35,28 @@ public class CafeReservationListActivity extends AppCompatActivity {
         setCustomActionbar();
 
         if (savedInstanceState == null) {
-            if(!isChecked) {
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container, new CafeReservationListFragment())
-                        .commit();
-            }else // 입찰카페가 없으면 빈 화면 표시
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.container, new CafeReservationListEmptyFragment())
-                        .commit();
+            CafeProposalListRequest cafeProposalListRequest=
+                    new CafeProposalListRequest(this,"1","10");
+            NetworkManager.getInstance().getNetworkData(cafeProposalListRequest, new NetworkManager.OnResultListener<NetworkResult<List<Proposal>>>() {
+                @Override
+                public void onSuccess(NetworkRequest<NetworkResult<List<Proposal>>> request, NetworkResult<List<Proposal>> result) {
+                    List<Proposal> proposals = result.getResult();
+                    if(proposals.size()==0){
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new CafeReservationListEmptyFragment())
+                                .commit();
+                    }else{
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new CafeReservationListFragment())
+                                .commit();
+                    }
+                }
+                @Override
+                public void onFail(NetworkRequest<NetworkResult<List<Proposal>>> request, int errorCode, String errorMessage, Throwable e) {
+
+                }
+            });
+
         }
     }
 

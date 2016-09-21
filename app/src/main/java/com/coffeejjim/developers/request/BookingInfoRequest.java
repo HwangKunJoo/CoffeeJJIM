@@ -2,8 +2,8 @@ package com.coffeejjim.developers.request;
 
 import android.content.Context;
 
+import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.data.Proposal;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -15,7 +15,7 @@ import okhttp3.Request;
  * Created by Tacademy on 2016-09-21.
  */
 
-public class BookingInfoRequest extends AbstractRequest<NetworkResult<Proposal>> {
+public class BookingInfoRequest extends AbstractRequest<NetworkResult<Estimate>> {
 
     Request request;
 
@@ -35,7 +35,7 @@ public class BookingInfoRequest extends AbstractRequest<NetworkResult<Proposal>>
 
     @Override
     protected Type getType() {
-        return new TypeToken<NetworkResult<Proposal>>() {
+        return new TypeToken<NetworkResult<Estimate>>() {
         }.getType();
     }
 

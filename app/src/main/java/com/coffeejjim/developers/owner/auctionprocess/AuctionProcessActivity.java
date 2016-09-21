@@ -6,6 +6,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.AuctionProcessRequest;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,10 +31,27 @@ public class AuctionProcessActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setCustomActionbar();
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new AuctionProcessFragment())
-                    .commit();
-            //데이터 없을 때 emptyAuctionProcessFragment
+            AuctionProcessRequest auctionProcessRequest = new AuctionProcessRequest(this,"1","10");
+            NetworkManager.getInstance().getNetworkData(auctionProcessRequest, new NetworkManager.OnResultListener<NetworkResult<List<Estimate>>>() {
+                @Override
+                public void onSuccess(NetworkRequest<NetworkResult<List<Estimate>>> request, NetworkResult<List<Estimate>> result) {
+                    List<Estimate> estimates = result.getResult();
+                    if(estimates.size()==0){
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new AuctionProcessEmptyFragment())
+                                .commit();
+                    }else{
+                        getSupportFragmentManager().beginTransaction()
+                                .add(R.id.container, new AuctionProcessFragment())
+                                .commit();
+                    }
+                }
+
+                @Override
+                public void onFail(NetworkRequest<NetworkResult<List<Estimate>>> request, int errorCode, String errorMessage, Throwable e) {
+
+                }
+            });
         }
     }
     private void setCustomActionbar() {

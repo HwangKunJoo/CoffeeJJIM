@@ -50,20 +50,20 @@ public class UserVisitCountFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         userVisitCountRecyclerView.setLayoutManager(manager);
 
-        initData();
+        //initData();
         return view;
     }
 
-    public void initData() {
-
-        for (int i = 0; i < 10; i++) {
-            Estimate e = new Estimate();
-            e.setBid_price("12000원");
-            e.setPeople(i);
-            e.setReservationDate("2016. 08. 29");
-            e.setReservationTime("11 : " + i);
-            mAdapter.add(e);
-        }
-    }
+//    public void initData() {
+//
+//        for (int i = 0; i < 10; i++) {
+//            Estimate e = new Estimate();
+//            e.setBid_price("12000원");
+//            e.setPeople(i);
+//            e.setReservationDate("2016. 08. 29");
+//            e.setReservationTime("11 : " + i);
+//            mAdapter.add(e);
+//        }
+//    }
 }
 
