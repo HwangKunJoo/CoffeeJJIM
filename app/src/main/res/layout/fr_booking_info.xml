@@ -262,7 +262,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="UserA"
                 android:textSize="@dimen/subject_text_size"
-                android:id="@+id/bookinginfo_id1_text"
+                android:id="@+id/bookinginfo_user_nickname"
                 android:layout_alignTop="@+id/bookinginfo_id_text"
                 android:layout_toRightOf="@+id/bookinginfo_id_text"
                 android:layout_toEndOf="@+id/bookinginfo_id_text"
@@ -274,10 +274,10 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="aaaa"
                 android:textSize="@dimen/subject_text_size"
-                android:id="@+id/bookinginfo_name1_text"
-                android:layout_below="@+id/bookinginfo_id1_text"
-                android:layout_alignLeft="@+id/bookinginfo_id1_text"
-                android:layout_alignStart="@+id/bookinginfo_id1_text"
+                android:id="@+id/bookinginfo_price_text"
+                android:layout_below="@+id/bookinginfo_user_nickname"
+                android:layout_alignLeft="@+id/bookinginfo_user_nickname"
+                android:layout_alignStart="@+id/bookinginfo_user_nickname"
                 android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
                 android:textColor="@color/coffeejjim_brown" />
 
@@ -288,9 +288,9 @@
                 android:text="010-1234-1234"
                 android:textSize="@dimen/subject_text_size"
                 android:id="@+id/bookinginfo_hp1_text"
-                android:layout_below="@+id/bookinginfo_name1_text"
-                android:layout_alignLeft="@+id/bookinginfo_name1_text"
-                android:layout_alignStart="@+id/bookinginfo_name1_text"
+                android:layout_below="@+id/bookinginfo_price_text"
+                android:layout_alignLeft="@+id/bookinginfo_price_text"
+                android:layout_alignStart="@+id/bookinginfo_price_text"
                 android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
                 android:textColor="@color/coffeejjim_brown" />
         </RelativeLayout>
