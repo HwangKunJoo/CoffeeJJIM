@@ -71,7 +71,7 @@
         android:inputType="textEmailAddress" />
 
     <Button
-        android:id="@+id/btn_back_login_fragment"
+        android:id="@+id/btn_find_owner_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

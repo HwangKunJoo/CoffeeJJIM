@@ -9,8 +9,15 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.NetworkResult;
+import com.coffeejjim.developers.data.Owner;
+import com.coffeejjim.developers.manager.NetworkManager;
+import com.coffeejjim.developers.manager.NetworkRequest;
+import com.coffeejjim.developers.request.OwnerInfoFindRequest;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +31,8 @@ public class ReissuanceFragment extends Fragment {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.fr_reissuance_email_edit)
+    EditText ownerEmailView;
 
     public ReissuanceFragment() {
         // Required empty public constructor
@@ -40,13 +49,22 @@ public class ReissuanceFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.btn_back_login_fragment)
+    @OnClick(R.id.btn_find_owner_info)
     public void onFindInfo(){
-        changeLoginFragment();
-    }
+        String ownerEmail = ownerEmailView.getText().toString();
+        OwnerInfoFindRequest ownerInfoFindRequest = new OwnerInfoFindRequest(getContext(),ownerEmail);
+        NetworkManager.getInstance().getNetworkData(ownerInfoFindRequest, new NetworkManager.OnResultListener<NetworkResult<Owner>>() {
+            @Override
+            public void onSuccess(NetworkRequest<NetworkResult<Owner>> request, NetworkResult<Owner> result) {
+                Toast.makeText(getContext(),"이메일이 전송되었습니다.",Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
 
-    public void changeLoginFragment(){
-        getActivity().onBackPressed();
+            @Override
+            public void onFail(NetworkRequest<NetworkResult<Owner>> request, int errorCode, String errorMessage, Throwable e) {
+                Toast.makeText(getContext(),"이메일이 전송이 실패하였습니다.\n 메일주소를 확인해 주세요.",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setCustomActionbar() {

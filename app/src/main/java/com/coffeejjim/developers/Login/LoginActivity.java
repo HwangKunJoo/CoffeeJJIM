@@ -25,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
     public void changeReissuance() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new ReissuanceFragment())
@@ -41,17 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
         }
-//        } else {
-//            FragmentTransaction ft = getSupportFragmentManager()
-//                    .beginTransaction();
-//            SignupFragment f = new SignupFragment();
-//            f = SignupFragment.newInstance("data");
-//            ft.replace(R.id.container, f, TAG_ONE);
-//            ft.commitAllowingStateLoss();
-//        }
-
     }
-
     public void moveHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
@@ -64,19 +55,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == SEARCH_ADDRESS || resultCode == RESULT_OK) {
-//            String findAddress = data.getExtras().getString("data");
-//            Bundle addressData = new Bundle();
-//            addressData.putString("data", findAddress);
-//            SignupFragment sf = new SignupFragment();
-//            sf.setArguments(addressData);
-//            changeSingup();
-//        } else
-//            super.onActivityResult(requestCode, resultCode, data);
-//
-//    }
 
 }
