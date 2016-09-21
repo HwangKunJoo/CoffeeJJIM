@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     tools:context=".estimate.EstimateSheetFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -252,17 +258,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
         android:textSize="@dimen/subject_text_size"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_marginLeft="5dp" />
+        android:layout_alignTop="@+id/estimate_sheet_auction_time"
+        android:layout_toRightOf="@+id/estimate_sheet_auction_time"
+        android:layout_toEndOf="@+id/estimate_sheet_auction_time"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/coffeejjim_brown" />
 
     <EditText
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:textSize="@dimen/subject_text_size"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/estimate_sheet_auction_time"
         android:background="@drawable/xml_edit_text_box_line"
         android:layout_alignTop="@+id/estimate_sheet_endtime_text"
         android:layout_toLeftOf="@+id/estimate_sheet_parking_btn"
