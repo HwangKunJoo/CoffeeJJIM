@@ -167,14 +167,39 @@
         android:paddingLeft="10dp"
         android:singleLine="true" />
 
-    <Spinner
-        android:layout_width="@dimen/fr_provider_home_edit_spinner_Size"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/provider_home_edit_working_daytime_spinner1"
+        android:inputType="textPersonName"
+        android:hint="08:00 ~ 24:00"
+        android:textSize="@dimen/small_text_size"
+        android:ems="10"
         android:layout_alignTop="@+id/provider_home_edit_working_daytime_text"
-        android:layout_alignLeft="@+id/provider_home_edit_phone"
-        android:layout_alignStart="@+id/provider_home_edit_phone"
-        android:layout_above="@+id/provider_home_edit_working_weektime_text" />
+        android:layout_alignLeft="@+id/provider_home_edit_options_wifi"
+        android:layout_alignStart="@+id/provider_home_edit_options_wifi"
+        android:id="@+id/provider_home_edit_working"
+        android:background="@drawable/xml_edit_text_box_line"
+        android:layout_alignRight="@+id/provider_home_edit_phone"
+        android:layout_alignEnd="@+id/provider_home_edit_phone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="10:00 ~ 24:00"
+        android:textSize="@dimen/small_text_size"
+        android:ems="10"
+        android:layout_alignTop="@+id/provider_home_edit_working_weektime_text"
+        android:layout_alignLeft="@+id/provider_home_edit_options_wifi"
+        android:layout_alignStart="@+id/provider_home_edit_options_wifi"
+        android:id="@+id/provider_home_edit_weeke"
+        android:background="@drawable/xml_edit_text_box_line"
+        android:layout_alignRight="@+id/provider_home_edit_working"
+        android:layout_alignEnd="@+id/provider_home_edit_working"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -183,28 +208,7 @@
         android:id="@+id/provider_home_edit_working_daytime_text1"
         android:textSize="@dimen/small_text_size"
         android:gravity="center"
-        android:layout_alignTop="@+id/provider_home_edit_working_daytime_spinner1"
-        android:layout_toRightOf="@+id/provider_home_edit_working_daytime_spinner1"
-        android:layout_toEndOf="@+id/provider_home_edit_working_daytime_spinner1"
         android:layout_above="@+id/provider_home_edit_working_weektime_text" />
-
-    <Spinner
-        android:layout_width="@dimen/fr_provider_home_edit_spinner_Size"
-        android:layout_height="wrap_content"
-        android:id="@+id/provider_home_edit_working_daytime_spinner2"
-        android:layout_alignTop="@+id/provider_home_edit_working_daytime_text1"
-        android:layout_toRightOf="@+id/provider_home_edit_working_daytime_text1"
-        android:layout_toEndOf="@+id/provider_home_edit_working_daytime_text1"
-        android:layout_above="@+id/provider_home_edit_working_weektime_text" />
-
-    <Spinner
-        android:layout_width="@dimen/fr_provider_home_edit_spinner_Size"
-        android:layout_height="wrap_content"
-        android:id="@+id/provider_home_edit_working_weektime_spinner1"
-        android:layout_alignTop="@+id/provider_home_edit_working_weektime_text"
-        android:layout_alignLeft="@+id/provider_home_edit_working_daytime_spinner1"
-        android:layout_alignStart="@+id/provider_home_edit_working_daytime_spinner1"
-        android:layout_alignBottom="@+id/provider_home_edit_working_weektime_text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -212,20 +216,7 @@
         android:text="~"
         android:id="@+id/provider_home_edit_working_weektime_text1"
         android:textSize="@dimen/small_text_size"
-        android:gravity="center"
-        android:layout_alignTop="@+id/provider_home_edit_working_weektime_spinner1"
-        android:layout_toRightOf="@+id/provider_home_edit_working_weektime_spinner1"
-        android:layout_toEndOf="@+id/provider_home_edit_working_weektime_spinner1"
-        android:layout_alignBottom="@+id/provider_home_edit_working_weektime_spinner1" />
-
-    <Spinner
-        android:layout_width="@dimen/fr_provider_home_edit_spinner_Size"
-        android:layout_height="wrap_content"
-        android:id="@+id/provider_home_edit_working_weektime_spinner2"
-        android:layout_alignTop="@+id/provider_home_edit_working_weektime_text1"
-        android:layout_toRightOf="@+id/provider_home_edit_working_weektime_text1"
-        android:layout_toEndOf="@+id/provider_home_edit_working_weektime_text1"
-        android:layout_alignBottom="@+id/provider_home_edit_working_weektime_text1" />
+        android:gravity="center" />
 
     <ImageView
         android:id="@+id/provider_home_edit_options_wifi"

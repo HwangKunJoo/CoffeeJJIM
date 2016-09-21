@@ -99,7 +99,9 @@
         <activity
             android:name=".extrafunctions.settings.SettingsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            />
         <activity
             android:name=".owner.OwnerHomeActivity"
             android:screenOrientation="portrait"

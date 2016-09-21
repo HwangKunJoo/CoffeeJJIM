@@ -160,21 +160,24 @@
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:text="반경"
-            android:gravity="right|center"
+            android:gravity="center"
             android:id="@+id/activity_settings_from_text"
             android:layout_weight="0.5"
             android:textSize="13dp"
             android:layout_gravity="center"
             android:textColor="@color/coffeejjim_brown" />
 
-        <Spinner
+        <EditText
+            android:ems="10"
+            android:id="@+id/activity_settings_distance_edit"
+            android:inputType="number"
+            android:gravity="center_vertical|center"
+            android:textSize="@dimen/subject_text_size"
+            android:maxLength="2"
+            android:singleLine="true"
+            android:background="@drawable/xml_edit_text_box_line"
             android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/activity_settings_distance_spinner"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textAlignment="center" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
