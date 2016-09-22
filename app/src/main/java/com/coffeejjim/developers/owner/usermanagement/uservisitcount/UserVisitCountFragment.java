@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.cafedetail.CafeDetailFragment;
 import com.coffeejjim.developers.data.Customer;
 
 import butterknife.BindView;
@@ -40,8 +39,8 @@ public class UserVisitCountFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static CafeDetailFragment newInstance(Customer customer) {
-        CafeDetailFragment f = new CafeDetailFragment();
+    public static UserVisitCountFragment newInstance(Customer customer) {
+        UserVisitCountFragment f = new UserVisitCountFragment();
         Bundle b = new Bundle();
         b.putSerializable("userManagementInfo", customer);
         f.setArguments(b);
@@ -58,6 +57,7 @@ public class UserVisitCountFragment extends Fragment {
         }
     }
 
+    //방문 내역 리스트 확인할 수 있는 리퀘스트가 필요할듯
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,13 +65,13 @@ public class UserVisitCountFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_user_visit, container, false);
         ButterKnife.bind(this, view);
 
-//        userVisitNickname.setText(customer.getNickname());
-//        userVisitCount.setText(""+customer.getVisitTime());
-//        if(customer.getBookmark() == -1){
-//            likeView.setImageResource(R.drawable.btn_likeempty);
-//        }else{
-//            likeView.setImageResource(R.drawable.btn_likefull);
-//        }
+        userVisitNickname.setText(customer.getNickname());
+        userVisitCount.setText(""+customer.getVisitTime());
+        if(customer.getBookmark() == -1){
+            likeView.setImageResource(R.drawable.btn_likeempty);
+        }else{
+            likeView.setImageResource(R.drawable.btn_likefull);
+        }
 
 
         mAdapter = new UserVisitCountRecyclerAdapter();

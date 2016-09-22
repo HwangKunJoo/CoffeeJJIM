@@ -29,8 +29,9 @@ public class UserVisitCountActivity extends AppCompatActivity {
         setCustomActionbar();
 
         if (savedInstanceState == null) {
+            UserVisitCountFragment userVisitCountFragment = UserVisitCountFragment.newInstance(customer);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new UserVisitCountFragment())
+                    .add(R.id.container, userVisitCountFragment)
                     .commit();
         }
     }

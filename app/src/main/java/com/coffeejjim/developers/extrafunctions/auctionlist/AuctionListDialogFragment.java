@@ -2,7 +2,6 @@ package com.coffeejjim.developers.extrafunctions.auctionlist;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -48,7 +47,9 @@ public class AuctionListDialogFragment extends DialogFragment {
         AuctionListDialogFragment f = new AuctionListDialogFragment();
         Bundle b = new Bundle();
         b.putSerializable("", estimate);
+        return f;
     }
+
     Estimate estimate;
 
 
@@ -60,7 +61,7 @@ public class AuctionListDialogFragment extends DialogFragment {
 
         auctionListLocation.setText(estimate.getAddress());
         auctionListDate.setText(estimate.getReservationDate().toString().substring(0,10));
-        auctionListTime.setText(estimate.getReservationTime().toString().substring((11,19));
+        auctionListTime.setText(estimate.getReservationTime().toString().substring(11,19));
         auctionListPerson.setText(""+estimate.getPeople());
 
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
