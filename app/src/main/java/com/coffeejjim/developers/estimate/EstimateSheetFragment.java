@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +20,6 @@ import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
 import com.coffeejjim.developers.data.Estimate;
-import com.coffeejjim.developers.data.NetworkResult;
-import com.coffeejjim.developers.manager.NetworkManager;
-import com.coffeejjim.developers.manager.NetworkRequest;
-import com.coffeejjim.developers.request.EstimateRequest;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.ActivityRecognition;
@@ -73,6 +68,7 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     int optionParking = 0;
     int optionSocket = 0;
     int optionDays = 0;
+
 
     public EstimateSheetFragment() {
         // Required empty public constructor
@@ -244,6 +240,11 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
 //        }
 //    }
 
+//        if (!isStringInt(peopleView.getText().toString())) {
+//            Toast.makeText(getContext(), "인원 수를 잘못입력하셨습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+
 
     @OnClick(R.id.btn_estimate_sheet_present)
     public void onEstimateCheckDialogButtonClick() {
@@ -260,40 +261,24 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
             return;
         }
 
-//        if (!isStringInt(peopleView.getText().toString())) {
-//            Toast.makeText(getContext(), "인원 수를 잘못입력하셨습니다. 다시 입력해주세요.", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
         String location = locationView.getText().toString();
         String reservationTime = dateView.getText().toString() + " " + timeView.getText().toString();
         int people = Integer.parseInt(peopleView.getText().toString());
         int auctionTime = Integer.parseInt(auctionTimeView.getText().toString());
 
-        EstimateRequest ERequest = new EstimateRequest(getContext(), people, 37.477025, 126.963493
-                , reservationTime, optionWifi, optionDays, optionParking, optionSocket, auctionTime);
-        NetworkManager.getInstance().getNetworkData(ERequest, new NetworkManager.OnResultListener<NetworkResult<Estimate>>() {
-            @Override
-            public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {
-                if (result.getCode() == 0) {
-                    Toast.makeText(getContext(), result.getMessage(), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "성공", Toast.LENGTH_SHORT).show();
-                    onDialogFragmentClick();
+        Estimate estimate = new Estimate();
 
-                }
-            }
+        estimate.setAddress(location);
+        estimate.setPeople(people);
+        estimate.setReservationTime(reservationTime);
+        estimate.setWifi(optionWifi);
+        estimate.setSocket(optionSocket);
+        estimate.setParking(optionParking);
+        estimate.setDays(optionDays);
+        estimate.setAuctionTime(auctionTime);
 
-            @Override
-            public void onFail(NetworkRequest<NetworkResult<Estimate>> request, int errorCode, String errorMessage, Throwable e) {
-                Toast.makeText(getContext(), "실패", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    public void onDialogFragmentClick() {
-        FragmentManager f = getActivity().getSupportFragmentManager();
-        EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
-        estimateSheetDialogFragment.show(f, "dialog");
+        EstimateSheetDialogFragment estimateSheetDialogFragment = EstimateSheetDialogFragment.newInstance(estimate);
+        estimateSheetDialogFragment.show(getFragmentManager(), "dialog");
     }
 
 }

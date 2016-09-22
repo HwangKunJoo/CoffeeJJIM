@@ -9,7 +9,7 @@ public class Estimate implements java.io.Serializable {
     private String nickname;
     private int people;
     private int bidPrice;
-    private String auctionStartTime;
+    private int auctionTime;
     private String deadlineTime;
     private int wifi;
     private int parking;
@@ -53,12 +53,12 @@ public class Estimate implements java.io.Serializable {
         this.proposalState = proposalState;
     }
 
-    public String getAuctionStartTime() {
-        return auctionStartTime;
+    public int getAuctionTime() {
+        return auctionTime;
     }
 
-    public void setAuctionStartTime(String auctionStartTime) {
-        this.auctionStartTime = auctionStartTime;
+    public void setAuctionTime(int auctionTime) {
+        this.auctionTime = auctionTime;
     }
 
     public String getDeadlineTime() {

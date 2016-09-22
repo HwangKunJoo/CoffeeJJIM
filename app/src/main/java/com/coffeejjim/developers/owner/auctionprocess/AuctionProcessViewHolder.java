@@ -78,7 +78,7 @@ public class AuctionProcessViewHolder extends RecyclerView.ViewHolder {
         userNicknameView.setText(estimate.getNickname());
         deadlineTimeView.setText(estimate.getDeadlineTime());
         peopleView.setText(""+estimate.getPeople());
-        auctionStartTimeView.setText(estimate.getAuctionStartTime());
+        auctionStartTimeView.setText(estimate.getAuctionTime());
         if(estimate.getWifi() == 1){
             optionWifiImageView.setVisibility(View.VISIBLE);
         }
