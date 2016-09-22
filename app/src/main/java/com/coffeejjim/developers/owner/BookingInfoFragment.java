@@ -14,7 +14,6 @@ import com.coffeejjim.developers.data.Estimate;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,8 +85,8 @@ public class BookingInfoFragment extends Fragment {
 //        });
 //    }
 
-    @OnClick(R.id.bookinginfo_ok_btn)
-    public void onBookingInfoCheck(){
-        getActivity().finish();
-    }
+//    @OnClick(R.id.bookinginfo_ok_btn)
+//    public void onBookingInfoCheck(){
+//        getActivity().finish();
+//    }
 }

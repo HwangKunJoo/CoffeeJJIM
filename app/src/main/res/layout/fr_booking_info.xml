@@ -10,10 +10,10 @@
         android:layout_weight="1.5">
 
         <RelativeLayout
-            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp">
 
             <ImageView
                 android:layout_width="@dimen/fr_booking_info_image_Size"
@@ -37,19 +37,6 @@
                 android:layout_toRightOf="@+id/proposal_title_image_clock"
                 android:layout_toEndOf="@+id/proposal_title_image_clock"
                 android:layout_marginLeft="10dp"
-                android:textColor="@color/coffeejjim_brown" />
-
-            <TextView
-                android:layout_width="@dimen/fr_booking_info_text_view_Size"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="날짜"
-                android:textSize="@dimen/subject_text_size"
-                android:id="@+id/proposal_date_plain_text"
-                android:layout_below="@+id/proposal_title_plain_text"
-                android:layout_alignLeft="@+id/proposal_title_plain_text"
-                android:layout_alignStart="@+id/proposal_title_plain_text"
-                android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
                 android:textColor="@color/coffeejjim_brown" />
 
             <TextView
@@ -116,6 +103,32 @@
                 android:layout_marginTop="@dimen/fr_booking_info_text_view_interval_marginTop"
                 android:textColor="@color/coffeejjim_brown" />
 
+            <TextView
+                android:text="명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView7"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_alignTop="@+id/proposal_person"
+                android:layout_toRightOf="@+id/proposal_person"
+                android:layout_toEndOf="@+id/proposal_person"
+                android:textColor="@color/coffeejjim_brown"/>
+
+            <TextView
+                android:layout_width="@dimen/fr_booking_info_text_view_Size"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="날짜"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_date_plain_text"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_below="@+id/proposal_title_image_clock"
+                android:layout_toRightOf="@+id/proposal_title_image_clock"
+                android:layout_toEndOf="@+id/proposal_title_image_clock"
+                android:layout_marginLeft="30dp" />
+
         </RelativeLayout>
 
     </RelativeLayout>
@@ -136,10 +149,10 @@
         android:layout_weight="2">
 
         <RelativeLayout
-            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp">
 
             <ImageView
                 android:layout_width="@dimen/fr_booking_info_image_Size"
@@ -151,20 +164,6 @@
                 android:src="@drawable/ic_face"
                 android:background="@color/coffeejjim_invisible"
                 android:scaleType="centerCrop" />
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="예약자 정보"
-                android:textSize="@dimen/subject_text_size"
-                android:id="@+id/proposal_nickname_plain_text"
-                android:layout_marginLeft="43dp"
-                android:textColor="@color/coffeejjim_brown"
-                android:layout_marginStart="43dp"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/proposal_title_image_user"
-                android:layout_toEndOf="@+id/proposal_title_image_user" />
 
             <TextView
                 android:layout_width="@dimen/fr_booking_info_text_view_Size"
@@ -183,18 +182,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="UserA"
-                android:textSize="@dimen/subject_text_size"
-                android:id="@+id/proposal_nickname"
-                android:textColor="@color/coffeejjim_brown"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/proposal_nickname_plain_text"
-                android:layout_toEndOf="@+id/proposal_nickname_plain_text" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="010-1234-1234"
                 android:textSize="@dimen/subject_text_size"
                 android:id="@+id/proposal_phone"
@@ -203,6 +190,32 @@
                 android:layout_alignBottom="@+id/proposal_phone_plain_text"
                 android:layout_toRightOf="@+id/proposal_phone_plain_text"
                 android:layout_toEndOf="@+id/proposal_phone_plain_text" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="닉네임"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_nickname_plain_text"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_marginStart="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/proposal_title_image_user"
+                android:layout_toEndOf="@+id/proposal_title_image_user" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="UserA"
+                android:textSize="@dimen/subject_text_size"
+                android:id="@+id/proposal_nickname"
+                android:textColor="@color/coffeejjim_brown"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/proposal_nickname_plain_text"
+                android:layout_toEndOf="@+id/proposal_nickname_plain_text" />
 
         </RelativeLayout>
 
@@ -224,10 +237,10 @@
         android:layout_weight="2">
 
         <RelativeLayout
-            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_width="250dp">
 
             <ImageView
                 android:layout_width="25dp"
@@ -245,30 +258,35 @@
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/imageView"
                 android:layout_toEndOf="@+id/imageView"
-                android:layout_width="80dp"
-                android:layout_marginLeft="43dp" />
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="10000원"
+                android:hint="10000"
                 android:textSize="@dimen/subject_text_size"
                 android:id="@+id/proposal_price"
                 android:textColor="@color/coffeejjim_red"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/proposal_price_plain_text"
-                android:layout_toEndOf="@+id/proposal_price_plain_text" />
+                android:layout_toEndOf="@+id/proposal_price_plain_text"
+                android:layout_marginLeft="10dp"
+                android:gravity="right"/>
+
+            <TextView
+                android:text="원"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:textSize="@dimen/subject_text_size"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/proposal_price"
+                android:layout_toEndOf="@+id/proposal_price"
+                android:textColor="@color/coffeejjim_brown" />
         </RelativeLayout>
 
     </RelativeLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="확인"
-        android:id="@+id/bookinginfo_ok_btn"
-        android:background="@color/coffeejjim_brown"
-        android:textColor="@color/coffeejjim_white" />
 
 </LinearLayout>
