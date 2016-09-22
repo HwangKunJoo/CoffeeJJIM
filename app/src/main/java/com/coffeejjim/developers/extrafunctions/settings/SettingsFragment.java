@@ -1,9 +1,7 @@
 package com.coffeejjim.developers.extrafunctions.settings;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +15,6 @@ import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.request.AuctionRangeEditRequest;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +32,8 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fr_settings, container, false);
         ButterKnife.bind(this, view);
         putAuctionRange();
+
+
 
         return view;
     }
@@ -54,10 +53,19 @@ public class SettingsFragment extends Fragment {
         });
     }
 
-    @OnClick(R.id.activity_settings_vi_switch)
-    public void onvibSwitch() {
-        Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(200);
-    }
+//    @OnClick(R.id.activity_settings_vi_switch)
+//    public void onvibSwitch( boolean isChecked) {
+//
+//        if (isChecked == true) {
+//            Toast.makeText(getContext(), "진동 On", Toast.LENGTH_SHORT).show();
+//
+//            Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+//            vibrator.vibrate(200);
+//
+//        } else {
+//            Toast.makeText(getContext(), "진동 Off", Toast.LENGTH_SHORT).show();
+//        }
+//
+//    }
 
 }
