@@ -24,6 +24,7 @@ import com.coffeejjim.developers.login.LoginActivity;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
 import com.coffeejjim.developers.manager.PropertyManager;
+import com.coffeejjim.developers.owner.BookingInfoActivity;
 import com.coffeejjim.developers.owner.OwnerHomeActivity;
 import com.coffeejjim.developers.owner.auctionprocess.AuctionProcessActivity;
 import com.coffeejjim.developers.owner.auctionstatement.AuctionStatementActivity;
@@ -193,6 +194,17 @@ public class CoffeeJJIMSplashActivity extends AppCompatActivity {
                 Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
                 Intent auctionStatementIntent = new Intent(this, AuctionStatementActivity.class);
                 Intent[] intents = {homeIntent, auctionStatementIntent};
+                startActivities(intents);
+                finish();
+            }else if(key.equals(AuctionStatementActivity.AUCTION_STATEMENT_FAIL_NOTI)){
+                String estimateId = getIntent().getStringExtra("estimateId");
+                String proposalId = getIntent().getStringExtra("proposalId");
+                Intent homeIntent = new Intent(this, OwnerHomeActivity.class);
+                Intent auctionStatementIntent = new Intent(this, AuctionStatementActivity.class);
+                Intent bookingInfoIntent = new Intent(this, BookingInfoActivity.class);
+                bookingInfoIntent.putExtra("estimateId", estimateId);
+                bookingInfoIntent.putExtra("proposalId", proposalId);
+                Intent[] intents = {homeIntent, auctionStatementIntent, bookingInfoIntent};
                 startActivities(intents);
                 finish();
             }

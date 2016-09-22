@@ -16,6 +16,7 @@ public class AuctionStatementActivity extends AppCompatActivity {
     Toolbar toolbar;
 
     public static final String AUCTION_STATEMENT_NOTI = "4";
+    public static final String AUCTION_STATEMENT_FAIL_NOTI = "5";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

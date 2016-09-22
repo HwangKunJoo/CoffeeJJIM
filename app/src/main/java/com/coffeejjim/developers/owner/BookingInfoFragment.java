@@ -31,6 +31,8 @@ public class BookingInfoFragment extends Fragment {
     @BindView(R.id.proposal_price)
     TextView priceView;
 
+    static boolean notiNumChecked = false;
+
     public BookingInfoFragment() {
         // Required empty public constructor
     }
@@ -43,13 +45,29 @@ public class BookingInfoFragment extends Fragment {
         return f;
     }
 
-    Estimate estimate;
+    public static BookingInfoFragment newInstance(String estimateId, String proposalId){
+        BookingInfoFragment f = new BookingInfoFragment();
+        Bundle b = new Bundle();
+        b.putString("estimateId", estimateId);
+        b.putString("proposalId", proposalId);
+        f.setArguments(b);
+        notiNumChecked = true;
+        return f;
+    }
 
+    Estimate estimate;
+    String estimateId;
+    String proposalId;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            estimate = (Estimate) getArguments().getSerializable("estimate");
+            if(!notiNumChecked) {
+                estimate = (Estimate) getArguments().getSerializable("estimate");
+            }else{
+                estimateId = getArguments().getString("estimateId");
+                proposalId = getArguments().getString("proposalId");
+            }
         }
     }
 
@@ -58,7 +76,9 @@ public class BookingInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fr_booking_info, container, false);
         ButterKnife.bind(this, view);
-        phoneNumberView.setText(estimate.getPhoneNumber());
+        if(!notiNumChecked) {
+            phoneNumberView.setText(estimate.getPhoneNumber());
+        }
         dateView.setText(estimate.getReservationTime().toString().substring(0,10));
         timeView.setText(estimate.getReservationTime().toString().substring(12,19));
         nicknameView.setText(estimate.getNickname());

@@ -32,6 +32,8 @@ public class MyGcmListenerService extends GcmListenerService {
 
     private static final String TAG = "MyGcmListenerService";
     String key;
+    String estimateId;
+    String proposalId;
 
     /**
      * Called when message is received.
@@ -45,6 +47,8 @@ public class MyGcmListenerService extends GcmListenerService {
     public void onMessageReceived(String from, Bundle data) {
         String message = data.getString("message");
         key = data.getString("key1");
+        estimateId = data.getString("key2");
+        proposalId = data.getString("key3");
         Log.d(TAG, "From: " + from);
         Log.d(TAG, "Message: " + message);
 
@@ -62,6 +66,9 @@ public class MyGcmListenerService extends GcmListenerService {
                 }
                 case "4":{
                     sendAuctionStatementNotification();
+                }
+                case "5":{
+                    sendAuctionStatementFailNotification(estimateId, proposalId);
                 }
             }
         }
@@ -150,9 +157,31 @@ public class MyGcmListenerService extends GcmListenerService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setTicker("고객님의 예약이 완료되었습니다.")
+                .setTicker("고객님의 예약이 입찰되었습니다.")
                 .setContentTitle("CoffeeJJIM")
                 .setContentText("예약 내용을 확인해주세요.")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setContentIntent(pendingIntent);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    private void sendAuctionStatementFailNotification(String estimateId, String proposalId){
+        Intent intent = new Intent(this, CoffeeJJIMSplashActivity.class);
+        intent.putExtra("key", key);
+        intent.putExtra("estimateId", estimateId);
+        intent.putExtra("proposalId", proposalId);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setTicker("고객님의 경매가 유찰 되었습니다.")
+                .setContentTitle("CoffeeJJIM")
+                .setContentText("다음에 다시 부탁드려요.")
                 .setAutoCancel(true)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setContentIntent(pendingIntent);
