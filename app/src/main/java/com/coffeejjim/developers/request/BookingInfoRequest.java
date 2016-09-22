@@ -19,12 +19,12 @@ public class BookingInfoRequest extends AbstractRequest<NetworkResult<Estimate>>
 
     Request request;
 
-    public BookingInfoRequest(Context context, int estimateId, int proposalId) {
+    public BookingInfoRequest(Context context, String estimateId, String proposalId) {
         HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("estimates")
-                .addPathSegment("" + estimateId)
+                .addPathSegment(estimateId)
                 .addPathSegment("proposalId")
-                .addPathSegment("" + proposalId)
+                .addPathSegment(proposalId)
                 .build();
 
         request = new Request.Builder()

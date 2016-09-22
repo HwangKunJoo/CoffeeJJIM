@@ -57,18 +57,23 @@ public class MyGcmListenerService extends GcmListenerService {
             switch (key) {
                 case "1": {
                     sendAuctionProcessNotification();
+                    break;
                 }
                 case "2":{
                     sendAuctionFinishNotification();
+                    break;
                 }
                 case "3":{
                     sendProposalNotification();
+                    break;
                 }
                 case "4":{
                     sendAuctionStatementNotification();
+                    break;
                 }
                 case "5":{
                     sendAuctionStatementFailNotification(estimateId, proposalId);
+                    break;
                 }
             }
         }
