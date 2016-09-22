@@ -211,9 +211,6 @@ public class EstimateSheetFragment extends Fragment implements GoogleApiClient.O
     }
 
     public void onDialogFragmentClick() {
-//        EstimateSheetDialogFragment f = EstimateSheetDialogFragment.newInstance(ESTIMATE_CALL);
-//        f.show(getFragmentManager(), "dialog");
-
         FragmentManager f = getActivity().getSupportFragmentManager();
         EstimateSheetDialogFragment estimateSheetDialogFragment = new EstimateSheetDialogFragment();
         estimateSheetDialogFragment.show(f, "dialog");

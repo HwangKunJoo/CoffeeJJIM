@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.Customer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +39,7 @@ public class UserVisitCountFragment extends Fragment {
         mAdapter = new UserVisitCountRecyclerAdapter();
         mAdapter.setOnAdapterItemClickListener(new UserVisitCountRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
-            public void onAdapterItemClick(View view, Estimate estimate, int position) {
+            public void onAdapterItemClick(View view, Customer customer, int position) {
 
             }
         });
@@ -50,20 +50,8 @@ public class UserVisitCountFragment extends Fragment {
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         userVisitCountRecyclerView.setLayoutManager(manager);
 
-        //initData();
         return view;
     }
 
-//    public void initData() {
-//
-//        for (int i = 0; i < 10; i++) {
-//            Estimate e = new Estimate();
-//            e.setBidPrice("12000원");
-//            e.setPeople(i);
-//            e.setReservationDate("2016. 08. 29");
-//            e.setReservationTime("11 : " + i);
-//            mAdapter.add(e);
-//        }
-//    }
 }
 

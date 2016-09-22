@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.Customer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +18,7 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.user_visit_count_description_visit_date)
     TextView userVisitCountDateView;
     @BindView(R.id.user_visit_count_description_visit_time)
-    TextView userVisitCountTimeView;
+    TextView userVisitTimeView;
     @BindView(R.id.user_visit_count_description_people)
     TextView userVisitCountPeopleView;
     @BindView(R.id.user_visit_count_description_price)
@@ -30,7 +30,7 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 if (listener != null) {
-                    listener.onUserVisitCountItemClick(v, estimate, getAdapterPosition());
+                    listener.onUserVisitCountItemClick(v, customer, getAdapterPosition());
                 }
             }
         });
@@ -38,7 +38,7 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
     }
 
     public interface OnUserVisitCountItemClickListener {
-        public void onUserVisitCountItemClick(View view, Estimate estimate, int position);
+        public void onUserVisitCountItemClick(View view, Customer customer, int position);
     }
 
     OnUserVisitCountItemClickListener listener;
@@ -47,14 +47,15 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
         this.listener = listener;
     }
 
-    Estimate estimate;
+    Customer customer;
 
-    public void setEstimate(Estimate estimate) {
-        this.estimate = estimate;
-        userVisitCountDateView.setText(estimate.getReservationDate());
-        userVisitCountTimeView.setText(estimate.getReservationTime());
-        userVisitCountPeopleView.setText(""+estimate.getPeople());
-        userVisitCountPriceView.setText(estimate.getBidPrice());
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+        String reservationTime = customer.getReservationTime();
+        userVisitCountDateView.setText(reservationTime.substring(0,9));
+        userVisitTimeView.setText(reservationTime.substring(11,18));
+        userVisitCountPeopleView.setText(""+customer.getPeople());
+        userVisitCountPriceView.setText(""+customer.getBidPrice());
 
     }
 }

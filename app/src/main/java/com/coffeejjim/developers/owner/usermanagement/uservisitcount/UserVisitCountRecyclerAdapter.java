@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.Estimate;
+import com.coffeejjim.developers.data.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,10 @@ import java.util.List;
 public class UserVisitCountRecyclerAdapter extends RecyclerView.Adapter<UserVisitCountViewHolder>
         implements UserVisitCountViewHolder.OnUserVisitCountItemClickListener{
 
-    List<Estimate> items = new ArrayList<>();
+    List<Customer> items = new ArrayList<>();
 
-    public void add(Estimate e){
-        items.add(e);
+    public void add(Customer c){
+        items.add(c);
         notifyDataSetChanged();
     }
 
@@ -35,7 +35,7 @@ public class UserVisitCountRecyclerAdapter extends RecyclerView.Adapter<UserVisi
 
     @Override
     public void onBindViewHolder(UserVisitCountViewHolder holder, int position) {
-        holder.setEstimate(items.get(position));
+        holder.setCustomer(items.get(position));
     }
 
     @Override
@@ -44,7 +44,7 @@ public class UserVisitCountRecyclerAdapter extends RecyclerView.Adapter<UserVisi
     }
 
     public interface OnAdapterItemClickLIstener {
-        public void onAdapterItemClick(View view, Estimate estimate, int position);
+        public void onAdapterItemClick(View view, Customer customer, int position);
     }
 
     OnAdapterItemClickLIstener listener;
@@ -54,7 +54,7 @@ public class UserVisitCountRecyclerAdapter extends RecyclerView.Adapter<UserVisi
     }
 
     @Override
-    public void onUserVisitCountItemClick(View view, Estimate estimate, int position) {
-        listener.onAdapterItemClick(view, estimate, position);
+    public void onUserVisitCountItemClick(View view, Customer customer, int position) {
+        listener.onAdapterItemClick(view, customer, position);
     }
 }

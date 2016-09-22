@@ -16,9 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.coffeejjim.developers.R;
-import com.coffeejjim.developers.data.CafeImage;
 import com.coffeejjim.developers.data.CafeInfo;
-import com.coffeejjim.developers.data.Event;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
@@ -77,6 +75,7 @@ public class CafeDetailFragment extends Fragment {
         f.setArguments(b);
         return f;
     }
+
     int cafeId;
 
     @Override

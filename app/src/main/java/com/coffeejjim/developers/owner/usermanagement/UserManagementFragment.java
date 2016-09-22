@@ -17,7 +17,6 @@ import com.coffeejjim.developers.data.Customer;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.manager.NetworkManager;
 import com.coffeejjim.developers.manager.NetworkRequest;
-import com.coffeejjim.developers.owner.BookingInfoActivity;
 import com.coffeejjim.developers.owner.usermanagement.uservisitcount.UserVisitCountActivity;
 import com.coffeejjim.developers.request.UserManagementRequest;
 
@@ -36,8 +35,6 @@ public class UserManagementFragment extends Fragment {
     RecyclerView userManagementRecyclerView;
     UserManagementRecyclerAdapter mAdapter;
 
-    public static final int BTN_DETAIL = 0;
-    public static final int BTN_VISIT_COUNT = 1;
 
     public UserManagementFragment() {
         // Required empty public constructor
@@ -58,13 +55,10 @@ public class UserManagementFragment extends Fragment {
         mAdapter.setOnAdapterItemClickListener(new UserManagementRecyclerAdapter.OnAdapterItemClickLIstener() {
             @Override
             public void onAdapterItemClick(View view, Customer customer, int position, int flag) {
-                if (flag == BTN_DETAIL) {
-                    Intent intent = new Intent(getActivity(), BookingInfoActivity.class);
-                    startActivity(intent);
-                } else if(flag == BTN_VISIT_COUNT){
-                    Intent intent = new Intent(getActivity(), UserVisitCountActivity.class);
-                    startActivity(intent);
-                }
+
+                Intent intent = new Intent(getActivity(), UserVisitCountActivity.class);
+                intent.putExtra("userManagementInfo",customer);
+                startActivity(intent);
             }
         });
 
