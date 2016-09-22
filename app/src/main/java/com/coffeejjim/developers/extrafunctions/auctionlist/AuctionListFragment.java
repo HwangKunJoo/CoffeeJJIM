@@ -4,7 +4,6 @@ package com.coffeejjim.developers.extrafunctions.auctionlist;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -62,21 +61,9 @@ public class AuctionListFragment extends Fragment {
 
             @Override
             public void onAdapterButtonClick(View view, Estimate estimate, int position) {
-
-                ////////////////////////////////    1차    ///////////////////////////////
-//                getFragmentManager().beginTransaction().replace(R.id.container, new EstimateSheetDialogFragment())
-//                        .addToBackStack(null).commit();
-
-                ////////////////////////////////    2차    ////////////////////////////
-//                EstimateSheetDialogFragment estimateSheetDialogFragment
-//                        = EstimateSheetDialogFragment.newInstance(AUCTION_LIST_CALL);
-//                estimateSheetDialogFragment.show(getFragmentManager(), "Dialog");
-
-                ////////////////////////////////   3차   ///////////////////////////////
-                FragmentManager f = getActivity().getSupportFragmentManager();
-                AuctionListDialogFragment auctionListDialogFragment = new AuctionListDialogFragment();
-                auctionListDialogFragment.show(f, "dialog");
-
+                AuctionListDialogFragment auctionListDialogFragment
+                        = AuctionListDialogFragment.newInstance(estimate);
+                auctionListDialogFragment.show(getFragmentManager(), "dialog");
             }
         });
 
