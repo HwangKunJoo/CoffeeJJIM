@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Estimate;
 import com.coffeejjim.developers.data.NetworkResult;
 import com.coffeejjim.developers.data.Proposal;
 import com.coffeejjim.developers.manager.NetworkManager;
@@ -30,32 +32,37 @@ public class ProposalFragment extends Fragment {
 
     @BindView(R.id.proposal_price_edit)
     EditText bidPriceView;
-
     @BindView(R.id.btn_proposal_present)
     Button btn_proposal;
-
-
+    @BindView(R.id.proposal_date)
+    TextView dateView;
+    @BindView(R.id.proposal_time)
+    TextView timeView;
+    @BindView(R.id.proposal_person)
+    TextView personView;
+    @BindView(R.id.proposal_endtime)
+    TextView auctionTimeView;
 
 
     public ProposalFragment() {
         // Required empty public constructor
     }
 
-    public static ProposalFragment newInstance(int estimateId){
+    public static ProposalFragment newInstance(Estimate estimate){
         ProposalFragment f = new ProposalFragment();
         Bundle b = new Bundle();
-        b.putInt("estimateId", estimateId);
+        b.putSerializable("estimate", estimate);
         f.setArguments(b);
         return f;
     }
 
-    int estimateId;
+    Estimate estimate;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            estimateId = getArguments().getInt("estimateId");
+            estimate = (Estimate)getArguments().getSerializable("estimate");
         }
     }
 
@@ -64,6 +71,11 @@ public class ProposalFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fr_proposal, container, false);
         ButterKnife.bind(this, view);
+        dateView.setText(estimate.getReservationTime().toString().substring(0,10));
+        timeView.setText(estimate.getReservationTime().toString().substring(11,19));
+        personView.setText(""+estimate.getPeople());
+        auctionTimeView.setText(""+estimate.getAuctionTime());
+
         btn_proposal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +88,7 @@ public class ProposalFragment extends Fragment {
 
     public void postProposal(){
         String bidPrice = bidPriceView.getText().toString();
-        ProposalRequest PRequest = new ProposalRequest(getContext(), estimateId, bidPrice);
+        ProposalRequest PRequest = new ProposalRequest(getContext(), estimate.getEstimateId(), bidPrice);
         NetworkManager.getInstance().getNetworkData(PRequest, new NetworkManager.OnResultListener<NetworkResult<Proposal>>() {
             @Override
             public void onSuccess(NetworkRequest<NetworkResult<Proposal>> request, NetworkResult<Proposal> result) {

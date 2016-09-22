@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Estimate;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,10 +24,10 @@ public class ProposalActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setCustomActionbar();
         Intent intent = getIntent();
-        int estimateId = intent.getIntExtra("estimateId", 345);
+        Estimate estimate = (Estimate)intent.getSerializableExtra("estimate");
 
         if (savedInstanceState == null) {
-            ProposalFragment proposalFragment = ProposalFragment.newInstance(estimateId);
+            ProposalFragment proposalFragment = ProposalFragment.newInstance(estimate);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, proposalFragment).commit();
         }
