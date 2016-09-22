@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.coffeejjim.developers.R;
+import com.coffeejjim.developers.data.Customer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,11 +16,16 @@ public class UserVisitCountActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    Customer customer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_visit_count);
         ButterKnife.bind(this);
+
+        customer = (Customer) getIntent().getSerializableExtra("userManagementInfo");
+
         setCustomActionbar();
 
         if (savedInstanceState == null) {

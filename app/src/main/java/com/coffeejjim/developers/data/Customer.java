@@ -14,6 +14,7 @@ public class Customer implements java.io.Serializable {
     private int people;
     private int bidPrice;
 
+
     public int getParking() {
         return this.parking;
     }
