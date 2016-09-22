@@ -112,7 +112,11 @@
         android:layout_alignLeft="@+id/estimate_sheet_time_edit"
         android:layout_alignStart="@+id/estimate_sheet_time_edit"
         android:layout_alignRight="@+id/estimate_sheet_time_edit"
-        android:layout_alignEnd="@+id/estimate_sheet_time_edit" />
+        android:layout_alignEnd="@+id/estimate_sheet_time_edit"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="버튼을 눌러주세요" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -123,14 +127,17 @@
         android:background="@drawable/xml_edit_text_box_line"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:singleLine="true"
         android:textSize="@dimen/fr_estimate_sheet_text_Size"
         android:inputType="number"
         android:layout_alignLeft="@+id/estimate_sheet_people_edit"
         android:layout_alignStart="@+id/estimate_sheet_people_edit"
         android:layout_toLeftOf="@+id/estimate_sheet_time"
         android:layout_toStartOf="@+id/estimate_sheet_time"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="5dp"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:hint="버튼을 눌러주세요" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -147,7 +154,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="@dimen/fr_estimate_sheet_set_text_view_marginLeft"
         android:layout_alignLeft="@+id/estimate_sheet_selecting_text"
-        android:layout_alignStart="@+id/estimate_sheet_selecting_text" />
+        android:layout_alignStart="@+id/estimate_sheet_selecting_text"
+        android:inputType="number"
+        tools:inputType="number" />
 
     <ImageButton
         android:layout_width="@dimen/fr_estimate_sheet_option_image_button_size"
@@ -266,7 +275,7 @@
 
     <EditText
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textSize="@dimen/subject_text_size"
         android:ems="10"
         android:id="@+id/estimate_sheet_auction_time"
