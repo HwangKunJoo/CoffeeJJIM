@@ -84,8 +84,8 @@ public class BookingInfoFragment extends Fragment {
         ButterKnife.bind(this, view);
         if (!notiNumChecked) {
             phoneNumberView.setText(estimate.getPhoneNumber());
-            dateView.setText(estimate.getReservationTime().toString().substring(0, 9));
-            timeView.setText(estimate.getReservationTime().toString().substring(11, 18));
+            dateView.setText(estimate.getReservationTime().toString().substring(0, 10));
+            timeView.setText(estimate.getReservationTime().toString().substring(11, 19));
             nicknameView.setText(estimate.getNickname());
             priceView.setText("" + estimate.getBidPrice());
         }else{
@@ -94,8 +94,9 @@ public class BookingInfoFragment extends Fragment {
                 @Override
                 public void onSuccess(NetworkRequest<NetworkResult<Estimate>> request, NetworkResult<Estimate> result) {
                     Toast.makeText(getContext(), "씨발 집 가고 싶다", Toast.LENGTH_SHORT).show();
-                    dateView.setText(estimate.getReservationTime().toString().substring(0, 9));
-                    timeView.setText(estimate.getReservationTime().toString().substring(11, 18));
+                    Estimate estimate = result.getResult();
+                    dateView.setText(estimate.getReservationTime().toString().substring(0, 10));
+                    timeView.setText(estimate.getReservationTime().toString().substring(11, 19));
                     nicknameView.setText(estimate.getNickname());
                     priceView.setText("" + estimate.getBidPrice());
 

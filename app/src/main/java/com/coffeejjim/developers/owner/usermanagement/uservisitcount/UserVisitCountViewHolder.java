@@ -52,8 +52,8 @@ public class UserVisitCountViewHolder extends RecyclerView.ViewHolder {
     public void setCustomer(Customer customer) {
         this.customer = customer;
         String reservationTime = customer.getReservationTime();
-        userVisitCountDateView.setText(reservationTime.substring(0,9));
-        userVisitTimeView.setText(reservationTime.substring(11,18));
+        userVisitCountDateView.setText(reservationTime.substring(0,10));
+        userVisitTimeView.setText(reservationTime.substring(11,19));
         userVisitCountPeopleView.setText(""+customer.getPeople());
         userVisitCountPriceView.setText(""+customer.getBidPrice());
 

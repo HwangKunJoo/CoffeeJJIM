@@ -182,7 +182,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="010-1234-1234"
                 android:textSize="@dimen/subject_text_size"
                 android:id="@+id/proposal_phone"
                 android:textColor="@color/coffeejjim_brown"

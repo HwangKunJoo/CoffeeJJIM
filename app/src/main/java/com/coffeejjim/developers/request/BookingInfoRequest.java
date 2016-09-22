@@ -23,7 +23,7 @@ public class BookingInfoRequest extends AbstractRequest<NetworkResult<Estimate>>
         HttpUrl url = getBaseUrlHttpsBuilder()
                 .addPathSegment("estimates")
                 .addPathSegment(estimateId)
-                .addPathSegment("proposalId")
+                .addPathSegment("proposals")
                 .addPathSegment(proposalId)
                 .build();
 
