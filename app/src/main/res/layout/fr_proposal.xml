@@ -146,7 +146,8 @@
             android:layout_alignStart="@+id/proposal_nickname_plain_text"
             android:textSize="20dp"
             android:singleLine="true"
-            android:background="@drawable/xml_edit_text_box_line" />
+            android:background="@drawable/xml_edit_text_box_line"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -285,6 +285,7 @@
         android:layout_toRightOf="@+id/estimate_sheet_socket_btn"
         android:layout_toEndOf="@+id/estimate_sheet_socket_btn"
         android:layout_width="50dp"
-        android:layout_alignBottom="@+id/estimate_sheet_endtime_text" />
+        android:layout_alignBottom="@+id/estimate_sheet_endtime_text"
+        android:gravity="center" />
 
 </RelativeLayout>
